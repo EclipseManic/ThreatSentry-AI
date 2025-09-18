@@ -1,0 +1,45 @@
+# Networking / APIs
+requests
+shodan
+nvdlib
+xmltodict
+ipaddress
+
+# Database / ORM
+SQLAlchemy
+pandas
+
+# AI / Machine Learning
+scikit-learn
+numpy
+joblib
+tensorflow # For advanced neural network capabilities
+xgboost   # For gradient boosting
+lightgbm  # For additional ensemble methods
+pandas    # For data manipulation
+torch   # For PyTorch-based models (optional)
+shap  # For model interpretability
+
+# Email / Alerts
+sendgrid
+python-dotenv
+
+# Scheduler / Background tasks
+schedule
+apscheduler
+
+# GUI / Dashboard
+PyQt5
+PySide6
+dash
+plotly
+matplotlib
+# Notes
+# The utilities below (re, hashlib, argparse, pathlib, etc.) are part of the
+# Python standard library and should NOT be listed in requirements. They were
+# removed to avoid pip attempting to install them.
+#
+# Some packages may not have wheels for the very latest Python versions (for
+# example, early releases of Python 3.13). If you run into compatibility errors
+# during installation, consider using Python 3.11 or a conda environment where
+# prebuilt binaries are available.
