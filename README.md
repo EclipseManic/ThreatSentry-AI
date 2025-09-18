@@ -39,6 +39,17 @@ In today's complex cybersecurity landscape, security teams are often overwhelmed
     * Alerts provide a clear summary of the device, its risk factors, and actionable remediation guidance to accelerate response times.
     * Features a "mark as notified" system to prevent duplicate alerts for the same high-risk device.
 
+## 🛠️ Technologies Used
+
+* **Backend:** Python
+* **GUI:** PyQt5
+* **Machine Learning:** Scikit-learn, TensorFlow, XGBoost
+* **Data Collection:** Shodan API, NVDLib
+* **Database:** SQLite (via SQLAlchemy)
+* **Email Alerts:** SendGrid API
+* **Scheduling:** APScheduler
+
+
 ## ⚙️ How It Works (Architecture)
 
 The application operates in a continuous, cyclical workflow:
