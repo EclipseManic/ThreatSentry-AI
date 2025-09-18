@@ -108,15 +108,15 @@ python run.py
 ```
 The GUI window will appear, and the scheduler will begin the first data collection cycle immediately.
 
-###🛠️ Scripts and Usage Guide
+### 🛠️ Scripts and Usage Guide
 This project contains several scripts that handle everything from running the main application to managing the database and training the machine learning model.
 
-###Core Application Scripts
+### Core Application Scripts
 run.py: This is the main entry point for the entire application. It initializes the database, starts the background scheduler, and launches the GUI.
 
 scheduler.py: This script is responsible for all automated, background tasks. It is started by run.py and handles periodic scanning, model retraining, and alerting.
 
-###Utility and Maintenance Scripts (scripts/)
+### Utility and Maintenance Scripts (scripts/)
 scripts/generate_realistic_training_data.py: Generates a synthetic dataset to bootstrap the machine learning model.
 ```
 # Generate 500 records (default)
@@ -135,10 +135,10 @@ python scripts/clear_db_enhanced.py --reset-notified
 
 scripts/_email_preview.py: A helper script to preview the HTML email alert without sending an actual email.
 
-###💬 Feedback and Suggestions
+### 💬 Feedback and Suggestions
 This is a solo project developed by EclipseManic. While direct code contributions are not being accepted at this time, feedback, suggestions, and bug reports are highly appreciated.
 
 Please feel free to open an issue to share your thoughts or report a problem.
 
-###📄 License
+### 📄 License
 This project is distributed under the MIT License. See the LICENSE file for more information.
