@@ -143,11 +143,10 @@ scripts/clear_db_enhanced.py: A safe and powerful script for database maintenanc
 ```
 # Delete all devices and vulnerabilities after confirmation
 python scripts/clear_db_enhanced.py --delete-devices --delete-vulns
+
 # Reset the "notified" flag on all devices
 python scripts/clear_db_enhanced.py --reset-notified
 ```
-
-scripts/_email_preview.py: A helper script to preview the HTML email alert without sending an actual email.
 
 ### 💬 Feedback and Suggestions
 This is a solo project developed by EclipseManic. While direct code contributions are not being accepted at this time, feedback, suggestions, and bug reports are highly appreciated.
