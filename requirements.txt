@@ -29,7 +29,6 @@ apscheduler
 
 # GUI / Dashboard
 PyQt5
-PySide6
 plotly
 matplotlib
 # Notes
@@ -42,3 +41,4 @@ matplotlib
 # during installation, consider using Python 3.11 or a conda environment where
 
 # prebuilt binaries are available.
+
