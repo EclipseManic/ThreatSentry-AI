@@ -109,6 +109,9 @@ The application operates in a continuous, cyclical workflow:
     # Scheduler settings (in minutes)
     SCAN_INTERVAL_MINUTES="30"
     RETRAIN_INTERVAL_MINUTES="60"
+    RETRAIN_ON_SCHEDULE=True
+
+    MAX_SHODAN_RESULTS=50
     ```
 
 ### Running the Application
