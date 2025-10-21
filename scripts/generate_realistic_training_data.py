@@ -105,6 +105,20 @@ def generate_record():
         "cve_count": int(cve_count),
         "max_cvss": float(round(max_cvss, 1)),
         "exposure_days": int(exposure_days),
+        # Advanced synthetic fields
+        "auth_failures_24h": int(random.choices([0,0,0,0,1,2,3,5,10,25,50,100], weights=[50,15,10,8,5,3,2,2,2,1,1,1])[0]),
+        "traffic_anomaly_score": round(max(0.0, min(1.0, random.gauss(0.05, 0.12))), 2),
+        "patch_lag_days": int(random.choices([0,5,15,30,60,90], weights=[60,20,10,7,2,1])[0]),
+        "suspicious_activities_count": int(random.choices([0,0,1,2,3,5,10], weights=[70,12,8,5,2,2,1])[0]),
+        "data_sensitivity_level": int(random.randint(1,5)),
+        "is_critical_service": bool(random.random() < 0.15),
+        "service_category": random.choice(['web','database','auth','api','file','internal','other']),
+        "infrastructure_type": random.choice(['cloud','on-prem','hybrid']),
+        "compliance_requirements": ",".join(random.sample(['PCI-DSS','HIPAA','SOX','GDPR'], k=random.choices([0,1,2], weights=[60,30,10])[0])) if random.random() < 0.4 else None,
+        "incident_history_count": int(random.choices([0,1,2,3,5], weights=[80,10,5,3,2])[0]),
+        "network_segment": random.choice(['DMZ','internal','dev','prod','user_segment']),
+        "firewall_rules_count": int(random.randint(0,500)),
+        "connected_critical_assets": int(random.randint(0,5)),
         "label": int(label)
     }
 

@@ -15,7 +15,7 @@ from email_alerts import send_email_alert, build_device_summary
 from collectors import shodan_collector, nvd_collector
 from config import SHODAN_QUERIES, DEFAULT_SHODAN_QUERY_KEY, SHODAN_QUERY
 from logger import get_logger
-from model import train_and_save_model
+import importlib
 import ipaddress
 
 logger = get_logger("gui")
@@ -179,7 +179,8 @@ class DashboardWindow(QWidget):
         right_group = QHBoxLayout()
         self.actions_combo = QComboBox()
         # Refresh removed from actions (now a left-side button). Add Send Selected and keep Upload here.
-        self.actions_combo.addItems(["Train Model", "Send Filtered", "Send Selected", "Send All", "Upload"])
+        # "Train Model" removed so GUI can run even if the training script/module is deleted.
+        self.actions_combo.addItems(["Send Filtered", "Send Selected", "Send All", "Upload"])
         self.actions_combo.setToolTip("Choose an action and click Go")
         self.actions_combo.setFixedWidth(160)
         right_group.addWidget(self.actions_combo)
@@ -590,19 +591,75 @@ class DashboardWindow(QWidget):
                             existing.risk_label = int(lab)
                         except Exception:
                             pass
+                    # --- Update advanced fields if provided ---
+                    try:
+                        existing.auth_failures_24h = int(val_for('auth_failures_24h', existing.auth_failures_24h or 0))
+                    except Exception:
+                        pass
+                    try:
+                        existing.traffic_anomaly_score = float(val_for('traffic_anomaly_score', existing.traffic_anomaly_score or 0.0))
+                    except Exception:
+                        pass
+                    try:
+                        existing.patch_lag_days = int(val_for('patch_lag_days', existing.patch_lag_days or 0))
+                    except Exception:
+                        pass
+                    try:
+                        existing.suspicious_activities_count = int(val_for('suspicious_activities_count', existing.suspicious_activities_count or 0))
+                    except Exception:
+                        pass
+                    try:
+                        existing.data_sensitivity_level = int(val_for('data_sensitivity_level', existing.data_sensitivity_level or 1))
+                    except Exception:
+                        pass
+                    try:
+                        existing.is_critical_service = bool(val_for('is_critical_service', existing.is_critical_service or False))
+                    except Exception:
+                        pass
+                    existing.service_category = val_for('service_category', existing.service_category)
+                    existing.infrastructure_type = val_for('infrastructure_type', existing.infrastructure_type)
+                    existing.compliance_requirements = val_for('compliance_requirements', existing.compliance_requirements)
+                    try:
+                        existing.incident_history_count = int(val_for('incident_history_count', existing.incident_history_count or 0))
+                    except Exception:
+                        pass
+                    existing.network_segment = val_for('network_segment', existing.network_segment)
+                    try:
+                        existing.firewall_rules_count = int(val_for('firewall_rules_count', existing.firewall_rules_count or 0))
+                    except Exception:
+                        pass
+                    try:
+                        existing.connected_critical_assets = int(val_for('connected_critical_assets', existing.connected_critical_assets or 0))
+                    except Exception:
+                        pass
                     updated += 1
                 else:
                     try:
-                        new = Device(
-                            ip=ip,
-                            org=val_for('org', ''),
-                            country=val_for('country', ''),
-                            num_open_ports=int(val_for('num_open_ports', 0) or 0),
-                            cve_count=int(val_for('cve_count', 0) or 0),
-                            max_cvss=float(val_for('max_cvss', 0.0) or 0.0),
-                            exposure_days=int(val_for('exposure_days', 0) or 0),
-                            risk_label=int(val_for('label', val_for('risk', 0) or 0))
-                        )
+                        new_data = {
+                            "ip": ip,
+                            "org": val_for('org', ''),
+                            "country": val_for('country', ''),
+                            "num_open_ports": int(val_for('num_open_ports', 0) or 0),
+                            "cve_count": int(val_for('cve_count', 0) or 0),
+                            "max_cvss": float(val_for('max_cvss', 0.0) or 0.0),
+                            "exposure_days": int(val_for('exposure_days', 0) or 0),
+                            "risk_label": int(val_for('label', val_for('risk', 0) or 0)),
+                            # advanced fields
+                            "auth_failures_24h": int(val_for('auth_failures_24h', 0) or 0),
+                            "traffic_anomaly_score": float(val_for('traffic_anomaly_score', 0.0) or 0.0),
+                            "patch_lag_days": int(val_for('patch_lag_days', 0) or 0),
+                            "suspicious_activities_count": int(val_for('suspicious_activities_count', 0) or 0),
+                            "data_sensitivity_level": int(val_for('data_sensitivity_level', 1) or 1),
+                            "is_critical_service": bool(val_for('is_critical_service', False)),
+                            "service_category": val_for('service_category'),
+                            "infrastructure_type": val_for('infrastructure_type'),
+                            "compliance_requirements": val_for('compliance_requirements'),
+                            "incident_history_count": int(val_for('incident_history_count', 0) or 0),
+                            "network_segment": val_for('network_segment'),
+                            "firewall_rules_count": int(val_for('firewall_rules_count', 0) or 0),
+                            "connected_critical_assets": int(val_for('connected_critical_assets', 0) or 0),
+                        }
+                        new = Device(**{k: v for k, v in new_data.items() if v is not None})
                         session.add(new)
                         added += 1
                     except Exception:
@@ -620,8 +677,16 @@ class DashboardWindow(QWidget):
             session.close()
 
         try:
-            train_and_save_model()
-            QMessageBox.information(self, "Training", "Model trained and stored from uploaded data.")
+            # Attempt to call training dynamically so upload doesn't fail when training module is absent
+            try:
+                mod = importlib.import_module('model')
+                if hasattr(mod, 'train_and_save_model'):
+                    mod.train_and_save_model()
+                    QMessageBox.information(self, "Training", "Model trained and stored from uploaded data.")
+                else:
+                    logger.info("No train_and_save_model found in model package; skipping post-import training.")
+            except Exception:
+                logger.exception("Post-import training failed or training module missing; skipping.")
         except Exception:
             logger.exception("Training after import failed.")
 
@@ -869,8 +934,18 @@ class DashboardWindow(QWidget):
                 logger.info("Training aborted: insufficient class diversity (%d classes)", len(labels))
                 return
 
-            train_and_save_model()
-            QMessageBox.information(self, "Training", "Model trained and stored.")
+            # Attempt to import training function dynamically so GUI works without the training script
+            try:
+                mod = importlib.import_module('model.training_orchestrator')
+                if hasattr(mod, 'train_and_save_model'):
+                    mod.train_and_save_model()
+                    QMessageBox.information(self, "Training", "Model trained and stored.")
+                else:
+                    QMessageBox.information(self, "Training", "Training function not found in module.")
+                    logger.info("Training function not found; skipping.")
+            except Exception:
+                logger.exception("Manual train failed due to missing training module or error.")
+                QMessageBox.information(self, "Training", "Training module not available. Skipping.")
             self.refresh()
         except Exception as e:
             logger.exception("Manual train failed: %s", e)

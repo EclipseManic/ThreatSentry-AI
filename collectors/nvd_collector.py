@@ -6,18 +6,43 @@ from db import get_session, Device, Vulnerability
 logger = get_logger("nvd_collector")
 
 def extract_product_keywords(banner_text):
+    import re
     text = (banner_text or "").lower()
     kws = set()
-    if "apache" in text:
-        kws.add("Apache")
-    if "nginx" in text:
-        kws.add("nginx")
-    if "forti" in text or "fortinet" in text:
-        kws.add("Fortinet")
-    if "cisco" in text:
-        kws.add("Cisco")
-    # Add more heuristics as needed
-    return kws
+
+    # Common product tokens
+    simple_keywords = [
+        'apache', 'nginx', 'fortinet', 'forti', 'cisco', 'openssh', 'mysql',
+        'postgresql', 'mongodb', 'iis', 'exchange', 'vmware', 'citrix', 'tomcat'
+    ]
+    for kw in simple_keywords:
+        if kw in text:
+            kws.add(kw.capitalize())
+
+    # Regex patterns for product/version pairs
+    patterns = [
+        (r'apache/(\d+\.\d+)', 'Apache {}'),
+        (r'microsoft-iis/(\d+\.\d+)', 'IIS {}'),
+        (r'openssh_(\d+\.\d+)', 'OpenSSH {}'),
+        (r'mysql.*?ver\s+(\d+\.\d+)', 'MySQL {}'),
+        (r'postgresql\s+([0-9]+\.[0-9]+)', 'PostgreSQL {}'),
+    ]
+    for pat, fmt in patterns:
+        m = re.search(pat, text, re.IGNORECASE)
+        if m:
+            try:
+                kws.add(fmt.format(m.group(1)))
+            except Exception:
+                pass
+
+    # Fallback: split common separators and attempt to capture product tokens
+    tokens = re.split(r'[\s/;()\[\],]+', text)
+    for t in tokens:
+        if len(t) > 2 and any(sk in t for sk in simple_keywords):
+            kws.add(t.capitalize())
+
+    # Limit keywords to avoid too many NVD queries
+    return list(kws)[:12]
 
 def search_cves_for_keyword(keyword, limit=20):
     results = []

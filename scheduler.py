@@ -3,6 +3,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from logger import get_logger
 import datetime
 from collectors import shodan_collector, nvd_collector
+from collectors import enrich_from_cmdb, enrich_from_siem, enrich_from_patch_system, enrich_from_network_monitor
 from model import train_and_save_model
 from email_alerts import notify_new_high_risk_devices
 from config import SCAN_INTERVAL_MINUTES, RETRAIN_INTERVAL_MINUTES, RETRAIN_ON_SCHEDULE, SHODAN_QUERY, MAX_SHODAN_RESULTS
@@ -16,6 +17,25 @@ def scheduled_scan():
         # Use configured SHODAN_QUERY and MAX_SHODAN_RESULTS. If empty, the collector defaults will apply.
         shodan_collector.scan_shodan(query=SHODAN_QUERY, limit=MAX_SHODAN_RESULTS)
         nvd_collector.enrich_devices_with_vulns()
+
+        # Enrich with additional internal data sources (CMDB, SIEM, Patch, Network Monitor)
+        try:
+            enrich_from_cmdb()
+        except Exception:
+            logger.exception("CMDB enrichment failed")
+        try:
+            enrich_from_siem()
+        except Exception:
+            logger.exception("SIEM enrichment failed")
+        try:
+            enrich_from_patch_system()
+        except Exception:
+            logger.exception("Patch enrichment failed")
+        try:
+            enrich_from_network_monitor()
+        except Exception:
+            logger.exception("Network monitor enrichment failed")
+
         logger.info("Scan/enrichment complete.")
     except Exception as e:
         logger.exception("Scheduled scan failed: %s", e)
