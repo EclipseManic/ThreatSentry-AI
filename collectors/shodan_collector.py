@@ -2,7 +2,7 @@
 import shodan
 import datetime
 from logger import get_logger
-from config import SHODAN_API_KEY, MAX_SHODAN_RESULTS
+from config import SHODAN_API_KEY, MAX_SHODAN_RESULTS, SHODAN_QUERY
 from db import get_session, Device
 
 logger = get_logger("shodan_collector")
@@ -21,10 +21,16 @@ def parse_banners(host_data):
         banners.append(d.get('data', '')[:1000])
     return "\n---\n".join(banners)
 
-def scan_shodan(query="product:apache", limit=MAX_SHODAN_RESULTS):
+def scan_shodan(query: str = None, limit: int = None):
     """
     Query Shodan and persist devices to DB (or update existing).
+    If query is None or empty, falls back to config.SHODAN_QUERY.
+    If limit is None, falls back to config.MAX_SHODAN_RESULTS.
     """
+    if not query:
+        query = SHODAN_QUERY or "product:apache"
+    if not limit:
+        limit = MAX_SHODAN_RESULTS or 50
     if api is None:
         logger.error("Shodan API not configured.")
         return
