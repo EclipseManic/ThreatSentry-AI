@@ -52,7 +52,21 @@ class EnsembleModel:
         """
         # Split data for training and validation
         X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)
-        
+        # Basic safety checks
+        unique_train_classes = np.unique(y_train)
+        if len(unique_train_classes) < 2:
+            raise ValueError("Training requires at least 2 classes in the training set")
+
+        # If training set is small, disable NN early stopping to avoid MLP internal
+        # validation-split errors (small splits can lead to zero samples per class)
+        try:
+            if X_train.shape[0] < max(30, len(unique_train_classes) * 5):
+                # turn off early stopping for small datasets
+                self.nn_model.set_params(early_stopping=False)
+        except Exception:
+            # If the estimator doesn't support set_params for some reason, ignore
+            pass
+
         # Train each model
         self.rf_model.fit(X_train, y_train)
         self.gb_model.fit(X_train, y_train)

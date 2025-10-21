@@ -998,5 +998,9005 @@
     "max_cvss": 4.3,
     "exposure_days": 97,
     "label": 0
+  },
+  {
+    "ip": "197.110.220.116",
+    "org": "Managed Hosting",
+    "country": "DE",
+    "num_open_ports": 4,
+    "cve_count": 2,
+    "max_cvss": 0.7,
+    "exposure_days": 83,
+    "label": 0
+  },
+  {
+    "ip": "40.242.34.24",
+    "org": "Managed Hosting",
+    "country": "CN",
+    "num_open_ports": 8443,
+    "cve_count": 26,
+    "max_cvss": 5.6,
+    "exposure_days": 393,
+    "label": 2
+  },
+  {
+    "ip": "32.210.181.224",
+    "org": "Hetzner",
+    "country": "AU",
+    "num_open_ports": 16,
+    "cve_count": 8,
+    "max_cvss": 6.9,
+    "exposure_days": 696,
+    "label": 0
+  },
+  {
+    "ip": "217.55.179.217",
+    "org": "Amazon AWS",
+    "country": "NL",
+    "num_open_ports": 8443,
+    "cve_count": 38,
+    "max_cvss": 7.8,
+    "exposure_days": 682,
+    "label": 2
+  },
+  {
+    "ip": "158.13.136.8",
+    "org": "University IT",
+    "country": "RU",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 2.1,
+    "exposure_days": 79,
+    "label": 0
+  },
+  {
+    "ip": "103.35.72.190",
+    "org": "University IT",
+    "country": "SE",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 0.8,
+    "exposure_days": 72,
+    "label": 0
+  },
+  {
+    "ip": "185.166.43.227",
+    "org": "Retail POS",
+    "country": "CN",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 1.5,
+    "exposure_days": 39,
+    "label": 0
+  },
+  {
+    "ip": "156.226.212.70",
+    "org": "SmallCorp Inc.",
+    "country": "JP",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 2.0,
+    "exposure_days": 62,
+    "label": 0
+  },
+  {
+    "ip": "135.157.23.57",
+    "org": "University IT",
+    "country": "CN",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 3.3,
+    "exposure_days": 62,
+    "label": 0
+  },
+  {
+    "ip": "75.167.61.2",
+    "org": "SmallCorp Inc.",
+    "country": "FR",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 1.0,
+    "exposure_days": 32,
+    "label": 0
+  },
+  {
+    "ip": "207.181.36.102",
+    "org": "Retail POS",
+    "country": "CN",
+    "num_open_ports": 3,
+    "cve_count": 1,
+    "max_cvss": 1.2,
+    "exposure_days": 85,
+    "label": 0
+  },
+  {
+    "ip": "75.58.207.6",
+    "org": "Managed Hosting",
+    "country": "DE",
+    "num_open_ports": 12,
+    "cve_count": 55,
+    "max_cvss": 7.9,
+    "exposure_days": 437,
+    "label": 2
+  },
+  {
+    "ip": "112.54.124.112",
+    "org": "Retail POS",
+    "country": "DE",
+    "num_open_ports": 5,
+    "cve_count": 7,
+    "max_cvss": 5.8,
+    "exposure_days": 971,
+    "label": 0
+  },
+  {
+    "ip": "20.58.99.232",
+    "org": "Managed Hosting",
+    "country": "CA",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 1.5,
+    "exposure_days": 21,
+    "label": 0
+  },
+  {
+    "ip": "46.252.237.194",
+    "org": "Microsoft Azure",
+    "country": "FR",
+    "num_open_ports": 3389,
+    "cve_count": 6,
+    "max_cvss": 8.6,
+    "exposure_days": 87,
+    "label": 2
+  },
+  {
+    "ip": "121.226.155.204",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 5,
+    "cve_count": 5,
+    "max_cvss": 1.4,
+    "exposure_days": 8,
+    "label": 0
+  },
+  {
+    "ip": "20.46.196.119",
+    "org": "SmallCorp Inc.",
+    "country": "NL",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 0.2,
+    "exposure_days": 36,
+    "label": 0
+  },
+  {
+    "ip": "155.243.77.246",
+    "org": "SmallCorp Inc.",
+    "country": "IN",
+    "num_open_ports": 11,
+    "cve_count": 4,
+    "max_cvss": 2.6,
+    "exposure_days": 41,
+    "label": 0
+  },
+  {
+    "ip": "182.224.224.135",
+    "org": "University IT",
+    "country": "SG",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 2.9,
+    "exposure_days": 31,
+    "label": 0
+  },
+  {
+    "ip": "14.171.33.85",
+    "org": "University IT",
+    "country": "NL",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 3.7,
+    "exposure_days": 76,
+    "label": 0
+  },
+  {
+    "ip": "86.41.72.235",
+    "org": "University IT",
+    "country": "NL",
+    "num_open_ports": 6,
+    "cve_count": 2,
+    "max_cvss": 3.2,
+    "exposure_days": 19,
+    "label": 0
+  },
+  {
+    "ip": "97.168.65.172",
+    "org": "Managed Hosting",
+    "country": "GB",
+    "num_open_ports": 12,
+    "cve_count": 1,
+    "max_cvss": 4.2,
+    "exposure_days": 71,
+    "label": 0
+  },
+  {
+    "ip": "125.98.115.36",
+    "org": "Linode",
+    "country": "BR",
+    "num_open_ports": 6379,
+    "cve_count": 23,
+    "max_cvss": 5.5,
+    "exposure_days": 794,
+    "label": 2
+  },
+  {
+    "ip": "170.172.67.153",
+    "org": "SmallCorp Inc.",
+    "country": "BR",
+    "num_open_ports": 2,
+    "cve_count": 2,
+    "max_cvss": 4.0,
+    "exposure_days": 4,
+    "label": 0
+  },
+  {
+    "ip": "114.145.229.60",
+    "org": "Retail POS",
+    "country": "SG",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 2.0,
+    "exposure_days": 30,
+    "label": 0
+  },
+  {
+    "ip": "119.144.195.129",
+    "org": "Managed Hosting",
+    "country": "CA",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 3.3,
+    "exposure_days": 56,
+    "label": 0
+  },
+  {
+    "ip": "124.190.52.183",
+    "org": "Retail POS",
+    "country": "AU",
+    "num_open_ports": 12,
+    "cve_count": 1,
+    "max_cvss": 3.9,
+    "exposure_days": 82,
+    "label": 0
+  },
+  {
+    "ip": "90.13.212.14",
+    "org": "Microsoft Azure",
+    "country": "NL",
+    "num_open_ports": 20,
+    "cve_count": 28,
+    "max_cvss": 5.4,
+    "exposure_days": 471,
+    "label": 1
+  },
+  {
+    "ip": "86.74.70.10",
+    "org": "Managed Hosting",
+    "country": "DE",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 0.1,
+    "exposure_days": 83,
+    "label": 0
+  },
+  {
+    "ip": "5.131.110.214",
+    "org": "Retail POS",
+    "country": "AU",
+    "num_open_ports": 8,
+    "cve_count": 2,
+    "max_cvss": 2.0,
+    "exposure_days": 10,
+    "label": 0
+  },
+  {
+    "ip": "62.214.234.17",
+    "org": "Managed Hosting",
+    "country": "DE",
+    "num_open_ports": 10,
+    "cve_count": 2,
+    "max_cvss": 1.1,
+    "exposure_days": 6,
+    "label": 0
+  },
+  {
+    "ip": "110.0.180.62",
+    "org": "SmallCorp Inc.",
+    "country": "JP",
+    "num_open_ports": 9,
+    "cve_count": 1,
+    "max_cvss": 1.1,
+    "exposure_days": 37,
+    "label": 0
+  },
+  {
+    "ip": "130.10.199.224",
+    "org": "SmallCorp Inc.",
+    "country": "BR",
+    "num_open_ports": 2,
+    "cve_count": 5,
+    "max_cvss": 0.5,
+    "exposure_days": 69,
+    "label": 0
+  },
+  {
+    "ip": "62.53.170.35",
+    "org": "University IT",
+    "country": "NL",
+    "num_open_ports": 5,
+    "cve_count": 2,
+    "max_cvss": 1.6,
+    "exposure_days": 44,
+    "label": 0
+  },
+  {
+    "ip": "162.93.69.17",
+    "org": "Retail POS",
+    "country": "CA",
+    "num_open_ports": 5,
+    "cve_count": 2,
+    "max_cvss": 2.3,
+    "exposure_days": 61,
+    "label": 0
+  },
+  {
+    "ip": "122.129.18.193",
+    "org": "Amazon AWS",
+    "country": "AU",
+    "num_open_ports": 55,
+    "cve_count": 12,
+    "max_cvss": 5.6,
+    "exposure_days": 566,
+    "label": 1
+  },
+  {
+    "ip": "103.225.197.87",
+    "org": "SmallCorp Inc.",
+    "country": "CA",
+    "num_open_ports": 2,
+    "cve_count": 1,
+    "max_cvss": 1.2,
+    "exposure_days": 55,
+    "label": 0
+  },
+  {
+    "ip": "22.217.40.111",
+    "org": "Retail POS",
+    "country": "AU",
+    "num_open_ports": 4,
+    "cve_count": 5,
+    "max_cvss": 6.5,
+    "exposure_days": 561,
+    "label": 0
+  },
+  {
+    "ip": "115.218.85.177",
+    "org": "University IT",
+    "country": "SE",
+    "num_open_ports": 8,
+    "cve_count": 0,
+    "max_cvss": 1.5,
+    "exposure_days": 39,
+    "label": 0
+  },
+  {
+    "ip": "164.207.186.132",
+    "org": "University IT",
+    "country": "RU",
+    "num_open_ports": 4,
+    "cve_count": 5,
+    "max_cvss": 1.2,
+    "exposure_days": 9,
+    "label": 0
+  },
+  {
+    "ip": "99.16.78.174",
+    "org": "Microsoft Azure",
+    "country": "CA",
+    "num_open_ports": 25,
+    "cve_count": 38,
+    "max_cvss": 7.4,
+    "exposure_days": 670,
+    "label": 2
+  },
+  {
+    "ip": "81.142.127.246",
+    "org": "Managed Hosting",
+    "country": "AU",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 0.6,
+    "exposure_days": 50,
+    "label": 0
+  },
+  {
+    "ip": "181.228.109.157",
+    "org": "Managed Hosting",
+    "country": "BR",
+    "num_open_ports": 7,
+    "cve_count": 0,
+    "max_cvss": 2.5,
+    "exposure_days": 33,
+    "label": 0
+  },
+  {
+    "ip": "183.227.44.208",
+    "org": "Managed Hosting",
+    "country": "FR",
+    "num_open_ports": 10,
+    "cve_count": 0,
+    "max_cvss": 3.8,
+    "exposure_days": 22,
+    "label": 0
+  },
+  {
+    "ip": "164.89.185.131",
+    "org": "Google Cloud",
+    "country": "BR",
+    "num_open_ports": 143,
+    "cve_count": 34,
+    "max_cvss": 7.1,
+    "exposure_days": 727,
+    "label": 2
+  },
+  {
+    "ip": "95.239.66.157",
+    "org": "Retail POS",
+    "country": "FR",
+    "num_open_ports": 15,
+    "cve_count": 2,
+    "max_cvss": 0.3,
+    "exposure_days": 73,
+    "label": 0
+  },
+  {
+    "ip": "19.230.238.175",
+    "org": "Managed Hosting",
+    "country": "BR",
+    "num_open_ports": 16,
+    "cve_count": 26,
+    "max_cvss": 8.1,
+    "exposure_days": 667,
+    "label": 1
+  },
+  {
+    "ip": "133.78.155.43",
+    "org": "Retail POS",
+    "country": "AU",
+    "num_open_ports": 1,
+    "cve_count": 5,
+    "max_cvss": 1.9,
+    "exposure_days": 15,
+    "label": 0
+  },
+  {
+    "ip": "65.100.140.33",
+    "org": "Retail POS",
+    "country": "SE",
+    "num_open_ports": 10,
+    "cve_count": 4,
+    "max_cvss": 2.3,
+    "exposure_days": 10,
+    "label": 0
+  },
+  {
+    "ip": "44.172.21.212",
+    "org": "SmallCorp Inc.",
+    "country": "BR",
+    "num_open_ports": 5,
+    "cve_count": 1,
+    "max_cvss": 2.9,
+    "exposure_days": 19,
+    "label": 0
+  },
+  {
+    "ip": "140.148.154.124",
+    "org": "OVH",
+    "country": "JP",
+    "num_open_ports": 112,
+    "cve_count": 13,
+    "max_cvss": 6.1,
+    "exposure_days": 652,
+    "label": 1
+  },
+  {
+    "ip": "107.247.237.53",
+    "org": "Managed Hosting",
+    "country": "NL",
+    "num_open_ports": 8,
+    "cve_count": 0,
+    "max_cvss": 3.1,
+    "exposure_days": 56,
+    "label": 0
+  },
+  {
+    "ip": "195.189.54.82",
+    "org": "University IT",
+    "country": "SG",
+    "num_open_ports": 1,
+    "cve_count": 5,
+    "max_cvss": 1.6,
+    "exposure_days": 16,
+    "label": 0
+  },
+  {
+    "ip": "108.127.81.209",
+    "org": "Managed Hosting",
+    "country": "FR",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 0.2,
+    "exposure_days": 78,
+    "label": 0
+  },
+  {
+    "ip": "128.157.254.6",
+    "org": "University IT",
+    "country": "FR",
+    "num_open_ports": 5,
+    "cve_count": 2,
+    "max_cvss": 2.4,
+    "exposure_days": 59,
+    "label": 0
+  },
+  {
+    "ip": "153.240.146.138",
+    "org": "Managed Hosting",
+    "country": "FR",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 1.6,
+    "exposure_days": 36,
+    "label": 0
+  },
+  {
+    "ip": "103.26.99.93",
+    "org": "Retail POS",
+    "country": "NL",
+    "num_open_ports": 1,
+    "cve_count": 2,
+    "max_cvss": 3.4,
+    "exposure_days": 5,
+    "label": 0
+  },
+  {
+    "ip": "157.60.65.250",
+    "org": "Managed Hosting",
+    "country": "AU",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 3.9,
+    "exposure_days": 87,
+    "label": 0
+  },
+  {
+    "ip": "131.205.20.12",
+    "org": "University IT",
+    "country": "BR",
+    "num_open_ports": 3,
+    "cve_count": 4,
+    "max_cvss": 3.4,
+    "exposure_days": 77,
+    "label": 0
+  },
+  {
+    "ip": "84.163.83.101",
+    "org": "Managed Hosting",
+    "country": "BR",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 2.9,
+    "exposure_days": 17,
+    "label": 0
+  },
+  {
+    "ip": "145.153.243.209",
+    "org": "Cloudflare",
+    "country": "SG",
+    "num_open_ports": 253,
+    "cve_count": 161,
+    "max_cvss": 6.7,
+    "exposure_days": 1073,
+    "label": 2
+  },
+  {
+    "ip": "162.13.242.68",
+    "org": "SmallCorp Inc.",
+    "country": "CN",
+    "num_open_ports": 3,
+    "cve_count": 1,
+    "max_cvss": 3.8,
+    "exposure_days": 88,
+    "label": 0
+  },
+  {
+    "ip": "135.194.75.211",
+    "org": "Cloudflare",
+    "country": "GB",
+    "num_open_ports": 396,
+    "cve_count": 157,
+    "max_cvss": 6.1,
+    "exposure_days": 135,
+    "label": 2
+  },
+  {
+    "ip": "129.241.31.181",
+    "org": "Google Cloud",
+    "country": "FR",
+    "num_open_ports": 12,
+    "cve_count": 1,
+    "max_cvss": 2.6,
+    "exposure_days": 430,
+    "label": 0
+  },
+  {
+    "ip": "137.175.181.174",
+    "org": "University IT",
+    "country": "JP",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 1.7,
+    "exposure_days": 58,
+    "label": 0
+  },
+  {
+    "ip": "74.106.250.82",
+    "org": "DigitalOcean",
+    "country": "FR",
+    "num_open_ports": 443,
+    "cve_count": 17,
+    "max_cvss": 5.1,
+    "exposure_days": 799,
+    "label": 2
+  },
+  {
+    "ip": "210.176.74.75",
+    "org": "University IT",
+    "country": "NL",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 3.0,
+    "exposure_days": 50,
+    "label": 0
+  },
+  {
+    "ip": "55.103.138.239",
+    "org": "SmallCorp Inc.",
+    "country": "SE",
+    "num_open_ports": 11,
+    "cve_count": 4,
+    "max_cvss": 3.2,
+    "exposure_days": 61,
+    "label": 0
+  },
+  {
+    "ip": "136.115.119.14",
+    "org": "SmallCorp Inc.",
+    "country": "RU",
+    "num_open_ports": 2,
+    "cve_count": 2,
+    "max_cvss": 1.1,
+    "exposure_days": 85,
+    "label": 0
+  },
+  {
+    "ip": "105.243.244.167",
+    "org": "Managed Hosting",
+    "country": "DE",
+    "num_open_ports": 3,
+    "cve_count": 1,
+    "max_cvss": 0.8,
+    "exposure_days": 20,
+    "label": 0
+  },
+  {
+    "ip": "147.118.19.234",
+    "org": "University IT",
+    "country": "NL",
+    "num_open_ports": 12,
+    "cve_count": 1,
+    "max_cvss": 4.1,
+    "exposure_days": 83,
+    "label": 0
+  },
+  {
+    "ip": "75.19.4.77",
+    "org": "Retail POS",
+    "country": "GB",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 7.0,
+    "exposure_days": 436,
+    "label": 1
+  },
+  {
+    "ip": "35.239.139.50",
+    "org": "University IT",
+    "country": "NL",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 3.1,
+    "exposure_days": 63,
+    "label": 0
+  },
+  {
+    "ip": "173.98.89.157",
+    "org": "Managed Hosting",
+    "country": "JP",
+    "num_open_ports": 143,
+    "cve_count": 16,
+    "max_cvss": 4.1,
+    "exposure_days": 591,
+    "label": 1
+  },
+  {
+    "ip": "2.133.196.61",
+    "org": "Hetzner",
+    "country": "DE",
+    "num_open_ports": 8080,
+    "cve_count": 25,
+    "max_cvss": 4.9,
+    "exposure_days": 264,
+    "label": 2
+  },
+  {
+    "ip": "93.120.31.171",
+    "org": "University IT",
+    "country": "NL",
+    "num_open_ports": 2,
+    "cve_count": 1,
+    "max_cvss": 2.6,
+    "exposure_days": 83,
+    "label": 0
+  },
+  {
+    "ip": "177.60.151.95",
+    "org": "Managed Hosting",
+    "country": "JP",
+    "num_open_ports": 2,
+    "cve_count": 1,
+    "max_cvss": 4.2,
+    "exposure_days": 39,
+    "label": 0
+  },
+  {
+    "ip": "107.241.111.196",
+    "org": "Retail POS",
+    "country": "IN",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 3.6,
+    "exposure_days": 47,
+    "label": 0
+  },
+  {
+    "ip": "29.31.103.147",
+    "org": "SmallCorp Inc.",
+    "country": "BR",
+    "num_open_ports": 7,
+    "cve_count": 0,
+    "max_cvss": 3.2,
+    "exposure_days": 72,
+    "label": 0
+  },
+  {
+    "ip": "131.228.28.117",
+    "org": "Managed Hosting",
+    "country": "DE",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 3.2,
+    "exposure_days": 11,
+    "label": 0
+  },
+  {
+    "ip": "102.130.1.191",
+    "org": "SmallCorp Inc.",
+    "country": "BR",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 3.8,
+    "exposure_days": 2,
+    "label": 0
+  },
+  {
+    "ip": "121.16.146.105",
+    "org": "Managed Hosting",
+    "country": "SE",
+    "num_open_ports": 1,
+    "cve_count": 2,
+    "max_cvss": 2.4,
+    "exposure_days": 8,
+    "label": 0
+  },
+  {
+    "ip": "21.68.178.31",
+    "org": "Managed Hosting",
+    "country": "SE",
+    "num_open_ports": 1,
+    "cve_count": 5,
+    "max_cvss": 1.7,
+    "exposure_days": 48,
+    "label": 0
+  },
+  {
+    "ip": "119.217.194.211",
+    "org": "Retail POS",
+    "country": "SG",
+    "num_open_ports": 4,
+    "cve_count": 5,
+    "max_cvss": 3.8,
+    "exposure_days": 38,
+    "label": 0
+  },
+  {
+    "ip": "208.214.8.62",
+    "org": "Retail POS",
+    "country": "NL",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 3.9,
+    "exposure_days": 4,
+    "label": 0
+  },
+  {
+    "ip": "190.22.205.113",
+    "org": "SmallCorp Inc.",
+    "country": "IN",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 3.2,
+    "exposure_days": 31,
+    "label": 0
+  },
+  {
+    "ip": "82.164.121.78",
+    "org": "SmallCorp Inc.",
+    "country": "GB",
+    "num_open_ports": 2,
+    "cve_count": 1,
+    "max_cvss": 1.5,
+    "exposure_days": 73,
+    "label": 0
+  },
+  {
+    "ip": "174.218.253.13",
+    "org": "OVH",
+    "country": "NL",
+    "num_open_ports": 6379,
+    "cve_count": 3,
+    "max_cvss": 3.3,
+    "exposure_days": 651,
+    "label": 2
+  },
+  {
+    "ip": "77.192.94.194",
+    "org": "Cloudflare",
+    "country": "GB",
+    "num_open_ports": 295,
+    "cve_count": 144,
+    "max_cvss": 6.6,
+    "exposure_days": 882,
+    "label": 2
+  },
+  {
+    "ip": "144.211.213.143",
+    "org": "Retail POS",
+    "country": "NL",
+    "num_open_ports": 2,
+    "cve_count": 3,
+    "max_cvss": 0.6,
+    "exposure_days": 7,
+    "label": 0
+  },
+  {
+    "ip": "24.97.26.69",
+    "org": "University IT",
+    "country": "FR",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 0.4,
+    "exposure_days": 47,
+    "label": 0
+  },
+  {
+    "ip": "144.111.245.54",
+    "org": "SmallCorp Inc.",
+    "country": "CA",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 3.8,
+    "exposure_days": 85,
+    "label": 0
+  },
+  {
+    "ip": "179.104.203.235",
+    "org": "Amazon AWS",
+    "country": "FR",
+    "num_open_ports": 143,
+    "cve_count": 59,
+    "max_cvss": 7.7,
+    "exposure_days": 258,
+    "label": 2
+  },
+  {
+    "ip": "93.254.238.26",
+    "org": "University IT",
+    "country": "CN",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 2.9,
+    "exposure_days": 33,
+    "label": 0
+  },
+  {
+    "ip": "5.133.213.76",
+    "org": "Hetzner",
+    "country": "FR",
+    "num_open_ports": 5432,
+    "cve_count": 23,
+    "max_cvss": 9.5,
+    "exposure_days": 159,
+    "label": 2
+  },
+  {
+    "ip": "87.131.250.248",
+    "org": "Managed Hosting",
+    "country": "RU",
+    "num_open_ports": 3,
+    "cve_count": 3,
+    "max_cvss": 2.4,
+    "exposure_days": 87,
+    "label": 0
+  },
+  {
+    "ip": "16.17.38.242",
+    "org": "Hetzner",
+    "country": "GB",
+    "num_open_ports": 5432,
+    "cve_count": 8,
+    "max_cvss": 9.7,
+    "exposure_days": 667,
+    "label": 2
+  },
+  {
+    "ip": "16.247.249.5",
+    "org": "Linode",
+    "country": "GB",
+    "num_open_ports": 12,
+    "cve_count": 53,
+    "max_cvss": 7.7,
+    "exposure_days": 527,
+    "label": 2
+  },
+  {
+    "ip": "129.220.91.28",
+    "org": "SmallCorp Inc.",
+    "country": "US",
+    "num_open_ports": 5,
+    "cve_count": 1,
+    "max_cvss": 1.2,
+    "exposure_days": 2,
+    "label": 0
+  },
+  {
+    "ip": "204.203.40.96",
+    "org": "Akamai",
+    "country": "NL",
+    "num_open_ports": 223,
+    "cve_count": 59,
+    "max_cvss": 8.1,
+    "exposure_days": 546,
+    "label": 2
+  },
+  {
+    "ip": "220.16.47.104",
+    "org": "Factory IoT",
+    "country": "JP",
+    "num_open_ports": 2,
+    "cve_count": 3,
+    "max_cvss": 2.1,
+    "exposure_days": 877,
+    "label": 0
+  },
+  {
+    "ip": "166.169.48.230",
+    "org": "SmallCorp Inc.",
+    "country": "JP",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 0.8,
+    "exposure_days": 55,
+    "label": 0
+  },
+  {
+    "ip": "20.143.16.46",
+    "org": "Retail POS",
+    "country": "CA",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 2.6,
+    "exposure_days": 5,
+    "label": 0
+  },
+  {
+    "ip": "77.83.123.146",
+    "org": "Retail POS",
+    "country": "DE",
+    "num_open_ports": 2,
+    "cve_count": 2,
+    "max_cvss": 5.3,
+    "exposure_days": 759,
+    "label": 0
+  },
+  {
+    "ip": "89.27.50.112",
+    "org": "Hetzner",
+    "country": "CN",
+    "num_open_ports": 8080,
+    "cve_count": 48,
+    "max_cvss": 8.8,
+    "exposure_days": 522,
+    "label": 2
+  },
+  {
+    "ip": "59.182.192.111",
+    "org": "Managed Hosting",
+    "country": "AU",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 2.9,
+    "exposure_days": 62,
+    "label": 0
+  },
+  {
+    "ip": "22.137.78.98",
+    "org": "Managed Hosting",
+    "country": "DE",
+    "num_open_ports": 5,
+    "cve_count": 2,
+    "max_cvss": 1.3,
+    "exposure_days": 9,
+    "label": 0
+  },
+  {
+    "ip": "34.44.95.111",
+    "org": "Hetzner",
+    "country": "SE",
+    "num_open_ports": 22,
+    "cve_count": 6,
+    "max_cvss": 8.7,
+    "exposure_days": 114,
+    "label": 1
+  },
+  {
+    "ip": "154.166.197.4",
+    "org": "Managed Hosting",
+    "country": "DE",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 1.6,
+    "exposure_days": 76,
+    "label": 0
+  },
+  {
+    "ip": "134.86.194.44",
+    "org": "SmallCorp Inc.",
+    "country": "SG",
+    "num_open_ports": 3,
+    "cve_count": 4,
+    "max_cvss": 4.1,
+    "exposure_days": 73,
+    "label": 0
+  },
+  {
+    "ip": "124.39.184.65",
+    "org": "Managed Hosting",
+    "country": "GB",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 2.0,
+    "exposure_days": 38,
+    "label": 0
+  },
+  {
+    "ip": "78.3.202.86",
+    "org": "Security Lab",
+    "country": "GB",
+    "num_open_ports": 353,
+    "cve_count": 162,
+    "max_cvss": 8.1,
+    "exposure_days": 967,
+    "label": 2
+  },
+  {
+    "ip": "77.164.102.123",
+    "org": "Hetzner",
+    "country": "IN",
+    "num_open_ports": 8080,
+    "cve_count": 21,
+    "max_cvss": 8.8,
+    "exposure_days": 149,
+    "label": 2
+  },
+  {
+    "ip": "84.192.143.210",
+    "org": "University IT",
+    "country": "NL",
+    "num_open_ports": 12,
+    "cve_count": 2,
+    "max_cvss": 3.0,
+    "exposure_days": 31,
+    "label": 0
+  },
+  {
+    "ip": "182.107.224.205",
+    "org": "DigitalOcean",
+    "country": "RU",
+    "num_open_ports": 3389,
+    "cve_count": 34,
+    "max_cvss": 6.6,
+    "exposure_days": 482,
+    "label": 2
+  },
+  {
+    "ip": "40.216.193.19",
+    "org": "Managed Hosting",
+    "country": "JP",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 2.9,
+    "exposure_days": 32,
+    "label": 0
+  },
+  {
+    "ip": "140.18.184.180",
+    "org": "Managed Hosting",
+    "country": "BR",
+    "num_open_ports": 5,
+    "cve_count": 1,
+    "max_cvss": 4.3,
+    "exposure_days": 53,
+    "label": 0
+  },
+  {
+    "ip": "145.204.169.248",
+    "org": "Google Cloud",
+    "country": "DE",
+    "num_open_ports": 27017,
+    "cve_count": 49,
+    "max_cvss": 7.1,
+    "exposure_days": 55,
+    "label": 2
+  },
+  {
+    "ip": "101.237.77.89",
+    "org": "DigitalOcean",
+    "country": "BR",
+    "num_open_ports": 63,
+    "cve_count": 47,
+    "max_cvss": 6.9,
+    "exposure_days": 393,
+    "label": 2
+  },
+  {
+    "ip": "187.72.178.80",
+    "org": "Factory IoT",
+    "country": "CA",
+    "num_open_ports": 3,
+    "cve_count": 6,
+    "max_cvss": 6.4,
+    "exposure_days": 117,
+    "label": 0
+  },
+  {
+    "ip": "82.34.153.12",
+    "org": "Managed Hosting",
+    "country": "SE",
+    "num_open_ports": 7,
+    "cve_count": 0,
+    "max_cvss": 2.2,
+    "exposure_days": 57,
+    "label": 0
+  },
+  {
+    "ip": "144.218.236.60",
+    "org": "Google Cloud",
+    "country": "JP",
+    "num_open_ports": 73,
+    "cve_count": 51,
+    "max_cvss": 6.6,
+    "exposure_days": 575,
+    "label": 2
+  },
+  {
+    "ip": "2.109.105.72",
+    "org": "Linode",
+    "country": "CN",
+    "num_open_ports": 25,
+    "cve_count": 1,
+    "max_cvss": 8.4,
+    "exposure_days": 408,
+    "label": 1
+  },
+  {
+    "ip": "164.160.198.157",
+    "org": "Microsoft Azure",
+    "country": "SE",
+    "num_open_ports": 16,
+    "cve_count": 20,
+    "max_cvss": 4.6,
+    "exposure_days": 550,
+    "label": 1
+  },
+  {
+    "ip": "205.152.43.173",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 1.0,
+    "exposure_days": 90,
+    "label": 0
+  },
+  {
+    "ip": "108.70.196.109",
+    "org": "University IT",
+    "country": "DE",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 3.3,
+    "exposure_days": 49,
+    "label": 0
+  },
+  {
+    "ip": "216.230.27.222",
+    "org": "Retail POS",
+    "country": "BR",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 1.3,
+    "exposure_days": 40,
+    "label": 0
+  },
+  {
+    "ip": "105.251.212.182",
+    "org": "Retail POS",
+    "country": "FR",
+    "num_open_ports": 1,
+    "cve_count": 3,
+    "max_cvss": 4.5,
+    "exposure_days": 83,
+    "label": 0
+  },
+  {
+    "ip": "145.253.57.147",
+    "org": "Amazon AWS",
+    "country": "AU",
+    "num_open_ports": 5432,
+    "cve_count": 48,
+    "max_cvss": 9.0,
+    "exposure_days": 182,
+    "label": 2
+  },
+  {
+    "ip": "140.111.217.27",
+    "org": "University IT",
+    "country": "BR",
+    "num_open_ports": 7,
+    "cve_count": 3,
+    "max_cvss": 0.4,
+    "exposure_days": 56,
+    "label": 0
+  },
+  {
+    "ip": "54.179.219.43",
+    "org": "Amazon AWS",
+    "country": "IN",
+    "num_open_ports": 80,
+    "cve_count": 16,
+    "max_cvss": 2.1,
+    "exposure_days": 252,
+    "label": 1
+  },
+  {
+    "ip": "138.86.165.251",
+    "org": "Retail POS",
+    "country": "AU",
+    "num_open_ports": 7,
+    "cve_count": 0,
+    "max_cvss": 1.6,
+    "exposure_days": 76,
+    "label": 0
+  },
+  {
+    "ip": "180.67.127.38",
+    "org": "Google Cloud",
+    "country": "GB",
+    "num_open_ports": 110,
+    "cve_count": 48,
+    "max_cvss": 10.0,
+    "exposure_days": 139,
+    "label": 2
+  },
+  {
+    "ip": "163.47.206.132",
+    "org": "Linode",
+    "country": "IN",
+    "num_open_ports": 80,
+    "cve_count": 9,
+    "max_cvss": 5.3,
+    "exposure_days": 87,
+    "label": 1
+  },
+  {
+    "ip": "163.183.32.204",
+    "org": "Managed Hosting",
+    "country": "SE",
+    "num_open_ports": 3389,
+    "cve_count": 37,
+    "max_cvss": 9.1,
+    "exposure_days": 479,
+    "label": 2
+  },
+  {
+    "ip": "141.66.248.202",
+    "org": "Managed Hosting",
+    "country": "CA",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 1.2,
+    "exposure_days": 43,
+    "label": 0
+  },
+  {
+    "ip": "32.80.225.117",
+    "org": "SmallCorp Inc.",
+    "country": "US",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 3.5,
+    "exposure_days": 2,
+    "label": 0
+  },
+  {
+    "ip": "71.47.184.65",
+    "org": "Retail POS",
+    "country": "SG",
+    "num_open_ports": 11,
+    "cve_count": 4,
+    "max_cvss": 4.0,
+    "exposure_days": 20,
+    "label": 0
+  },
+  {
+    "ip": "110.46.48.1",
+    "org": "Retail POS",
+    "country": "US",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 1.6,
+    "exposure_days": 29,
+    "label": 0
+  },
+  {
+    "ip": "210.61.216.178",
+    "org": "Retail POS",
+    "country": "BR",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 0.2,
+    "exposure_days": 43,
+    "label": 0
+  },
+  {
+    "ip": "77.70.195.199",
+    "org": "Managed Hosting",
+    "country": "DE",
+    "num_open_ports": 1,
+    "cve_count": 2,
+    "max_cvss": 0.5,
+    "exposure_days": 47,
+    "label": 0
+  },
+  {
+    "ip": "55.77.210.158",
+    "org": "Microsoft Azure",
+    "country": "DE",
+    "num_open_ports": 22,
+    "cve_count": 33,
+    "max_cvss": 7.1,
+    "exposure_days": 749,
+    "label": 2
+  },
+  {
+    "ip": "203.71.126.71",
+    "org": "Google Cloud",
+    "country": "GB",
+    "num_open_ports": 53,
+    "cve_count": 48,
+    "max_cvss": 7.7,
+    "exposure_days": 332,
+    "label": 2
+  },
+  {
+    "ip": "53.96.200.76",
+    "org": "University IT",
+    "country": "AU",
+    "num_open_ports": 2,
+    "cve_count": 4,
+    "max_cvss": 0.3,
+    "exposure_days": 38,
+    "label": 0
+  },
+  {
+    "ip": "19.6.184.240",
+    "org": "Retail POS",
+    "country": "IN",
+    "num_open_ports": 7,
+    "cve_count": 0,
+    "max_cvss": 1.3,
+    "exposure_days": 76,
+    "label": 0
+  },
+  {
+    "ip": "5.34.7.68",
+    "org": "Managed Hosting",
+    "country": "SE",
+    "num_open_ports": 3,
+    "cve_count": 1,
+    "max_cvss": 0.8,
+    "exposure_days": 9,
+    "label": 0
+  },
+  {
+    "ip": "180.205.42.164",
+    "org": "Managed Hosting",
+    "country": "BR",
+    "num_open_ports": 10,
+    "cve_count": 0,
+    "max_cvss": 3.2,
+    "exposure_days": 54,
+    "label": 0
+  },
+  {
+    "ip": "138.167.200.151",
+    "org": "University IT",
+    "country": "DE",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 2.3,
+    "exposure_days": 19,
+    "label": 0
+  },
+  {
+    "ip": "63.44.222.30",
+    "org": "SmallCorp Inc.",
+    "country": "NL",
+    "num_open_ports": 8,
+    "cve_count": 1,
+    "max_cvss": 3.3,
+    "exposure_days": 7,
+    "label": 0
+  },
+  {
+    "ip": "182.70.5.42",
+    "org": "University IT",
+    "country": "JP",
+    "num_open_ports": 5,
+    "cve_count": 2,
+    "max_cvss": 3.3,
+    "exposure_days": 1,
+    "label": 0
+  },
+  {
+    "ip": "198.15.171.207",
+    "org": "University IT",
+    "country": "GB",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 3.4,
+    "exposure_days": 15,
+    "label": 0
+  },
+  {
+    "ip": "131.184.28.128",
+    "org": "University IT",
+    "country": "SG",
+    "num_open_ports": 4,
+    "cve_count": 5,
+    "max_cvss": 2.8,
+    "exposure_days": 58,
+    "label": 0
+  },
+  {
+    "ip": "1.22.6.63",
+    "org": "OVH",
+    "country": "AU",
+    "num_open_ports": 25,
+    "cve_count": 6,
+    "max_cvss": 6.9,
+    "exposure_days": 531,
+    "label": 0
+  },
+  {
+    "ip": "108.114.164.64",
+    "org": "Retail POS",
+    "country": "GB",
+    "num_open_ports": 3,
+    "cve_count": 4,
+    "max_cvss": 4.1,
+    "exposure_days": 83,
+    "label": 0
+  },
+  {
+    "ip": "14.91.114.206",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 1.9,
+    "exposure_days": 86,
+    "label": 0
+  },
+  {
+    "ip": "23.233.4.95",
+    "org": "Managed Hosting",
+    "country": "DE",
+    "num_open_ports": 1,
+    "cve_count": 3,
+    "max_cvss": 3.9,
+    "exposure_days": 41,
+    "label": 0
+  },
+  {
+    "ip": "198.100.125.39",
+    "org": "University IT",
+    "country": "SG",
+    "num_open_ports": 5,
+    "cve_count": 1,
+    "max_cvss": 2.3,
+    "exposure_days": 63,
+    "label": 0
+  },
+  {
+    "ip": "1.192.157.27",
+    "org": "Retail POS",
+    "country": "BR",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 3.8,
+    "exposure_days": 42,
+    "label": 0
+  },
+  {
+    "ip": "24.22.118.230",
+    "org": "Managed Hosting",
+    "country": "IN",
+    "num_open_ports": 15,
+    "cve_count": 5,
+    "max_cvss": 4.4,
+    "exposure_days": 35,
+    "label": 0
+  },
+  {
+    "ip": "16.222.66.61",
+    "org": "Hetzner",
+    "country": "IN",
+    "num_open_ports": 8443,
+    "cve_count": 47,
+    "max_cvss": 8.2,
+    "exposure_days": 86,
+    "label": 2
+  },
+  {
+    "ip": "60.38.103.35",
+    "org": "Managed Hosting",
+    "country": "SG",
+    "num_open_ports": 8,
+    "cve_count": 3,
+    "max_cvss": 1.5,
+    "exposure_days": 34,
+    "label": 0
+  },
+  {
+    "ip": "79.237.135.219",
+    "org": "Microsoft Azure",
+    "country": "IN",
+    "num_open_ports": 20,
+    "cve_count": 29,
+    "max_cvss": 1.9,
+    "exposure_days": 472,
+    "label": 1
+  },
+  {
+    "ip": "38.46.127.248",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 1,
+    "cve_count": 2,
+    "max_cvss": 2.7,
+    "exposure_days": 41,
+    "label": 0
+  },
+  {
+    "ip": "143.127.48.119",
+    "org": "University IT",
+    "country": "NL",
+    "num_open_ports": 4,
+    "cve_count": 3,
+    "max_cvss": 0.8,
+    "exposure_days": 57,
+    "label": 0
+  },
+  {
+    "ip": "51.205.190.176",
+    "org": "SmallCorp Inc.",
+    "country": "US",
+    "num_open_ports": 7,
+    "cve_count": 0,
+    "max_cvss": 3.5,
+    "exposure_days": 16,
+    "label": 0
+  },
+  {
+    "ip": "114.65.47.232",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 4.5,
+    "exposure_days": 82,
+    "label": 0
+  },
+  {
+    "ip": "98.218.88.91",
+    "org": "Managed Hosting",
+    "country": "US",
+    "num_open_ports": 143,
+    "cve_count": 10,
+    "max_cvss": 6.2,
+    "exposure_days": 40,
+    "label": 1
+  },
+  {
+    "ip": "63.151.255.106",
+    "org": "University IT",
+    "country": "IN",
+    "num_open_ports": 2,
+    "cve_count": 4,
+    "max_cvss": 0.4,
+    "exposure_days": 78,
+    "label": 0
+  },
+  {
+    "ip": "206.9.195.201",
+    "org": "OVH",
+    "country": "CN",
+    "num_open_ports": 5432,
+    "cve_count": 8,
+    "max_cvss": 2.5,
+    "exposure_days": 655,
+    "label": 2
+  },
+  {
+    "ip": "8.143.29.208",
+    "org": "Managed Hosting",
+    "country": "SE",
+    "num_open_ports": 5432,
+    "cve_count": 58,
+    "max_cvss": 8.3,
+    "exposure_days": 336,
+    "label": 2
+  },
+  {
+    "ip": "62.136.28.196",
+    "org": "ISP Backbone",
+    "country": "JP",
+    "num_open_ports": 399,
+    "cve_count": 69,
+    "max_cvss": 9.9,
+    "exposure_days": 235,
+    "label": 2
+  },
+  {
+    "ip": "61.162.183.234",
+    "org": "Factory IoT",
+    "country": "GB",
+    "num_open_ports": 4,
+    "cve_count": 5,
+    "max_cvss": 6.5,
+    "exposure_days": 895,
+    "label": 0
+  },
+  {
+    "ip": "139.158.89.126",
+    "org": "University IT",
+    "country": "RU",
+    "num_open_ports": 6,
+    "cve_count": 1,
+    "max_cvss": 2.5,
+    "exposure_days": 63,
+    "label": 0
+  },
+  {
+    "ip": "207.66.174.184",
+    "org": "Retail POS",
+    "country": "US",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 0.2,
+    "exposure_days": 25,
+    "label": 0
+  },
+  {
+    "ip": "217.186.37.96",
+    "org": "University IT",
+    "country": "US",
+    "num_open_ports": 8,
+    "cve_count": 0,
+    "max_cvss": 2.6,
+    "exposure_days": 14,
+    "label": 0
+  },
+  {
+    "ip": "167.162.89.182",
+    "org": "Hetzner",
+    "country": "NL",
+    "num_open_ports": 8080,
+    "cve_count": 20,
+    "max_cvss": 9.8,
+    "exposure_days": 508,
+    "label": 2
+  },
+  {
+    "ip": "188.150.65.46",
+    "org": "Cloudflare",
+    "country": "NL",
+    "num_open_ports": 282,
+    "cve_count": 67,
+    "max_cvss": 8.3,
+    "exposure_days": 389,
+    "label": 2
+  },
+  {
+    "ip": "27.254.72.85",
+    "org": "Amazon AWS",
+    "country": "GB",
+    "num_open_ports": 8080,
+    "cve_count": 38,
+    "max_cvss": 8.6,
+    "exposure_days": 589,
+    "label": 2
+  },
+  {
+    "ip": "86.228.5.68",
+    "org": "Hetzner",
+    "country": "GB",
+    "num_open_ports": 80,
+    "cve_count": 40,
+    "max_cvss": 9.0,
+    "exposure_days": 756,
+    "label": 2
+  },
+  {
+    "ip": "113.214.85.227",
+    "org": "University IT",
+    "country": "NL",
+    "num_open_ports": 6,
+    "cve_count": 2,
+    "max_cvss": 3.2,
+    "exposure_days": 49,
+    "label": 0
+  },
+  {
+    "ip": "195.115.83.116",
+    "org": "University IT",
+    "country": "BR",
+    "num_open_ports": 9,
+    "cve_count": 0,
+    "max_cvss": 3.9,
+    "exposure_days": 83,
+    "label": 0
+  },
+  {
+    "ip": "44.192.82.188",
+    "org": "University IT",
+    "country": "US",
+    "num_open_ports": 8,
+    "cve_count": 0,
+    "max_cvss": 4.3,
+    "exposure_days": 43,
+    "label": 0
+  },
+  {
+    "ip": "8.220.84.156",
+    "org": "SmallCorp Inc.",
+    "country": "SE",
+    "num_open_ports": 10,
+    "cve_count": 1,
+    "max_cvss": 2.8,
+    "exposure_days": 90,
+    "label": 0
+  },
+  {
+    "ip": "170.144.152.61",
+    "org": "Hetzner",
+    "country": "FR",
+    "num_open_ports": 25,
+    "cve_count": 12,
+    "max_cvss": 9.7,
+    "exposure_days": 281,
+    "label": 2
+  },
+  {
+    "ip": "211.245.102.25",
+    "org": "Managed Hosting",
+    "country": "GB",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 0.0,
+    "exposure_days": 37,
+    "label": 0
+  },
+  {
+    "ip": "126.135.46.165",
+    "org": "University IT",
+    "country": "DE",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 0.5,
+    "exposure_days": 60,
+    "label": 0
+  },
+  {
+    "ip": "68.115.137.145",
+    "org": "Managed Hosting",
+    "country": "SE",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 0.2,
+    "exposure_days": 59,
+    "label": 0
+  },
+  {
+    "ip": "59.31.198.210",
+    "org": "SmallCorp Inc.",
+    "country": "DE",
+    "num_open_ports": 7,
+    "cve_count": 1,
+    "max_cvss": 3.6,
+    "exposure_days": 75,
+    "label": 0
+  },
+  {
+    "ip": "219.17.75.31",
+    "org": "Managed Hosting",
+    "country": "RU",
+    "num_open_ports": 12,
+    "cve_count": 4,
+    "max_cvss": 2.1,
+    "exposure_days": 50,
+    "label": 0
+  },
+  {
+    "ip": "21.222.103.211",
+    "org": "Factory IoT",
+    "country": "CN",
+    "num_open_ports": 2,
+    "cve_count": 3,
+    "max_cvss": 5.7,
+    "exposure_days": 159,
+    "label": 0
+  },
+  {
+    "ip": "100.203.166.220",
+    "org": "University IT",
+    "country": "SE",
+    "num_open_ports": 8,
+    "cve_count": 4,
+    "max_cvss": 4.1,
+    "exposure_days": 11,
+    "label": 0
+  },
+  {
+    "ip": "107.76.75.146",
+    "org": "SmallCorp Inc.",
+    "country": "AU",
+    "num_open_ports": 4,
+    "cve_count": 2,
+    "max_cvss": 2.6,
+    "exposure_days": 14,
+    "label": 0
+  },
+  {
+    "ip": "89.210.135.99",
+    "org": "SmallCorp Inc.",
+    "country": "DE",
+    "num_open_ports": 7,
+    "cve_count": 1,
+    "max_cvss": 0.5,
+    "exposure_days": 68,
+    "label": 0
+  },
+  {
+    "ip": "61.25.243.236",
+    "org": "Linode",
+    "country": "GB",
+    "num_open_ports": 65,
+    "cve_count": 39,
+    "max_cvss": 7.5,
+    "exposure_days": 717,
+    "label": 2
+  },
+  {
+    "ip": "176.50.116.35",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 3,
+    "cve_count": 2,
+    "max_cvss": 1.4,
+    "exposure_days": 89,
+    "label": 0
+  },
+  {
+    "ip": "114.108.208.190",
+    "org": "University IT",
+    "country": "NL",
+    "num_open_ports": 7,
+    "cve_count": 2,
+    "max_cvss": 2.7,
+    "exposure_days": 24,
+    "label": 0
+  },
+  {
+    "ip": "182.206.69.200",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 3.6,
+    "exposure_days": 39,
+    "label": 0
+  },
+  {
+    "ip": "95.237.203.163",
+    "org": "DigitalOcean",
+    "country": "CA",
+    "num_open_ports": 10,
+    "cve_count": 40,
+    "max_cvss": 9.7,
+    "exposure_days": 213,
+    "label": 2
+  },
+  {
+    "ip": "122.179.176.42",
+    "org": "ISP Backbone",
+    "country": "CA",
+    "num_open_ports": 223,
+    "cve_count": 105,
+    "max_cvss": 7.4,
+    "exposure_days": 943,
+    "label": 2
+  },
+  {
+    "ip": "166.115.105.69",
+    "org": "Google Cloud",
+    "country": "NL",
+    "num_open_ports": 443,
+    "cve_count": 1,
+    "max_cvss": 2.3,
+    "exposure_days": 236,
+    "label": 2
+  },
+  {
+    "ip": "79.140.216.230",
+    "org": "Amazon AWS",
+    "country": "IN",
+    "num_open_ports": 117,
+    "cve_count": 58,
+    "max_cvss": 8.3,
+    "exposure_days": 268,
+    "label": 2
+  },
+  {
+    "ip": "150.52.3.131",
+    "org": "University IT",
+    "country": "FR",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 3.2,
+    "exposure_days": 50,
+    "label": 0
+  },
+  {
+    "ip": "176.55.246.17",
+    "org": "Akamai",
+    "country": "NL",
+    "num_open_ports": 291,
+    "cve_count": 153,
+    "max_cvss": 8.2,
+    "exposure_days": 1277,
+    "label": 2
+  },
+  {
+    "ip": "49.76.123.231",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 3.2,
+    "exposure_days": 38,
+    "label": 0
+  },
+  {
+    "ip": "128.151.132.233",
+    "org": "Managed Hosting",
+    "country": "JP",
+    "num_open_ports": 9,
+    "cve_count": 0,
+    "max_cvss": 0.6,
+    "exposure_days": 83,
+    "label": 0
+  },
+  {
+    "ip": "186.113.243.233",
+    "org": "SmallCorp Inc.",
+    "country": "RU",
+    "num_open_ports": 3,
+    "cve_count": 2,
+    "max_cvss": 2.6,
+    "exposure_days": 43,
+    "label": 0
+  },
+  {
+    "ip": "76.49.241.33",
+    "org": "Edge Provider",
+    "country": "GB",
+    "num_open_ports": 3,
+    "cve_count": 2,
+    "max_cvss": 5.9,
+    "exposure_days": 927,
+    "label": 0
+  },
+  {
+    "ip": "108.169.190.67",
+    "org": "Microsoft Azure",
+    "country": "JP",
+    "num_open_ports": 27017,
+    "cve_count": 57,
+    "max_cvss": 7.7,
+    "exposure_days": 324,
+    "label": 2
+  },
+  {
+    "ip": "19.241.99.129",
+    "org": "SmallCorp Inc.",
+    "country": "IN",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 3.1,
+    "exposure_days": 79,
+    "label": 0
+  },
+  {
+    "ip": "88.209.234.37",
+    "org": "University IT",
+    "country": "CN",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 3.8,
+    "exposure_days": 25,
+    "label": 0
+  },
+  {
+    "ip": "15.2.231.71",
+    "org": "SmallCorp Inc.",
+    "country": "IN",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 4.4,
+    "exposure_days": 81,
+    "label": 0
+  },
+  {
+    "ip": "112.219.206.110",
+    "org": "Retail POS",
+    "country": "IN",
+    "num_open_ports": 7,
+    "cve_count": 2,
+    "max_cvss": 3.5,
+    "exposure_days": 78,
+    "label": 0
+  },
+  {
+    "ip": "194.97.9.174",
+    "org": "Factory IoT",
+    "country": "SE",
+    "num_open_ports": 1,
+    "cve_count": 8,
+    "max_cvss": 1.4,
+    "exposure_days": 412,
+    "label": 0
+  },
+  {
+    "ip": "129.156.85.17",
+    "org": "Retail POS",
+    "country": "SG",
+    "num_open_ports": 7,
+    "cve_count": 3,
+    "max_cvss": 1.4,
+    "exposure_days": 49,
+    "label": 0
+  },
+  {
+    "ip": "126.183.96.43",
+    "org": "Managed Hosting",
+    "country": "SG",
+    "num_open_ports": 110,
+    "cve_count": 33,
+    "max_cvss": 9.8,
+    "exposure_days": 360,
+    "label": 2
+  },
+  {
+    "ip": "6.86.63.94",
+    "org": "ISP Backbone",
+    "country": "SG",
+    "num_open_ports": 306,
+    "cve_count": 14,
+    "max_cvss": 6.1,
+    "exposure_days": 298,
+    "label": 2
+  },
+  {
+    "ip": "13.59.213.114",
+    "org": "OVH",
+    "country": "AU",
+    "num_open_ports": 12,
+    "cve_count": 34,
+    "max_cvss": 9.2,
+    "exposure_days": 679,
+    "label": 2
+  },
+  {
+    "ip": "78.215.51.170",
+    "org": "Managed Hosting",
+    "country": "SG",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 3.3,
+    "exposure_days": 1,
+    "label": 0
+  },
+  {
+    "ip": "31.144.58.201",
+    "org": "Retail POS",
+    "country": "CN",
+    "num_open_ports": 5,
+    "cve_count": 3,
+    "max_cvss": 0.7,
+    "exposure_days": 79,
+    "label": 0
+  },
+  {
+    "ip": "181.209.151.42",
+    "org": "Retail POS",
+    "country": "AU",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 2.4,
+    "exposure_days": 45,
+    "label": 0
+  },
+  {
+    "ip": "23.56.252.39",
+    "org": "Retail POS",
+    "country": "SG",
+    "num_open_ports": 4,
+    "cve_count": 4,
+    "max_cvss": 1.5,
+    "exposure_days": 1,
+    "label": 0
+  },
+  {
+    "ip": "76.135.237.13",
+    "org": "ISP Backbone",
+    "country": "IN",
+    "num_open_ports": 138,
+    "cve_count": 195,
+    "max_cvss": 8.6,
+    "exposure_days": 554,
+    "label": 2
+  },
+  {
+    "ip": "190.59.48.218",
+    "org": "SmallCorp Inc.",
+    "country": "CA",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 3.6,
+    "exposure_days": 54,
+    "label": 0
+  },
+  {
+    "ip": "96.175.93.30",
+    "org": "Microsoft Azure",
+    "country": "SE",
+    "num_open_ports": 47,
+    "cve_count": 22,
+    "max_cvss": 7.4,
+    "exposure_days": 105,
+    "label": 1
+  },
+  {
+    "ip": "205.85.57.34",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 11,
+    "cve_count": 0,
+    "max_cvss": 3.8,
+    "exposure_days": 83,
+    "label": 0
+  },
+  {
+    "ip": "157.194.183.157",
+    "org": "Microsoft Azure",
+    "country": "DE",
+    "num_open_ports": 12,
+    "cve_count": 26,
+    "max_cvss": 6.4,
+    "exposure_days": 195,
+    "label": 1
+  },
+  {
+    "ip": "12.32.133.168",
+    "org": "Retail POS",
+    "country": "IN",
+    "num_open_ports": 6,
+    "cve_count": 4,
+    "max_cvss": 0.5,
+    "exposure_days": 56,
+    "label": 0
+  },
+  {
+    "ip": "159.48.221.170",
+    "org": "Retail POS",
+    "country": "JP",
+    "num_open_ports": 6,
+    "cve_count": 3,
+    "max_cvss": 2.5,
+    "exposure_days": 89,
+    "label": 0
+  },
+  {
+    "ip": "130.240.253.223",
+    "org": "Linode",
+    "country": "GB",
+    "num_open_ports": 5432,
+    "cve_count": 53,
+    "max_cvss": 9.6,
+    "exposure_days": 668,
+    "label": 2
+  },
+  {
+    "ip": "141.193.206.210",
+    "org": "University IT",
+    "country": "FR",
+    "num_open_ports": 7,
+    "cve_count": 0,
+    "max_cvss": 1.5,
+    "exposure_days": 28,
+    "label": 0
+  },
+  {
+    "ip": "191.9.52.104",
+    "org": "Managed Hosting",
+    "country": "DE",
+    "num_open_ports": 4,
+    "cve_count": 3,
+    "max_cvss": 2.0,
+    "exposure_days": 63,
+    "label": 0
+  },
+  {
+    "ip": "78.105.233.244",
+    "org": "SmallCorp Inc.",
+    "country": "CA",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 2.9,
+    "exposure_days": 81,
+    "label": 0
+  },
+  {
+    "ip": "122.186.231.30",
+    "org": "Retail POS",
+    "country": "CA",
+    "num_open_ports": 8,
+    "cve_count": 0,
+    "max_cvss": 2.7,
+    "exposure_days": 76,
+    "label": 0
+  },
+  {
+    "ip": "134.191.54.12",
+    "org": "SmallCorp Inc.",
+    "country": "SE",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 2.9,
+    "exposure_days": 70,
+    "label": 0
+  },
+  {
+    "ip": "118.97.173.28",
+    "org": "Linode",
+    "country": "DE",
+    "num_open_ports": 5432,
+    "cve_count": 16,
+    "max_cvss": 4.9,
+    "exposure_days": 230,
+    "label": 2
+  },
+  {
+    "ip": "189.24.221.215",
+    "org": "Google Cloud",
+    "country": "AU",
+    "num_open_ports": 12,
+    "cve_count": 57,
+    "max_cvss": 6.0,
+    "exposure_days": 520,
+    "label": 2
+  },
+  {
+    "ip": "100.164.196.108",
+    "org": "Retail POS",
+    "country": "SG",
+    "num_open_ports": 10,
+    "cve_count": 1,
+    "max_cvss": 3.3,
+    "exposure_days": 13,
+    "label": 0
+  },
+  {
+    "ip": "207.68.70.106",
+    "org": "Akamai",
+    "country": "IN",
+    "num_open_ports": 227,
+    "cve_count": 80,
+    "max_cvss": 7.0,
+    "exposure_days": 732,
+    "label": 2
+  },
+  {
+    "ip": "162.111.102.54",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 9,
+    "cve_count": 2,
+    "max_cvss": 4.1,
+    "exposure_days": 70,
+    "label": 0
+  },
+  {
+    "ip": "139.165.59.195",
+    "org": "University IT",
+    "country": "JP",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 3.2,
+    "exposure_days": 64,
+    "label": 0
+  },
+  {
+    "ip": "207.6.54.7",
+    "org": "Managed Hosting",
+    "country": "JP",
+    "num_open_ports": 4,
+    "cve_count": 2,
+    "max_cvss": 3.8,
+    "exposure_days": 54,
+    "label": 0
+  },
+  {
+    "ip": "65.74.31.177",
+    "org": "SmallCorp Inc.",
+    "country": "FR",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 3.5,
+    "exposure_days": 87,
+    "label": 0
+  },
+  {
+    "ip": "191.199.121.131",
+    "org": "Amazon AWS",
+    "country": "SE",
+    "num_open_ports": 53,
+    "cve_count": 52,
+    "max_cvss": 8.9,
+    "exposure_days": 239,
+    "label": 2
+  },
+  {
+    "ip": "4.128.103.159",
+    "org": "Amazon AWS",
+    "country": "CN",
+    "num_open_ports": 110,
+    "cve_count": 24,
+    "max_cvss": 8.9,
+    "exposure_days": 65,
+    "label": 1
+  },
+  {
+    "ip": "175.38.95.247",
+    "org": "Hetzner",
+    "country": "AU",
+    "num_open_ports": 3306,
+    "cve_count": 37,
+    "max_cvss": 7.7,
+    "exposure_days": 311,
+    "label": 2
+  },
+  {
+    "ip": "150.130.2.85",
+    "org": "Managed Hosting",
+    "country": "US",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 2.5,
+    "exposure_days": 20,
+    "label": 0
+  },
+  {
+    "ip": "216.154.251.203",
+    "org": "SmallCorp Inc.",
+    "country": "GB",
+    "num_open_ports": 10,
+    "cve_count": 4,
+    "max_cvss": 2.9,
+    "exposure_days": 78,
+    "label": 0
+  },
+  {
+    "ip": "41.212.206.24",
+    "org": "University IT",
+    "country": "BR",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 0.8,
+    "exposure_days": 64,
+    "label": 0
+  },
+  {
+    "ip": "122.4.58.172",
+    "org": "University IT",
+    "country": "SE",
+    "num_open_ports": 9,
+    "cve_count": 0,
+    "max_cvss": 1.2,
+    "exposure_days": 67,
+    "label": 0
+  },
+  {
+    "ip": "66.144.12.234",
+    "org": "Retail POS",
+    "country": "US",
+    "num_open_ports": 2,
+    "cve_count": 1,
+    "max_cvss": 1.4,
+    "exposure_days": 49,
+    "label": 0
+  },
+  {
+    "ip": "132.42.49.43",
+    "org": "Managed Hosting",
+    "country": "IN",
+    "num_open_ports": 7,
+    "cve_count": 0,
+    "max_cvss": 4.0,
+    "exposure_days": 41,
+    "label": 0
+  },
+  {
+    "ip": "176.217.53.53",
+    "org": "ISP Backbone",
+    "country": "CA",
+    "num_open_ports": 373,
+    "cve_count": 11,
+    "max_cvss": 8.1,
+    "exposure_days": 461,
+    "label": 2
+  },
+  {
+    "ip": "7.235.169.10",
+    "org": "Managed Hosting",
+    "country": "JP",
+    "num_open_ports": 6,
+    "cve_count": 3,
+    "max_cvss": 0.5,
+    "exposure_days": 19,
+    "label": 0
+  },
+  {
+    "ip": "100.230.207.111",
+    "org": "University IT",
+    "country": "BR",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 3.7,
+    "exposure_days": 52,
+    "label": 0
+  },
+  {
+    "ip": "12.37.183.238",
+    "org": "SmallCorp Inc.",
+    "country": "BR",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 3.2,
+    "exposure_days": 74,
+    "label": 0
+  },
+  {
+    "ip": "102.15.242.41",
+    "org": "University IT",
+    "country": "RU",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 3.4,
+    "exposure_days": 48,
+    "label": 0
+  },
+  {
+    "ip": "77.191.5.142",
+    "org": "Managed Hosting",
+    "country": "AU",
+    "num_open_ports": 1,
+    "cve_count": 2,
+    "max_cvss": 2.7,
+    "exposure_days": 18,
+    "label": 0
+  },
+  {
+    "ip": "186.176.108.106",
+    "org": "Amazon AWS",
+    "country": "RU",
+    "num_open_ports": 22,
+    "cve_count": 38,
+    "max_cvss": 8.8,
+    "exposure_days": 776,
+    "label": 2
+  },
+  {
+    "ip": "205.27.236.166",
+    "org": "Akamai",
+    "country": "FR",
+    "num_open_ports": 172,
+    "cve_count": 51,
+    "max_cvss": 6.4,
+    "exposure_days": 1293,
+    "label": 2
+  },
+  {
+    "ip": "92.65.120.26",
+    "org": "SmallCorp Inc.",
+    "country": "NL",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 3.3,
+    "exposure_days": 42,
+    "label": 0
+  },
+  {
+    "ip": "178.78.186.207",
+    "org": "Retail POS",
+    "country": "SE",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 1.7,
+    "exposure_days": 39,
+    "label": 0
+  },
+  {
+    "ip": "112.141.184.35",
+    "org": "SmallCorp Inc.",
+    "country": "SE",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 1.2,
+    "exposure_days": 82,
+    "label": 0
+  },
+  {
+    "ip": "21.143.71.229",
+    "org": "Managed Hosting",
+    "country": "IN",
+    "num_open_ports": 143,
+    "cve_count": 22,
+    "max_cvss": 6.9,
+    "exposure_days": 631,
+    "label": 1
+  },
+  {
+    "ip": "8.207.108.233",
+    "org": "SmallCorp Inc.",
+    "country": "SG",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 0.3,
+    "exposure_days": 80,
+    "label": 0
+  },
+  {
+    "ip": "188.148.68.119",
+    "org": "Managed Hosting",
+    "country": "JP",
+    "num_open_ports": 2,
+    "cve_count": 2,
+    "max_cvss": 1.6,
+    "exposure_days": 75,
+    "label": 0
+  },
+  {
+    "ip": "43.71.228.41",
+    "org": "University IT",
+    "country": "BR",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 1.3,
+    "exposure_days": 87,
+    "label": 0
+  },
+  {
+    "ip": "195.249.118.17",
+    "org": "Retail POS",
+    "country": "SG",
+    "num_open_ports": 11,
+    "cve_count": 2,
+    "max_cvss": 4.2,
+    "exposure_days": 28,
+    "label": 0
+  },
+  {
+    "ip": "12.20.165.27",
+    "org": "Retail POS",
+    "country": "BR",
+    "num_open_ports": 2,
+    "cve_count": 4,
+    "max_cvss": 1.6,
+    "exposure_days": 58,
+    "label": 0
+  },
+  {
+    "ip": "94.39.128.97",
+    "org": "OVH",
+    "country": "CA",
+    "num_open_ports": 6379,
+    "cve_count": 47,
+    "max_cvss": 7.1,
+    "exposure_days": 397,
+    "label": 2
+  },
+  {
+    "ip": "124.3.71.113",
+    "org": "Retail POS",
+    "country": "AU",
+    "num_open_ports": 4,
+    "cve_count": 5,
+    "max_cvss": 5.7,
+    "exposure_days": 383,
+    "label": 0
+  },
+  {
+    "ip": "170.117.212.208",
+    "org": "University IT",
+    "country": "FR",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 0.9,
+    "exposure_days": 15,
+    "label": 0
+  },
+  {
+    "ip": "63.22.65.147",
+    "org": "Managed Hosting",
+    "country": "IN",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 0.7,
+    "exposure_days": 2,
+    "label": 0
+  },
+  {
+    "ip": "104.9.145.243",
+    "org": "SmallCorp Inc.",
+    "country": "RU",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 0.7,
+    "exposure_days": 66,
+    "label": 0
+  },
+  {
+    "ip": "37.93.135.43",
+    "org": "Managed Hosting",
+    "country": "CA",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 1.0,
+    "exposure_days": 76,
+    "label": 0
+  },
+  {
+    "ip": "108.76.49.46",
+    "org": "Google Cloud",
+    "country": "FR",
+    "num_open_ports": 143,
+    "cve_count": 24,
+    "max_cvss": 7.2,
+    "exposure_days": 710,
+    "label": 1
+  },
+  {
+    "ip": "34.0.220.134",
+    "org": "SmallCorp Inc.",
+    "country": "AU",
+    "num_open_ports": 5,
+    "cve_count": 1,
+    "max_cvss": 3.4,
+    "exposure_days": 61,
+    "label": 0
+  },
+  {
+    "ip": "151.50.217.35",
+    "org": "Managed Hosting",
+    "country": "FR",
+    "num_open_ports": 9,
+    "cve_count": 4,
+    "max_cvss": 2.2,
+    "exposure_days": 44,
+    "label": 0
+  },
+  {
+    "ip": "2.3.60.134",
+    "org": "SmallCorp Inc.",
+    "country": "NL",
+    "num_open_ports": 7,
+    "cve_count": 1,
+    "max_cvss": 2.4,
+    "exposure_days": 24,
+    "label": 0
+  },
+  {
+    "ip": "65.133.216.145",
+    "org": "University IT",
+    "country": "CN",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 0.9,
+    "exposure_days": 74,
+    "label": 0
+  },
+  {
+    "ip": "46.189.247.65",
+    "org": "Managed Hosting",
+    "country": "AU",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 2.7,
+    "exposure_days": 61,
+    "label": 0
+  },
+  {
+    "ip": "201.82.51.55",
+    "org": "Security Lab",
+    "country": "SG",
+    "num_open_ports": 303,
+    "cve_count": 198,
+    "max_cvss": 6.9,
+    "exposure_days": 1380,
+    "label": 2
+  },
+  {
+    "ip": "121.222.45.17",
+    "org": "SmallCorp Inc.",
+    "country": "GB",
+    "num_open_ports": 7,
+    "cve_count": 0,
+    "max_cvss": 2.9,
+    "exposure_days": 18,
+    "label": 0
+  },
+  {
+    "ip": "134.146.29.243",
+    "org": "SmallCorp Inc.",
+    "country": "SG",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 4.6,
+    "exposure_days": 83,
+    "label": 0
+  },
+  {
+    "ip": "201.118.86.173",
+    "org": "Managed Hosting",
+    "country": "US",
+    "num_open_ports": 25,
+    "cve_count": 12,
+    "max_cvss": 5.1,
+    "exposure_days": 44,
+    "label": 1
+  },
+  {
+    "ip": "102.207.102.133",
+    "org": "SmallCorp Inc.",
+    "country": "GB",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 1.2,
+    "exposure_days": 45,
+    "label": 0
+  },
+  {
+    "ip": "89.141.115.156",
+    "org": "SmallCorp Inc.",
+    "country": "BR",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 3.9,
+    "exposure_days": 44,
+    "label": 0
+  },
+  {
+    "ip": "144.37.150.88",
+    "org": "Edge Provider",
+    "country": "DE",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 1.8,
+    "exposure_days": 446,
+    "label": 0
+  },
+  {
+    "ip": "114.193.247.198",
+    "org": "Akamai",
+    "country": "SG",
+    "num_open_ports": 231,
+    "cve_count": 147,
+    "max_cvss": 9.1,
+    "exposure_days": 1207,
+    "label": 2
+  },
+  {
+    "ip": "30.132.34.98",
+    "org": "Managed Hosting",
+    "country": "JP",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 2.6,
+    "exposure_days": 61,
+    "label": 0
+  },
+  {
+    "ip": "3.134.127.74",
+    "org": "Retail POS",
+    "country": "AU",
+    "num_open_ports": 15,
+    "cve_count": 0,
+    "max_cvss": 4.5,
+    "exposure_days": 68,
+    "label": 0
+  },
+  {
+    "ip": "56.137.93.243",
+    "org": "University IT",
+    "country": "DE",
+    "num_open_ports": 6,
+    "cve_count": 1,
+    "max_cvss": 0.8,
+    "exposure_days": 45,
+    "label": 0
+  },
+  {
+    "ip": "200.54.61.236",
+    "org": "DigitalOcean",
+    "country": "FR",
+    "num_open_ports": 53,
+    "cve_count": 47,
+    "max_cvss": 7.4,
+    "exposure_days": 643,
+    "label": 2
+  },
+  {
+    "ip": "96.161.252.230",
+    "org": "Managed Hosting",
+    "country": "RU",
+    "num_open_ports": 11,
+    "cve_count": 0,
+    "max_cvss": 3.9,
+    "exposure_days": 61,
+    "label": 0
+  },
+  {
+    "ip": "148.65.27.135",
+    "org": "Akamai",
+    "country": "CN",
+    "num_open_ports": 240,
+    "cve_count": 135,
+    "max_cvss": 6.8,
+    "exposure_days": 1076,
+    "label": 2
+  },
+  {
+    "ip": "133.235.161.177",
+    "org": "Amazon AWS",
+    "country": "BR",
+    "num_open_ports": 5432,
+    "cve_count": 22,
+    "max_cvss": 2.4,
+    "exposure_days": 725,
+    "label": 2
+  },
+  {
+    "ip": "141.134.121.69",
+    "org": "Managed Hosting",
+    "country": "RU",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 1.6,
+    "exposure_days": 23,
+    "label": 0
+  },
+  {
+    "ip": "94.205.143.116",
+    "org": "University IT",
+    "country": "GB",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 1.1,
+    "exposure_days": 47,
+    "label": 0
+  },
+  {
+    "ip": "111.195.100.38",
+    "org": "Retail POS",
+    "country": "CA",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 1.2,
+    "exposure_days": 71,
+    "label": 0
+  },
+  {
+    "ip": "185.161.249.77",
+    "org": "Amazon AWS",
+    "country": "GB",
+    "num_open_ports": 22,
+    "cve_count": 26,
+    "max_cvss": 9.5,
+    "exposure_days": 556,
+    "label": 2
+  },
+  {
+    "ip": "122.49.230.191",
+    "org": "SmallCorp Inc.",
+    "country": "CN",
+    "num_open_ports": 9,
+    "cve_count": 0,
+    "max_cvss": 0.7,
+    "exposure_days": 32,
+    "label": 0
+  },
+  {
+    "ip": "51.89.145.91",
+    "org": "University IT",
+    "country": "SE",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 0.7,
+    "exposure_days": 77,
+    "label": 0
+  },
+  {
+    "ip": "223.85.172.108",
+    "org": "Managed Hosting",
+    "country": "DE",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 1.5,
+    "exposure_days": 18,
+    "label": 0
+  },
+  {
+    "ip": "75.136.202.70",
+    "org": "SmallCorp Inc.",
+    "country": "DE",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 1.0,
+    "exposure_days": 83,
+    "label": 0
+  },
+  {
+    "ip": "191.40.107.43",
+    "org": "Managed Hosting",
+    "country": "CN",
+    "num_open_ports": 3389,
+    "cve_count": 10,
+    "max_cvss": 9.0,
+    "exposure_days": 267,
+    "label": 2
+  },
+  {
+    "ip": "27.134.79.22",
+    "org": "Managed Hosting",
+    "country": "BR",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 3.7,
+    "exposure_days": 10,
+    "label": 0
+  },
+  {
+    "ip": "9.182.166.222",
+    "org": "DigitalOcean",
+    "country": "SG",
+    "num_open_ports": 8080,
+    "cve_count": 18,
+    "max_cvss": 2.7,
+    "exposure_days": 39,
+    "label": 2
+  },
+  {
+    "ip": "46.233.222.135",
+    "org": "University IT",
+    "country": "BR",
+    "num_open_ports": 12,
+    "cve_count": 0,
+    "max_cvss": 4.6,
+    "exposure_days": 69,
+    "label": 0
+  },
+  {
+    "ip": "94.211.133.40",
+    "org": "University IT",
+    "country": "IN",
+    "num_open_ports": 4,
+    "cve_count": 1,
+    "max_cvss": 3.6,
+    "exposure_days": 39,
+    "label": 0
+  },
+  {
+    "ip": "194.244.153.3",
+    "org": "Retail POS",
+    "country": "SE",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 2.6,
+    "exposure_days": 62,
+    "label": 0
+  },
+  {
+    "ip": "184.199.193.57",
+    "org": "Amazon AWS",
+    "country": "BR",
+    "num_open_ports": 110,
+    "cve_count": 23,
+    "max_cvss": 1.1,
+    "exposure_days": 177,
+    "label": 1
+  },
+  {
+    "ip": "70.145.137.106",
+    "org": "Retail POS",
+    "country": "BR",
+    "num_open_ports": 3,
+    "cve_count": 2,
+    "max_cvss": 4.3,
+    "exposure_days": 87,
+    "label": 0
+  },
+  {
+    "ip": "180.251.96.83",
+    "org": "Retail POS",
+    "country": "NL",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 2.0,
+    "exposure_days": 34,
+    "label": 0
+  },
+  {
+    "ip": "187.4.119.24",
+    "org": "SmallCorp Inc.",
+    "country": "GB",
+    "num_open_ports": 1,
+    "cve_count": 5,
+    "max_cvss": 1.3,
+    "exposure_days": 56,
+    "label": 0
+  },
+  {
+    "ip": "179.16.169.21",
+    "org": "University IT",
+    "country": "CN",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 3.6,
+    "exposure_days": 59,
+    "label": 0
+  },
+  {
+    "ip": "197.127.197.198",
+    "org": "Linode",
+    "country": "DE",
+    "num_open_ports": 22,
+    "cve_count": 34,
+    "max_cvss": 6.5,
+    "exposure_days": 22,
+    "label": 2
+  },
+  {
+    "ip": "171.106.242.100",
+    "org": "Factory IoT",
+    "country": "BR",
+    "num_open_ports": 1,
+    "cve_count": 3,
+    "max_cvss": 3.2,
+    "exposure_days": 819,
+    "label": 0
+  },
+  {
+    "ip": "164.152.101.93",
+    "org": "Microsoft Azure",
+    "country": "JP",
+    "num_open_ports": 110,
+    "cve_count": 46,
+    "max_cvss": 8.7,
+    "exposure_days": 502,
+    "label": 2
+  },
+  {
+    "ip": "203.124.4.249",
+    "org": "DigitalOcean",
+    "country": "JP",
+    "num_open_ports": 53,
+    "cve_count": 27,
+    "max_cvss": 1.9,
+    "exposure_days": 415,
+    "label": 1
+  },
+  {
+    "ip": "41.255.46.176",
+    "org": "Managed Hosting",
+    "country": "SG",
+    "num_open_ports": 7,
+    "cve_count": 1,
+    "max_cvss": 1.7,
+    "exposure_days": 31,
+    "label": 0
+  },
+  {
+    "ip": "33.249.119.82",
+    "org": "SmallCorp Inc.",
+    "country": "US",
+    "num_open_ports": 10,
+    "cve_count": 0,
+    "max_cvss": 0.9,
+    "exposure_days": 13,
+    "label": 0
+  },
+  {
+    "ip": "186.68.128.231",
+    "org": "Cloudflare",
+    "country": "SE",
+    "num_open_ports": 277,
+    "cve_count": 122,
+    "max_cvss": 8.7,
+    "exposure_days": 73,
+    "label": 2
+  },
+  {
+    "ip": "90.165.239.71",
+    "org": "University IT",
+    "country": "BR",
+    "num_open_ports": 6,
+    "cve_count": 1,
+    "max_cvss": 0.9,
+    "exposure_days": 69,
+    "label": 0
+  },
+  {
+    "ip": "98.94.9.159",
+    "org": "Microsoft Azure",
+    "country": "IN",
+    "num_open_ports": 27017,
+    "cve_count": 18,
+    "max_cvss": 8.1,
+    "exposure_days": 528,
+    "label": 2
+  },
+  {
+    "ip": "157.144.165.105",
+    "org": "Google Cloud",
+    "country": "JP",
+    "num_open_ports": 80,
+    "cve_count": 34,
+    "max_cvss": 8.9,
+    "exposure_days": 167,
+    "label": 2
+  },
+  {
+    "ip": "28.248.98.26",
+    "org": "SmallCorp Inc.",
+    "country": "US",
+    "num_open_ports": 1,
+    "cve_count": 3,
+    "max_cvss": 0.6,
+    "exposure_days": 25,
+    "label": 0
+  },
+  {
+    "ip": "13.187.113.156",
+    "org": "Managed Hosting",
+    "country": "JP",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 3.0,
+    "exposure_days": 32,
+    "label": 0
+  },
+  {
+    "ip": "93.212.188.204",
+    "org": "DigitalOcean",
+    "country": "JP",
+    "num_open_ports": 10,
+    "cve_count": 31,
+    "max_cvss": 8.1,
+    "exposure_days": 72,
+    "label": 2
+  },
+  {
+    "ip": "60.197.97.50",
+    "org": "Google Cloud",
+    "country": "CA",
+    "num_open_ports": 443,
+    "cve_count": 19,
+    "max_cvss": 0.5,
+    "exposure_days": 752,
+    "label": 2
+  },
+  {
+    "ip": "148.183.234.180",
+    "org": "Retail POS",
+    "country": "BR",
+    "num_open_ports": 2,
+    "cve_count": 2,
+    "max_cvss": 1.9,
+    "exposure_days": 81,
+    "label": 0
+  },
+  {
+    "ip": "91.161.166.217",
+    "org": "Microsoft Azure",
+    "country": "BR",
+    "num_open_ports": 20,
+    "cve_count": 25,
+    "max_cvss": 8.4,
+    "exposure_days": 463,
+    "label": 1
+  },
+  {
+    "ip": "55.192.130.93",
+    "org": "Managed Hosting",
+    "country": "CA",
+    "num_open_ports": 7,
+    "cve_count": 2,
+    "max_cvss": 2.9,
+    "exposure_days": 69,
+    "label": 0
+  },
+  {
+    "ip": "133.69.154.2",
+    "org": "Edge Provider",
+    "country": "US",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 5.1,
+    "exposure_days": 321,
+    "label": 0
+  },
+  {
+    "ip": "131.79.48.10",
+    "org": "University IT",
+    "country": "US",
+    "num_open_ports": 2,
+    "cve_count": 2,
+    "max_cvss": 4.2,
+    "exposure_days": 70,
+    "label": 0
+  },
+  {
+    "ip": "24.204.111.188",
+    "org": "University IT",
+    "country": "SE",
+    "num_open_ports": 1,
+    "cve_count": 4,
+    "max_cvss": 1.1,
+    "exposure_days": 38,
+    "label": 0
+  },
+  {
+    "ip": "210.48.153.10",
+    "org": "Managed Hosting",
+    "country": "GB",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 4.2,
+    "exposure_days": 73,
+    "label": 0
+  },
+  {
+    "ip": "59.5.195.14",
+    "org": "Amazon AWS",
+    "country": "AU",
+    "num_open_ports": 8080,
+    "cve_count": 21,
+    "max_cvss": 2.1,
+    "exposure_days": 798,
+    "label": 2
+  },
+  {
+    "ip": "188.201.228.193",
+    "org": "Retail POS",
+    "country": "SE",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 1.0,
+    "exposure_days": 86,
+    "label": 0
+  },
+  {
+    "ip": "22.243.25.141",
+    "org": "Retail POS",
+    "country": "CN",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 1.8,
+    "exposure_days": 43,
+    "label": 0
+  },
+  {
+    "ip": "51.249.202.167",
+    "org": "Managed Hosting",
+    "country": "AU",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 3.4,
+    "exposure_days": 71,
+    "label": 0
+  },
+  {
+    "ip": "148.45.57.172",
+    "org": "Retail POS",
+    "country": "FR",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 3.5,
+    "exposure_days": 87,
+    "label": 0
+  },
+  {
+    "ip": "90.226.74.113",
+    "org": "Retail POS",
+    "country": "SE",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 2.9,
+    "exposure_days": 21,
+    "label": 0
+  },
+  {
+    "ip": "190.27.124.243",
+    "org": "Retail POS",
+    "country": "JP",
+    "num_open_ports": 8,
+    "cve_count": 0,
+    "max_cvss": 3.4,
+    "exposure_days": 14,
+    "label": 0
+  },
+  {
+    "ip": "121.11.169.54",
+    "org": "University IT",
+    "country": "US",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 3.6,
+    "exposure_days": 57,
+    "label": 0
+  },
+  {
+    "ip": "97.22.130.44",
+    "org": "OVH",
+    "country": "BR",
+    "num_open_ports": 53,
+    "cve_count": 30,
+    "max_cvss": 8.9,
+    "exposure_days": 28,
+    "label": 1
+  },
+  {
+    "ip": "170.138.184.222",
+    "org": "University IT",
+    "country": "US",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 4.3,
+    "exposure_days": 49,
+    "label": 0
+  },
+  {
+    "ip": "81.248.45.48",
+    "org": "Managed Hosting",
+    "country": "FR",
+    "num_open_ports": 2,
+    "cve_count": 5,
+    "max_cvss": 2.5,
+    "exposure_days": 12,
+    "label": 0
+  },
+  {
+    "ip": "101.80.9.89",
+    "org": "SmallCorp Inc.",
+    "country": "US",
+    "num_open_ports": 12,
+    "cve_count": 0,
+    "max_cvss": 2.4,
+    "exposure_days": 62,
+    "label": 0
+  },
+  {
+    "ip": "72.115.77.88",
+    "org": "DigitalOcean",
+    "country": "BR",
+    "num_open_ports": 3389,
+    "cve_count": 17,
+    "max_cvss": 4.9,
+    "exposure_days": 578,
+    "label": 2
+  },
+  {
+    "ip": "80.168.229.139",
+    "org": "Linode",
+    "country": "BR",
+    "num_open_ports": 22,
+    "cve_count": 43,
+    "max_cvss": 6.6,
+    "exposure_days": 596,
+    "label": 2
+  },
+  {
+    "ip": "111.74.80.82",
+    "org": "Retail POS",
+    "country": "CA",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 3.3,
+    "exposure_days": 17,
+    "label": 0
+  },
+  {
+    "ip": "196.163.211.247",
+    "org": "SmallCorp Inc.",
+    "country": "GB",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 4.2,
+    "exposure_days": 3,
+    "label": 0
+  },
+  {
+    "ip": "196.136.118.153",
+    "org": "University IT",
+    "country": "GB",
+    "num_open_ports": 4,
+    "cve_count": 2,
+    "max_cvss": 0.5,
+    "exposure_days": 3,
+    "label": 0
+  },
+  {
+    "ip": "121.191.94.219",
+    "org": "University IT",
+    "country": "DE",
+    "num_open_ports": 6,
+    "cve_count": 1,
+    "max_cvss": 2.3,
+    "exposure_days": 77,
+    "label": 0
+  },
+  {
+    "ip": "106.113.103.194",
+    "org": "Retail POS",
+    "country": "FR",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 1.8,
+    "exposure_days": 34,
+    "label": 0
+  },
+  {
+    "ip": "110.207.21.156",
+    "org": "Managed Hosting",
+    "country": "CA",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 3.1,
+    "exposure_days": 31,
+    "label": 0
+  },
+  {
+    "ip": "134.55.231.117",
+    "org": "Linode",
+    "country": "RU",
+    "num_open_ports": 8080,
+    "cve_count": 60,
+    "max_cvss": 8.3,
+    "exposure_days": 49,
+    "label": 2
+  },
+  {
+    "ip": "162.25.97.75",
+    "org": "DigitalOcean",
+    "country": "BR",
+    "num_open_ports": 12,
+    "cve_count": 34,
+    "max_cvss": 8.5,
+    "exposure_days": 793,
+    "label": 2
+  },
+  {
+    "ip": "133.72.237.213",
+    "org": "University IT",
+    "country": "IN",
+    "num_open_ports": 9,
+    "cve_count": 0,
+    "max_cvss": 1.3,
+    "exposure_days": 88,
+    "label": 0
+  },
+  {
+    "ip": "35.201.211.83",
+    "org": "SmallCorp Inc.",
+    "country": "GB",
+    "num_open_ports": 1,
+    "cve_count": 2,
+    "max_cvss": 4.4,
+    "exposure_days": 69,
+    "label": 0
+  },
+  {
+    "ip": "184.63.46.30",
+    "org": "Retail POS",
+    "country": "IN",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 1.7,
+    "exposure_days": 20,
+    "label": 0
+  },
+  {
+    "ip": "12.87.171.145",
+    "org": "Linode",
+    "country": "SG",
+    "num_open_ports": 3389,
+    "cve_count": 50,
+    "max_cvss": 7.1,
+    "exposure_days": 399,
+    "label": 2
+  },
+  {
+    "ip": "161.92.60.231",
+    "org": "Microsoft Azure",
+    "country": "GB",
+    "num_open_ports": 22,
+    "cve_count": 49,
+    "max_cvss": 6.1,
+    "exposure_days": 305,
+    "label": 2
+  },
+  {
+    "ip": "156.252.121.56",
+    "org": "University IT",
+    "country": "US",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 4.0,
+    "exposure_days": 0,
+    "label": 0
+  },
+  {
+    "ip": "72.106.25.48",
+    "org": "Managed Hosting",
+    "country": "IN",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 2.7,
+    "exposure_days": 70,
+    "label": 0
+  },
+  {
+    "ip": "85.44.25.28",
+    "org": "SmallCorp Inc.",
+    "country": "GB",
+    "num_open_ports": 6,
+    "cve_count": 3,
+    "max_cvss": 3.2,
+    "exposure_days": 38,
+    "label": 0
+  },
+  {
+    "ip": "46.233.184.239",
+    "org": "University IT",
+    "country": "RU",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 3.3,
+    "exposure_days": 71,
+    "label": 0
+  },
+  {
+    "ip": "17.149.241.35",
+    "org": "University IT",
+    "country": "SE",
+    "num_open_ports": 7,
+    "cve_count": 4,
+    "max_cvss": 3.7,
+    "exposure_days": 70,
+    "label": 0
+  },
+  {
+    "ip": "15.55.44.124",
+    "org": "University IT",
+    "country": "BR",
+    "num_open_ports": 9,
+    "cve_count": 0,
+    "max_cvss": 0.9,
+    "exposure_days": 78,
+    "label": 0
+  },
+  {
+    "ip": "128.254.252.207",
+    "org": "Hetzner",
+    "country": "NL",
+    "num_open_ports": 110,
+    "cve_count": 33,
+    "max_cvss": 9.7,
+    "exposure_days": 586,
+    "label": 2
+  },
+  {
+    "ip": "189.106.212.106",
+    "org": "University IT",
+    "country": "FR",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 0.3,
+    "exposure_days": 15,
+    "label": 0
+  },
+  {
+    "ip": "79.153.165.197",
+    "org": "Retail POS",
+    "country": "US",
+    "num_open_ports": 3,
+    "cve_count": 1,
+    "max_cvss": 3.1,
+    "exposure_days": 8,
+    "label": 0
+  },
+  {
+    "ip": "50.169.173.237",
+    "org": "University IT",
+    "country": "CN",
+    "num_open_ports": 6,
+    "cve_count": 2,
+    "max_cvss": 2.8,
+    "exposure_days": 22,
+    "label": 0
+  },
+  {
+    "ip": "201.211.28.214",
+    "org": "Microsoft Azure",
+    "country": "IN",
+    "num_open_ports": 5432,
+    "cve_count": 9,
+    "max_cvss": 8.5,
+    "exposure_days": 483,
+    "label": 2
+  },
+  {
+    "ip": "205.181.33.249",
+    "org": "University IT",
+    "country": "BR",
+    "num_open_ports": 5,
+    "cve_count": 1,
+    "max_cvss": 1.1,
+    "exposure_days": 42,
+    "label": 0
+  },
+  {
+    "ip": "100.95.59.222",
+    "org": "University IT",
+    "country": "CN",
+    "num_open_ports": 8,
+    "cve_count": 1,
+    "max_cvss": 4.0,
+    "exposure_days": 77,
+    "label": 0
+  },
+  {
+    "ip": "213.154.110.135",
+    "org": "Hetzner",
+    "country": "SG",
+    "num_open_ports": 110,
+    "cve_count": 2,
+    "max_cvss": 4.4,
+    "exposure_days": 472,
+    "label": 1
+  },
+  {
+    "ip": "205.247.78.49",
+    "org": "SmallCorp Inc.",
+    "country": "AU",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 0.6,
+    "exposure_days": 3,
+    "label": 0
+  },
+  {
+    "ip": "174.67.105.186",
+    "org": "University IT",
+    "country": "AU",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 3.5,
+    "exposure_days": 66,
+    "label": 0
+  },
+  {
+    "ip": "86.239.23.27",
+    "org": "SmallCorp Inc.",
+    "country": "US",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 0.4,
+    "exposure_days": 11,
+    "label": 0
+  },
+  {
+    "ip": "52.98.146.71",
+    "org": "University IT",
+    "country": "US",
+    "num_open_ports": 6,
+    "cve_count": 1,
+    "max_cvss": 1.4,
+    "exposure_days": 41,
+    "label": 0
+  },
+  {
+    "ip": "144.52.105.139",
+    "org": "SmallCorp Inc.",
+    "country": "NL",
+    "num_open_ports": 7,
+    "cve_count": 0,
+    "max_cvss": 1.2,
+    "exposure_days": 79,
+    "label": 0
+  },
+  {
+    "ip": "80.173.227.13",
+    "org": "Retail POS",
+    "country": "SG",
+    "num_open_ports": 2,
+    "cve_count": 3,
+    "max_cvss": 2.6,
+    "exposure_days": 9,
+    "label": 0
+  },
+  {
+    "ip": "181.228.182.80",
+    "org": "SmallCorp Inc.",
+    "country": "DE",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 0.4,
+    "exposure_days": 22,
+    "label": 0
+  },
+  {
+    "ip": "120.49.233.80",
+    "org": "SmallCorp Inc.",
+    "country": "AU",
+    "num_open_ports": 2,
+    "cve_count": 2,
+    "max_cvss": 2.6,
+    "exposure_days": 89,
+    "label": 0
+  },
+  {
+    "ip": "85.166.232.125",
+    "org": "DigitalOcean",
+    "country": "GB",
+    "num_open_ports": 3306,
+    "cve_count": 55,
+    "max_cvss": 9.5,
+    "exposure_days": 726,
+    "label": 2
+  },
+  {
+    "ip": "148.65.52.104",
+    "org": "University IT",
+    "country": "IN",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 0.8,
+    "exposure_days": 77,
+    "label": 0
+  },
+  {
+    "ip": "141.81.246.99",
+    "org": "Google Cloud",
+    "country": "AU",
+    "num_open_ports": 20,
+    "cve_count": 19,
+    "max_cvss": 7.9,
+    "exposure_days": 259,
+    "label": 1
+  },
+  {
+    "ip": "178.120.88.170",
+    "org": "Managed Hosting",
+    "country": "AU",
+    "num_open_ports": 2,
+    "cve_count": 5,
+    "max_cvss": 2.6,
+    "exposure_days": 69,
+    "label": 0
+  },
+  {
+    "ip": "154.55.194.84",
+    "org": "Managed Hosting",
+    "country": "SE",
+    "num_open_ports": 5432,
+    "cve_count": 35,
+    "max_cvss": 6.2,
+    "exposure_days": 81,
+    "label": 2
+  },
+  {
+    "ip": "194.75.76.116",
+    "org": "SmallCorp Inc.",
+    "country": "FR",
+    "num_open_ports": 6,
+    "cve_count": 3,
+    "max_cvss": 4.2,
+    "exposure_days": 0,
+    "label": 0
+  },
+  {
+    "ip": "204.155.222.184",
+    "org": "Managed Hosting",
+    "country": "FR",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 3.9,
+    "exposure_days": 72,
+    "label": 0
+  },
+  {
+    "ip": "33.150.31.95",
+    "org": "Retail POS",
+    "country": "CA",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 4.3,
+    "exposure_days": 552,
+    "label": 0
+  },
+  {
+    "ip": "73.15.120.111",
+    "org": "Security Lab",
+    "country": "CA",
+    "num_open_ports": 100,
+    "cve_count": 190,
+    "max_cvss": 7.8,
+    "exposure_days": 765,
+    "label": 2
+  },
+  {
+    "ip": "143.196.184.216",
+    "org": "Linode",
+    "country": "CN",
+    "num_open_ports": 8080,
+    "cve_count": 24,
+    "max_cvss": 2.6,
+    "exposure_days": 202,
+    "label": 2
+  },
+  {
+    "ip": "112.69.43.36",
+    "org": "Retail POS",
+    "country": "GB",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 2.9,
+    "exposure_days": 62,
+    "label": 0
+  },
+  {
+    "ip": "117.217.230.99",
+    "org": "Managed Hosting",
+    "country": "AU",
+    "num_open_ports": 3,
+    "cve_count": 1,
+    "max_cvss": 4.4,
+    "exposure_days": 23,
+    "label": 0
+  },
+  {
+    "ip": "69.210.187.9",
+    "org": "SmallCorp Inc.",
+    "country": "RU",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 3.5,
+    "exposure_days": 64,
+    "label": 0
+  },
+  {
+    "ip": "187.143.238.133",
+    "org": "Security Lab",
+    "country": "GB",
+    "num_open_ports": 288,
+    "cve_count": 38,
+    "max_cvss": 7.9,
+    "exposure_days": 1444,
+    "label": 2
+  },
+  {
+    "ip": "176.159.27.232",
+    "org": "SmallCorp Inc.",
+    "country": "FR",
+    "num_open_ports": 9,
+    "cve_count": 0,
+    "max_cvss": 3.5,
+    "exposure_days": 9,
+    "label": 0
+  },
+  {
+    "ip": "108.180.150.75",
+    "org": "Managed Hosting",
+    "country": "IN",
+    "num_open_ports": 7,
+    "cve_count": 1,
+    "max_cvss": 2.3,
+    "exposure_days": 42,
+    "label": 0
+  },
+  {
+    "ip": "149.86.26.169",
+    "org": "University IT",
+    "country": "SG",
+    "num_open_ports": 6,
+    "cve_count": 2,
+    "max_cvss": 1.4,
+    "exposure_days": 60,
+    "label": 0
+  },
+  {
+    "ip": "201.142.129.34",
+    "org": "Security Lab",
+    "country": "CA",
+    "num_open_ports": 113,
+    "cve_count": 83,
+    "max_cvss": 7.4,
+    "exposure_days": 289,
+    "label": 2
+  },
+  {
+    "ip": "115.189.89.67",
+    "org": "University IT",
+    "country": "US",
+    "num_open_ports": 2,
+    "cve_count": 2,
+    "max_cvss": 2.9,
+    "exposure_days": 19,
+    "label": 0
+  },
+  {
+    "ip": "106.196.121.170",
+    "org": "Amazon AWS",
+    "country": "SE",
+    "num_open_ports": 80,
+    "cve_count": 5,
+    "max_cvss": 7.0,
+    "exposure_days": 780,
+    "label": 1
+  },
+  {
+    "ip": "194.59.26.43",
+    "org": "Retail POS",
+    "country": "RU",
+    "num_open_ports": 6,
+    "cve_count": 2,
+    "max_cvss": 1.8,
+    "exposure_days": 33,
+    "label": 0
+  },
+  {
+    "ip": "175.199.242.68",
+    "org": "Managed Hosting",
+    "country": "SG",
+    "num_open_ports": 4,
+    "cve_count": 4,
+    "max_cvss": 4.2,
+    "exposure_days": 48,
+    "label": 0
+  },
+  {
+    "ip": "136.21.49.235",
+    "org": "SmallCorp Inc.",
+    "country": "NL",
+    "num_open_ports": 9,
+    "cve_count": 4,
+    "max_cvss": 2.2,
+    "exposure_days": 40,
+    "label": 0
+  },
+  {
+    "ip": "69.50.130.168",
+    "org": "Managed Hosting",
+    "country": "RU",
+    "num_open_ports": 3,
+    "cve_count": 4,
+    "max_cvss": 3.9,
+    "exposure_days": 34,
+    "label": 0
+  },
+  {
+    "ip": "174.92.160.141",
+    "org": "Retail POS",
+    "country": "SG",
+    "num_open_ports": 4,
+    "cve_count": 1,
+    "max_cvss": 3.7,
+    "exposure_days": 43,
+    "label": 0
+  },
+  {
+    "ip": "90.112.145.65",
+    "org": "SmallCorp Inc.",
+    "country": "US",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 2.6,
+    "exposure_days": 57,
+    "label": 0
+  },
+  {
+    "ip": "164.62.61.23",
+    "org": "SmallCorp Inc.",
+    "country": "US",
+    "num_open_ports": 1,
+    "cve_count": 4,
+    "max_cvss": 3.0,
+    "exposure_days": 76,
+    "label": 0
+  },
+  {
+    "ip": "71.218.165.66",
+    "org": "Microsoft Azure",
+    "country": "DE",
+    "num_open_ports": 22,
+    "cve_count": 44,
+    "max_cvss": 7.7,
+    "exposure_days": 664,
+    "label": 2
+  },
+  {
+    "ip": "46.225.35.126",
+    "org": "SmallCorp Inc.",
+    "country": "CN",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 4.5,
+    "exposure_days": 33,
+    "label": 0
+  },
+  {
+    "ip": "197.220.111.158",
+    "org": "Factory IoT",
+    "country": "BR",
+    "num_open_ports": 4,
+    "cve_count": 2,
+    "max_cvss": 4.5,
+    "exposure_days": 141,
+    "label": 0
+  },
+  {
+    "ip": "199.228.9.230",
+    "org": "University IT",
+    "country": "DE",
+    "num_open_ports": 10,
+    "cve_count": 0,
+    "max_cvss": 0.5,
+    "exposure_days": 32,
+    "label": 0
+  },
+  {
+    "ip": "101.1.251.123",
+    "org": "SmallCorp Inc.",
+    "country": "US",
+    "num_open_ports": 6,
+    "cve_count": 1,
+    "max_cvss": 1.4,
+    "exposure_days": 42,
+    "label": 0
+  },
+  {
+    "ip": "32.183.170.175",
+    "org": "SmallCorp Inc.",
+    "country": "BR",
+    "num_open_ports": 8,
+    "cve_count": 0,
+    "max_cvss": 1.9,
+    "exposure_days": 61,
+    "label": 0
+  },
+  {
+    "ip": "195.148.103.46",
+    "org": "SmallCorp Inc.",
+    "country": "SE",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 4.3,
+    "exposure_days": 58,
+    "label": 0
+  },
+  {
+    "ip": "92.249.43.227",
+    "org": "Retail POS",
+    "country": "NL",
+    "num_open_ports": 12,
+    "cve_count": 1,
+    "max_cvss": 4.2,
+    "exposure_days": 88,
+    "label": 0
+  },
+  {
+    "ip": "126.199.32.203",
+    "org": "Retail POS",
+    "country": "US",
+    "num_open_ports": 7,
+    "cve_count": 0,
+    "max_cvss": 3.4,
+    "exposure_days": 30,
+    "label": 0
+  },
+  {
+    "ip": "104.60.108.207",
+    "org": "Managed Hosting",
+    "country": "US",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 0.5,
+    "exposure_days": 5,
+    "label": 0
+  },
+  {
+    "ip": "159.23.124.180",
+    "org": "Microsoft Azure",
+    "country": "SG",
+    "num_open_ports": 6379,
+    "cve_count": 37,
+    "max_cvss": 6.1,
+    "exposure_days": 679,
+    "label": 2
+  },
+  {
+    "ip": "214.32.54.30",
+    "org": "SmallCorp Inc.",
+    "country": "NL",
+    "num_open_ports": 1,
+    "cve_count": 3,
+    "max_cvss": 0.6,
+    "exposure_days": 21,
+    "label": 0
+  },
+  {
+    "ip": "103.166.61.250",
+    "org": "Retail POS",
+    "country": "DE",
+    "num_open_ports": 7,
+    "cve_count": 3,
+    "max_cvss": 2.1,
+    "exposure_days": 86,
+    "label": 0
+  },
+  {
+    "ip": "107.86.189.142",
+    "org": "DigitalOcean",
+    "country": "AU",
+    "num_open_ports": 27017,
+    "cve_count": 2,
+    "max_cvss": 3.6,
+    "exposure_days": 785,
+    "label": 2
+  },
+  {
+    "ip": "200.80.8.226",
+    "org": "SmallCorp Inc.",
+    "country": "GB",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 4.0,
+    "exposure_days": 48,
+    "label": 0
+  },
+  {
+    "ip": "178.243.64.53",
+    "org": "Retail POS",
+    "country": "DE",
+    "num_open_ports": 1,
+    "cve_count": 2,
+    "max_cvss": 2.7,
+    "exposure_days": 53,
+    "label": 0
+  },
+  {
+    "ip": "153.92.255.157",
+    "org": "Managed Hosting",
+    "country": "CN",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 1.0,
+    "exposure_days": 4,
+    "label": 0
+  },
+  {
+    "ip": "31.48.185.221",
+    "org": "ISP Backbone",
+    "country": "FR",
+    "num_open_ports": 254,
+    "cve_count": 99,
+    "max_cvss": 7.1,
+    "exposure_days": 1172,
+    "label": 2
+  },
+  {
+    "ip": "122.254.90.41",
+    "org": "Managed Hosting",
+    "country": "AU",
+    "num_open_ports": 27017,
+    "cve_count": 40,
+    "max_cvss": 9.2,
+    "exposure_days": 711,
+    "label": 2
+  },
+  {
+    "ip": "27.26.90.41",
+    "org": "Hetzner",
+    "country": "NL",
+    "num_open_ports": 12,
+    "cve_count": 13,
+    "max_cvss": 5.7,
+    "exposure_days": 54,
+    "label": 1
+  },
+  {
+    "ip": "84.117.56.84",
+    "org": "Google Cloud",
+    "country": "FR",
+    "num_open_ports": 5432,
+    "cve_count": 46,
+    "max_cvss": 8.0,
+    "exposure_days": 703,
+    "label": 2
+  },
+  {
+    "ip": "150.248.27.228",
+    "org": "Managed Hosting",
+    "country": "CA",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 4.0,
+    "exposure_days": 60,
+    "label": 0
+  },
+  {
+    "ip": "162.183.138.52",
+    "org": "Managed Hosting",
+    "country": "GB",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 0.8,
+    "exposure_days": 24,
+    "label": 0
+  },
+  {
+    "ip": "44.175.112.227",
+    "org": "SmallCorp Inc.",
+    "country": "NL",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 3.8,
+    "exposure_days": 53,
+    "label": 0
+  },
+  {
+    "ip": "220.250.110.152",
+    "org": "Retail POS",
+    "country": "RU",
+    "num_open_ports": 1,
+    "cve_count": 5,
+    "max_cvss": 3.8,
+    "exposure_days": 52,
+    "label": 0
+  },
+  {
+    "ip": "112.113.76.234",
+    "org": "SmallCorp Inc.",
+    "country": "SG",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 3.9,
+    "exposure_days": 41,
+    "label": 0
+  },
+  {
+    "ip": "109.201.245.208",
+    "org": "SmallCorp Inc.",
+    "country": "US",
+    "num_open_ports": 1,
+    "cve_count": 5,
+    "max_cvss": 3.5,
+    "exposure_days": 4,
+    "label": 0
+  },
+  {
+    "ip": "62.46.8.123",
+    "org": "DigitalOcean",
+    "country": "DE",
+    "num_open_ports": 20,
+    "cve_count": 35,
+    "max_cvss": 7.4,
+    "exposure_days": 145,
+    "label": 2
+  },
+  {
+    "ip": "119.0.36.99",
+    "org": "Amazon AWS",
+    "country": "IN",
+    "num_open_ports": 25,
+    "cve_count": 29,
+    "max_cvss": 8.4,
+    "exposure_days": 651,
+    "label": 1
+  },
+  {
+    "ip": "86.28.186.228",
+    "org": "OVH",
+    "country": "CN",
+    "num_open_ports": 143,
+    "cve_count": 48,
+    "max_cvss": 6.3,
+    "exposure_days": 711,
+    "label": 2
+  },
+  {
+    "ip": "181.34.104.36",
+    "org": "Managed Hosting",
+    "country": "RU",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 1.8,
+    "exposure_days": 71,
+    "label": 0
+  },
+  {
+    "ip": "180.107.115.83",
+    "org": "Edge Provider",
+    "country": "CA",
+    "num_open_ports": 1,
+    "cve_count": 7,
+    "max_cvss": 5.2,
+    "exposure_days": 800,
+    "label": 0
+  },
+  {
+    "ip": "129.62.240.182",
+    "org": "Managed Hosting",
+    "country": "NL",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 1.7,
+    "exposure_days": 62,
+    "label": 0
+  },
+  {
+    "ip": "49.234.44.21",
+    "org": "University IT",
+    "country": "IN",
+    "num_open_ports": 8,
+    "cve_count": 1,
+    "max_cvss": 3.8,
+    "exposure_days": 8,
+    "label": 0
+  },
+  {
+    "ip": "39.104.11.76",
+    "org": "SmallCorp Inc.",
+    "country": "DE",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 0.5,
+    "exposure_days": 63,
+    "label": 0
+  },
+  {
+    "ip": "75.96.32.6",
+    "org": "Retail POS",
+    "country": "IN",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 2.2,
+    "exposure_days": 2,
+    "label": 0
+  },
+  {
+    "ip": "179.227.234.78",
+    "org": "Hetzner",
+    "country": "CN",
+    "num_open_ports": 80,
+    "cve_count": 37,
+    "max_cvss": 7.6,
+    "exposure_days": 691,
+    "label": 2
+  },
+  {
+    "ip": "198.24.75.91",
+    "org": "University IT",
+    "country": "GB",
+    "num_open_ports": 9,
+    "cve_count": 2,
+    "max_cvss": 1.0,
+    "exposure_days": 36,
+    "label": 0
+  },
+  {
+    "ip": "178.78.82.61",
+    "org": "Retail POS",
+    "country": "SG",
+    "num_open_ports": 11,
+    "cve_count": 1,
+    "max_cvss": 0.8,
+    "exposure_days": 90,
+    "label": 0
+  },
+  {
+    "ip": "9.162.176.38",
+    "org": "Retail POS",
+    "country": "IN",
+    "num_open_ports": 15,
+    "cve_count": 0,
+    "max_cvss": 1.0,
+    "exposure_days": 90,
+    "label": 0
+  },
+  {
+    "ip": "197.74.234.238",
+    "org": "Retail POS",
+    "country": "BR",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 4.1,
+    "exposure_days": 63,
+    "label": 0
+  },
+  {
+    "ip": "171.75.226.87",
+    "org": "University IT",
+    "country": "JP",
+    "num_open_ports": 1,
+    "cve_count": 2,
+    "max_cvss": 2.1,
+    "exposure_days": 73,
+    "label": 0
+  },
+  {
+    "ip": "84.28.99.150",
+    "org": "Microsoft Azure",
+    "country": "JP",
+    "num_open_ports": 5432,
+    "cve_count": 35,
+    "max_cvss": 7.4,
+    "exposure_days": 466,
+    "label": 2
+  },
+  {
+    "ip": "23.201.99.126",
+    "org": "University IT",
+    "country": "FR",
+    "num_open_ports": 7,
+    "cve_count": 0,
+    "max_cvss": 2.4,
+    "exposure_days": 86,
+    "label": 0
+  },
+  {
+    "ip": "99.190.6.73",
+    "org": "SmallCorp Inc.",
+    "country": "JP",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 0.7,
+    "exposure_days": 47,
+    "label": 0
+  },
+  {
+    "ip": "206.226.147.42",
+    "org": "Managed Hosting",
+    "country": "CA",
+    "num_open_ports": 2,
+    "cve_count": 1,
+    "max_cvss": 1.0,
+    "exposure_days": 53,
+    "label": 0
+  },
+  {
+    "ip": "17.192.45.2",
+    "org": "Linode",
+    "country": "GB",
+    "num_open_ports": 8443,
+    "cve_count": 53,
+    "max_cvss": 9.7,
+    "exposure_days": 547,
+    "label": 2
+  },
+  {
+    "ip": "48.195.148.142",
+    "org": "Managed Hosting",
+    "country": "GB",
+    "num_open_ports": 10,
+    "cve_count": 1,
+    "max_cvss": 3.2,
+    "exposure_days": 25,
+    "label": 0
+  },
+  {
+    "ip": "58.13.1.40",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 8,
+    "cve_count": 1,
+    "max_cvss": 2.4,
+    "exposure_days": 59,
+    "label": 0
+  },
+  {
+    "ip": "126.125.14.31",
+    "org": "Managed Hosting",
+    "country": "DE",
+    "num_open_ports": 11,
+    "cve_count": 1,
+    "max_cvss": 4.0,
+    "exposure_days": 22,
+    "label": 0
+  },
+  {
+    "ip": "176.243.61.96",
+    "org": "Google Cloud",
+    "country": "RU",
+    "num_open_ports": 5432,
+    "cve_count": 47,
+    "max_cvss": 6.4,
+    "exposure_days": 653,
+    "label": 2
+  },
+  {
+    "ip": "35.182.83.14",
+    "org": "University IT",
+    "country": "GB",
+    "num_open_ports": 5,
+    "cve_count": 1,
+    "max_cvss": 0.7,
+    "exposure_days": 88,
+    "label": 0
+  },
+  {
+    "ip": "50.93.48.154",
+    "org": "University IT",
+    "country": "US",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 2.4,
+    "exposure_days": 65,
+    "label": 0
+  },
+  {
+    "ip": "25.180.73.4",
+    "org": "Hetzner",
+    "country": "CA",
+    "num_open_ports": 27017,
+    "cve_count": 54,
+    "max_cvss": 8.9,
+    "exposure_days": 381,
+    "label": 2
+  },
+  {
+    "ip": "40.113.96.204",
+    "org": "Managed Hosting",
+    "country": "CN",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 4.1,
+    "exposure_days": 27,
+    "label": 0
+  },
+  {
+    "ip": "90.159.185.36",
+    "org": "Google Cloud",
+    "country": "CN",
+    "num_open_ports": 6379,
+    "cve_count": 29,
+    "max_cvss": 5.5,
+    "exposure_days": 501,
+    "label": 2
+  },
+  {
+    "ip": "59.157.64.54",
+    "org": "Hetzner",
+    "country": "GB",
+    "num_open_ports": 6379,
+    "cve_count": 45,
+    "max_cvss": 6.5,
+    "exposure_days": 720,
+    "label": 2
+  },
+  {
+    "ip": "51.55.16.204",
+    "org": "SmallCorp Inc.",
+    "country": "DE",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 2.2,
+    "exposure_days": 5,
+    "label": 0
+  },
+  {
+    "ip": "53.102.94.172",
+    "org": "OVH",
+    "country": "US",
+    "num_open_ports": 12,
+    "cve_count": 4,
+    "max_cvss": 1.8,
+    "exposure_days": 626,
+    "label": 0
+  },
+  {
+    "ip": "62.34.50.210",
+    "org": "University IT",
+    "country": "RU",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 0.9,
+    "exposure_days": 78,
+    "label": 0
+  },
+  {
+    "ip": "186.50.109.236",
+    "org": "Retail POS",
+    "country": "SG",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 1.5,
+    "exposure_days": 0,
+    "label": 0
+  },
+  {
+    "ip": "214.181.194.109",
+    "org": "University IT",
+    "country": "SG",
+    "num_open_ports": 6,
+    "cve_count": 1,
+    "max_cvss": 2.0,
+    "exposure_days": 23,
+    "label": 0
+  },
+  {
+    "ip": "35.253.184.181",
+    "org": "SmallCorp Inc.",
+    "country": "AU",
+    "num_open_ports": 2,
+    "cve_count": 5,
+    "max_cvss": 0.6,
+    "exposure_days": 66,
+    "label": 0
+  },
+  {
+    "ip": "189.159.227.58",
+    "org": "SmallCorp Inc.",
+    "country": "SE",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 1.7,
+    "exposure_days": 76,
+    "label": 0
+  },
+  {
+    "ip": "95.91.6.173",
+    "org": "Managed Hosting",
+    "country": "FR",
+    "num_open_ports": 2,
+    "cve_count": 3,
+    "max_cvss": 4.0,
+    "exposure_days": 86,
+    "label": 0
+  },
+  {
+    "ip": "103.52.86.17",
+    "org": "Managed Hosting",
+    "country": "BR",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 0.4,
+    "exposure_days": 50,
+    "label": 0
+  },
+  {
+    "ip": "186.255.142.196",
+    "org": "Retail POS",
+    "country": "RU",
+    "num_open_ports": 2,
+    "cve_count": 3,
+    "max_cvss": 1.8,
+    "exposure_days": 54,
+    "label": 0
+  },
+  {
+    "ip": "38.232.55.32",
+    "org": "Linode",
+    "country": "SE",
+    "num_open_ports": 443,
+    "cve_count": 30,
+    "max_cvss": 10.0,
+    "exposure_days": 295,
+    "label": 2
+  },
+  {
+    "ip": "174.13.91.98",
+    "org": "Retail POS",
+    "country": "US",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 0.2,
+    "exposure_days": 63,
+    "label": 0
+  },
+  {
+    "ip": "197.252.238.52",
+    "org": "University IT",
+    "country": "RU",
+    "num_open_ports": 2,
+    "cve_count": 1,
+    "max_cvss": 3.6,
+    "exposure_days": 66,
+    "label": 0
+  },
+  {
+    "ip": "196.16.220.226",
+    "org": "University IT",
+    "country": "BR",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 4.1,
+    "exposure_days": 2,
+    "label": 0
+  },
+  {
+    "ip": "143.155.84.126",
+    "org": "Factory IoT",
+    "country": "GB",
+    "num_open_ports": 3,
+    "cve_count": 6,
+    "max_cvss": 3.1,
+    "exposure_days": 66,
+    "label": 0
+  },
+  {
+    "ip": "142.240.243.144",
+    "org": "Managed Hosting",
+    "country": "IN",
+    "num_open_ports": 2,
+    "cve_count": 2,
+    "max_cvss": 2.6,
+    "exposure_days": 84,
+    "label": 0
+  },
+  {
+    "ip": "16.14.23.33",
+    "org": "OVH",
+    "country": "IN",
+    "num_open_ports": 6379,
+    "cve_count": 37,
+    "max_cvss": 7.1,
+    "exposure_days": 338,
+    "label": 2
+  },
+  {
+    "ip": "170.125.126.61",
+    "org": "Amazon AWS",
+    "country": "AU",
+    "num_open_ports": 3389,
+    "cve_count": 57,
+    "max_cvss": 7.3,
+    "exposure_days": 431,
+    "label": 2
+  },
+  {
+    "ip": "84.19.235.169",
+    "org": "SmallCorp Inc.",
+    "country": "CA",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 1.5,
+    "exposure_days": 68,
+    "label": 0
+  },
+  {
+    "ip": "83.50.250.26",
+    "org": "OVH",
+    "country": "US",
+    "num_open_ports": 6379,
+    "cve_count": 44,
+    "max_cvss": 7.6,
+    "exposure_days": 409,
+    "label": 2
+  },
+  {
+    "ip": "216.109.147.68",
+    "org": "Hetzner",
+    "country": "GB",
+    "num_open_ports": 53,
+    "cve_count": 39,
+    "max_cvss": 7.2,
+    "exposure_days": 87,
+    "label": 2
+  },
+  {
+    "ip": "25.172.139.18",
+    "org": "Managed Hosting",
+    "country": "AU",
+    "num_open_ports": 15,
+    "cve_count": 0,
+    "max_cvss": 3.3,
+    "exposure_days": 74,
+    "label": 0
+  },
+  {
+    "ip": "206.153.221.170",
+    "org": "Managed Hosting",
+    "country": "FR",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 0.3,
+    "exposure_days": 64,
+    "label": 0
+  },
+  {
+    "ip": "5.95.255.55",
+    "org": "Managed Hosting",
+    "country": "NL",
+    "num_open_ports": 2,
+    "cve_count": 1,
+    "max_cvss": 2.2,
+    "exposure_days": 23,
+    "label": 0
+  },
+  {
+    "ip": "176.153.222.106",
+    "org": "Linode",
+    "country": "RU",
+    "num_open_ports": 3306,
+    "cve_count": 46,
+    "max_cvss": 6.6,
+    "exposure_days": 256,
+    "label": 2
+  },
+  {
+    "ip": "42.131.120.104",
+    "org": "SmallCorp Inc.",
+    "country": "JP",
+    "num_open_ports": 8,
+    "cve_count": 0,
+    "max_cvss": 1.9,
+    "exposure_days": 82,
+    "label": 0
+  },
+  {
+    "ip": "112.216.18.52",
+    "org": "SmallCorp Inc.",
+    "country": "FR",
+    "num_open_ports": 1,
+    "cve_count": 2,
+    "max_cvss": 1.4,
+    "exposure_days": 71,
+    "label": 0
+  },
+  {
+    "ip": "219.21.248.201",
+    "org": "University IT",
+    "country": "AU",
+    "num_open_ports": 1,
+    "cve_count": 3,
+    "max_cvss": 3.0,
+    "exposure_days": 82,
+    "label": 0
+  },
+  {
+    "ip": "24.203.71.61",
+    "org": "SmallCorp Inc.",
+    "country": "SE",
+    "num_open_ports": 9,
+    "cve_count": 1,
+    "max_cvss": 3.9,
+    "exposure_days": 46,
+    "label": 0
+  },
+  {
+    "ip": "128.46.121.154",
+    "org": "SmallCorp Inc.",
+    "country": "BR",
+    "num_open_ports": 7,
+    "cve_count": 1,
+    "max_cvss": 2.8,
+    "exposure_days": 32,
+    "label": 0
+  },
+  {
+    "ip": "109.111.73.28",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 8,
+    "cve_count": 1,
+    "max_cvss": 2.0,
+    "exposure_days": 30,
+    "label": 0
+  },
+  {
+    "ip": "96.57.162.140",
+    "org": "Managed Hosting",
+    "country": "CN",
+    "num_open_ports": 12,
+    "cve_count": 0,
+    "max_cvss": 2.7,
+    "exposure_days": 68,
+    "label": 0
+  },
+  {
+    "ip": "211.157.10.166",
+    "org": "University IT",
+    "country": "AU",
+    "num_open_ports": 6,
+    "cve_count": 4,
+    "max_cvss": 1.8,
+    "exposure_days": 47,
+    "label": 0
+  },
+  {
+    "ip": "142.196.158.164",
+    "org": "ISP Backbone",
+    "country": "NL",
+    "num_open_ports": 127,
+    "cve_count": 186,
+    "max_cvss": 9.6,
+    "exposure_days": 1405,
+    "label": 2
+  },
+  {
+    "ip": "3.201.130.78",
+    "org": "Retail POS",
+    "country": "CN",
+    "num_open_ports": 6,
+    "cve_count": 1,
+    "max_cvss": 3.7,
+    "exposure_days": 272,
+    "label": 0
+  },
+  {
+    "ip": "82.208.17.71",
+    "org": "Retail POS",
+    "country": "NL",
+    "num_open_ports": 8,
+    "cve_count": 0,
+    "max_cvss": 4.0,
+    "exposure_days": 80,
+    "label": 0
+  },
+  {
+    "ip": "67.33.180.108",
+    "org": "Linode",
+    "country": "CA",
+    "num_open_ports": 5432,
+    "cve_count": 21,
+    "max_cvss": 4.3,
+    "exposure_days": 725,
+    "label": 2
+  },
+  {
+    "ip": "48.227.69.1",
+    "org": "University IT",
+    "country": "IN",
+    "num_open_ports": 8,
+    "cve_count": 1,
+    "max_cvss": 3.6,
+    "exposure_days": 82,
+    "label": 0
+  },
+  {
+    "ip": "196.66.210.203",
+    "org": "University IT",
+    "country": "RU",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 0.9,
+    "exposure_days": 83,
+    "label": 0
+  },
+  {
+    "ip": "84.144.101.22",
+    "org": "Edge Provider",
+    "country": "CA",
+    "num_open_ports": 6,
+    "cve_count": 2,
+    "max_cvss": 1.8,
+    "exposure_days": 733,
+    "label": 0
+  },
+  {
+    "ip": "166.117.45.250",
+    "org": "Managed Hosting",
+    "country": "CA",
+    "num_open_ports": 2,
+    "cve_count": 4,
+    "max_cvss": 1.0,
+    "exposure_days": 71,
+    "label": 0
+  },
+  {
+    "ip": "23.188.87.243",
+    "org": "Retail POS",
+    "country": "US",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 1.9,
+    "exposure_days": 19,
+    "label": 0
+  },
+  {
+    "ip": "31.114.104.49",
+    "org": "Managed Hosting",
+    "country": "AU",
+    "num_open_ports": 1,
+    "cve_count": 4,
+    "max_cvss": 2.2,
+    "exposure_days": 63,
+    "label": 0
+  },
+  {
+    "ip": "220.105.110.211",
+    "org": "ISP Backbone",
+    "country": "CN",
+    "num_open_ports": 236,
+    "cve_count": 83,
+    "max_cvss": 8.7,
+    "exposure_days": 812,
+    "label": 2
+  },
+  {
+    "ip": "61.230.127.95",
+    "org": "Managed Hosting",
+    "country": "GB",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 0.7,
+    "exposure_days": 33,
+    "label": 0
+  },
+  {
+    "ip": "176.108.196.182",
+    "org": "SmallCorp Inc.",
+    "country": "US",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 4.1,
+    "exposure_days": 50,
+    "label": 0
+  },
+  {
+    "ip": "91.23.2.65",
+    "org": "SmallCorp Inc.",
+    "country": "DE",
+    "num_open_ports": 5,
+    "cve_count": 1,
+    "max_cvss": 0.2,
+    "exposure_days": 60,
+    "label": 0
+  },
+  {
+    "ip": "149.91.133.44",
+    "org": "Managed Hosting",
+    "country": "JP",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 4.6,
+    "exposure_days": 5,
+    "label": 0
+  },
+  {
+    "ip": "67.59.160.12",
+    "org": "Managed Hosting",
+    "country": "GB",
+    "num_open_ports": 10,
+    "cve_count": 0,
+    "max_cvss": 3.2,
+    "exposure_days": 18,
+    "label": 0
+  },
+  {
+    "ip": "213.135.160.112",
+    "org": "Retail POS",
+    "country": "RU",
+    "num_open_ports": 3,
+    "cve_count": 5,
+    "max_cvss": 6.5,
+    "exposure_days": 319,
+    "label": 0
+  },
+  {
+    "ip": "49.76.27.59",
+    "org": "Managed Hosting",
+    "country": "AU",
+    "num_open_ports": 143,
+    "cve_count": 60,
+    "max_cvss": 8.3,
+    "exposure_days": 64,
+    "label": 2
+  },
+  {
+    "ip": "114.182.248.118",
+    "org": "Retail POS",
+    "country": "SG",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 0.5,
+    "exposure_days": 5,
+    "label": 0
+  },
+  {
+    "ip": "214.86.139.145",
+    "org": "Retail POS",
+    "country": "DE",
+    "num_open_ports": 8,
+    "cve_count": 0,
+    "max_cvss": 0.9,
+    "exposure_days": 23,
+    "label": 0
+  },
+  {
+    "ip": "25.168.13.73",
+    "org": "Amazon AWS",
+    "country": "BR",
+    "num_open_ports": 53,
+    "cve_count": 49,
+    "max_cvss": 6.1,
+    "exposure_days": 703,
+    "label": 2
+  },
+  {
+    "ip": "117.137.2.85",
+    "org": "Google Cloud",
+    "country": "CA",
+    "num_open_ports": 20,
+    "cve_count": 20,
+    "max_cvss": 9.4,
+    "exposure_days": 501,
+    "label": 2
+  },
+  {
+    "ip": "221.24.144.83",
+    "org": "ISP Backbone",
+    "country": "FR",
+    "num_open_ports": 331,
+    "cve_count": 93,
+    "max_cvss": 9.7,
+    "exposure_days": 1195,
+    "label": 2
+  },
+  {
+    "ip": "6.106.83.100",
+    "org": "Linode",
+    "country": "DE",
+    "num_open_ports": 16,
+    "cve_count": 25,
+    "max_cvss": 5.2,
+    "exposure_days": 101,
+    "label": 1
+  },
+  {
+    "ip": "155.67.183.171",
+    "org": "Microsoft Azure",
+    "country": "DE",
+    "num_open_ports": 110,
+    "cve_count": 19,
+    "max_cvss": 6.2,
+    "exposure_days": 711,
+    "label": 1
+  },
+  {
+    "ip": "154.216.46.194",
+    "org": "Retail POS",
+    "country": "IN",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 1.7,
+    "exposure_days": 72,
+    "label": 0
+  },
+  {
+    "ip": "119.114.79.239",
+    "org": "Retail POS",
+    "country": "CN",
+    "num_open_ports": 3,
+    "cve_count": 1,
+    "max_cvss": 0.6,
+    "exposure_days": 43,
+    "label": 0
+  },
+  {
+    "ip": "39.65.153.216",
+    "org": "SmallCorp Inc.",
+    "country": "NL",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 0.4,
+    "exposure_days": 38,
+    "label": 0
+  },
+  {
+    "ip": "109.211.48.119",
+    "org": "SmallCorp Inc.",
+    "country": "BR",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 0.2,
+    "exposure_days": 65,
+    "label": 0
+  },
+  {
+    "ip": "107.152.160.151",
+    "org": "Google Cloud",
+    "country": "AU",
+    "num_open_ports": 443,
+    "cve_count": 32,
+    "max_cvss": 6.2,
+    "exposure_days": 412,
+    "label": 2
+  },
+  {
+    "ip": "67.54.222.137",
+    "org": "OVH",
+    "country": "SE",
+    "num_open_ports": 3306,
+    "cve_count": 58,
+    "max_cvss": 7.1,
+    "exposure_days": 628,
+    "label": 2
+  },
+  {
+    "ip": "191.249.155.159",
+    "org": "SmallCorp Inc.",
+    "country": "GB",
+    "num_open_ports": 3,
+    "cve_count": 1,
+    "max_cvss": 2.1,
+    "exposure_days": 84,
+    "label": 0
+  },
+  {
+    "ip": "49.13.107.124",
+    "org": "Linode",
+    "country": "AU",
+    "num_open_ports": 3389,
+    "cve_count": 19,
+    "max_cvss": 0.5,
+    "exposure_days": 722,
+    "label": 2
+  },
+  {
+    "ip": "78.237.75.122",
+    "org": "Managed Hosting",
+    "country": "CA",
+    "num_open_ports": 6,
+    "cve_count": 1,
+    "max_cvss": 3.6,
+    "exposure_days": 11,
+    "label": 0
+  },
+  {
+    "ip": "221.230.124.52",
+    "org": "Retail POS",
+    "country": "SG",
+    "num_open_ports": 1,
+    "cve_count": 2,
+    "max_cvss": 4.3,
+    "exposure_days": 2,
+    "label": 0
+  },
+  {
+    "ip": "107.253.148.10",
+    "org": "Managed Hosting",
+    "country": "US",
+    "num_open_ports": 8,
+    "cve_count": 0,
+    "max_cvss": 0.7,
+    "exposure_days": 55,
+    "label": 0
+  },
+  {
+    "ip": "81.32.137.229",
+    "org": "Managed Hosting",
+    "country": "FR",
+    "num_open_ports": 4,
+    "cve_count": 2,
+    "max_cvss": 2.4,
+    "exposure_days": 73,
+    "label": 0
+  },
+  {
+    "ip": "112.10.82.74",
+    "org": "SmallCorp Inc.",
+    "country": "IN",
+    "num_open_ports": 9,
+    "cve_count": 1,
+    "max_cvss": 2.9,
+    "exposure_days": 89,
+    "label": 0
+  },
+  {
+    "ip": "120.67.150.186",
+    "org": "DigitalOcean",
+    "country": "BR",
+    "num_open_ports": 5432,
+    "cve_count": 14,
+    "max_cvss": 9.7,
+    "exposure_days": 682,
+    "label": 2
+  },
+  {
+    "ip": "23.247.66.45",
+    "org": "Hetzner",
+    "country": "AU",
+    "num_open_ports": 8443,
+    "cve_count": 30,
+    "max_cvss": 8.2,
+    "exposure_days": 717,
+    "label": 2
+  },
+  {
+    "ip": "54.24.9.92",
+    "org": "SmallCorp Inc.",
+    "country": "AU",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 4.5,
+    "exposure_days": 30,
+    "label": 0
+  },
+  {
+    "ip": "31.114.249.67",
+    "org": "Microsoft Azure",
+    "country": "CA",
+    "num_open_ports": 3389,
+    "cve_count": 55,
+    "max_cvss": 8.3,
+    "exposure_days": 126,
+    "label": 2
+  },
+  {
+    "ip": "13.224.234.247",
+    "org": "Security Lab",
+    "country": "SG",
+    "num_open_ports": 123,
+    "cve_count": 152,
+    "max_cvss": 6.3,
+    "exposure_days": 339,
+    "label": 2
+  },
+  {
+    "ip": "75.226.255.188",
+    "org": "Google Cloud",
+    "country": "CA",
+    "num_open_ports": 20,
+    "cve_count": 35,
+    "max_cvss": 6.6,
+    "exposure_days": 380,
+    "label": 2
+  },
+  {
+    "ip": "214.242.174.74",
+    "org": "Hetzner",
+    "country": "CA",
+    "num_open_ports": 22,
+    "cve_count": 8,
+    "max_cvss": 0.7,
+    "exposure_days": 261,
+    "label": 0
+  },
+  {
+    "ip": "39.215.116.36",
+    "org": "University IT",
+    "country": "SG",
+    "num_open_ports": 1,
+    "cve_count": 2,
+    "max_cvss": 1.8,
+    "exposure_days": 31,
+    "label": 0
+  },
+  {
+    "ip": "207.35.43.87",
+    "org": "Managed Hosting",
+    "country": "CA",
+    "num_open_ports": 8443,
+    "cve_count": 33,
+    "max_cvss": 6.0,
+    "exposure_days": 798,
+    "label": 2
+  },
+  {
+    "ip": "39.29.151.108",
+    "org": "Retail POS",
+    "country": "CN",
+    "num_open_ports": 15,
+    "cve_count": 0,
+    "max_cvss": 3.6,
+    "exposure_days": 82,
+    "label": 0
+  },
+  {
+    "ip": "136.75.206.115",
+    "org": "University IT",
+    "country": "SG",
+    "num_open_ports": 6,
+    "cve_count": 2,
+    "max_cvss": 4.1,
+    "exposure_days": 35,
+    "label": 0
+  },
+  {
+    "ip": "199.101.154.22",
+    "org": "Managed Hosting",
+    "country": "SG",
+    "num_open_ports": 9,
+    "cve_count": 0,
+    "max_cvss": 3.9,
+    "exposure_days": 51,
+    "label": 0
+  },
+  {
+    "ip": "142.159.174.194",
+    "org": "Retail POS",
+    "country": "BR",
+    "num_open_ports": 3,
+    "cve_count": 5,
+    "max_cvss": 1.3,
+    "exposure_days": 65,
+    "label": 0
+  },
+  {
+    "ip": "29.30.190.67",
+    "org": "University IT",
+    "country": "FR",
+    "num_open_ports": 1,
+    "cve_count": 3,
+    "max_cvss": 1.4,
+    "exposure_days": 64,
+    "label": 0
+  },
+  {
+    "ip": "189.2.232.87",
+    "org": "SmallCorp Inc.",
+    "country": "AU",
+    "num_open_ports": 3,
+    "cve_count": 1,
+    "max_cvss": 0.6,
+    "exposure_days": 73,
+    "label": 0
+  },
+  {
+    "ip": "77.145.71.183",
+    "org": "ISP Backbone",
+    "country": "SE",
+    "num_open_ports": 397,
+    "cve_count": 154,
+    "max_cvss": 8.6,
+    "exposure_days": 1315,
+    "label": 2
+  },
+  {
+    "ip": "26.75.217.213",
+    "org": "SmallCorp Inc.",
+    "country": "SE",
+    "num_open_ports": 7,
+    "cve_count": 1,
+    "max_cvss": 0.9,
+    "exposure_days": 58,
+    "label": 0
+  },
+  {
+    "ip": "135.206.202.224",
+    "org": "Managed Hosting",
+    "country": "GB",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 2.0,
+    "exposure_days": 86,
+    "label": 0
+  },
+  {
+    "ip": "211.83.73.130",
+    "org": "Managed Hosting",
+    "country": "IN",
+    "num_open_ports": 4,
+    "cve_count": 1,
+    "max_cvss": 4.5,
+    "exposure_days": 53,
+    "label": 0
+  },
+  {
+    "ip": "117.242.16.192",
+    "org": "Retail POS",
+    "country": "SG",
+    "num_open_ports": 6,
+    "cve_count": 1,
+    "max_cvss": 2.6,
+    "exposure_days": 27,
+    "label": 0
+  },
+  {
+    "ip": "75.20.78.31",
+    "org": "SmallCorp Inc.",
+    "country": "RU",
+    "num_open_ports": 5,
+    "cve_count": 3,
+    "max_cvss": 0.5,
+    "exposure_days": 73,
+    "label": 0
+  },
+  {
+    "ip": "108.24.156.228",
+    "org": "University IT",
+    "country": "NL",
+    "num_open_ports": 15,
+    "cve_count": 0,
+    "max_cvss": 3.6,
+    "exposure_days": 75,
+    "label": 0
+  },
+  {
+    "ip": "124.158.231.231",
+    "org": "Managed Hosting",
+    "country": "US",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 1.6,
+    "exposure_days": 53,
+    "label": 0
+  },
+  {
+    "ip": "115.76.166.23",
+    "org": "Retail POS",
+    "country": "AU",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 2.9,
+    "exposure_days": 85,
+    "label": 0
+  },
+  {
+    "ip": "23.84.12.147",
+    "org": "Linode",
+    "country": "SE",
+    "num_open_ports": 8443,
+    "cve_count": 34,
+    "max_cvss": 7.4,
+    "exposure_days": 671,
+    "label": 2
+  },
+  {
+    "ip": "159.27.96.193",
+    "org": "University IT",
+    "country": "BR",
+    "num_open_ports": 7,
+    "cve_count": 1,
+    "max_cvss": 2.9,
+    "exposure_days": 24,
+    "label": 0
+  },
+  {
+    "ip": "202.105.125.213",
+    "org": "SmallCorp Inc.",
+    "country": "JP",
+    "num_open_ports": 9,
+    "cve_count": 4,
+    "max_cvss": 0.8,
+    "exposure_days": 35,
+    "label": 0
+  },
+  {
+    "ip": "107.12.162.98",
+    "org": "Hetzner",
+    "country": "CN",
+    "num_open_ports": 3306,
+    "cve_count": 37,
+    "max_cvss": 8.3,
+    "exposure_days": 194,
+    "label": 2
+  },
+  {
+    "ip": "40.157.208.174",
+    "org": "SmallCorp Inc.",
+    "country": "BR",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 0.6,
+    "exposure_days": 11,
+    "label": 0
+  },
+  {
+    "ip": "82.72.211.229",
+    "org": "University IT",
+    "country": "GB",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 0.3,
+    "exposure_days": 12,
+    "label": 0
+  },
+  {
+    "ip": "131.197.58.69",
+    "org": "SmallCorp Inc.",
+    "country": "US",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 3.6,
+    "exposure_days": 30,
+    "label": 0
+  },
+  {
+    "ip": "69.51.126.196",
+    "org": "Managed Hosting",
+    "country": "DE",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 1.8,
+    "exposure_days": 2,
+    "label": 0
+  },
+  {
+    "ip": "53.72.191.139",
+    "org": "University IT",
+    "country": "RU",
+    "num_open_ports": 7,
+    "cve_count": 0,
+    "max_cvss": 0.6,
+    "exposure_days": 64,
+    "label": 0
+  },
+  {
+    "ip": "1.237.148.168",
+    "org": "Cloudflare",
+    "country": "US",
+    "num_open_ports": 375,
+    "cve_count": 118,
+    "max_cvss": 9.8,
+    "exposure_days": 1166,
+    "label": 2
+  },
+  {
+    "ip": "90.108.144.12",
+    "org": "Edge Provider",
+    "country": "CN",
+    "num_open_ports": 4,
+    "cve_count": 4,
+    "max_cvss": 4.2,
+    "exposure_days": 889,
+    "label": 0
+  },
+  {
+    "ip": "72.221.107.157",
+    "org": "SmallCorp Inc.",
+    "country": "NL",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 3.1,
+    "exposure_days": 71,
+    "label": 0
+  },
+  {
+    "ip": "63.164.174.54",
+    "org": "University IT",
+    "country": "JP",
+    "num_open_ports": 8,
+    "cve_count": 0,
+    "max_cvss": 3.4,
+    "exposure_days": 34,
+    "label": 0
+  },
+  {
+    "ip": "2.4.88.106",
+    "org": "SmallCorp Inc.",
+    "country": "SG",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 4.4,
+    "exposure_days": 60,
+    "label": 0
+  },
+  {
+    "ip": "20.15.227.173",
+    "org": "Managed Hosting",
+    "country": "AU",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 0.6,
+    "exposure_days": 83,
+    "label": 0
+  },
+  {
+    "ip": "32.236.189.240",
+    "org": "Managed Hosting",
+    "country": "CA",
+    "num_open_ports": 12,
+    "cve_count": 1,
+    "max_cvss": 1.9,
+    "exposure_days": 1,
+    "label": 0
+  },
+  {
+    "ip": "24.155.113.60",
+    "org": "SmallCorp Inc.",
+    "country": "AU",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 4.1,
+    "exposure_days": 24,
+    "label": 0
+  },
+  {
+    "ip": "51.202.56.223",
+    "org": "ISP Backbone",
+    "country": "US",
+    "num_open_ports": 118,
+    "cve_count": 81,
+    "max_cvss": 7.5,
+    "exposure_days": 1471,
+    "label": 2
+  },
+  {
+    "ip": "155.89.33.151",
+    "org": "Retail POS",
+    "country": "BR",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 3.5,
+    "exposure_days": 87,
+    "label": 0
+  },
+  {
+    "ip": "50.11.129.175",
+    "org": "University IT",
+    "country": "RU",
+    "num_open_ports": 1,
+    "cve_count": 3,
+    "max_cvss": 4.2,
+    "exposure_days": 35,
+    "label": 0
+  },
+  {
+    "ip": "217.208.140.32",
+    "org": "Managed Hosting",
+    "country": "JP",
+    "num_open_ports": 4,
+    "cve_count": 1,
+    "max_cvss": 2.9,
+    "exposure_days": 55,
+    "label": 0
+  },
+  {
+    "ip": "101.99.171.21",
+    "org": "Amazon AWS",
+    "country": "SG",
+    "num_open_ports": 3306,
+    "cve_count": 14,
+    "max_cvss": 8.6,
+    "exposure_days": 15,
+    "label": 2
+  },
+  {
+    "ip": "17.49.14.123",
+    "org": "DigitalOcean",
+    "country": "SG",
+    "num_open_ports": 10,
+    "cve_count": 27,
+    "max_cvss": 8.6,
+    "exposure_days": 328,
+    "label": 1
+  },
+  {
+    "ip": "214.27.170.134",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 0.5,
+    "exposure_days": 43,
+    "label": 0
+  },
+  {
+    "ip": "97.160.33.201",
+    "org": "Managed Hosting",
+    "country": "AU",
+    "num_open_ports": 16,
+    "cve_count": 6,
+    "max_cvss": 3.8,
+    "exposure_days": 44,
+    "label": 0
+  },
+  {
+    "ip": "174.28.26.76",
+    "org": "Managed Hosting",
+    "country": "US",
+    "num_open_ports": 10,
+    "cve_count": 0,
+    "max_cvss": 2.8,
+    "exposure_days": 13,
+    "label": 0
+  },
+  {
+    "ip": "204.219.51.87",
+    "org": "Linode",
+    "country": "FR",
+    "num_open_ports": 8080,
+    "cve_count": 55,
+    "max_cvss": 7.3,
+    "exposure_days": 485,
+    "label": 2
+  },
+  {
+    "ip": "147.64.131.91",
+    "org": "Hetzner",
+    "country": "RU",
+    "num_open_ports": 10,
+    "cve_count": 12,
+    "max_cvss": 9.0,
+    "exposure_days": 208,
+    "label": 2
+  },
+  {
+    "ip": "80.223.183.80",
+    "org": "Managed Hosting",
+    "country": "GB",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 3.6,
+    "exposure_days": 16,
+    "label": 0
+  },
+  {
+    "ip": "3.74.29.61",
+    "org": "Retail POS",
+    "country": "GB",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 2.7,
+    "exposure_days": 47,
+    "label": 0
+  },
+  {
+    "ip": "202.35.174.49",
+    "org": "SmallCorp Inc.",
+    "country": "CN",
+    "num_open_ports": 8,
+    "cve_count": 0,
+    "max_cvss": 4.6,
+    "exposure_days": 25,
+    "label": 0
+  },
+  {
+    "ip": "203.21.253.57",
+    "org": "Hetzner",
+    "country": "CA",
+    "num_open_ports": 3306,
+    "cve_count": 37,
+    "max_cvss": 6.4,
+    "exposure_days": 176,
+    "label": 2
+  },
+  {
+    "ip": "197.169.192.53",
+    "org": "Cloudflare",
+    "country": "SG",
+    "num_open_ports": 217,
+    "cve_count": 129,
+    "max_cvss": 8.1,
+    "exposure_days": 519,
+    "label": 2
+  },
+  {
+    "ip": "37.148.225.50",
+    "org": "SmallCorp Inc.",
+    "country": "SE",
+    "num_open_ports": 8,
+    "cve_count": 0,
+    "max_cvss": 1.8,
+    "exposure_days": 14,
+    "label": 0
+  },
+  {
+    "ip": "57.134.89.87",
+    "org": "University IT",
+    "country": "US",
+    "num_open_ports": 10,
+    "cve_count": 5,
+    "max_cvss": 0.9,
+    "exposure_days": 22,
+    "label": 0
+  },
+  {
+    "ip": "29.173.107.79",
+    "org": "Amazon AWS",
+    "country": "GB",
+    "num_open_ports": 80,
+    "cve_count": 53,
+    "max_cvss": 8.5,
+    "exposure_days": 398,
+    "label": 2
+  },
+  {
+    "ip": "183.33.60.37",
+    "org": "University IT",
+    "country": "JP",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 2.6,
+    "exposure_days": 55,
+    "label": 0
+  },
+  {
+    "ip": "12.96.150.203",
+    "org": "DigitalOcean",
+    "country": "BR",
+    "num_open_ports": 22,
+    "cve_count": 24,
+    "max_cvss": 8.0,
+    "exposure_days": 260,
+    "label": 1
+  },
+  {
+    "ip": "54.41.240.203",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 2.5,
+    "exposure_days": 62,
+    "label": 0
+  },
+  {
+    "ip": "83.191.247.184",
+    "org": "Linode",
+    "country": "AU",
+    "num_open_ports": 16,
+    "cve_count": 56,
+    "max_cvss": 6.5,
+    "exposure_days": 193,
+    "label": 2
+  },
+  {
+    "ip": "54.112.103.116",
+    "org": "Edge Provider",
+    "country": "JP",
+    "num_open_ports": 5,
+    "cve_count": 6,
+    "max_cvss": 4.5,
+    "exposure_days": 839,
+    "label": 0
+  },
+  {
+    "ip": "76.227.180.59",
+    "org": "Linode",
+    "country": "CN",
+    "num_open_ports": 8080,
+    "cve_count": 36,
+    "max_cvss": 8.9,
+    "exposure_days": 147,
+    "label": 2
+  },
+  {
+    "ip": "82.139.195.7",
+    "org": "University IT",
+    "country": "CN",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 1.9,
+    "exposure_days": 63,
+    "label": 0
+  },
+  {
+    "ip": "140.40.141.238",
+    "org": "SmallCorp Inc.",
+    "country": "SE",
+    "num_open_ports": 2,
+    "cve_count": 4,
+    "max_cvss": 1.5,
+    "exposure_days": 65,
+    "label": 0
+  },
+  {
+    "ip": "65.154.140.49",
+    "org": "University IT",
+    "country": "US",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 1.7,
+    "exposure_days": 42,
+    "label": 0
+  },
+  {
+    "ip": "211.6.241.168",
+    "org": "OVH",
+    "country": "US",
+    "num_open_ports": 22,
+    "cve_count": 49,
+    "max_cvss": 8.1,
+    "exposure_days": 425,
+    "label": 2
+  },
+  {
+    "ip": "122.119.239.185",
+    "org": "Retail POS",
+    "country": "CA",
+    "num_open_ports": 7,
+    "cve_count": 0,
+    "max_cvss": 1.2,
+    "exposure_days": 26,
+    "label": 0
+  },
+  {
+    "ip": "219.15.191.36",
+    "org": "Hetzner",
+    "country": "CA",
+    "num_open_ports": 143,
+    "cve_count": 12,
+    "max_cvss": 8.7,
+    "exposure_days": 470,
+    "label": 1
+  },
+  {
+    "ip": "108.217.206.196",
+    "org": "SmallCorp Inc.",
+    "country": "IN",
+    "num_open_ports": 1,
+    "cve_count": 3,
+    "max_cvss": 3.8,
+    "exposure_days": 28,
+    "label": 0
+  },
+  {
+    "ip": "155.200.195.53",
+    "org": "Amazon AWS",
+    "country": "RU",
+    "num_open_ports": 27017,
+    "cve_count": 50,
+    "max_cvss": 8.4,
+    "exposure_days": 591,
+    "label": 2
+  },
+  {
+    "ip": "164.155.47.44",
+    "org": "Edge Provider",
+    "country": "IN",
+    "num_open_ports": 4,
+    "cve_count": 3,
+    "max_cvss": 3.3,
+    "exposure_days": 366,
+    "label": 0
+  },
+  {
+    "ip": "18.197.145.53",
+    "org": "SmallCorp Inc.",
+    "country": "CA",
+    "num_open_ports": 5,
+    "cve_count": 1,
+    "max_cvss": 2.2,
+    "exposure_days": 25,
+    "label": 0
+  },
+  {
+    "ip": "221.210.200.41",
+    "org": "SmallCorp Inc.",
+    "country": "IN",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 2.3,
+    "exposure_days": 41,
+    "label": 0
+  },
+  {
+    "ip": "223.105.158.111",
+    "org": "Factory IoT",
+    "country": "GB",
+    "num_open_ports": 4,
+    "cve_count": 7,
+    "max_cvss": 5.2,
+    "exposure_days": 428,
+    "label": 0
+  },
+  {
+    "ip": "115.32.204.155",
+    "org": "OVH",
+    "country": "RU",
+    "num_open_ports": 5432,
+    "cve_count": 12,
+    "max_cvss": 3.0,
+    "exposure_days": 156,
+    "label": 2
+  },
+  {
+    "ip": "180.152.200.157",
+    "org": "Managed Hosting",
+    "country": "IN",
+    "num_open_ports": 6379,
+    "cve_count": 29,
+    "max_cvss": 7.7,
+    "exposure_days": 365,
+    "label": 2
+  },
+  {
+    "ip": "25.201.22.62",
+    "org": "Microsoft Azure",
+    "country": "RU",
+    "num_open_ports": 25,
+    "cve_count": 46,
+    "max_cvss": 8.8,
+    "exposure_days": 592,
+    "label": 2
+  },
+  {
+    "ip": "196.62.188.20",
+    "org": "OVH",
+    "country": "JP",
+    "num_open_ports": 25,
+    "cve_count": 58,
+    "max_cvss": 7.6,
+    "exposure_days": 431,
+    "label": 2
+  },
+  {
+    "ip": "164.236.195.88",
+    "org": "Hetzner",
+    "country": "CN",
+    "num_open_ports": 6379,
+    "cve_count": 28,
+    "max_cvss": 1.0,
+    "exposure_days": 84,
+    "label": 2
+  },
+  {
+    "ip": "119.34.42.141",
+    "org": "Amazon AWS",
+    "country": "NL",
+    "num_open_ports": 53,
+    "cve_count": 7,
+    "max_cvss": 4.7,
+    "exposure_days": 506,
+    "label": 1
+  },
+  {
+    "ip": "137.200.86.20",
+    "org": "OVH",
+    "country": "CA",
+    "num_open_ports": 3306,
+    "cve_count": 10,
+    "max_cvss": 4.1,
+    "exposure_days": 137,
+    "label": 2
+  },
+  {
+    "ip": "114.24.52.100",
+    "org": "Microsoft Azure",
+    "country": "IN",
+    "num_open_ports": 10,
+    "cve_count": 22,
+    "max_cvss": 9.6,
+    "exposure_days": 231,
+    "label": 2
+  },
+  {
+    "ip": "108.14.7.87",
+    "org": "Amazon AWS",
+    "country": "US",
+    "num_open_ports": 3306,
+    "cve_count": 49,
+    "max_cvss": 6.3,
+    "exposure_days": 214,
+    "label": 2
+  },
+  {
+    "ip": "84.165.97.160",
+    "org": "Google Cloud",
+    "country": "AU",
+    "num_open_ports": 16,
+    "cve_count": 53,
+    "max_cvss": 6.4,
+    "exposure_days": 534,
+    "label": 2
+  },
+  {
+    "ip": "4.205.161.4",
+    "org": "Managed Hosting",
+    "country": "DE",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 0.5,
+    "exposure_days": 22,
+    "label": 0
+  },
+  {
+    "ip": "18.111.210.78",
+    "org": "SmallCorp Inc.",
+    "country": "JP",
+    "num_open_ports": 4,
+    "cve_count": 3,
+    "max_cvss": 2.9,
+    "exposure_days": 5,
+    "label": 0
+  },
+  {
+    "ip": "154.166.198.174",
+    "org": "Google Cloud",
+    "country": "SG",
+    "num_open_ports": 5432,
+    "cve_count": 34,
+    "max_cvss": 8.6,
+    "exposure_days": 107,
+    "label": 2
+  },
+  {
+    "ip": "18.171.9.156",
+    "org": "Akamai",
+    "country": "CA",
+    "num_open_ports": 168,
+    "cve_count": 95,
+    "max_cvss": 8.5,
+    "exposure_days": 1438,
+    "label": 2
+  },
+  {
+    "ip": "6.63.158.61",
+    "org": "Factory IoT",
+    "country": "FR",
+    "num_open_ports": 5,
+    "cve_count": 3,
+    "max_cvss": 3.5,
+    "exposure_days": 751,
+    "label": 0
+  },
+  {
+    "ip": "61.227.168.35",
+    "org": "Amazon AWS",
+    "country": "GB",
+    "num_open_ports": 80,
+    "cve_count": 23,
+    "max_cvss": 7.8,
+    "exposure_days": 48,
+    "label": 1
+  },
+  {
+    "ip": "59.169.175.63",
+    "org": "SmallCorp Inc.",
+    "country": "BR",
+    "num_open_ports": 6,
+    "cve_count": 2,
+    "max_cvss": 1.9,
+    "exposure_days": 3,
+    "label": 0
+  },
+  {
+    "ip": "134.164.93.114",
+    "org": "Retail POS",
+    "country": "AU",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 3.4,
+    "exposure_days": 48,
+    "label": 0
+  },
+  {
+    "ip": "33.46.88.152",
+    "org": "Managed Hosting",
+    "country": "DE",
+    "num_open_ports": 1,
+    "cve_count": 5,
+    "max_cvss": 0.2,
+    "exposure_days": 26,
+    "label": 0
+  },
+  {
+    "ip": "43.101.125.109",
+    "org": "Retail POS",
+    "country": "FR",
+    "num_open_ports": 7,
+    "cve_count": 1,
+    "max_cvss": 1.9,
+    "exposure_days": 39,
+    "label": 0
+  },
+  {
+    "ip": "21.184.203.97",
+    "org": "University IT",
+    "country": "RU",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 2.9,
+    "exposure_days": 61,
+    "label": 0
+  },
+  {
+    "ip": "196.195.218.219",
+    "org": "Managed Hosting",
+    "country": "AU",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 4.3,
+    "exposure_days": 2,
+    "label": 0
+  },
+  {
+    "ip": "98.237.156.117",
+    "org": "University IT",
+    "country": "RU",
+    "num_open_ports": 9,
+    "cve_count": 1,
+    "max_cvss": 2.5,
+    "exposure_days": 32,
+    "label": 0
+  },
+  {
+    "ip": "49.2.6.221",
+    "org": "Managed Hosting",
+    "country": "DE",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 3.2,
+    "exposure_days": 19,
+    "label": 0
+  },
+  {
+    "ip": "99.250.157.165",
+    "org": "Managed Hosting",
+    "country": "CN",
+    "num_open_ports": 6,
+    "cve_count": 4,
+    "max_cvss": 4.4,
+    "exposure_days": 47,
+    "label": 0
+  },
+  {
+    "ip": "196.223.130.198",
+    "org": "Factory IoT",
+    "country": "FR",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 2.7,
+    "exposure_days": 609,
+    "label": 0
+  },
+  {
+    "ip": "15.197.217.189",
+    "org": "Akamai",
+    "country": "SG",
+    "num_open_ports": 360,
+    "cve_count": 191,
+    "max_cvss": 7.4,
+    "exposure_days": 1440,
+    "label": 2
+  },
+  {
+    "ip": "38.133.233.242",
+    "org": "University IT",
+    "country": "JP",
+    "num_open_ports": 4,
+    "cve_count": 2,
+    "max_cvss": 0.3,
+    "exposure_days": 82,
+    "label": 0
+  },
+  {
+    "ip": "151.41.96.225",
+    "org": "Microsoft Azure",
+    "country": "US",
+    "num_open_ports": 443,
+    "cve_count": 7,
+    "max_cvss": 7.2,
+    "exposure_days": 733,
+    "label": 2
+  },
+  {
+    "ip": "151.157.210.193",
+    "org": "University IT",
+    "country": "SG",
+    "num_open_ports": 8,
+    "cve_count": 0,
+    "max_cvss": 4.6,
+    "exposure_days": 48,
+    "label": 0
+  },
+  {
+    "ip": "2.86.251.1",
+    "org": "Hetzner",
+    "country": "CA",
+    "num_open_ports": 16,
+    "cve_count": 9,
+    "max_cvss": 9.1,
+    "exposure_days": 325,
+    "label": 2
+  },
+  {
+    "ip": "46.191.95.181",
+    "org": "Managed Hosting",
+    "country": "BR",
+    "num_open_ports": 7,
+    "cve_count": 0,
+    "max_cvss": 1.3,
+    "exposure_days": 21,
+    "label": 0
+  },
+  {
+    "ip": "47.98.132.252",
+    "org": "SmallCorp Inc.",
+    "country": "IN",
+    "num_open_ports": 4,
+    "cve_count": 1,
+    "max_cvss": 1.0,
+    "exposure_days": 7,
+    "label": 0
+  },
+  {
+    "ip": "22.193.63.71",
+    "org": "Factory IoT",
+    "country": "NL",
+    "num_open_ports": 6,
+    "cve_count": 1,
+    "max_cvss": 6.1,
+    "exposure_days": 200,
+    "label": 0
+  },
+  {
+    "ip": "69.3.21.25",
+    "org": "Retail POS",
+    "country": "IN",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 3.4,
+    "exposure_days": 7,
+    "label": 0
+  },
+  {
+    "ip": "122.172.219.87",
+    "org": "Managed Hosting",
+    "country": "RU",
+    "num_open_ports": 7,
+    "cve_count": 1,
+    "max_cvss": 4.3,
+    "exposure_days": 62,
+    "label": 0
+  },
+  {
+    "ip": "157.29.182.224",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 9,
+    "cve_count": 0,
+    "max_cvss": 1.6,
+    "exposure_days": 48,
+    "label": 0
+  },
+  {
+    "ip": "155.62.143.244",
+    "org": "Managed Hosting",
+    "country": "CA",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 3.3,
+    "exposure_days": 3,
+    "label": 0
+  },
+  {
+    "ip": "163.184.23.249",
+    "org": "Managed Hosting",
+    "country": "BR",
+    "num_open_ports": 80,
+    "cve_count": 26,
+    "max_cvss": 4.0,
+    "exposure_days": 27,
+    "label": 1
+  },
+  {
+    "ip": "220.51.197.76",
+    "org": "DigitalOcean",
+    "country": "RU",
+    "num_open_ports": 143,
+    "cve_count": 31,
+    "max_cvss": 7.1,
+    "exposure_days": 497,
+    "label": 2
+  },
+  {
+    "ip": "120.86.228.245",
+    "org": "SmallCorp Inc.",
+    "country": "GB",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 0.6,
+    "exposure_days": 70,
+    "label": 0
+  },
+  {
+    "ip": "23.54.222.184",
+    "org": "Retail POS",
+    "country": "FR",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 3.6,
+    "exposure_days": 89,
+    "label": 0
+  },
+  {
+    "ip": "122.63.69.237",
+    "org": "University IT",
+    "country": "CN",
+    "num_open_ports": 10,
+    "cve_count": 2,
+    "max_cvss": 1.0,
+    "exposure_days": 85,
+    "label": 0
+  },
+  {
+    "ip": "17.175.193.234",
+    "org": "SmallCorp Inc.",
+    "country": "AU",
+    "num_open_ports": 6,
+    "cve_count": 1,
+    "max_cvss": 4.1,
+    "exposure_days": 76,
+    "label": 0
+  },
+  {
+    "ip": "190.96.59.147",
+    "org": "Linode",
+    "country": "AU",
+    "num_open_ports": 8080,
+    "cve_count": 14,
+    "max_cvss": 1.3,
+    "exposure_days": 358,
+    "label": 2
+  },
+  {
+    "ip": "49.198.216.82",
+    "org": "Managed Hosting",
+    "country": "RU",
+    "num_open_ports": 8,
+    "cve_count": 2,
+    "max_cvss": 1.6,
+    "exposure_days": 68,
+    "label": 0
+  },
+  {
+    "ip": "128.233.75.154",
+    "org": "DigitalOcean",
+    "country": "DE",
+    "num_open_ports": 22,
+    "cve_count": 25,
+    "max_cvss": 8.3,
+    "exposure_days": 234,
+    "label": 1
+  },
+  {
+    "ip": "71.244.110.127",
+    "org": "SmallCorp Inc.",
+    "country": "RU",
+    "num_open_ports": 7,
+    "cve_count": 0,
+    "max_cvss": 2.5,
+    "exposure_days": 15,
+    "label": 0
+  },
+  {
+    "ip": "180.26.91.220",
+    "org": "SmallCorp Inc.",
+    "country": "AU",
+    "num_open_ports": 12,
+    "cve_count": 0,
+    "max_cvss": 3.7,
+    "exposure_days": 28,
+    "label": 0
+  },
+  {
+    "ip": "90.200.200.19",
+    "org": "Retail POS",
+    "country": "US",
+    "num_open_ports": 3,
+    "cve_count": 1,
+    "max_cvss": 1.7,
+    "exposure_days": 60,
+    "label": 0
+  },
+  {
+    "ip": "193.27.155.118",
+    "org": "Retail POS",
+    "country": "SG",
+    "num_open_ports": 2,
+    "cve_count": 3,
+    "max_cvss": 1.8,
+    "exposure_days": 41,
+    "label": 0
+  },
+  {
+    "ip": "3.185.52.174",
+    "org": "Managed Hosting",
+    "country": "NL",
+    "num_open_ports": 22,
+    "cve_count": 57,
+    "max_cvss": 9.1,
+    "exposure_days": 676,
+    "label": 2
+  },
+  {
+    "ip": "31.173.222.249",
+    "org": "Linode",
+    "country": "JP",
+    "num_open_ports": 22,
+    "cve_count": 53,
+    "max_cvss": 9.6,
+    "exposure_days": 193,
+    "label": 2
+  },
+  {
+    "ip": "153.88.192.199",
+    "org": "Retail POS",
+    "country": "US",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 1.8,
+    "exposure_days": 88,
+    "label": 0
+  },
+  {
+    "ip": "131.115.11.151",
+    "org": "Linode",
+    "country": "NL",
+    "num_open_ports": 16,
+    "cve_count": 40,
+    "max_cvss": 7.9,
+    "exposure_days": 134,
+    "label": 2
+  },
+  {
+    "ip": "124.222.152.147",
+    "org": "University IT",
+    "country": "SG",
+    "num_open_ports": 5,
+    "cve_count": 2,
+    "max_cvss": 3.6,
+    "exposure_days": 49,
+    "label": 0
+  },
+  {
+    "ip": "201.250.32.133",
+    "org": "Retail POS",
+    "country": "CN",
+    "num_open_ports": 2,
+    "cve_count": 3,
+    "max_cvss": 0.3,
+    "exposure_days": 68,
+    "label": 0
+  },
+  {
+    "ip": "47.2.228.205",
+    "org": "Google Cloud",
+    "country": "AU",
+    "num_open_ports": 27017,
+    "cve_count": 48,
+    "max_cvss": 6.9,
+    "exposure_days": 721,
+    "label": 2
+  },
+  {
+    "ip": "32.152.186.248",
+    "org": "Retail POS",
+    "country": "JP",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 2.5,
+    "exposure_days": 10,
+    "label": 0
+  },
+  {
+    "ip": "137.227.71.148",
+    "org": "SmallCorp Inc.",
+    "country": "FR",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 4.5,
+    "exposure_days": 37,
+    "label": 0
+  },
+  {
+    "ip": "210.22.121.10",
+    "org": "University IT",
+    "country": "RU",
+    "num_open_ports": 2,
+    "cve_count": 1,
+    "max_cvss": 0.9,
+    "exposure_days": 84,
+    "label": 0
+  },
+  {
+    "ip": "33.216.38.141",
+    "org": "Retail POS",
+    "country": "GB",
+    "num_open_ports": 2,
+    "cve_count": 1,
+    "max_cvss": 1.0,
+    "exposure_days": 35,
+    "label": 0
+  },
+  {
+    "ip": "178.73.104.19",
+    "org": "Retail POS",
+    "country": "CN",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 4.5,
+    "exposure_days": 54,
+    "label": 0
+  },
+  {
+    "ip": "42.214.78.81",
+    "org": "Retail POS",
+    "country": "SG",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 3.2,
+    "exposure_days": 77,
+    "label": 0
+  },
+  {
+    "ip": "176.208.33.85",
+    "org": "Edge Provider",
+    "country": "DE",
+    "num_open_ports": 1,
+    "cve_count": 3,
+    "max_cvss": 0.5,
+    "exposure_days": 157,
+    "label": 0
+  },
+  {
+    "ip": "3.50.193.251",
+    "org": "University IT",
+    "country": "AU",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 3.9,
+    "exposure_days": 35,
+    "label": 0
+  },
+  {
+    "ip": "211.250.48.136",
+    "org": "Retail POS",
+    "country": "RU",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 1.2,
+    "exposure_days": 775,
+    "label": 0
+  },
+  {
+    "ip": "82.199.92.89",
+    "org": "University IT",
+    "country": "BR",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 0.4,
+    "exposure_days": 21,
+    "label": 0
+  },
+  {
+    "ip": "97.136.27.236",
+    "org": "Linode",
+    "country": "IN",
+    "num_open_ports": 27017,
+    "cve_count": 37,
+    "max_cvss": 6.5,
+    "exposure_days": 683,
+    "label": 2
+  },
+  {
+    "ip": "129.146.141.244",
+    "org": "DigitalOcean",
+    "country": "JP",
+    "num_open_ports": 3389,
+    "cve_count": 38,
+    "max_cvss": 6.3,
+    "exposure_days": 489,
+    "label": 2
+  },
+  {
+    "ip": "198.160.46.163",
+    "org": "Retail POS",
+    "country": "NL",
+    "num_open_ports": 10,
+    "cve_count": 1,
+    "max_cvss": 0.4,
+    "exposure_days": 52,
+    "label": 0
+  },
+  {
+    "ip": "207.5.217.174",
+    "org": "SmallCorp Inc.",
+    "country": "GB",
+    "num_open_ports": 7,
+    "cve_count": 1,
+    "max_cvss": 0.4,
+    "exposure_days": 70,
+    "label": 0
+  },
+  {
+    "ip": "32.207.7.158",
+    "org": "Managed Hosting",
+    "country": "IN",
+    "num_open_ports": 7,
+    "cve_count": 1,
+    "max_cvss": 4.7,
+    "exposure_days": 89,
+    "label": 0
+  },
+  {
+    "ip": "190.21.229.247",
+    "org": "SmallCorp Inc.",
+    "country": "SG",
+    "num_open_ports": 8,
+    "cve_count": 0,
+    "max_cvss": 2.4,
+    "exposure_days": 31,
+    "label": 0
+  },
+  {
+    "ip": "14.216.253.98",
+    "org": "Retail POS",
+    "country": "GB",
+    "num_open_ports": 10,
+    "cve_count": 0,
+    "max_cvss": 4.0,
+    "exposure_days": 45,
+    "label": 0
+  },
+  {
+    "ip": "77.247.150.68",
+    "org": "University IT",
+    "country": "JP",
+    "num_open_ports": 12,
+    "cve_count": 0,
+    "max_cvss": 2.4,
+    "exposure_days": 37,
+    "label": 0
+  },
+  {
+    "ip": "212.18.237.229",
+    "org": "Managed Hosting",
+    "country": "FR",
+    "num_open_ports": 7,
+    "cve_count": 4,
+    "max_cvss": 4.4,
+    "exposure_days": 65,
+    "label": 0
+  },
+  {
+    "ip": "2.179.95.103",
+    "org": "University IT",
+    "country": "US",
+    "num_open_ports": 4,
+    "cve_count": 1,
+    "max_cvss": 1.5,
+    "exposure_days": 13,
+    "label": 0
+  },
+  {
+    "ip": "32.249.3.40",
+    "org": "Managed Hosting",
+    "country": "FR",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 2.3,
+    "exposure_days": 52,
+    "label": 0
+  },
+  {
+    "ip": "113.224.82.36",
+    "org": "Linode",
+    "country": "SE",
+    "num_open_ports": 443,
+    "cve_count": 19,
+    "max_cvss": 8.5,
+    "exposure_days": 121,
+    "label": 2
+  },
+  {
+    "ip": "35.202.215.191",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 3,
+    "cve_count": 2,
+    "max_cvss": 0.5,
+    "exposure_days": 5,
+    "label": 0
+  },
+  {
+    "ip": "126.253.65.84",
+    "org": "Retail POS",
+    "country": "IN",
+    "num_open_ports": 1,
+    "cve_count": 5,
+    "max_cvss": 4.4,
+    "exposure_days": 53,
+    "label": 0
+  },
+  {
+    "ip": "4.121.26.174",
+    "org": "Linode",
+    "country": "GB",
+    "num_open_ports": 8080,
+    "cve_count": 7,
+    "max_cvss": 8.0,
+    "exposure_days": 522,
+    "label": 2
+  },
+  {
+    "ip": "40.95.127.72",
+    "org": "Amazon AWS",
+    "country": "CN",
+    "num_open_ports": 8443,
+    "cve_count": 30,
+    "max_cvss": 1.7,
+    "exposure_days": 642,
+    "label": 2
+  },
+  {
+    "ip": "157.92.96.219",
+    "org": "DigitalOcean",
+    "country": "JP",
+    "num_open_ports": 443,
+    "cve_count": 52,
+    "max_cvss": 8.8,
+    "exposure_days": 727,
+    "label": 2
+  },
+  {
+    "ip": "110.9.102.24",
+    "org": "Retail POS",
+    "country": "DE",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 0.2,
+    "exposure_days": 18,
+    "label": 0
+  },
+  {
+    "ip": "14.155.56.69",
+    "org": "OVH",
+    "country": "SG",
+    "num_open_ports": 8080,
+    "cve_count": 40,
+    "max_cvss": 7.6,
+    "exposure_days": 532,
+    "label": 2
+  },
+  {
+    "ip": "14.164.108.74",
+    "org": "Managed Hosting",
+    "country": "FR",
+    "num_open_ports": 10,
+    "cve_count": 0,
+    "max_cvss": 0.2,
+    "exposure_days": 0,
+    "label": 0
+  },
+  {
+    "ip": "78.57.49.172",
+    "org": "SmallCorp Inc.",
+    "country": "CN",
+    "num_open_ports": 9,
+    "cve_count": 0,
+    "max_cvss": 4.3,
+    "exposure_days": 42,
+    "label": 0
+  },
+  {
+    "ip": "136.190.121.167",
+    "org": "Retail POS",
+    "country": "SE",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 3.8,
+    "exposure_days": 75,
+    "label": 0
+  },
+  {
+    "ip": "151.97.98.181",
+    "org": "SmallCorp Inc.",
+    "country": "DE",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 3.3,
+    "exposure_days": 5,
+    "label": 0
+  },
+  {
+    "ip": "185.78.22.33",
+    "org": "University IT",
+    "country": "NL",
+    "num_open_ports": 1,
+    "cve_count": 2,
+    "max_cvss": 4.5,
+    "exposure_days": 68,
+    "label": 0
+  },
+  {
+    "ip": "115.60.223.18",
+    "org": "University IT",
+    "country": "AU",
+    "num_open_ports": 5,
+    "cve_count": 3,
+    "max_cvss": 4.1,
+    "exposure_days": 46,
+    "label": 0
+  },
+  {
+    "ip": "12.31.97.190",
+    "org": "SmallCorp Inc.",
+    "country": "GB",
+    "num_open_ports": 4,
+    "cve_count": 1,
+    "max_cvss": 3.1,
+    "exposure_days": 37,
+    "label": 0
+  },
+  {
+    "ip": "70.105.94.1",
+    "org": "Google Cloud",
+    "country": "GB",
+    "num_open_ports": 5432,
+    "cve_count": 28,
+    "max_cvss": 5.9,
+    "exposure_days": 631,
+    "label": 2
+  },
+  {
+    "ip": "67.155.112.76",
+    "org": "SmallCorp Inc.",
+    "country": "AU",
+    "num_open_ports": 2,
+    "cve_count": 1,
+    "max_cvss": 2.5,
+    "exposure_days": 67,
+    "label": 0
+  },
+  {
+    "ip": "203.26.127.254",
+    "org": "DigitalOcean",
+    "country": "US",
+    "num_open_ports": 27017,
+    "cve_count": 34,
+    "max_cvss": 7.0,
+    "exposure_days": 146,
+    "label": 2
+  },
+  {
+    "ip": "185.68.209.230",
+    "org": "Hetzner",
+    "country": "JP",
+    "num_open_ports": 27017,
+    "cve_count": 38,
+    "max_cvss": 9.8,
+    "exposure_days": 280,
+    "label": 2
+  },
+  {
+    "ip": "46.131.8.138",
+    "org": "SmallCorp Inc.",
+    "country": "JP",
+    "num_open_ports": 2,
+    "cve_count": 3,
+    "max_cvss": 3.7,
+    "exposure_days": 35,
+    "label": 0
+  },
+  {
+    "ip": "84.137.104.149",
+    "org": "Linode",
+    "country": "JP",
+    "num_open_ports": 20,
+    "cve_count": 16,
+    "max_cvss": 7.2,
+    "exposure_days": 235,
+    "label": 1
+  },
+  {
+    "ip": "38.245.47.127",
+    "org": "Managed Hosting",
+    "country": "GB",
+    "num_open_ports": 9,
+    "cve_count": 0,
+    "max_cvss": 3.3,
+    "exposure_days": 47,
+    "label": 0
+  },
+  {
+    "ip": "73.10.158.42",
+    "org": "Retail POS",
+    "country": "FR",
+    "num_open_ports": 2,
+    "cve_count": 1,
+    "max_cvss": 4.2,
+    "exposure_days": 82,
+    "label": 0
+  },
+  {
+    "ip": "186.70.6.155",
+    "org": "DigitalOcean",
+    "country": "DE",
+    "num_open_ports": 8080,
+    "cve_count": 9,
+    "max_cvss": 5.2,
+    "exposure_days": 112,
+    "label": 2
+  },
+  {
+    "ip": "64.42.137.37",
+    "org": "SmallCorp Inc.",
+    "country": "CA",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 3.7,
+    "exposure_days": 16,
+    "label": 0
+  },
+  {
+    "ip": "36.245.227.209",
+    "org": "Security Lab",
+    "country": "FR",
+    "num_open_ports": 104,
+    "cve_count": 37,
+    "max_cvss": 7.7,
+    "exposure_days": 723,
+    "label": 2
+  },
+  {
+    "ip": "32.10.22.27",
+    "org": "Retail POS",
+    "country": "FR",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 3.3,
+    "exposure_days": 69,
+    "label": 0
+  },
+  {
+    "ip": "99.75.180.168",
+    "org": "Managed Hosting",
+    "country": "GB",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 1.0,
+    "exposure_days": 54,
+    "label": 0
+  },
+  {
+    "ip": "44.56.114.27",
+    "org": "Managed Hosting",
+    "country": "JP",
+    "num_open_ports": 10,
+    "cve_count": 4,
+    "max_cvss": 3.7,
+    "exposure_days": 62,
+    "label": 0
+  },
+  {
+    "ip": "155.77.91.110",
+    "org": "Factory IoT",
+    "country": "US",
+    "num_open_ports": 1,
+    "cve_count": 5,
+    "max_cvss": 0.8,
+    "exposure_days": 975,
+    "label": 0
+  },
+  {
+    "ip": "90.53.138.235",
+    "org": "Managed Hosting",
+    "country": "GB",
+    "num_open_ports": 5,
+    "cve_count": 4,
+    "max_cvss": 3.3,
+    "exposure_days": 36,
+    "label": 0
+  },
+  {
+    "ip": "200.75.163.38",
+    "org": "University IT",
+    "country": "AU",
+    "num_open_ports": 3,
+    "cve_count": 4,
+    "max_cvss": 3.6,
+    "exposure_days": 19,
+    "label": 0
+  },
+  {
+    "ip": "38.46.165.33",
+    "org": "Managed Hosting",
+    "country": "CA",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 2.8,
+    "exposure_days": 35,
+    "label": 0
+  },
+  {
+    "ip": "204.170.70.206",
+    "org": "University IT",
+    "country": "IN",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 3.1,
+    "exposure_days": 77,
+    "label": 0
+  },
+  {
+    "ip": "138.117.196.22",
+    "org": "Cloudflare",
+    "country": "BR",
+    "num_open_ports": 296,
+    "cve_count": 117,
+    "max_cvss": 7.7,
+    "exposure_days": 1133,
+    "label": 2
+  },
+  {
+    "ip": "93.242.68.236",
+    "org": "Retail POS",
+    "country": "SG",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 1.6,
+    "exposure_days": 2,
+    "label": 0
+  },
+  {
+    "ip": "118.73.215.63",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 10,
+    "cve_count": 3,
+    "max_cvss": 3.5,
+    "exposure_days": 37,
+    "label": 0
+  },
+  {
+    "ip": "179.217.190.14",
+    "org": "Retail POS",
+    "country": "DE",
+    "num_open_ports": 2,
+    "cve_count": 5,
+    "max_cvss": 3.2,
+    "exposure_days": 3,
+    "label": 0
+  },
+  {
+    "ip": "39.93.240.191",
+    "org": "Microsoft Azure",
+    "country": "US",
+    "num_open_ports": 16,
+    "cve_count": 9,
+    "max_cvss": 6.8,
+    "exposure_days": 436,
+    "label": 0
+  },
+  {
+    "ip": "4.146.56.40",
+    "org": "University IT",
+    "country": "IN",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 1.7,
+    "exposure_days": 88,
+    "label": 0
+  },
+  {
+    "ip": "117.132.156.182",
+    "org": "Retail POS",
+    "country": "BR",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 1.8,
+    "exposure_days": 87,
+    "label": 0
+  },
+  {
+    "ip": "103.28.112.101",
+    "org": "University IT",
+    "country": "DE",
+    "num_open_ports": 10,
+    "cve_count": 1,
+    "max_cvss": 4.4,
+    "exposure_days": 27,
+    "label": 0
+  },
+  {
+    "ip": "104.194.84.14",
+    "org": "SmallCorp Inc.",
+    "country": "CA",
+    "num_open_ports": 7,
+    "cve_count": 1,
+    "max_cvss": 2.3,
+    "exposure_days": 82,
+    "label": 0
+  },
+  {
+    "ip": "42.54.33.55",
+    "org": "Google Cloud",
+    "country": "DE",
+    "num_open_ports": 8443,
+    "cve_count": 4,
+    "max_cvss": 2.2,
+    "exposure_days": 298,
+    "label": 2
+  },
+  {
+    "ip": "69.43.22.145",
+    "org": "University IT",
+    "country": "FR",
+    "num_open_ports": 7,
+    "cve_count": 1,
+    "max_cvss": 2.9,
+    "exposure_days": 30,
+    "label": 0
+  },
+  {
+    "ip": "193.144.203.129",
+    "org": "Factory IoT",
+    "country": "SE",
+    "num_open_ports": 1,
+    "cve_count": 5,
+    "max_cvss": 0.7,
+    "exposure_days": 346,
+    "label": 0
+  },
+  {
+    "ip": "26.76.12.151",
+    "org": "University IT",
+    "country": "GB",
+    "num_open_ports": 7,
+    "cve_count": 2,
+    "max_cvss": 0.4,
+    "exposure_days": 64,
+    "label": 0
+  },
+  {
+    "ip": "60.110.72.197",
+    "org": "Amazon AWS",
+    "country": "NL",
+    "num_open_ports": 5432,
+    "cve_count": 10,
+    "max_cvss": 0.9,
+    "exposure_days": 745,
+    "label": 2
+  },
+  {
+    "ip": "199.198.122.54",
+    "org": "Hetzner",
+    "country": "IN",
+    "num_open_ports": 6379,
+    "cve_count": 50,
+    "max_cvss": 9.4,
+    "exposure_days": 50,
+    "label": 2
+  },
+  {
+    "ip": "4.73.158.141",
+    "org": "Security Lab",
+    "country": "AU",
+    "num_open_ports": 178,
+    "cve_count": 155,
+    "max_cvss": 8.1,
+    "exposure_days": 1048,
+    "label": 2
+  },
+  {
+    "ip": "23.36.91.182",
+    "org": "Managed Hosting",
+    "country": "SE",
+    "num_open_ports": 16,
+    "cve_count": 10,
+    "max_cvss": 4.8,
+    "exposure_days": 371,
+    "label": 0
+  },
+  {
+    "ip": "11.186.146.103",
+    "org": "OVH",
+    "country": "AU",
+    "num_open_ports": 443,
+    "cve_count": 56,
+    "max_cvss": 9.8,
+    "exposure_days": 509,
+    "label": 2
+  },
+  {
+    "ip": "22.211.230.68",
+    "org": "Retail POS",
+    "country": "IN",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 3.8,
+    "exposure_days": 47,
+    "label": 0
+  },
+  {
+    "ip": "146.204.37.58",
+    "org": "Amazon AWS",
+    "country": "SG",
+    "num_open_ports": 12,
+    "cve_count": 50,
+    "max_cvss": 7.4,
+    "exposure_days": 307,
+    "label": 2
+  },
+  {
+    "ip": "22.92.55.235",
+    "org": "SmallCorp Inc.",
+    "country": "SE",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 2.9,
+    "exposure_days": 13,
+    "label": 0
+  },
+  {
+    "ip": "155.248.108.180",
+    "org": "Retail POS",
+    "country": "SE",
+    "num_open_ports": 4,
+    "cve_count": 3,
+    "max_cvss": 2.8,
+    "exposure_days": 96,
+    "label": 0
+  },
+  {
+    "ip": "154.194.31.240",
+    "org": "Amazon AWS",
+    "country": "BR",
+    "num_open_ports": 20,
+    "cve_count": 9,
+    "max_cvss": 7.2,
+    "exposure_days": 42,
+    "label": 1
+  },
+  {
+    "ip": "163.90.42.37",
+    "org": "DigitalOcean",
+    "country": "US",
+    "num_open_ports": 8443,
+    "cve_count": 13,
+    "max_cvss": 8.8,
+    "exposure_days": 268,
+    "label": 2
+  },
+  {
+    "ip": "67.94.27.24",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 3,
+    "cve_count": 2,
+    "max_cvss": 4.1,
+    "exposure_days": 27,
+    "label": 0
+  },
+  {
+    "ip": "179.223.181.234",
+    "org": "OVH",
+    "country": "GB",
+    "num_open_ports": 8443,
+    "cve_count": 12,
+    "max_cvss": 8.2,
+    "exposure_days": 174,
+    "label": 2
+  },
+  {
+    "ip": "212.162.7.39",
+    "org": "DigitalOcean",
+    "country": "DE",
+    "num_open_ports": 8080,
+    "cve_count": 46,
+    "max_cvss": 7.6,
+    "exposure_days": 770,
+    "label": 2
+  },
+  {
+    "ip": "220.64.230.164",
+    "org": "Hetzner",
+    "country": "DE",
+    "num_open_ports": 22,
+    "cve_count": 50,
+    "max_cvss": 9.6,
+    "exposure_days": 471,
+    "label": 2
+  },
+  {
+    "ip": "97.110.178.54",
+    "org": "Factory IoT",
+    "country": "RU",
+    "num_open_ports": 2,
+    "cve_count": 3,
+    "max_cvss": 2.9,
+    "exposure_days": 589,
+    "label": 0
+  },
+  {
+    "ip": "79.63.255.167",
+    "org": "Security Lab",
+    "country": "NL",
+    "num_open_ports": 395,
+    "cve_count": 13,
+    "max_cvss": 6.9,
+    "exposure_days": 775,
+    "label": 2
+  },
+  {
+    "ip": "86.58.90.118",
+    "org": "Edge Provider",
+    "country": "AU",
+    "num_open_ports": 3,
+    "cve_count": 5,
+    "max_cvss": 5.8,
+    "exposure_days": 466,
+    "label": 0
+  },
+  {
+    "ip": "175.223.145.180",
+    "org": "Retail POS",
+    "country": "BR",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 1.5,
+    "exposure_days": 88,
+    "label": 0
+  },
+  {
+    "ip": "158.210.53.128",
+    "org": "SmallCorp Inc.",
+    "country": "DE",
+    "num_open_ports": 10,
+    "cve_count": 3,
+    "max_cvss": 0.7,
+    "exposure_days": 2,
+    "label": 0
+  },
+  {
+    "ip": "142.195.58.51",
+    "org": "Managed Hosting",
+    "country": "BR",
+    "num_open_ports": 27017,
+    "cve_count": 37,
+    "max_cvss": 9.0,
+    "exposure_days": 238,
+    "label": 2
+  },
+  {
+    "ip": "130.145.137.226",
+    "org": "Managed Hosting",
+    "country": "CN",
+    "num_open_ports": 20,
+    "cve_count": 58,
+    "max_cvss": 9.0,
+    "exposure_days": 393,
+    "label": 2
+  },
+  {
+    "ip": "203.191.162.86",
+    "org": "Linode",
+    "country": "JP",
+    "num_open_ports": 110,
+    "cve_count": 15,
+    "max_cvss": 0.0,
+    "exposure_days": 167,
+    "label": 1
+  },
+  {
+    "ip": "101.26.219.33",
+    "org": "Managed Hosting",
+    "country": "FR",
+    "num_open_ports": 5,
+    "cve_count": 1,
+    "max_cvss": 2.0,
+    "exposure_days": 82,
+    "label": 0
+  },
+  {
+    "ip": "112.118.50.182",
+    "org": "Edge Provider",
+    "country": "GB",
+    "num_open_ports": 6,
+    "cve_count": 2,
+    "max_cvss": 2.8,
+    "exposure_days": 355,
+    "label": 0
+  },
+  {
+    "ip": "7.223.5.161",
+    "org": "Linode",
+    "country": "CA",
+    "num_open_ports": 6379,
+    "cve_count": 48,
+    "max_cvss": 6.4,
+    "exposure_days": 218,
+    "label": 2
+  },
+  {
+    "ip": "200.183.95.62",
+    "org": "Google Cloud",
+    "country": "RU",
+    "num_open_ports": 120,
+    "cve_count": 24,
+    "max_cvss": 9.9,
+    "exposure_days": 656,
+    "label": 2
+  },
+  {
+    "ip": "37.11.52.29",
+    "org": "DigitalOcean",
+    "country": "SG",
+    "num_open_ports": 80,
+    "cve_count": 49,
+    "max_cvss": 6.3,
+    "exposure_days": 291,
+    "label": 2
+  },
+  {
+    "ip": "217.185.106.101",
+    "org": "SmallCorp Inc.",
+    "country": "GB",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 4.0,
+    "exposure_days": 9,
+    "label": 0
+  },
+  {
+    "ip": "108.192.160.163",
+    "org": "Managed Hosting",
+    "country": "DE",
+    "num_open_ports": 7,
+    "cve_count": 0,
+    "max_cvss": 2.8,
+    "exposure_days": 87,
+    "label": 0
+  },
+  {
+    "ip": "89.247.2.41",
+    "org": "Security Lab",
+    "country": "DE",
+    "num_open_ports": 192,
+    "cve_count": 86,
+    "max_cvss": 9.7,
+    "exposure_days": 395,
+    "label": 2
+  },
+  {
+    "ip": "195.78.110.222",
+    "org": "SmallCorp Inc.",
+    "country": "FR",
+    "num_open_ports": 2,
+    "cve_count": 1,
+    "max_cvss": 2.6,
+    "exposure_days": 65,
+    "label": 0
+  },
+  {
+    "ip": "69.140.246.52",
+    "org": "SmallCorp Inc.",
+    "country": "SE",
+    "num_open_ports": 9,
+    "cve_count": 0,
+    "max_cvss": 0.6,
+    "exposure_days": 16,
+    "label": 0
+  },
+  {
+    "ip": "132.204.98.65",
+    "org": "Retail POS",
+    "country": "CN",
+    "num_open_ports": 5,
+    "cve_count": 4,
+    "max_cvss": 3.3,
+    "exposure_days": 858,
+    "label": 0
+  },
+  {
+    "ip": "43.105.249.111",
+    "org": "University IT",
+    "country": "CN",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 3.8,
+    "exposure_days": 39,
+    "label": 0
+  },
+  {
+    "ip": "96.32.230.43",
+    "org": "OVH",
+    "country": "CA",
+    "num_open_ports": 8443,
+    "cve_count": 20,
+    "max_cvss": 8.0,
+    "exposure_days": 371,
+    "label": 2
+  },
+  {
+    "ip": "8.58.92.208",
+    "org": "Linode",
+    "country": "NL",
+    "num_open_ports": 6379,
+    "cve_count": 38,
+    "max_cvss": 7.2,
+    "exposure_days": 417,
+    "label": 2
+  },
+  {
+    "ip": "200.160.62.3",
+    "org": "University IT",
+    "country": "FR",
+    "num_open_ports": 7,
+    "cve_count": 0,
+    "max_cvss": 3.0,
+    "exposure_days": 18,
+    "label": 0
+  },
+  {
+    "ip": "17.197.145.155",
+    "org": "University IT",
+    "country": "FR",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 3.6,
+    "exposure_days": 71,
+    "label": 0
+  },
+  {
+    "ip": "147.215.222.82",
+    "org": "University IT",
+    "country": "SG",
+    "num_open_ports": 2,
+    "cve_count": 1,
+    "max_cvss": 4.2,
+    "exposure_days": 9,
+    "label": 0
+  },
+  {
+    "ip": "84.196.121.148",
+    "org": "Managed Hosting",
+    "country": "IN",
+    "num_open_ports": 53,
+    "cve_count": 2,
+    "max_cvss": 5.9,
+    "exposure_days": 625,
+    "label": 1
+  },
+  {
+    "ip": "137.20.172.166",
+    "org": "SmallCorp Inc.",
+    "country": "IN",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 3.8,
+    "exposure_days": 4,
+    "label": 0
+  },
+  {
+    "ip": "21.160.252.157",
+    "org": "Managed Hosting",
+    "country": "SG",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 1.4,
+    "exposure_days": 51,
+    "label": 0
+  },
+  {
+    "ip": "159.52.14.58",
+    "org": "Managed Hosting",
+    "country": "IN",
+    "num_open_ports": 2,
+    "cve_count": 3,
+    "max_cvss": 4.4,
+    "exposure_days": 47,
+    "label": 0
+  },
+  {
+    "ip": "23.97.188.209",
+    "org": "SmallCorp Inc.",
+    "country": "SE",
+    "num_open_ports": 1,
+    "cve_count": 3,
+    "max_cvss": 3.3,
+    "exposure_days": 21,
+    "label": 0
+  },
+  {
+    "ip": "78.38.135.85",
+    "org": "Security Lab",
+    "country": "US",
+    "num_open_ports": 126,
+    "cve_count": 76,
+    "max_cvss": 9.4,
+    "exposure_days": 118,
+    "label": 2
+  },
+  {
+    "ip": "164.228.62.134",
+    "org": "Microsoft Azure",
+    "country": "GB",
+    "num_open_ports": 8080,
+    "cve_count": 37,
+    "max_cvss": 9.5,
+    "exposure_days": 433,
+    "label": 2
+  },
+  {
+    "ip": "68.151.42.91",
+    "org": "Managed Hosting",
+    "country": "NL",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 3.3,
+    "exposure_days": 11,
+    "label": 0
+  },
+  {
+    "ip": "4.110.239.210",
+    "org": "Retail POS",
+    "country": "SG",
+    "num_open_ports": 9,
+    "cve_count": 0,
+    "max_cvss": 4.4,
+    "exposure_days": 27,
+    "label": 0
+  },
+  {
+    "ip": "195.159.232.168",
+    "org": "University IT",
+    "country": "FR",
+    "num_open_ports": 4,
+    "cve_count": 3,
+    "max_cvss": 3.6,
+    "exposure_days": 40,
+    "label": 0
+  },
+  {
+    "ip": "132.103.204.49",
+    "org": "Retail POS",
+    "country": "FR",
+    "num_open_ports": 4,
+    "cve_count": 4,
+    "max_cvss": 1.7,
+    "exposure_days": 79,
+    "label": 0
+  },
+  {
+    "ip": "191.56.123.5",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 3,
+    "cve_count": 1,
+    "max_cvss": 0.5,
+    "exposure_days": 13,
+    "label": 0
+  },
+  {
+    "ip": "39.203.220.131",
+    "org": "Managed Hosting",
+    "country": "JP",
+    "num_open_ports": 25,
+    "cve_count": 33,
+    "max_cvss": 7.6,
+    "exposure_days": 372,
+    "label": 2
+  },
+  {
+    "ip": "76.96.206.46",
+    "org": "University IT",
+    "country": "DE",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 1.7,
+    "exposure_days": 24,
+    "label": 0
+  },
+  {
+    "ip": "29.112.58.14",
+    "org": "Managed Hosting",
+    "country": "BR",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 3.3,
+    "exposure_days": 31,
+    "label": 0
+  },
+  {
+    "ip": "57.137.253.53",
+    "org": "Google Cloud",
+    "country": "NL",
+    "num_open_ports": 443,
+    "cve_count": 14,
+    "max_cvss": 7.5,
+    "exposure_days": 113,
+    "label": 2
+  },
+  {
+    "ip": "129.244.156.219",
+    "org": "University IT",
+    "country": "SG",
+    "num_open_ports": 2,
+    "cve_count": 1,
+    "max_cvss": 3.3,
+    "exposure_days": 23,
+    "label": 0
+  },
+  {
+    "ip": "4.242.219.86",
+    "org": "Retail POS",
+    "country": "GB",
+    "num_open_ports": 3,
+    "cve_count": 1,
+    "max_cvss": 1.2,
+    "exposure_days": 370,
+    "label": 0
+  },
+  {
+    "ip": "122.0.250.224",
+    "org": "SmallCorp Inc.",
+    "country": "GB",
+    "num_open_ports": 12,
+    "cve_count": 1,
+    "max_cvss": 4.0,
+    "exposure_days": 45,
+    "label": 0
+  },
+  {
+    "ip": "129.85.75.199",
+    "org": "SmallCorp Inc.",
+    "country": "RU",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 1.3,
+    "exposure_days": 67,
+    "label": 0
+  },
+  {
+    "ip": "170.249.129.94",
+    "org": "University IT",
+    "country": "IN",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 1.8,
+    "exposure_days": 32,
+    "label": 0
+  },
+  {
+    "ip": "124.57.138.176",
+    "org": "University IT",
+    "country": "SG",
+    "num_open_ports": 8,
+    "cve_count": 0,
+    "max_cvss": 2.5,
+    "exposure_days": 76,
+    "label": 0
+  },
+  {
+    "ip": "128.15.125.148",
+    "org": "Retail POS",
+    "country": "CN",
+    "num_open_ports": 6,
+    "cve_count": 3,
+    "max_cvss": 3.0,
+    "exposure_days": 45,
+    "label": 0
+  },
+  {
+    "ip": "140.230.89.68",
+    "org": "Google Cloud",
+    "country": "FR",
+    "num_open_ports": 8443,
+    "cve_count": 58,
+    "max_cvss": 9.9,
+    "exposure_days": 705,
+    "label": 2
+  },
+  {
+    "ip": "49.21.175.214",
+    "org": "Retail POS",
+    "country": "NL",
+    "num_open_ports": 3,
+    "cve_count": 6,
+    "max_cvss": 4.1,
+    "exposure_days": 997,
+    "label": 0
+  },
+  {
+    "ip": "3.255.75.120",
+    "org": "Managed Hosting",
+    "country": "RU",
+    "num_open_ports": 3,
+    "cve_count": 5,
+    "max_cvss": 3.6,
+    "exposure_days": 14,
+    "label": 0
+  },
+  {
+    "ip": "152.63.27.126",
+    "org": "Microsoft Azure",
+    "country": "NL",
+    "num_open_ports": 6379,
+    "cve_count": 31,
+    "max_cvss": 7.1,
+    "exposure_days": 232,
+    "label": 2
+  },
+  {
+    "ip": "171.79.44.183",
+    "org": "SmallCorp Inc.",
+    "country": "US",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 1.6,
+    "exposure_days": 64,
+    "label": 0
+  },
+  {
+    "ip": "122.181.127.208",
+    "org": "Retail POS",
+    "country": "CN",
+    "num_open_ports": 15,
+    "cve_count": 1,
+    "max_cvss": 0.4,
+    "exposure_days": 4,
+    "label": 0
+  },
+  {
+    "ip": "206.71.102.65",
+    "org": "Google Cloud",
+    "country": "NL",
+    "num_open_ports": 8080,
+    "cve_count": 58,
+    "max_cvss": 8.5,
+    "exposure_days": 340,
+    "label": 2
+  },
+  {
+    "ip": "140.93.192.201",
+    "org": "University IT",
+    "country": "NL",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 2.7,
+    "exposure_days": 59,
+    "label": 0
+  },
+  {
+    "ip": "120.215.210.119",
+    "org": "Managed Hosting",
+    "country": "SG",
+    "num_open_ports": 8443,
+    "cve_count": 20,
+    "max_cvss": 7.4,
+    "exposure_days": 447,
+    "label": 2
+  },
+  {
+    "ip": "149.191.65.159",
+    "org": "Managed Hosting",
+    "country": "DE",
+    "num_open_ports": 5,
+    "cve_count": 2,
+    "max_cvss": 2.8,
+    "exposure_days": 31,
+    "label": 0
+  },
+  {
+    "ip": "2.236.235.215",
+    "org": "University IT",
+    "country": "US",
+    "num_open_ports": 5,
+    "cve_count": 2,
+    "max_cvss": 1.8,
+    "exposure_days": 85,
+    "label": 0
+  },
+  {
+    "ip": "177.169.31.32",
+    "org": "SmallCorp Inc.",
+    "country": "SE",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 3.9,
+    "exposure_days": 61,
+    "label": 0
+  },
+  {
+    "ip": "173.79.154.161",
+    "org": "Amazon AWS",
+    "country": "SG",
+    "num_open_ports": 6379,
+    "cve_count": 13,
+    "max_cvss": 3.1,
+    "exposure_days": 238,
+    "label": 2
+  },
+  {
+    "ip": "1.78.61.134",
+    "org": "SmallCorp Inc.",
+    "country": "AU",
+    "num_open_ports": 15,
+    "cve_count": 0,
+    "max_cvss": 3.1,
+    "exposure_days": 8,
+    "label": 0
+  },
+  {
+    "ip": "77.207.247.252",
+    "org": "Managed Hosting",
+    "country": "US",
+    "num_open_ports": 2,
+    "cve_count": 3,
+    "max_cvss": 2.0,
+    "exposure_days": 15,
+    "label": 0
+  },
+  {
+    "ip": "32.221.74.163",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 2,
+    "cve_count": 1,
+    "max_cvss": 2.2,
+    "exposure_days": 78,
+    "label": 0
+  },
+  {
+    "ip": "123.148.148.171",
+    "org": "Retail POS",
+    "country": "GB",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 3.1,
+    "exposure_days": 60,
+    "label": 0
+  },
+  {
+    "ip": "107.217.75.8",
+    "org": "University IT",
+    "country": "JP",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 1.7,
+    "exposure_days": 59,
+    "label": 0
+  },
+  {
+    "ip": "159.227.21.233",
+    "org": "Managed Hosting",
+    "country": "US",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 0.4,
+    "exposure_days": 84,
+    "label": 0
+  },
+  {
+    "ip": "129.107.178.232",
+    "org": "ISP Backbone",
+    "country": "SE",
+    "num_open_ports": 339,
+    "cve_count": 195,
+    "max_cvss": 7.3,
+    "exposure_days": 48,
+    "label": 2
+  },
+  {
+    "ip": "72.155.201.18",
+    "org": "Microsoft Azure",
+    "country": "JP",
+    "num_open_ports": 8080,
+    "cve_count": 9,
+    "max_cvss": 7.7,
+    "exposure_days": 153,
+    "label": 2
+  },
+  {
+    "ip": "179.165.178.150",
+    "org": "Akamai",
+    "country": "GB",
+    "num_open_ports": 292,
+    "cve_count": 130,
+    "max_cvss": 8.0,
+    "exposure_days": 399,
+    "label": 2
+  },
+  {
+    "ip": "28.255.243.83",
+    "org": "SmallCorp Inc.",
+    "country": "US",
+    "num_open_ports": 3,
+    "cve_count": 3,
+    "max_cvss": 0.7,
+    "exposure_days": 85,
+    "label": 0
+  },
+  {
+    "ip": "217.37.226.196",
+    "org": "Microsoft Azure",
+    "country": "SG",
+    "num_open_ports": 80,
+    "cve_count": 57,
+    "max_cvss": 7.0,
+    "exposure_days": 636,
+    "label": 2
+  },
+  {
+    "ip": "164.102.100.65",
+    "org": "SmallCorp Inc.",
+    "country": "GB",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 3.1,
+    "exposure_days": 17,
+    "label": 0
+  },
+  {
+    "ip": "23.12.49.53",
+    "org": "Retail POS",
+    "country": "FR",
+    "num_open_ports": 6,
+    "cve_count": 2,
+    "max_cvss": 2.2,
+    "exposure_days": 24,
+    "label": 0
+  },
+  {
+    "ip": "48.254.97.214",
+    "org": "SmallCorp Inc.",
+    "country": "SE",
+    "num_open_ports": 1,
+    "cve_count": 2,
+    "max_cvss": 2.6,
+    "exposure_days": 43,
+    "label": 0
+  },
+  {
+    "ip": "113.218.192.224",
+    "org": "University IT",
+    "country": "SE",
+    "num_open_ports": 8,
+    "cve_count": 1,
+    "max_cvss": 2.5,
+    "exposure_days": 8,
+    "label": 0
+  },
+  {
+    "ip": "85.11.114.211",
+    "org": "University IT",
+    "country": "DE",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 1.2,
+    "exposure_days": 69,
+    "label": 0
+  },
+  {
+    "ip": "20.123.159.103",
+    "org": "ISP Backbone",
+    "country": "NL",
+    "num_open_ports": 228,
+    "cve_count": 109,
+    "max_cvss": 8.5,
+    "exposure_days": 169,
+    "label": 2
+  },
+  {
+    "ip": "8.16.173.108",
+    "org": "SmallCorp Inc.",
+    "country": "RU",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 4.1,
+    "exposure_days": 83,
+    "label": 0
+  },
+  {
+    "ip": "16.120.252.19",
+    "org": "SmallCorp Inc.",
+    "country": "GB",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 3.7,
+    "exposure_days": 84,
+    "label": 0
+  },
+  {
+    "ip": "70.21.53.10",
+    "org": "Google Cloud",
+    "country": "CN",
+    "num_open_ports": 12,
+    "cve_count": 38,
+    "max_cvss": 8.6,
+    "exposure_days": 142,
+    "label": 2
+  },
+  {
+    "ip": "15.13.100.137",
+    "org": "University IT",
+    "country": "CN",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 3.5,
+    "exposure_days": 2,
+    "label": 0
+  },
+  {
+    "ip": "33.220.218.141",
+    "org": "SmallCorp Inc.",
+    "country": "BR",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 1.7,
+    "exposure_days": 89,
+    "label": 0
+  },
+  {
+    "ip": "60.47.5.59",
+    "org": "University IT",
+    "country": "SE",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 2.0,
+    "exposure_days": 30,
+    "label": 0
+  },
+  {
+    "ip": "15.64.224.47",
+    "org": "SmallCorp Inc.",
+    "country": "AU",
+    "num_open_ports": 7,
+    "cve_count": 0,
+    "max_cvss": 3.2,
+    "exposure_days": 9,
+    "label": 0
+  },
+  {
+    "ip": "20.39.128.241",
+    "org": "Retail POS",
+    "country": "NL",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 2.0,
+    "exposure_days": 15,
+    "label": 0
+  },
+  {
+    "ip": "75.125.136.82",
+    "org": "University IT",
+    "country": "CA",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 3.2,
+    "exposure_days": 70,
+    "label": 0
+  },
+  {
+    "ip": "190.107.62.96",
+    "org": "Hetzner",
+    "country": "CN",
+    "num_open_ports": 6379,
+    "cve_count": 45,
+    "max_cvss": 6.9,
+    "exposure_days": 543,
+    "label": 2
+  },
+  {
+    "ip": "99.153.43.16",
+    "org": "Managed Hosting",
+    "country": "JP",
+    "num_open_ports": 60,
+    "cve_count": 48,
+    "max_cvss": 7.1,
+    "exposure_days": 286,
+    "label": 2
+  },
+  {
+    "ip": "53.194.94.169",
+    "org": "Managed Hosting",
+    "country": "US",
+    "num_open_ports": 5,
+    "cve_count": 3,
+    "max_cvss": 1.7,
+    "exposure_days": 28,
+    "label": 0
+  },
+  {
+    "ip": "194.172.134.208",
+    "org": "University IT",
+    "country": "US",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 1.6,
+    "exposure_days": 77,
+    "label": 0
+  },
+  {
+    "ip": "15.55.198.244",
+    "org": "Hetzner",
+    "country": "SG",
+    "num_open_ports": 53,
+    "cve_count": 53,
+    "max_cvss": 9.2,
+    "exposure_days": 780,
+    "label": 2
+  },
+  {
+    "ip": "191.121.67.233",
+    "org": "Managed Hosting",
+    "country": "CN",
+    "num_open_ports": 110,
+    "cve_count": 36,
+    "max_cvss": 7.8,
+    "exposure_days": 488,
+    "label": 2
+  },
+  {
+    "ip": "147.202.19.158",
+    "org": "University IT",
+    "country": "DE",
+    "num_open_ports": 7,
+    "cve_count": 5,
+    "max_cvss": 3.5,
+    "exposure_days": 43,
+    "label": 0
+  },
+  {
+    "ip": "79.164.135.217",
+    "org": "University IT",
+    "country": "AU",
+    "num_open_ports": 2,
+    "cve_count": 1,
+    "max_cvss": 3.5,
+    "exposure_days": 15,
+    "label": 0
+  },
+  {
+    "ip": "217.111.209.15",
+    "org": "Managed Hosting",
+    "country": "US",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 4.3,
+    "exposure_days": 81,
+    "label": 0
+  },
+  {
+    "ip": "223.253.65.59",
+    "org": "University IT",
+    "country": "DE",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 1.2,
+    "exposure_days": 33,
+    "label": 0
+  },
+  {
+    "ip": "221.225.162.11",
+    "org": "SmallCorp Inc.",
+    "country": "FR",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 0.4,
+    "exposure_days": 64,
+    "label": 0
+  },
+  {
+    "ip": "184.22.120.90",
+    "org": "University IT",
+    "country": "NL",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 3.8,
+    "exposure_days": 69,
+    "label": 0
+  },
+  {
+    "ip": "213.212.36.165",
+    "org": "SmallCorp Inc.",
+    "country": "BR",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 1.1,
+    "exposure_days": 47,
+    "label": 0
+  },
+  {
+    "ip": "96.240.150.160",
+    "org": "SmallCorp Inc.",
+    "country": "SE",
+    "num_open_ports": 2,
+    "cve_count": 1,
+    "max_cvss": 1.6,
+    "exposure_days": 83,
+    "label": 0
+  },
+  {
+    "ip": "207.160.176.241",
+    "org": "University IT",
+    "country": "GB",
+    "num_open_ports": 3,
+    "cve_count": 4,
+    "max_cvss": 0.3,
+    "exposure_days": 27,
+    "label": 0
+  },
+  {
+    "ip": "20.114.214.138",
+    "org": "SmallCorp Inc.",
+    "country": "JP",
+    "num_open_ports": 8,
+    "cve_count": 2,
+    "max_cvss": 1.9,
+    "exposure_days": 10,
+    "label": 0
+  },
+  {
+    "ip": "63.168.124.205",
+    "org": "Managed Hosting",
+    "country": "JP",
+    "num_open_ports": 6379,
+    "cve_count": 33,
+    "max_cvss": 7.2,
+    "exposure_days": 310,
+    "label": 2
+  },
+  {
+    "ip": "21.180.39.235",
+    "org": "Hetzner",
+    "country": "SG",
+    "num_open_ports": 3389,
+    "cve_count": 7,
+    "max_cvss": 6.2,
+    "exposure_days": 380,
+    "label": 2
+  },
+  {
+    "ip": "63.208.70.156",
+    "org": "Retail POS",
+    "country": "IN",
+    "num_open_ports": 4,
+    "cve_count": 2,
+    "max_cvss": 1.0,
+    "exposure_days": 68,
+    "label": 0
+  },
+  {
+    "ip": "162.101.92.225",
+    "org": "University IT",
+    "country": "DE",
+    "num_open_ports": 2,
+    "cve_count": 0,
+    "max_cvss": 1.9,
+    "exposure_days": 73,
+    "label": 0
+  },
+  {
+    "ip": "33.17.220.7",
+    "org": "Managed Hosting",
+    "country": "NL",
+    "num_open_ports": 1,
+    "cve_count": 2,
+    "max_cvss": 3.2,
+    "exposure_days": 12,
+    "label": 0
+  },
+  {
+    "ip": "87.172.55.185",
+    "org": "Linode",
+    "country": "CN",
+    "num_open_ports": 16,
+    "cve_count": 22,
+    "max_cvss": 7.5,
+    "exposure_days": 131,
+    "label": 1
+  },
+  {
+    "ip": "75.244.68.188",
+    "org": "University IT",
+    "country": "IN",
+    "num_open_ports": 7,
+    "cve_count": 4,
+    "max_cvss": 3.0,
+    "exposure_days": 55,
+    "label": 0
+  },
+  {
+    "ip": "167.232.194.83",
+    "org": "SmallCorp Inc.",
+    "country": "GB",
+    "num_open_ports": 7,
+    "cve_count": 4,
+    "max_cvss": 2.7,
+    "exposure_days": 86,
+    "label": 0
+  },
+  {
+    "ip": "145.218.146.83",
+    "org": "University IT",
+    "country": "AU",
+    "num_open_ports": 4,
+    "cve_count": 0,
+    "max_cvss": 1.3,
+    "exposure_days": 6,
+    "label": 0
+  },
+  {
+    "ip": "111.142.160.26",
+    "org": "Retail POS",
+    "country": "US",
+    "num_open_ports": 7,
+    "cve_count": 3,
+    "max_cvss": 3.5,
+    "exposure_days": 26,
+    "label": 0
+  },
+  {
+    "ip": "67.54.118.171",
+    "org": "University IT",
+    "country": "NL",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 1.0,
+    "exposure_days": 36,
+    "label": 0
+  },
+  {
+    "ip": "205.99.3.126",
+    "org": "Retail POS",
+    "country": "US",
+    "num_open_ports": 1,
+    "cve_count": 1,
+    "max_cvss": 0.4,
+    "exposure_days": 68,
+    "label": 0
+  },
+  {
+    "ip": "184.61.227.228",
+    "org": "OVH",
+    "country": "RU",
+    "num_open_ports": 10,
+    "cve_count": 27,
+    "max_cvss": 6.6,
+    "exposure_days": 122,
+    "label": 1
+  },
+  {
+    "ip": "191.113.38.84",
+    "org": "Retail POS",
+    "country": "NL",
+    "num_open_ports": 2,
+    "cve_count": 2,
+    "max_cvss": 0.5,
+    "exposure_days": 10,
+    "label": 0
+  },
+  {
+    "ip": "177.161.19.111",
+    "org": "Managed Hosting",
+    "country": "JP",
+    "num_open_ports": 3,
+    "cve_count": 2,
+    "max_cvss": 3.0,
+    "exposure_days": 90,
+    "label": 0
+  },
+  {
+    "ip": "163.4.125.36",
+    "org": "University IT",
+    "country": "FR",
+    "num_open_ports": 6,
+    "cve_count": 3,
+    "max_cvss": 3.2,
+    "exposure_days": 4,
+    "label": 0
+  },
+  {
+    "ip": "188.254.144.34",
+    "org": "Retail POS",
+    "country": "JP",
+    "num_open_ports": 9,
+    "cve_count": 0,
+    "max_cvss": 2.1,
+    "exposure_days": 23,
+    "label": 0
+  },
+  {
+    "ip": "182.91.19.108",
+    "org": "Retail POS",
+    "country": "US",
+    "num_open_ports": 9,
+    "cve_count": 0,
+    "max_cvss": 2.4,
+    "exposure_days": 26,
+    "label": 0
+  },
+  {
+    "ip": "75.248.250.204",
+    "org": "DigitalOcean",
+    "country": "JP",
+    "num_open_ports": 8080,
+    "cve_count": 22,
+    "max_cvss": 7.3,
+    "exposure_days": 247,
+    "label": 2
+  },
+  {
+    "ip": "115.166.126.170",
+    "org": "Managed Hosting",
+    "country": "NL",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 0.5,
+    "exposure_days": 53,
+    "label": 0
+  },
+  {
+    "ip": "199.247.250.154",
+    "org": "University IT",
+    "country": "JP",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 3.3,
+    "exposure_days": 16,
+    "label": 0
+  },
+  {
+    "ip": "144.165.133.173",
+    "org": "University IT",
+    "country": "NL",
+    "num_open_ports": 2,
+    "cve_count": 1,
+    "max_cvss": 4.0,
+    "exposure_days": 7,
+    "label": 0
+  },
+  {
+    "ip": "187.112.173.163",
+    "org": "Managed Hosting",
+    "country": "CN",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 4.1,
+    "exposure_days": 62,
+    "label": 0
+  },
+  {
+    "ip": "85.66.10.244",
+    "org": "DigitalOcean",
+    "country": "RU",
+    "num_open_ports": 110,
+    "cve_count": 56,
+    "max_cvss": 8.7,
+    "exposure_days": 635,
+    "label": 2
+  },
+  {
+    "ip": "41.202.117.75",
+    "org": "Hetzner",
+    "country": "SE",
+    "num_open_ports": 8080,
+    "cve_count": 49,
+    "max_cvss": 8.0,
+    "exposure_days": 380,
+    "label": 2
+  },
+  {
+    "ip": "129.203.248.11",
+    "org": "DigitalOcean",
+    "country": "BR",
+    "num_open_ports": 3389,
+    "cve_count": 46,
+    "max_cvss": 9.5,
+    "exposure_days": 114,
+    "label": 2
+  },
+  {
+    "ip": "209.193.205.34",
+    "org": "Retail POS",
+    "country": "JP",
+    "num_open_ports": 2,
+    "cve_count": 2,
+    "max_cvss": 1.1,
+    "exposure_days": 15,
+    "label": 0
+  },
+  {
+    "ip": "155.77.48.189",
+    "org": "Google Cloud",
+    "country": "DE",
+    "num_open_ports": 443,
+    "cve_count": 32,
+    "max_cvss": 9.2,
+    "exposure_days": 770,
+    "label": 2
+  },
+  {
+    "ip": "71.234.103.26",
+    "org": "University IT",
+    "country": "AU",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 2.3,
+    "exposure_days": 38,
+    "label": 0
+  },
+  {
+    "ip": "72.247.145.233",
+    "org": "Managed Hosting",
+    "country": "CN",
+    "num_open_ports": 6,
+    "cve_count": 0,
+    "max_cvss": 0.4,
+    "exposure_days": 71,
+    "label": 0
+  },
+  {
+    "ip": "7.203.118.115",
+    "org": "Amazon AWS",
+    "country": "IN",
+    "num_open_ports": 6379,
+    "cve_count": 46,
+    "max_cvss": 6.9,
+    "exposure_days": 473,
+    "label": 2
+  },
+  {
+    "ip": "144.86.106.222",
+    "org": "University IT",
+    "country": "SE",
+    "num_open_ports": 5,
+    "cve_count": 0,
+    "max_cvss": 2.8,
+    "exposure_days": 12,
+    "label": 0
+  },
+  {
+    "ip": "197.252.129.106",
+    "org": "ISP Backbone",
+    "country": "US",
+    "num_open_ports": 142,
+    "cve_count": 46,
+    "max_cvss": 7.0,
+    "exposure_days": 999,
+    "label": 2
+  },
+  {
+    "ip": "69.107.250.140",
+    "org": "Retail POS",
+    "country": "US",
+    "num_open_ports": 3,
+    "cve_count": 0,
+    "max_cvss": 2.5,
+    "exposure_days": 0,
+    "label": 0
+  },
+  {
+    "ip": "27.217.39.97",
+    "org": "Retail POS",
+    "country": "SE",
+    "num_open_ports": 11,
+    "cve_count": 0,
+    "max_cvss": 2.4,
+    "exposure_days": 10,
+    "label": 0
+  },
+  {
+    "ip": "109.253.87.161",
+    "org": "SmallCorp Inc.",
+    "country": "GB",
+    "num_open_ports": 1,
+    "cve_count": 0,
+    "max_cvss": 3.9,
+    "exposure_days": 4,
+    "label": 0
+  },
+  {
+    "ip": "134.165.190.145",
+    "org": "Linode",
+    "country": "CN",
+    "num_open_ports": 5432,
+    "cve_count": 0,
+    "max_cvss": 7.5,
+    "exposure_days": 287,
+    "label": 2
+  },
+  {
+    "ip": "85.69.84.135",
+    "org": "DigitalOcean",
+    "country": "AU",
+    "num_open_ports": 22,
+    "cve_count": 39,
+    "max_cvss": 6.8,
+    "exposure_days": 483,
+    "label": 2
+  },
+  {
+    "ip": "178.48.234.85",
+    "org": "Microsoft Azure",
+    "country": "GB",
+    "num_open_ports": 83,
+    "cve_count": 30,
+    "max_cvss": 0.4,
+    "exposure_days": 214,
+    "label": 1
   }
 ]

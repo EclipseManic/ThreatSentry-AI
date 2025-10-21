@@ -421,7 +421,7 @@ def notify_new_high_risk_devices():
             return
         # Build a rich HTML body and send
         html_body = build_device_summary(devices)
-        subject = f"[Threat Hunting] {len(devices)} New High-Risk Device(s) Detected"
+        subject = f"[Threat Sentric AI] {len(devices)} New High-Risk Device(s) Detected"
         try:
             send_email_alert(subject, html_body)
             for d in devices:

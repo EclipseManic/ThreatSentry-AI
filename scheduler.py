@@ -3,9 +3,9 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from logger import get_logger
 import datetime
 from collectors import shodan_collector, nvd_collector
-from model.trainer import train_and_save_model
+from model import train_and_save_model
 from email_alerts import notify_new_high_risk_devices
-from config import SCAN_INTERVAL_MINUTES, RETRAIN_INTERVAL_MINUTES, RETRAIN_ON_SCHEDULE
+from config import SCAN_INTERVAL_MINUTES, RETRAIN_INTERVAL_MINUTES, RETRAIN_ON_SCHEDULE, SHODAN_QUERY, MAX_SHODAN_RESULTS
 
 logger = get_logger("scheduler")
 sched = BackgroundScheduler()
@@ -13,7 +13,8 @@ sched = BackgroundScheduler()
 def scheduled_scan():
     logger.info("Scheduled scan started.")
     try:
-        shodan_collector.scan_shodan(query="product:apache", limit=50)
+        # Use configured SHODAN_QUERY and MAX_SHODAN_RESULTS. If empty, the collector defaults will apply.
+        shodan_collector.scan_shodan(query=SHODAN_QUERY, limit=MAX_SHODAN_RESULTS)
         nvd_collector.enrich_devices_with_vulns()
         logger.info("Scan/enrichment complete.")
     except Exception as e:

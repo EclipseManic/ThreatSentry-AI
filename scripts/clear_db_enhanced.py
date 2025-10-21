@@ -1,5 +1,5 @@
 """scripts/clear_db_enhanced.py
-Safer DB maintenance for the Threat Hunting dashboard.
+Safer DB maintenance for the Threat Sentric AI dashboard.
 
 Features:
  - Dry-run summary by default
@@ -32,7 +32,7 @@ def confirm(prompt: str) -> bool:
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Enhanced DB cleanup for the threat-hunting dashboard.')
+    parser = argparse.ArgumentParser(description='Enhanced DB cleanup for the Threat Sentric AI dashboard.')
     parser.add_argument('--yes', action='store_true', help='Perform actions without interactive confirmation.')
     parser.add_argument('--delete-devices', action='store_true', help='Delete Device rows from DB.')
     parser.add_argument('--delete-vulns', action='store_true', help='Delete Vulnerability rows from DB.')

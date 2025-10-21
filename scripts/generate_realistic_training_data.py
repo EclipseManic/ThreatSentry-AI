@@ -1,5 +1,5 @@
 """
-Generate a realistic-looking synthetic training dataset for the threat-hunting model.
+Generate a realistic-looking synthetic training dataset for Threat Sentric AI.
 Writes JSON to `model/my_training_data.json`.
 Usage: python generate_realistic_training_data.py --count 500
 """
@@ -111,8 +111,8 @@ def generate_record():
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--count', type=int, default=500)
-    parser.add_argument('--out', type=str, default='model/my_training_data.json')
+    parser.add_argument('--count', type=int, default=1000)
+    parser.add_argument('--out', type=str, default='scripts/my_training_data.json')
     args = parser.parse_args()
 
     records = []
