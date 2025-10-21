@@ -43,7 +43,7 @@ In today's complex cybersecurity landscape, security teams are often overwhelmed
 
 * **Backend:** Python
 * **GUI:** PyQt5
-* **Machine Learning:** Scikit-learn, TensorFlow, XGBoost
+* **Machine Learning:** Scikit-learn
 * **Data Collection:** Shodan API, NVDLib
 * **Database:** SQLite (via SQLAlchemy)
 * **Email Alerts:** SendGrid API
