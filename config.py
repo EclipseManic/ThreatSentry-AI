@@ -28,6 +28,12 @@ SHODAN_QUERIES = {
 # Which preset key to pick by default when the GUI preset selector is left alone.
 DEFAULT_SHODAN_QUERY_KEY = os.getenv("DEFAULT_SHODAN_QUERY_KEY", "default")
 
+# Note: SHODAN_QUERY (a direct query string) and SHODAN_QUERIES + DEFAULT_SHODAN_QUERY_KEY
+# are both supported. GUI and collectors use the precedence: custom GUI value -> preset ->
+# SHODAN_QUERY value. If you'd prefer a single canonical source, set SHODAN_QUERY_EMPTY_TO_PRESET
+# to False and rely exclusively on SHODAN_QUERY.
+SHODAN_QUERY_EMPTY_TO_PRESET = os.getenv("SHODAN_QUERY_EMPTY_TO_PRESET", "True").lower() in ("1","true","yes")
+
 # --- Database ---
 SQLITE_PATH = os.getenv("SQLITE_PATH", "threat_sentric_ai.db")
 
@@ -50,3 +56,19 @@ MAX_SHODAN_RESULTS = int(os.getenv("MAX_SHODAN_RESULTS", "50"))
 
 # --- Feature Flags ---
 ENABLE_EMAIL_ALERTS = bool(SENDGRID_API_KEY and SENDER_EMAIL and ALERT_RECIPIENTS)
+
+# Optional internal collector endpoints and API keys (set these in your .env if available)
+CMDB_API_ENDPOINT = os.getenv("CMDB_API_ENDPOINT")
+CMDB_API_KEY = os.getenv("CMDB_API_KEY")
+
+SIEM_API_ENDPOINT = os.getenv("SIEM_API_ENDPOINT")
+SIEM_API_KEY = os.getenv("SIEM_API_KEY")
+
+PATCH_API_ENDPOINT = os.getenv("PATCH_API_ENDPOINT")
+PATCH_API_KEY = os.getenv("PATCH_API_KEY")
+
+NETWORK_MONITOR_ENDPOINT = os.getenv("NETWORK_MONITOR_ENDPOINT")
+NETWORK_MONITOR_KEY = os.getenv("NETWORK_MONITOR_KEY")
+
+# Logging
+LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
