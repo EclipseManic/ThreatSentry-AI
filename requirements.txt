@@ -13,11 +13,7 @@ pandas
 scikit-learn
 numpy
 joblib
-tensorflow # For advanced neural network capabilities
-xgboost   # For gradient boosting
-lightgbm  # For additional ensemble methods
 pandas    # For data manipulation
-shap  # For model interpretability
 
 # Email / Alerts
 sendgrid
@@ -41,4 +37,5 @@ matplotlib
 # during installation, consider using Python 3.11 or a conda environment where
 
 # prebuilt binaries are available.
+
 
