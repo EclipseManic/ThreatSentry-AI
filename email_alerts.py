@@ -1,4 +1,11 @@
-# email_alerts.py
+"""
+Email alerting utilities
+
+Provides helpers to build device summary emails and send alerts via SendGrid.
+The module includes sensible fallbacks and will log rather than crash when
+external services (SendGrid) are not configured.
+"""
+
 from typing import List, Dict, Any, Optional, Union
 from datetime import datetime, timezone
 from sendgrid import SendGridAPIClient
@@ -75,7 +82,7 @@ def send_email_alert(subject: str, html_content: str, to_emails: Optional[Union[
     )
     try:
         sg = SendGridAPIClient(SENDGRID_API_KEY)
-        response = sg.send(message)
+        response: Any = sg.send(message)
         logger.info("SendGrid status: %s", response.status_code)
         return response
     except Exception as e:

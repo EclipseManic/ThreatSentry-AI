@@ -1,4 +1,12 @@
-# Clean gui.app
+"""
+GUI application (PyQt5)
+
+This module contains the main dashboard window used to view device records,
+manually trigger scans, upload device lists, and send alerts. The GUI is
+designed to be defensive so it continues to operate even if optional modules
+such as the training orchestrator are missing.
+"""
+
 import sys
 import pandas as pd
 from PyQt5.QtWidgets import (
@@ -13,10 +21,11 @@ from matplotlib.figure import Figure
 from db import get_session, Device, init_db
 from email_alerts import send_email_alert, build_device_summary
 from collectors import shodan_collector, nvd_collector
-from config import SHODAN_QUERIES, DEFAULT_SHODAN_QUERY_KEY, SHODAN_QUERY
+from config import SHODAN_QUERIES, SHODAN_QUERY
 from logger import get_logger
 import importlib
 import ipaddress
+import config
 
 logger = get_logger("gui")
 
@@ -157,6 +166,42 @@ class DashboardWindow(QWidget):
             self._shodan_preset.addItem(k)
         self._shodan_preset.setFixedWidth(160)
         left_col.addWidget(self._shodan_preset)
+
+        # Default the preset selector: prefer SHODAN_QUERY (if provided), else pick the
+        # first preset key from SHODAN_QUERIES so the UI shows a sensible default.
+        try:
+            default_key = None
+            if SHODAN_QUERY and str(SHODAN_QUERY).strip():
+                # try to find a preset that matches the configured SHODAN_QUERY
+                for k, v in (SHODAN_QUERIES or {}).items():
+                    if v == SHODAN_QUERY:
+                        default_key = k
+                        break
+            if default_key is None:
+                # pick the first preset key if available
+                keys = list(SHODAN_QUERIES.keys()) if SHODAN_QUERIES else []
+                default_key = keys[0] if keys else None
+
+            if default_key and default_key in self._shodan_preset_keys:
+                idx = self._shodan_preset_keys.index(default_key) + 1  # +1 for 'Custom' entry
+                self._shodan_preset.setCurrentIndex(idx)
+        except Exception:
+            pass
+
+        # When a preset is selected, populate the query box for clarity; 'Custom' clears it.
+        def _on_preset_changed(i):
+            try:
+                if i <= 0:
+                    self._shodan_query.clear()
+                else:
+                    key = self._shodan_preset_keys[i - 1]
+                    q = SHODAN_QUERIES.get(key, '')
+                    # show preset in the query box but keep it editable for quick changes
+                    self._shodan_query.setText(q or '')
+            except Exception:
+                pass
+
+        self._shodan_preset.currentIndexChanged.connect(_on_preset_changed)
 
         header_top.addLayout(left_group)
         header_top.addStretch(1)
@@ -485,7 +530,15 @@ class DashboardWindow(QWidget):
 
             used_default = False
             if not q:
-                q = SHODAN_QUERY or SHODAN_QUERIES.get(DEFAULT_SHODAN_QUERY_KEY, 'product:apache')
+                # Prefer an explicit SHODAN_QUERY (single global). If empty, use the
+                # first preset value from SHODAN_QUERIES as the UI/default behavior.
+                if SHODAN_QUERY and str(SHODAN_QUERY).strip():
+                    q = SHODAN_QUERY
+                else:
+                    try:
+                        q = next(iter(SHODAN_QUERIES.values()))
+                    except Exception:
+                        q = 'product:apache'
                 used_default = True
 
             if used_default:

@@ -1,4 +1,12 @@
-# db.py
+"""
+Database models and helpers
+
+Defines the SQLAlchemy ORM models used by the application (Device and
+Vulnerability) and provides simple helpers to initialize and obtain DB sessions.
+This module uses SQLite by default; change `SQLITE_PATH` in `config.py` to
+point to a different database file.
+"""
+
 from sqlalchemy import create_engine, Column, Integer, String, DateTime, Float, Text, ForeignKey, Boolean
 from sqlalchemy.orm import sessionmaker, declarative_base, relationship
 import datetime

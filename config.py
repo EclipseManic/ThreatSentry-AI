@@ -1,38 +1,52 @@
-# config.py
+"""
+Application configuration.
+
+This file centralizes simple configuration values that can be set via environment
+variables (or a .env file). Keep this module small and easy to edit for new users.
+
+Key Shodan-related settings:
+- SHODAN_API_KEY: API key used to access the Shodan service.
+- SHODAN_QUERY: optional single global query string. If set, scheduled scans use
+	this single query. If empty and SHODAN_QUERY_EMPTY_TO_PRESET is True, the
+	scheduler will iterate the `SHODAN_QUERIES` presets.
+- SHODAN_QUERIES: dictionary of named preset queries exposed to the GUI.
+- SHODAN_QUERY_EMPTY_TO_PRESET: boolean flag controlling whether the scheduler
+	should run all presets when SHODAN_QUERY is empty.
+"""
+
 import os
 from dotenv import load_dotenv
 
-# Load environment variables
+# Load .env file (if present) and environment variables
 load_dotenv()
 
-# --- Shodan ---
+# --- Shodan configuration ---
 SHODAN_API_KEY = os.getenv("SHODAN_API_KEY", "")
-SHODAN_QUERY = os.getenv("SHODAN_QUERY", "product:apache")
 
-# Optional: named Shodan query presets. Users can customize these in their .env
-# Example usage: set DEFAULT_SHODAN_QUERY_KEY to one of the keys below or pass a custom query
-# via SHODAN_QUERY. Each entry is a complete Shodan query string.
+# Optional single query string (highest priority for scheduled scans). Leave
+# empty to allow using presets defined in SHODAN_QUERIES.
+SHODAN_QUERY = os.getenv("SHODAN_QUERY", "")
+
+# Preset queries available in the GUI and used by the scheduler when
+# SHODAN_QUERY is empty and SHODAN_QUERY_EMPTY_TO_PRESET is True.
 SHODAN_QUERIES = {
-	"default": "product:apache",
-	"org": 'org:"Your Company Name"',
-	"net": 'net:"123.45.67.0/24"',
-	"ssl": 'ssl:"yourcompany.com"',
-	"hostname": 'hostname:".yourcompany.com"',
-	"rdp": 'port:3389 "remote desktop"',
-	"mongodb": 'port:27017 "mongodb"',
-	"ics_modbus": 'port:502 "modbus"',
-	"vuln_example": 'vuln:CVE-2024-12345',
-	"http_login": 'http.title:"Login" org:"Your Company"'
+		"default": "product:apache",
+		"org": 'org:"Your Company Name"',
+		"net": 'net:"123.45.67.0/24"',
+		"ssl": 'ssl:"yourcompany.com"',
+		"hostname": 'hostname:".yourcompany.com"',
+		"rdp": 'port:3389 "remote desktop"',
+		"mongodb": 'port:27017 "mongodb"',
+		"ics_modbus": 'port:502 "modbus"',
+		"vuln_example": 'vuln:CVE-2024-12345',
+		"http_login": 'http.title:"Login" org:"Your Company"'
 }
 
-# Which preset key to pick by default when the GUI preset selector is left alone.
-DEFAULT_SHODAN_QUERY_KEY = os.getenv("DEFAULT_SHODAN_QUERY_KEY", "default")
-
-# Note: SHODAN_QUERY (a direct query string) and SHODAN_QUERIES + DEFAULT_SHODAN_QUERY_KEY
-# are both supported. GUI and collectors use the precedence: custom GUI value -> preset ->
-# SHODAN_QUERY value. If you'd prefer a single canonical source, set SHODAN_QUERY_EMPTY_TO_PRESET
-# to False and rely exclusively on SHODAN_QUERY.
-SHODAN_QUERY_EMPTY_TO_PRESET = os.getenv("SHODAN_QUERY_EMPTY_TO_PRESET", "True").lower() in ("1","true","yes")
+# When True, the scheduler runs every preset from SHODAN_QUERIES if
+# SHODAN_QUERY is unset/empty. When False, the scheduler skips preset iteration
+# and will pass an empty query to the collector (collector may apply its own
+# fallback).
+SHODAN_QUERY_EMPTY_TO_PRESET = os.getenv("SHODAN_QUERY_EMPTY_TO_PRESET", "True").lower() in ("1", "true", "yes")
 
 # --- Database ---
 SQLITE_PATH = os.getenv("SQLITE_PATH", "threat_sentric_ai.db")
