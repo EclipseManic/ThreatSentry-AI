@@ -5,7 +5,6 @@
 [![Framework](https://img.shields.io/badge/UI-PyQt5-green.svg)](https://www.qt.io/qt-for-python)
 [![ML Libraries](https://img.shields.io/badge/ML-Scikit--learn-orange.svg)](https://scikit-learn.org/)
 
-**(Project Status: Actively Developed)**
 
 ## 👤 Author & Acknowledgment
 
