@@ -115,12 +115,6 @@ The application operates in a continuous, cyclical workflow managed by the **Sch
     # --- Shodan ---
     # Your Shodan API Key
     SHODAN_API_KEY="YOUR_SHODAN_API_KEY"
-    # Default Shodan query if none specified in GUI (optional, defaults used if empty)
-    SHODAN_QUERY="product:apache" 
-    # Key from SHODAN_QUERIES in config.py to use by default in GUI (optional)
-    DEFAULT_SHODAN_QUERY_KEY="default"
-    # Max results per Shodan scan
-    MAX_SHODAN_RESULTS="50"
 
     # --- SendGrid Email Alerts ---
     # Your SendGrid API Key
