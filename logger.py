@@ -19,7 +19,7 @@ def get_logger(name: str = __name__):
         logger.addHandler(ch)
         try:
             level = getattr(logging, config.LOG_LEVEL.upper(), logging.INFO)
-        except Exception:
+        except (AttributeError, TypeError):
             level = logging.INFO
         logger.setLevel(level)
     return logger

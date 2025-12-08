@@ -19,8 +19,12 @@ def train_and_save_model() -> bool:
 
 	Returns True on successful training, False otherwise.
 	"""
-	orch = ModelTrainingOrchestrator()
-	return orch.train_model()
+	try:
+		orch = ModelTrainingOrchestrator()
+		return orch.train_model()
+	except Exception as e:
+		logger.error("Failed to train and save model: %s", str(e))
+		return False
 
 
 def load_training_data():
@@ -28,8 +32,12 @@ def load_training_data():
 
 	Returns (X, y) or (None, None) when no data is available.
 	"""
-	orch = ModelTrainingOrchestrator()
-	return orch.prepare_training_data()
+	try:
+		orch = ModelTrainingOrchestrator()
+		return orch.prepare_training_data()
+	except Exception as e:
+		logger.error("Failed to load training data: %s", str(e))
+		return (None, None)
 
 
 def predict_and_store(model: Optional[EnsembleModel] = None):
@@ -38,8 +46,11 @@ def predict_and_store(model: Optional[EnsembleModel] = None):
 	The optional `model` parameter is accepted for API-compatibility but
 	currently ignored since orchestrator manages loading/saving.
 	"""
-	orch = ModelTrainingOrchestrator.load_latest_model()
-	orch.predict_and_update()
+	try:
+		orch = ModelTrainingOrchestrator.load_latest_model()
+		orch.predict_and_update()
+	except Exception as e:
+		logger.error("Failed to predict and store: %s", str(e))
 
 
 def load_model():

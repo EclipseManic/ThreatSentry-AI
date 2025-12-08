@@ -48,7 +48,7 @@ def enrich_from_siem():
             updated += 1
 
         session.commit()
-        logger.info(f"SIEM enrichment finished. Updated {updated} devices.")
+        logger.info("SIEM enrichment finished. Updated %d devices.", updated)
     except Exception:
         session.rollback()
         logger.exception("SIEM enrichment failed")

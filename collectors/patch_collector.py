@@ -44,7 +44,7 @@ def enrich_from_patch_system():
             updated += 1
 
         session.commit()
-        logger.info(f"Patch enrichment finished. Updated {updated} devices.")
+        logger.info("Patch enrichment finished. Updated %d devices.", updated)
     except Exception:
         session.rollback()
         logger.exception("Patch enrichment failed")

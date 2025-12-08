@@ -48,7 +48,7 @@ def enrich_from_network_monitor():
             updated += 1
 
         session.commit()
-        logger.info(f"Network monitor enrichment finished. Updated {updated} devices.")
+        logger.info("Network monitor enrichment finished. Updated %d devices.", updated)
     except Exception:
         session.rollback()
         logger.exception("Network monitor enrichment failed")

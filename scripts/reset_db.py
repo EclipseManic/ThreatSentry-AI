@@ -19,7 +19,7 @@ def reset_database():
         # Delete existing database
         if os.path.exists(SQLITE_PATH):
             os.remove(SQLITE_PATH)
-            logger.info(f"Deleted existing database at {SQLITE_PATH}")
+            logger.info("Deleted existing database at %s", SQLITE_PATH)
         
         # Import after deletion to avoid schema conflicts
         from db import init_db
@@ -27,10 +27,11 @@ def reset_database():
         # Initialize new database with updated schema
         init_db()
         logger.info("Database initialized with new schema")
+        return True
         
     except Exception as e:
-        logger.error(f"Failed to reset database: {str(e)}")
-        raise
+        logger.error("Failed to reset database: %s", str(e))
+        return False
 
 if __name__ == "__main__":
     reset_database()

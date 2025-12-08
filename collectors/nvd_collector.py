@@ -89,5 +89,6 @@ def enrich_devices_with_vulns():
         logger.info("Enriched devices with vulnerabilities.")
     except Exception as e:
         logger.exception("Failed to enrich devices: %s", e)
+        session.rollback()
     finally:
         session.close()

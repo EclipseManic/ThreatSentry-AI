@@ -117,7 +117,7 @@ class ModelTrainingOrchestrator:
         self._save_model_and_metadata()
         
         logger.info("Model training completed successfully")
-        logger.info(f"Validation accuracy: {self.model.validation_metrics['accuracy']:.3f}")
+        logger.info("Validation accuracy: %.3f", self.model.validation_metrics['accuracy'])
         
         return True
     
@@ -126,38 +126,42 @@ class ModelTrainingOrchestrator:
         Make predictions for all devices and update the database
         """
         session = get_session()
-        devices = session.query(Device).all()
-        
-        if not devices:
-            logger.warning("No devices found for prediction")
-            session.close()
-            return
-        
-        # Extract features
-        X = self.feature_engineer.batch_extract_features(devices)
-        X_scaled = self.feature_engineer.transform_features(X)
-        
-        # Get predictions and explanations
-        predictions = self.model.predict(X_scaled)
-        explanations = self.model.get_prediction_explanation(X_scaled)
-        
-        # Update devices with predictions and explanations
-        for device, pred, explanation in zip(devices, predictions, explanations):
-            device.risk_label = int(pred)
-            device.risk_score = float(explanation['confidence'] * 100)
-            device.confidence_score = float(explanation['confidence'])
-            device.last_analysis_date = datetime.now(timezone.utc)
+        try:
+            devices = session.query(Device).all()
             
-            # Store feature importance information
-            contrib_features = {
-                feat['feature_idx']: feat['importance']
-                for feat in explanation['contributing_features']
-            }
-            device.alert_history = json.dumps(contrib_features)
-        
-        session.commit()
-        session.close()
-        logger.info(f"Updated predictions for {len(devices)} devices")
+            if not devices:
+                logger.warning("No devices found for prediction")
+                return
+            
+            # Extract features
+            X = self.feature_engineer.batch_extract_features(devices)
+            X_scaled = self.feature_engineer.transform_features(X)
+            
+            # Get predictions and explanations
+            predictions = self.model.predict(X_scaled)
+            explanations = self.model.get_prediction_explanation(X_scaled)
+            
+            # Update devices with predictions and explanations
+            for device, pred, explanation in zip(devices, predictions, explanations):
+                device.risk_label = int(pred)
+                device.risk_score = float(explanation['confidence'] * 100)
+                device.confidence_score = float(explanation['confidence'])
+                device.last_analysis_date = datetime.now(timezone.utc)
+                
+                # Store feature importance information
+                contrib_features = {
+                    feat['feature_idx']: feat['importance']
+                    for feat in explanation['contributing_features']
+                }
+                device.alert_history = json.dumps(contrib_features)
+            
+            session.commit()
+            logger.info("Updated predictions for %d devices", len(devices))
+        except Exception as e:
+            logger.error("Failed to predict and update: %s", str(e))
+            session.rollback()
+        finally:
+            session.close()
     
     def _save_model_and_metadata(self) -> None:
         """
@@ -171,7 +175,7 @@ class ModelTrainingOrchestrator:
         with open(metadata_path, 'w') as f:
             json.dump(self.training_metadata, f, indent=2)
         
-        logger.info(f"Model and metadata saved to {MODEL_PATH}")
+        logger.info("Model and metadata saved to %s", MODEL_PATH)
     
     @classmethod
     def load_latest_model(cls) -> 'ModelTrainingOrchestrator':

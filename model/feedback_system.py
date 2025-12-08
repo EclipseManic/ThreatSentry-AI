@@ -28,80 +28,93 @@ class FeedbackSystem:
         Record feedback from security team about a device's risk classification
         """
         session = get_session()
-        device = session.query(Device).filter_by(id=device_id).first()
-        
-        if not device:
+        try:
+            device = session.query(Device).filter_by(id=device_id).first()
+            
+            if not device:
+                return {"success": False, "error": "Device not found"}
+            
+            # Get current prediction
+            features = self.feature_engineer.extract_features(device)
+            features_scaled = self.feature_engineer.transform_features(features.reshape(1, -1))
+            current_pred = self.model.predict(features_scaled)[0]
+            
+            # Record feedback
+            feedback_entry = {
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "device_id": device_id,
+                "predicted_risk": int(current_pred),
+                "actual_risk": actual_risk,
+                "feedback_source": feedback_source,
+                "feedback_notes": feedback_notes,
+                "features": features.tolist()
+            }
+            
+            # Update device metrics
+            device.prediction_accuracy = 1.0 if current_pred == actual_risk else 0.0
+            device.last_true_positive = datetime.now(timezone.utc) if actual_risk > 0 else None
+            if current_pred != actual_risk:
+                device.false_positive_count += 1
+            
+            # Store feedback
+            self.feedback_history.append(feedback_entry)
+            
+            # If we have enough feedback, trigger model adjustment
+            if len(self.feedback_history) >= self.adjustment_threshold:
+                self._adjust_model()
+            
+            session.commit()
+            
+            return {
+                "success": True,
+                "feedback_id": len(self.feedback_history) - 1,
+                "requires_adjustment": len(self.feedback_history) >= self.adjustment_threshold
+            }
+        except Exception as e:
+            logger.error("Failed to record feedback: %s", str(e))
+            session.rollback()
+            return {"success": False, "error": str(e)}
+        finally:
             session.close()
-            return {"success": False, "error": "Device not found"}
-        
-        # Get current prediction
-        features = self.feature_engineer.extract_features(device)
-        features_scaled = self.feature_engineer.transform_features(features.reshape(1, -1))
-        current_pred = self.model.predict(features_scaled)[0]
-        
-        # Record feedback
-        feedback_entry = {
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-            "device_id": device_id,
-            "predicted_risk": int(current_pred),
-            "actual_risk": actual_risk,
-            "feedback_source": feedback_source,
-            "feedback_notes": feedback_notes,
-            "features": features.tolist()
-        }
-        
-        # Update device metrics
-        device.prediction_accuracy = 1.0 if current_pred == actual_risk else 0.0
-        device.last_true_positive = datetime.now(timezone.utc) if actual_risk > 0 else None
-        if current_pred != actual_risk:
-            device.false_positive_count += 1
-        
-        # Store feedback
-        self.feedback_history.append(feedback_entry)
-        
-        # If we have enough feedback, trigger model adjustment
-        if len(self.feedback_history) >= self.adjustment_threshold:
-            self._adjust_model()
-        
-        session.commit()
-        session.close()
-        
-        return {
-            "success": True,
-            "feedback_id": len(self.feedback_history) - 1,
-            "requires_adjustment": len(self.feedback_history) >= self.adjustment_threshold
-        }
     
     def _adjust_model(self) -> None:
         """
         Adjust model based on accumulated feedback
         """
-        logger.info("Starting model adjustment based on feedback")
-        
-        # Prepare feedback data
-        X_feedback = []
-        y_feedback = []
-        
-        for entry in self.feedback_history:
-            X_feedback.append(entry["features"])
-            y_feedback.append(entry["actual_risk"])
-        
-        X_feedback = np.array(X_feedback)
-        y_feedback = np.array(y_feedback)
-        
-        # Scale features
-        X_feedback_scaled = self.feature_engineer.transform_features(X_feedback)
-        
-        # Update model weights based on performance
-        self._update_model_weights()
-        
-        # Retrain model with feedback data
-        self.model.fit(X_feedback_scaled, y_feedback)
-        
-        # Clear feedback history after adjustment
-        self.feedback_history = []
-        
-        logger.info("Model adjusted successfully with feedback data")
+        try:
+            logger.info("Starting model adjustment based on feedback")
+            
+            # Prepare feedback data
+            X_feedback = []
+            y_feedback = []
+            
+            for entry in self.feedback_history:
+                X_feedback.append(entry["features"])
+                y_feedback.append(entry["actual_risk"])
+            
+            X_feedback = np.array(X_feedback)
+            y_feedback = np.array(y_feedback)
+            
+            # Validate data
+            if len(X_feedback) == 0 or len(np.unique(y_feedback)) < 1:
+                logger.warning("Insufficient feedback data for model adjustment")
+                return
+            
+            # Scale features
+            X_feedback_scaled = self.feature_engineer.transform_features(X_feedback)
+            
+            # Update model weights based on performance
+            self._update_model_weights()
+            
+            # Retrain model with feedback data
+            self.model.fit(X_feedback_scaled, y_feedback)
+            
+            # Clear feedback history after adjustment
+            self.feedback_history = []
+            
+            logger.info("Model adjusted successfully with feedback data")
+        except Exception as e:
+            logger.error("Failed to adjust model: %s", str(e))
     
     def _update_model_weights(self) -> None:
         """

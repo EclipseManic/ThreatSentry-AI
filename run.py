@@ -14,9 +14,28 @@ logger = get_logger("run")
 
 
 def main():
-    init_db()
-    start_scheduler()
-    start_gui()
+    try:
+        logger.info("Initializing database...")
+        init_db()
+        logger.info("Database initialized successfully")
+    except Exception as e:
+        logger.error("Failed to initialize database: %s", str(e))
+        raise
+
+    try:
+        logger.info("Starting scheduler...")
+        start_scheduler()
+        logger.info("Scheduler started successfully")
+    except Exception as e:
+        logger.error("Failed to start scheduler: %s", str(e))
+        raise
+
+    try:
+        logger.info("Starting GUI...")
+        start_gui()
+    except Exception as e:
+        logger.error("Failed to start GUI: %s", str(e))
+        raise
 
 
 if __name__ == "__main__":

@@ -81,22 +81,37 @@ class Vulnerability(Base):
     device = relationship("Device", back_populates="vulnerabilities")
 
 def get_engine():
-    engine = create_engine(f"sqlite:///{SQLITE_PATH}", echo=False, connect_args={"check_same_thread": False})
-    return engine
+    try:
+        engine = create_engine(f"sqlite:///{SQLITE_PATH}", echo=False, connect_args={"check_same_thread": False})
+        logger.info("Database engine created successfully")
+        return engine
+    except Exception as e:
+        logger.error("Failed to create database engine: %s", str(e))
+        raise
 
 def init_db():
-    engine = get_engine()
-    Base.metadata.create_all(engine)
-    logger.info(f"DB initialized at {SQLITE_PATH}")
-    return engine
+    try:
+        engine = get_engine()
+        Base.metadata.create_all(engine)
+        logger.info("DB initialized at %s", SQLITE_PATH)
+        return engine
+    except Exception as e:
+        logger.error("Failed to initialize database: %s", str(e))
+        raise
 
 _engine = None
 _Session = None
 
 def get_session():
     global _engine, _Session
-    if _engine is None:
-        _engine = get_engine()
-    if _Session is None:
-        _Session = sessionmaker(bind=_engine)
-    return _Session()
+    try:
+        if _engine is None:
+            _engine = get_engine()
+        if _Session is None:
+            _Session = sessionmaker(bind=_engine)
+        session = _Session()
+        logger.debug("Database session created")
+        return session
+    except Exception as e:
+        logger.error("Failed to create database session: %s", str(e))
+        raise

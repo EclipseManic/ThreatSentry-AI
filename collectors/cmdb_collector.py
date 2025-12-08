@@ -51,7 +51,7 @@ def enrich_from_cmdb():
             updated += 1
 
         session.commit()
-        logger.info(f"CMDB enrichment finished. Updated {updated} devices.")
+        logger.info("CMDB enrichment finished. Updated %d devices.", updated)
     except Exception:
         session.rollback()
         logger.exception("CMDB enrichment failed")

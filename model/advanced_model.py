@@ -153,17 +153,20 @@ class EnsembleModel:
         probabilities = self.predict_proba(X)
         
         explanations = []
+        feature_importance = self.feature_importances_
+        
         for idx, (pred, probs) in enumerate(zip(predictions, probabilities)):
             contrib_features = []
-            feature_importance = self.feature_importances_
             
-            # Get top contributing features
-            for feat_idx in np.argsort(X[idx] * feature_importance)[-5:]:
-                contrib_features.append({
-                    'feature_idx': int(feat_idx),
-                    'importance': float(feature_importance[feat_idx]),
-                    'value': float(X[idx, feat_idx])
-                })
+            # Check if feature importance is available
+            if feature_importance is not None:
+                # Get top contributing features
+                for feat_idx in np.argsort(X[idx] * feature_importance)[-5:]:
+                    contrib_features.append({
+                        'feature_idx': int(feat_idx),
+                        'importance': float(feature_importance[feat_idx]),
+                        'value': float(X[idx, feat_idx])
+                    })
             
             explanations.append({
                 'prediction': int(pred),

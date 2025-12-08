@@ -1,11 +1,10 @@
 """
 Generate a realistic-looking synthetic training dataset for Threat Sentric AI.
-Writes JSON to `model/my_training_data.json`.
-Usage: python generate_realistic_training_data.py --count 500
+Writes JSON to `scripts/my_training_data.json`.
+Usage: from scripts.generate_realistic_training_data import main; main(count=500)
 """
 import json
 import random
-import argparse
 from ipaddress import IPv4Address
 
 random.seed(42)
@@ -128,25 +127,31 @@ def main():
     parser.add_argument('--count', type=int, default=1000)
     parser.add_argument('--out', type=str, default='scripts/my_training_data.json')
     args = parser.parse_args()
+def main(count=1000, output_path='scripts/my_training_data.json'):
+    """Generate training data with specified parameters"""
+    try:
+        records = []
+        ips = set()
+        for _ in range(count):
+            r = generate_record()
+            # ensure unique IPs
+            while r['ip'] in ips:
+                r['ip'] = random_public_ip()
+            ips.add(r['ip'])
+            records.append(r)
 
-    records = []
-    ips = set()
-    for _ in range(args.count):
-        r = generate_record()
-        # ensure unique IPs
-        while r['ip'] in ips:
-            r['ip'] = random_public_ip()
-        ips.add(r['ip'])
-        records.append(r)
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(records, f, indent=2)
 
-    with open(args.out, 'w', encoding='utf-8') as f:
-        json.dump(records, f, indent=2)
-
-    # print a small summary
-    cnts = {0:0,1:0,2:0}
-    for r in records:
-        cnts[r['label']] += 1
-    print(f"Wrote {len(records)} records to {args.out} (Low={cnts[0]}, Medium={cnts[1]}, High={cnts[2]})")
+        # print a small summary
+        cnts = {0:0,1:0,2:0}
+        for r in records:
+            cnts[r['label']] += 1
+        print("Wrote %d records to %s (Low=%d, Medium=%d, High=%d)" % (len(records), output_path, cnts[0], cnts[1], cnts[2]))
+        return True
+    except Exception as e:
+        print("Error generating training data: %s" % str(e))
+        return False
 
 
 if __name__ == '__main__':

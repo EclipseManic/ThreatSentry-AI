@@ -423,9 +423,7 @@ def notify_new_high_risk_devices():
         if not devices:
             logger.info("No new high-risk devices found for notification.")
             return
-        if not devices:
-            logger.debug("No new high-risk devices to notify.")
-            return
+
         # Build a rich HTML body and send
         html_body = build_device_summary(devices)
         subject = f"[Threat Sentric AI] {len(devices)} New High-Risk Device(s) Detected"

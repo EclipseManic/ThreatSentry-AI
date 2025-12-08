@@ -29,75 +29,87 @@ class ModelMonitor:
         Calculate comprehensive model performance metrics
         """
         session = get_session()
-        devices = session.query(Device).all()
-        
-        if not devices:
-            session.close()
-            return {"error": "No devices found"}
-        
-        # Extract features and actual labels
-        X = self.feature_engineer.batch_extract_features(devices)
-        X_scaled = self.feature_engineer.transform_features(X)
-        y_true = np.array([d.risk_label for d in devices])
-        y_pred = self.model.predict(X_scaled)
-        
-        # Calculate metrics
-        metrics = {
-            'timestamp': datetime.now(timezone.utc).isoformat(),
-            'accuracy': np.mean(y_true == y_pred),
-            'confusion_matrix': confusion_matrix(y_true, y_pred).tolist(),
-            'classification_report': classification_report(y_true, y_pred, output_dict=True),
-            'prediction_distribution': {
-                'low': np.sum(y_pred == 0),
-                'medium': np.sum(y_pred == 1),
-                'high': np.sum(y_pred == 2)
+        try:
+            devices = session.query(Device).all()
+            
+            if not devices:
+                return {"error": "No devices found"}
+            
+            # Extract features and actual labels
+            X = self.feature_engineer.batch_extract_features(devices)
+            X_scaled = self.feature_engineer.transform_features(X)
+            y_true = np.array([d.risk_label for d in devices])
+            y_pred = self.model.predict(X_scaled)
+            
+            # Calculate metrics
+            metrics = {
+                'timestamp': datetime.now(timezone.utc).isoformat(),
+                'accuracy': float(np.mean(y_true == y_pred)),
+                'confusion_matrix': confusion_matrix(y_true, y_pred).tolist(),
+                'classification_report': classification_report(y_true, y_pred, output_dict=True),
+                'prediction_distribution': {
+                    'low': int(np.sum(y_pred == 0)),
+                    'medium': int(np.sum(y_pred == 1)),
+                    'high': int(np.sum(y_pred == 2))
+                }
             }
-        }
-        
-        # Add confidence metrics
-        probas = self.model.predict_proba(X_scaled)
-        metrics['avg_confidence'] = float(np.mean(np.max(probas, axis=1)))
-        metrics['low_confidence_predictions'] = int(np.sum(np.max(probas, axis=1) < 0.7))
-        
-        self.performance_history.append(metrics)
-        session.close()
-        
-        return metrics
+            
+            # Add confidence metrics
+            probas = self.model.predict_proba(X_scaled)
+            metrics['avg_confidence'] = float(np.mean(np.max(probas, axis=1)))
+            metrics['low_confidence_predictions'] = int(np.sum(np.max(probas, axis=1) < 0.7))
+            
+            self.performance_history.append(metrics)
+            
+            return metrics
+        except Exception as e:
+            logger.error("Failed to calculate performance metrics: %s", str(e))
+            return {"error": str(e)}
+        finally:
+            session.close()
     
     def detect_feature_drift(self, reference_data: np.ndarray) -> Dict:
         """
         Detect drift in feature distributions
         """
         session = get_session()
-        devices = session.query(Device).all()
-        
-        if not devices:
-            session.close()
-            return {"error": "No devices found"}
-        
-        current_data = self.feature_engineer.batch_extract_features(devices)
-        
-        drift_scores = {}
-        feature_names = self.feature_engineer.feature_names
-        
-        for i, feature_name in enumerate(feature_names):
-            # Calculate distribution differences
-            ref_dist = reference_data[:, i]
-            curr_dist = current_data[:, i]
+        try:
+            devices = session.query(Device).all()
             
-            # Calculate KL divergence for continuous features
-            ref_hist = np.histogram(ref_dist, bins=20, density=True)[0]
-            curr_hist = np.histogram(curr_dist, bins=20, density=True)[0]
+            if not devices:
+                return {"error": "No devices found"}
             
-            # Add smoothing to avoid division by zero
-            ref_hist = ref_hist + 1e-10
-            curr_hist = curr_hist + 1e-10
+            current_data = self.feature_engineer.batch_extract_features(devices)
             
-            # Calculate KL divergence
-            kl_div = np.sum(ref_hist * np.log(ref_hist / curr_hist))
+            drift_scores = {}
+            feature_names = getattr(self.feature_engineer, 'feature_names', [])
             
-            drift_scores[feature_name] = {
-                'drift_score': float(kl_div),
+            if not feature_names:
+                logger.warning("Feature names not available for drift detection")
+                return {"drift_scores": {}, "warning": "Feature names not available"}
+            
+            for i, feature_name in enumerate(feature_names):
+                if i >= len(reference_data[0]):
+                    logger.warning("Feature index %d out of range", i)
+                    continue
+                    
+                # Calculate distribution differences
+                ref_dist = reference_data[:, i]
+                curr_dist = current_data[:, i]
+                
+                # Calculate KL divergence for continuous features
+                ref_hist = np.histogram(ref_dist, bins=20, density=True)[0]
+                curr_hist = np.histogram(curr_dist, bins=20, density=True)[0]
+                
+                # Add smoothing to avoid division by zero
+                ref_hist = ref_hist + 1e-10
+                curr_hist = curr_hist + 1e-10
+                
+                # Calculate KL divergence
+                kl_div = np.sum(ref_hist * np.log(ref_hist / curr_hist))
+                
+                drift_scores[feature_name] = {
+                    'drift_score': float(kl_div),
                 'significant_drift': kl_div > 0.5,  # Threshold can be adjusted
                 'mean_difference': float(np.mean(curr_dist) - np.mean(ref_dist)),
                 'std_difference': float(np.std(curr_dist) - np.std(ref_dist))

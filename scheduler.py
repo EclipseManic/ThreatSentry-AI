@@ -28,8 +28,6 @@ from email_alerts import notify_new_high_risk_devices
 logger = get_logger("scheduler")
 sched = BackgroundScheduler()
 
-log = logging.getLogger(__name__)
-
 def _run_shodan_queries(queries):
     """Execute a sequence of Shodan queries safely.
 
@@ -39,16 +37,16 @@ def _run_shodan_queries(queries):
     """
     for q in queries:
         try:
-            log.info("Starting Shodan scan for query: %s", q)
+            logger.info("Starting Shodan scan for query: %s", q)
             shodan_collector.scan_shodan(query=q, limit=config.MAX_SHODAN_RESULTS)
-            log.info("Finished Shodan scan for query: %s", q)
+            logger.info("Finished Shodan scan for query: %s", q)
         except Exception:
-            log.exception("Failed Shodan scan for query: %s", q)
+            logger.exception("Failed Shodan scan for query: %s", q)
 
 def scheduled_scan():
     """Called by the scheduler on each interval."""
     start_time = datetime.datetime.now(datetime.timezone.utc)
-    log.info("Scheduled scan triggered at %s", start_time.isoformat())
+    logger.info("Scheduled scan triggered at %s", start_time.isoformat())
 
     # Query selection precedence described at module top. Use trimmed string
     # checks to avoid accidental whitespace-only values being treated as set.
@@ -64,7 +62,7 @@ def scheduled_scan():
 
 def scheduled_initial_scan():
     """Optional startup scan. Reuse same behavior as scheduled_scan."""
-    log.info("Initial scheduled scan starting")
+    logger.info("Initial scheduled scan starting")
     scheduled_scan()
 
 def scheduled_retrain():
@@ -82,21 +80,26 @@ def scheduled_notify():
         logger.exception("Notify failed: %s", e)
 
 def start():
-    logger.info("Starting scheduler.")
-    # Add a small startup delay so the initial scan can run without overlapping scheduled jobs
-    now = datetime.datetime.now(datetime.timezone.utc)
-    start_delay = datetime.timedelta(seconds=10)
-    sched.add_job(scheduled_scan, 'interval', minutes=max(1, config.SCAN_INTERVAL_MINUTES), id='scan_job', next_run_time=now + start_delay)
-    if config.RETRAIN_ON_SCHEDULE:
-        sched.add_job(scheduled_retrain, 'interval', minutes=max(1, config.RETRAIN_INTERVAL_MINUTES), id='retrain_job', next_run_time=now + start_delay)
-    sched.add_job(scheduled_notify, 'interval', minutes=max(1, config.SCAN_INTERVAL_MINUTES), id='notify_job', next_run_time=now + start_delay)
-    # Run an immediate initial startup scan (non-blocking)
     try:
-        sched.add_job(scheduled_initial_scan, 'date', run_date=now + datetime.timedelta(seconds=1), id='initial_scan')
-    except Exception:
-        # If job scheduling fails for any reason, run it synchronously as a fallback
+        logger.info("Starting scheduler.")
+        # Add a small startup delay so the initial scan can run without overlapping scheduled jobs
+        now = datetime.datetime.now(datetime.timezone.utc)
+        start_delay = datetime.timedelta(seconds=10)
+        sched.add_job(scheduled_scan, 'interval', minutes=max(1, config.SCAN_INTERVAL_MINUTES), id='scan_job', next_run_time=now + start_delay)
+        if config.RETRAIN_ON_SCHEDULE:
+            sched.add_job(scheduled_retrain, 'interval', minutes=max(1, config.RETRAIN_INTERVAL_MINUTES), id='retrain_job', next_run_time=now + start_delay)
+        sched.add_job(scheduled_notify, 'interval', minutes=max(1, config.SCAN_INTERVAL_MINUTES), id='notify_job', next_run_time=now + start_delay)
+        # Run an immediate initial startup scan (non-blocking)
         try:
-            scheduled_initial_scan()
+            sched.add_job(scheduled_initial_scan, 'date', run_date=now + datetime.timedelta(seconds=1), id='initial_scan')
         except Exception:
-            logger.exception("Failed to run initial scan fallback")
-    sched.start()
+            # If job scheduling fails for any reason, run it synchronously as a fallback
+            try:
+                scheduled_initial_scan()
+            except Exception:
+                logger.exception("Failed to run initial scan fallback")
+        sched.start()
+        logger.info("Scheduler started successfully")
+    except Exception as e:
+        logger.error("Failed to start scheduler: %s", str(e))
+        raise

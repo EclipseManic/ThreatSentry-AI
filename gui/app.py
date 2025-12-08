@@ -1039,11 +1039,26 @@ class DashboardWindow(QWidget):
 
 
 def start_gui():
-    app = QApplication(sys.argv)
-    init_db()
-    win = DashboardWindow()
-    win.show()
-    sys.exit(app.exec_())
+    try:
+        # Check if QApplication already exists
+        app = QApplication.instance()
+        if app is None:
+            app = QApplication(sys.argv)
+        
+        try:
+            logger.info("Initializing database for GUI...")
+            init_db()
+            logger.info("Database initialized successfully")
+        except Exception as e:
+            logger.error("Failed to initialize database: %s", str(e))
+            # Continue anyway - GUI can work with degraded functionality
+        
+        win = DashboardWindow()
+        win.show()
+        sys.exit(app.exec_())
+    except Exception as e:
+        logger.error("Failed to start GUI: %s", str(e))
+        raise
 
 
 if __name__ == "__main__":

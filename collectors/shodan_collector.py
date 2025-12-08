@@ -99,5 +99,6 @@ def scan_shodan(query: str = None, limit: int = None):
         logger.info("Shodan scan finished and persisted.")
     except Exception as e:
         logger.exception("Shodan scan failed: %s", e)
+        session.rollback()
     finally:
         session.close()
