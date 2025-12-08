@@ -122,11 +122,6 @@ def generate_record():
     }
 
 
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--count', type=int, default=1000)
-    parser.add_argument('--out', type=str, default='scripts/my_training_data.json')
-    args = parser.parse_args()
 def main(count=1000, output_path='scripts/my_training_data.json'):
     """Generate training data with specified parameters"""
     try:
@@ -155,4 +150,16 @@ def main(count=1000, output_path='scripts/my_training_data.json'):
 
 
 if __name__ == '__main__':
-    main()
+    import sys
+    # Support both function call and CLI usage
+    count = 1000
+    output_path = 'scripts/my_training_data.json'
+    
+    # Parse simple command-line arguments
+    for i, arg in enumerate(sys.argv[1:]):
+        if arg == '--count' and i + 1 < len(sys.argv) - 1:
+            count = int(sys.argv[i + 2])
+        elif arg == '--out' and i + 1 < len(sys.argv) - 1:
+            output_path = sys.argv[i + 2]
+    
+    main(count, output_path)
