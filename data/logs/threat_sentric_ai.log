@@ -59,3 +59,61 @@ shodan.exception.APIError: Access denied (403 Forbidden)
 2025-12-13 14:41:31,040 - INFO - db - Database engine created successfully
 2025-12-13 14:41:31,061 - INFO - db - DB initialized at threat_sentric_ai.db
 2025-12-13 14:41:31,062 - INFO - db_reset - Database initialized with new schema
+2025-12-13 14:42:32,538 - INFO - db_reset - Deleted existing database at data/db/threat_sentric_ai.db
+2025-12-13 14:42:33,167 - INFO - db - Database engine created successfully
+2025-12-13 14:42:33,186 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2025-12-13 14:42:33,191 - INFO - db_reset - Database initialized with new schema
+2025-12-13 14:42:37,788 - INFO - db - Database engine created successfully
+2025-12-13 14:42:37,794 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2025-12-13 14:42:37,795 - INFO - db - Database engine created successfully
+2025-12-13 14:43:00,961 - INFO - run - Initializing database...
+2025-12-13 14:43:00,993 - INFO - db - Database engine created successfully
+2025-12-13 14:43:00,995 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2025-12-13 14:43:00,996 - INFO - run - Database initialized successfully
+2025-12-13 14:43:00,996 - INFO - run - Starting scheduler...
+2025-12-13 14:43:03,078 - INFO - run - Scheduler started successfully
+2025-12-13 14:43:03,079 - INFO - run - Starting GUI...
+2025-12-13 14:43:03,100 - INFO - gui - Initializing database for GUI...
+2025-12-13 14:43:03,102 - INFO - db - Database engine created successfully
+2025-12-13 14:43:03,104 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2025-12-13 14:43:03,104 - INFO - gui - Database initialized successfully
+2025-12-13 14:43:03,632 - INFO - db - Database engine created successfully
+2025-12-13 14:43:03,747 - INFO - gui - GUI refreshed.
+2025-12-13 14:43:18,691 - INFO - gui - Imported 1000 rows from D:/visual code file/Project_3/ThreatSentry-AI-main/data/generated_data/my_training_data.json -> added=1000 updated=0 skipped=0
+2025-12-13 14:43:18,692 - INFO - model_training - Starting advanced model training
+2025-12-13 14:43:21,614 - INFO - model_training - Model and metadata saved to data/models/rf_model.pkl
+2025-12-13 14:43:21,615 - INFO - model_training - Model training completed successfully
+2025-12-13 14:43:21,615 - INFO - model_training - Validation accuracy: 0.975
+2025-12-13 14:43:26,903 - INFO - gui - GUI refreshed.
+2025-12-13 14:43:58,821 - ERROR - email_alerts - Failed to send email via SendGrid: HTTP Error 401: Unauthorized
+Traceback (most recent call last):
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\alerts\email_alerts.py", line 85, in send_email_alert
+    response: Any = sg.send(message)
+                    ~~~~~~~^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\sendgrid\base_interface.py", line 63, in send
+    return self.client.mail.send.post(request_body=message)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\python_http_client\client.py", line 277, in http_request
+    self._make_request(opener, request, timeout=timeout)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\python_http_client\client.py", line 184, in _make_request
+    raise exc
+python_http_client.exceptions.UnauthorizedError: HTTP Error 401: Unauthorized
+2025-12-13 14:43:58,888 - ERROR - gui - Failed to send filtered alerts: HTTP Error 401: Unauthorized
+Traceback (most recent call last):
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\gui\app.py", line 917, in send_filtered_alerts
+    send_email_alert(warning_subject, html)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\alerts\email_alerts.py", line 85, in send_email_alert
+    response: Any = sg.send(message)
+                    ~~~~~~~^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\sendgrid\base_interface.py", line 63, in send
+    return self.client.mail.send.post(request_body=message)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\python_http_client\client.py", line 277, in http_request
+    self._make_request(opener, request, timeout=timeout)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\python_http_client\client.py", line 184, in _make_request
+    raise exc
+python_http_client.exceptions.UnauthorizedError: HTTP Error 401: Unauthorized
+2025-12-13 14:44:06,350 - INFO - gui - GUI refreshed.

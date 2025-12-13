@@ -12,7 +12,7 @@ import pandas as pd
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel,
     QTableView, QMessageBox, QHeaderView, QFileDialog, QComboBox, QSpinBox,
-    QCheckBox, QTextBrowser, QDialog, QLineEdit, QSizePolicy
+    QCheckBox, QTextBrowser, QDialog, QLineEdit, QSizePolicy, QTabWidget
 )
 from PyQt5.QtCore import QTimer, Qt, QAbstractTableModel, QSortFilterProxyModel
 from PyQt5.QtGui import QColor, QFont
@@ -25,6 +25,25 @@ from core import get_logger
 from core.config import SHODAN_QUERIES, SHODAN_QUERY
 import importlib
 import ipaddress
+
+# Import enhanced dashboard components
+try:
+    from .enhanced_dashboard import (
+        AdvancedFilterPanel, AnalyticsPanel, ExportManager,
+        ModelStatusWidget, RemediationSuggestionsWidget
+    )
+    ENHANCED_FEATURES_AVAILABLE = True
+except ImportError:
+    ENHANCED_FEATURES_AVAILABLE = False
+    logger = get_logger("gui")
+    logger.warning("Enhanced dashboard features not available")
+
+# Import theme manager
+try:
+    from .theme_manager import ThemeManager
+    THEME_MANAGER_AVAILABLE = True
+except ImportError:
+    THEME_MANAGER_AVAILABLE = False
 
 logger = get_logger("gui")
 
@@ -342,11 +361,73 @@ class DashboardWindow(QWidget):
         # Make selection operate on whole rows and allow multi-selection for Send Selected
         self.table_view.setSelectionBehavior(QTableView.SelectRows)
         self.table_view.setSelectionMode(QTableView.ExtendedSelection)
-        self.layout.addWidget(self.table_view, 3)
-
+        
+        # Create main tabs for Dashboard, Analytics, and Tools
+        self.main_tabs = QTabWidget()
+        
+        # Dashboard Tab (main view with table + chart)
+        dashboard_widget = QWidget()
+        dashboard_layout = QVBoxLayout(dashboard_widget)
+        
+        # Add advanced filters if available
+        if ENHANCED_FEATURES_AVAILABLE:
+            self.advanced_filters = AdvancedFilterPanel()
+            self.advanced_filters.filters_changed.connect(self.on_advanced_filters_changed)
+            dashboard_layout.addWidget(self.advanced_filters)
+        
+        dashboard_layout.addWidget(self.table_view, 3)
+        
         self.figure = Figure(figsize=(8, 3))
         self.canvas = FigureCanvas(self.figure)
-        self.layout.addWidget(self.canvas, 2)
+        dashboard_layout.addWidget(self.canvas, 2)
+        
+        self.main_tabs.addTab(dashboard_widget, "Dashboard")
+        
+        # Analytics Tab (if enhanced features available)
+        if ENHANCED_FEATURES_AVAILABLE:
+            self.analytics_panel = AnalyticsPanel()
+            self.main_tabs.addTab(self.analytics_panel, "Analytics")
+            
+            # Tools Tab with Model Status and Export
+            tools_widget = QWidget()
+            tools_layout = QVBoxLayout(tools_widget)
+            
+            # Model Status Section
+            tools_layout.addWidget(QLabel("Model Training Status"))
+            self.model_status = ModelStatusWidget()
+            tools_layout.addWidget(self.model_status)
+            
+            tools_layout.addSpacing(20)
+            
+            # Export Section
+            export_layout = QHBoxLayout()
+            export_label = QLabel("Export Report:")
+            export_layout.addWidget(export_label)
+            
+            export_csv_btn = QPushButton("Export to CSV")
+            export_csv_btn.clicked.connect(self.export_to_csv)
+            export_layout.addWidget(export_csv_btn)
+            
+            export_pdf_btn = QPushButton("Export to PDF")
+            export_pdf_btn.clicked.connect(self.export_to_pdf)
+            export_layout.addWidget(export_pdf_btn)
+            
+            export_layout.addStretch()
+            tools_layout.addLayout(export_layout)
+            
+            tools_layout.addSpacing(20)
+            
+            # Remediation Suggestions
+            tools_layout.addWidget(QLabel("Remediation Suggestions"))
+            self.remediation_widget = RemediationSuggestionsWidget()
+            tools_layout.addWidget(self.remediation_widget)
+            
+            tools_layout.addStretch()
+            
+            self.main_tabs.addTab(tools_widget, "Tools")
+        
+        # Add main tabs to layout
+        self.layout.addWidget(self.main_tabs, 5)
 
         self.status_label = QLabel("")
         self.layout.addWidget(self.status_label)
@@ -357,6 +438,109 @@ class DashboardWindow(QWidget):
         self.timer.start()
 
         self.refresh()
+    
+    def on_advanced_filters_changed(self, filters: dict):
+        """Handle advanced filter changes"""
+        try:
+            session = get_session()
+            query = session.query(Device)
+            
+            # Apply CVSS range filter
+            if filters.get('cvss_min') is not None:
+                query = query.filter(Device.max_cvss >= filters['cvss_min'])
+            if filters.get('cvss_max') is not None:
+                query = query.filter(Device.max_cvss <= filters['cvss_max'])
+            
+            # Apply organization filter
+            if filters.get('organization'):
+                query = query.filter(Device.org == filters['organization'])
+            
+            # Apply country filter
+            if filters.get('country'):
+                query = query.filter(Device.country == filters['country'])
+            
+            # Apply risk level filter
+            if filters.get('risk_level'):
+                risk_map = {'Low': 0, 'Medium': 1, 'High': 2}
+                risk_value = risk_map.get(filters['risk_level'])
+                if risk_value is not None:
+                    query = query.filter(Device.risk_label == risk_value)
+            
+            devices = query.all()
+            session.close()
+            
+            # Update table with filtered results
+            rows = []
+            for d in devices:
+                risk_text = {0: "Low", 1: "Medium", 2: "High"}.get(d.risk_label, "Unknown")
+                rows.append({
+                    "ip": d.ip,
+                    "org": d.org or "",
+                    "country": d.country or "",
+                    "open_ports": d.num_open_ports or 0,
+                    "cve_count": d.cve_count or 0,
+                    "max_cvss": d.max_cvss or 0.0,
+                    "risk": risk_text,
+                    "last_seen": d.last_seen.strftime("%Y-%m-%d %H:%M:%S") if d.last_seen else ""
+                })
+            
+            df = pd.DataFrame(rows)
+            self.model.setDataFrame(df)
+            self.status_label.setText(f"Filters applied | {len(devices)} devices shown")
+        except Exception as e:
+            logger.error("Error applying advanced filters: %s", e)
+    
+    def export_to_csv(self):
+        """Export filtered devices to CSV"""
+        if not ENHANCED_FEATURES_AVAILABLE:
+            return
+        
+        filepath, _ = QFileDialog.getSaveFileName(self, "Export to CSV", "", "CSV Files (*.csv)")
+        if filepath:
+            try:
+                df = self.model._df
+                devices_data = []
+                
+                for idx, row in df.iterrows():
+                    devices_data.append({
+                        'IP': row.get('IP', ''),
+                        'Organization': row.get('Org', ''),
+                        'Country': row.get('Country', ''),
+                        'Open Ports': row.get('Open Ports', 0),
+                        'CVE Count': row.get('CVE Count', 0),
+                        'Max CVSS': row.get('Max CVSS', 0),
+                        'Risk Level': row.get('Risk', ''),
+                        'Last Seen': row.get('Last Seen', '')
+                    })
+                
+                export_df = pd.DataFrame(devices_data)
+                export_df.to_csv(filepath, index=False)
+                QMessageBox.information(self, "Export Successful", f"Data exported to {filepath}")
+                logger.info("Exported %d devices to CSV: %s", len(devices_data), filepath)
+            except Exception as e:
+                QMessageBox.critical(self, "Export Failed", f"Error exporting CSV: {str(e)}")
+                logger.error("CSV export failed: %s", e)
+    
+    def export_to_pdf(self):
+        """Export filtered devices to PDF report"""
+        if not ENHANCED_FEATURES_AVAILABLE:
+            return
+        
+        filepath, _ = QFileDialog.getSaveFileName(self, "Export to PDF", "", "PDF Files (*.pdf)")
+        if filepath:
+            try:
+                session = get_session()
+                devices = session.query(Device).all()
+                session.close()
+                
+                success = ExportManager.export_to_pdf(devices, filepath)
+                if success:
+                    QMessageBox.information(self, "Export Successful", f"Report exported to {filepath}")
+                else:
+                    QMessageBox.critical(self, "Export Failed", "Failed to export PDF report")
+            except Exception as e:
+                QMessageBox.critical(self, "Export Failed", f"Error exporting PDF: {str(e)}")
+                logger.error("PDF export failed: %s", e)
 
     def _perform_action(self, act: str):
         if act == 'Refresh':
@@ -1037,12 +1221,19 @@ class DashboardWindow(QWidget):
         return confirmed['val']
 
 
-def start_gui():
+def start_gui(dark_theme=False):
     try:
         # Check if QApplication already exists
         app = QApplication.instance()
         if app is None:
             app = QApplication(sys.argv)
+        
+        # Apply theme
+        if THEME_MANAGER_AVAILABLE:
+            if dark_theme:
+                ThemeManager.apply_dark_theme(app)
+            else:
+                ThemeManager.apply_light_theme(app)
         
         try:
             logger.info("Initializing database for GUI...")
