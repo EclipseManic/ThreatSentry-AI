@@ -1,7 +1,7 @@
 """SIEM collector - fetch auth failure counts and suspicious activity metrics."""
-from db import get_session, Device
-from logger import get_logger
-import config
+from data import get_session, Device
+from core import get_logger
+from core import config
 import requests
 
 logger = get_logger("siem_collector")

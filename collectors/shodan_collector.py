@@ -8,9 +8,9 @@ are logged and do not crash the application.
 
 import shodan
 import datetime
-from logger import get_logger
-from config import SHODAN_API_KEY, MAX_SHODAN_RESULTS, SHODAN_QUERY
-from db import get_session, Device
+from core import get_logger
+from core.config import SHODAN_API_KEY, MAX_SHODAN_RESULTS, SHODAN_QUERY
+from data import get_session, Device
 
 logger = get_logger("shodan_collector")
 

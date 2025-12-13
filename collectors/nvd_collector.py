@@ -1,7 +1,7 @@
 # collectors/nvd_collector.py
 import nvdlib
-from logger import get_logger
-from db import get_session, Device, Vulnerability
+from core import get_logger
+from data import get_session, Device, Vulnerability
 
 logger = get_logger("nvd_collector")
 

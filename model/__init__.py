@@ -6,8 +6,8 @@ of the application but delegates implementation to the advanced
 """
 from .training_orchestrator import ModelTrainingOrchestrator
 from .advanced_model import EnsembleModel
-from logger import get_logger
-from config import MODEL_PATH
+from core import get_logger
+from core.config import MODEL_PATH
 from typing import Optional
 import os
 

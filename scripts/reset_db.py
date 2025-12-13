@@ -8,8 +8,8 @@ from pathlib import Path
 # Add parent directory to path
 sys.path.append(str(Path(__file__).parent.parent))
 
-from config import SQLITE_PATH
-from logger import get_logger
+from core.config import SQLITE_PATH
+from core import get_logger
 
 logger = get_logger("db_reset")
 

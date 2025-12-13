@@ -18,14 +18,13 @@ from PyQt5.QtCore import QTimer, Qt, QAbstractTableModel, QSortFilterProxyModel
 from PyQt5.QtGui import QColor, QFont
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
-from db import get_session, Device, init_db
-from email_alerts import send_email_alert, build_device_summary
+from data import get_session, Device, init_db
+from alerts import send_email_alert, build_device_summary
 from collectors import shodan_collector, nvd_collector
-from config import SHODAN_QUERIES, SHODAN_QUERY
-from logger import get_logger
+from core import get_logger
+from core.config import SHODAN_QUERIES, SHODAN_QUERY, config
 import importlib
 import ipaddress
-import config
 
 logger = get_logger("gui")
 

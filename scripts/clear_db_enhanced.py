@@ -13,15 +13,15 @@ Usage (PowerShell):
 """
 import sys
 import pathlib
-# Ensure project root is on sys.path so `from db import ...` works when run from scripts/
+# Ensure project root is on sys.path so `from data import ...` works when run from scripts/
 PROJECT_ROOT = pathlib.Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 import argparse
 import os
-from db import get_session, Device, Vulnerability, init_db
-from logger import get_logger
-from config import MODEL_PATH
+from data import get_session, Device, Vulnerability, init_db
+from core import get_logger
+from core.config import MODEL_PATH
 
 logger = get_logger('scripts.clear_db_enhanced')
 

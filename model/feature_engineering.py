@@ -4,7 +4,7 @@ Advanced feature engineering for threat detection model
 import numpy as np
 from datetime import datetime, timezone
 from sklearn.preprocessing import StandardScaler
-from db import Device, get_session
+from data import Device, get_session
 import json
 
 class FeatureEngineer:
