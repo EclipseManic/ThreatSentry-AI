@@ -22,7 +22,7 @@ def reset_database():
             logger.info("Deleted existing database at %s", SQLITE_PATH)
         
         # Import after deletion to avoid schema conflicts
-        from db import init_db
+        from data import init_db
         
         # Initialize new database with updated schema
         init_db()

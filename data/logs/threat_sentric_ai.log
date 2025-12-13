@@ -1,0 +1,61 @@
+2025-12-13 14:38:30,789 - INFO - run - Initializing database...
+2025-12-13 14:38:31,047 - INFO - db - Database engine created successfully
+2025-12-13 14:38:31,079 - INFO - db - DB initialized at threat_sentric_ai.db
+2025-12-13 14:38:31,080 - INFO - run - Database initialized successfully
+2025-12-13 14:38:31,080 - INFO - run - Starting scheduler...
+2025-12-13 14:38:46,860 - INFO - run - Scheduler started successfully
+2025-12-13 14:38:46,861 - INFO - run - Starting GUI...
+2025-12-13 14:38:47,535 - INFO - gui - Initializing database for GUI...
+2025-12-13 14:38:47,537 - INFO - db - Database engine created successfully
+2025-12-13 14:38:47,541 - INFO - db - DB initialized at threat_sentric_ai.db
+2025-12-13 14:38:47,542 - INFO - gui - Database initialized successfully
+2025-12-13 14:38:48,402 - INFO - db - Database engine created successfully
+2025-12-13 14:38:48,551 - INFO - gui - GUI refreshed.
+2025-12-13 14:39:03,179 - INFO - gui - GUI refreshed.
+2025-12-13 14:39:05,620 - INFO - gui - Manual scan started.
+2025-12-13 14:39:05,621 - INFO - shodan_collector - Starting Shodan scan: query=product:apache limit=50
+2025-12-13 14:39:06,517 - ERROR - shodan_collector - Shodan scan failed: Access denied (403 Forbidden)
+Traceback (most recent call last):
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 65, in scan_shodan
+    results = api.search(query, limit=limit)
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\shodan\client.py", line 571, in search
+    return self._request('/shodan/host/search', args)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\shodan\client.py", line 389, in _request
+    raise APIError('Access denied (403 Forbidden)')
+shodan.exception.APIError: Access denied (403 Forbidden)
+2025-12-13 14:39:06,524 - INFO - nvd_collector - Enriched devices with vulnerabilities.
+2025-12-13 14:39:06,586 - INFO - gui - GUI refreshed.
+2025-12-13 14:39:06,587 - INFO - gui - Manual scan finished.
+2025-12-13 14:39:36,944 - INFO - gui - GUI refreshed.
+2025-12-13 14:39:38,073 - INFO - gui - Manual scan started.
+2025-12-13 14:39:38,074 - INFO - shodan_collector - Starting Shodan scan: query=hostname:".yourcompany.com" limit=50
+2025-12-13 14:39:38,464 - ERROR - shodan_collector - Shodan scan failed: Access denied (403 Forbidden)
+Traceback (most recent call last):
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 65, in scan_shodan
+    results = api.search(query, limit=limit)
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\shodan\client.py", line 571, in search
+    return self._request('/shodan/host/search', args)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\shodan\client.py", line 389, in _request
+    raise APIError('Access denied (403 Forbidden)')
+shodan.exception.APIError: Access denied (403 Forbidden)
+2025-12-13 14:39:38,470 - INFO - nvd_collector - Enriched devices with vulnerabilities.
+2025-12-13 14:39:38,545 - INFO - gui - GUI refreshed.
+2025-12-13 14:39:38,546 - INFO - gui - Manual scan finished.
+2025-12-13 14:39:48,470 - INFO - gui - GUI refreshed.
+2025-12-13 14:40:13,762 - INFO - gui - Imported 10000 rows from D:/visual code file/Project_3/ThreatSentry-AI-main/data/generated_data/my_training_data.json -> added=10000 updated=0 skipped=0
+2025-12-13 14:40:13,764 - INFO - model_training - Starting advanced model training
+2025-12-13 14:40:23,644 - ERROR - db_reset - Failed to reset database: [WinError 32] The process cannot access the file because it is being used by another process: 'threat_sentric_ai.db'
+2025-12-13 14:40:33,574 - INFO - db_reset - Deleted existing database at threat_sentric_ai.db
+2025-12-13 14:40:33,576 - ERROR - db_reset - Failed to reset database: No module named 'db'
+2025-12-13 14:40:35,636 - ERROR - db_reset - Failed to reset database: No module named 'db'
+2025-12-13 14:40:36,833 - ERROR - db_reset - Failed to reset database: No module named 'db'
+2025-12-13 14:41:04,829 - ERROR - db_reset - Failed to reset database: No module named 'db'
+2025-12-13 14:41:20,954 - INFO - db - Database engine created successfully
+2025-12-13 14:41:20,971 - INFO - db - DB initialized at threat_sentric_ai.db
+2025-12-13 14:41:20,972 - INFO - db - Database engine created successfully
+2025-12-13 14:41:30,276 - INFO - db_reset - Deleted existing database at threat_sentric_ai.db
+2025-12-13 14:41:31,040 - INFO - db - Database engine created successfully
+2025-12-13 14:41:31,061 - INFO - db - DB initialized at threat_sentric_ai.db
+2025-12-13 14:41:31,062 - INFO - db_reset - Database initialized with new schema
