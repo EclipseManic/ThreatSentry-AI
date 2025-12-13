@@ -49,12 +49,22 @@ SHODAN_QUERIES = {
 SHODAN_QUERY_EMPTY_TO_PRESET = os.getenv("SHODAN_QUERY_EMPTY_TO_PRESET", "True").lower() in ("1", "true", "yes")
 
 # --- Database ---
-SQLITE_PATH = os.getenv("SQLITE_PATH", "threat_sentric_ai.db")
+SQLITE_PATH = os.getenv("SQLITE_PATH", "data/db/threat_sentric_ai.db")
 
 # --- Model ---
-MODEL_PATH = os.getenv("MODEL_PATH", "rf_model.pkl")
+MODEL_PATH = os.getenv("MODEL_PATH", "data/models/rf_model.pkl")
+MODEL_METADATA_PATH = os.getenv("MODEL_METADATA_PATH", "data/models/rf_model_metadata.json")
 RETRAIN_ON_SCHEDULE = os.getenv("RETRAIN_ON_SCHEDULE", "True").lower() in ("1", "true", "yes")
 RETRAIN_INTERVAL_MINUTES = int(os.getenv("RETRAIN_INTERVAL_MINUTES", "60"))
+
+# --- Generated Data ---
+GENERATED_DATA_PATH = os.getenv("GENERATED_DATA_PATH", "data/generated_data")
+
+# --- Logs ---
+LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
+LOG_FILE_PATH = os.getenv("LOG_FILE_PATH", "data/logs/threat_sentric_ai.log")
+LOG_FILE_MAX_BYTES = int(os.getenv("LOG_FILE_MAX_BYTES", "10485760"))  # 10MB default
+LOG_FILE_BACKUP_COUNT = int(os.getenv("LOG_FILE_BACKUP_COUNT", "5"))
 
 # --- Scheduler for scanning ---
 SCAN_INTERVAL_MINUTES = int(os.getenv("SCAN_INTERVAL_MINUTES", "30"))
@@ -83,6 +93,3 @@ PATCH_API_KEY = os.getenv("PATCH_API_KEY")
 
 NETWORK_MONITOR_ENDPOINT = os.getenv("NETWORK_MONITOR_ENDPOINT")
 NETWORK_MONITOR_KEY = os.getenv("NETWORK_MONITOR_KEY")
-
-# Logging
-LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")

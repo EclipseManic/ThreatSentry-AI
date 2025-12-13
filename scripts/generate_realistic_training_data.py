@@ -1,6 +1,6 @@
 """
 Generate a realistic-looking synthetic training dataset for Threat Sentric AI.
-Writes JSON to `scripts/my_training_data.json`.
+Writes JSON to `data/generated_data/my_training_data.json`.
 Usage: from scripts.generate_realistic_training_data import main; main(count=500)
 """
 import json
@@ -122,7 +122,7 @@ def generate_record():
     }
 
 
-def main(count=1000, output_path='scripts/my_training_data.json'):
+def main(count=1000, output_path='data/generated_data/my_training_data.json'):
     """Generate training data with specified parameters"""
     try:
         records = []
@@ -153,7 +153,7 @@ if __name__ == '__main__':
     import sys
     # Support both function call and CLI usage
     count = 1000
-    output_path = 'scripts/my_training_data.json'
+    output_path = 'data/generated_data/my_training_data.json'
     
     # Parse simple command-line arguments
     for i, arg in enumerate(sys.argv[1:]):
