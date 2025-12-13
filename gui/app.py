@@ -22,7 +22,7 @@ from data import get_session, Device, init_db
 from alerts import send_email_alert, build_device_summary
 from collectors import shodan_collector, nvd_collector
 from core import get_logger
-from core.config import SHODAN_QUERIES, SHODAN_QUERY, config
+from core.config import SHODAN_QUERIES, SHODAN_QUERY
 import importlib
 import ipaddress
 
