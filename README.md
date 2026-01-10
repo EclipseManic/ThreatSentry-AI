@@ -97,6 +97,10 @@ Modern security teams face unprecedented challenges:
   - Actionable remediation recommendations
 - **Flexible Configuration**: Define alert recipients, email templates, and trigger conditions
 
+#### Sample Alert Email
+![Automated Security Alert Email Template](./assets/screenshots/email-alert-sample.png)
+*HTML formatted email with risk summary, CVE details, and remediation guidance sent via SendGrid*
+
 ### 📈 Model Transparency & Continuous Improvement
 - **Performance Monitoring**:
   - Accuracy tracking across training epochs
@@ -127,7 +131,35 @@ Modern security teams face unprecedented challenges:
 
 ---
 
-## 🛠️ Technology Stack
+## � Visual Overview
+
+### Main Dashboard
+![ThreatSentry AI Dashboard - Main Threat Hunting Interface](./assets/screenshots/dashboard-main.png)
+*Real-time risk visualization with sortable device table and risk distribution bar chart*
+
+### Device Risk Assessment Table
+![Device Table with Risk Indicators](./assets/screenshots/device-table.png)
+*Sortable and filterable device listing with color-coded risk levels (Green=Low, Yellow=Medium, Red=High)*
+
+### Analytics & Reporting Panel
+![Analytics Tab - Risk Trends and CVE Analysis](./assets/screenshots/analytics-panel.png)
+*Historical risk trends, vulnerability analysis, and organization-wise security metrics*
+
+### Tools & Configuration
+![Tools Tab - Model Status and Data Export](./assets/screenshots/tools-panel.png)
+*Model training information, performance metrics, data export, and advanced filtering options*
+
+### Email Alert Notifications
+![Automated Security Alert Email](./assets/screenshots/email-alert-sample.png)
+*HTML formatted email with executive summary, vulnerability details, and remediation guidance*
+
+### Manual Scan Workflow
+![Scan Trigger Dialog](./assets/screenshots/scan-workflow.png)
+*Execute Shodan + NVD enrichment with detailed error reporting and progress indication*
+
+---
+
+## �🛠️ Technology Stack
 
 | Layer | Technologies |
 |-------|---------------|
@@ -294,34 +326,45 @@ The dashboard will launch with the scheduler running in the background.
 
 ## 🚀 Usage Guide
 
-### Dashboard Overview
-1. **Device Table**: Central view of all discovered assets with risk indicators
-   - **Color Coding**: Green (Low), Yellow (Medium), Red (High)
-   - **Sortable/Filterable**: Click column headers to sort, use Quick Filter for rapid searching
-   
-2. **Risk Distribution Chart**: Visual representation of overall security posture
-   - Shows count of devices per risk level
-   - Updates in real-time as predictions change
+### Dashboard Components Overview
+![Dashboard Main Interface with All Tabs](./assets/screenshots/dashboard-tabs.png)
+*Overview, Analytics, and Tools tabs for comprehensive threat assessment*
 
-3. **Action Buttons**:
-   - **Scan Now**: Manually trigger Shodan + NVD enrichment
-   - **Refresh**: Update dashboard from latest database state
-   - **Upload Data**: Bulk import CSV/JSON with device information
-   - **Train Model**: Manually retrain ensemble model with current data
+### 1. Device Table & Discovery
+![Organization and Country Filters with Device List](./assets/screenshots/device-table-filters.png)
+*Sortable device table with color-coded risk indicators (Green=Low, Yellow=Medium, Red=High)*
+- **Color Coding**: Instant visual risk assessment
+- **Sortable/Filterable**: Click column headers or use Quick Filter for rapid searching
+- **Real-time Updates**: Dashboard refreshes as new threats detected
+
+### 2. Risk Distribution Chart
+![Risk Distribution Bar Chart](./assets/screenshots/risk-chart.png)
+*Overall security posture visualization with device counts per risk level*
+- Shows count of devices across all risk categories
+- Updates in real-time as model predictions change
+- Identifies security hotspots requiring immediate attention
+
+### 3. Key Action Buttons
+- **Scan Now**: Manually trigger Shodan + NVD enrichment with detailed error reporting
+- **Refresh**: Update dashboard from latest database state
+- **Upload Data**: Bulk import CSV/JSON with device information
+- **Train Model**: Manually retrain ensemble model with current data
 
 ### Advanced Features
 
 #### Analytics Tab
-- Detailed risk trends over time
-- Top vulnerable services
-- Organization-wise risk metrics
-- CVE impact analysis
+![Analytics Panel - Risk Trends and Metrics](./assets/screenshots/analytics-panel.png)
+- Detailed risk trends over time with historical analysis
+- Top vulnerable services identification
+- Organization-wise risk metrics and comparisons
+- CVE impact analysis and vulnerability trending
 
 #### Tools Tab
+![Tools Panel - Model Status and Export](./assets/screenshots/tools-panel.png)
 - Model status and training information
-- Data export (CSV format)
-- Advanced filtering and searching
-- Email alert testing
+- Data export (CSV format) for reporting
+- Advanced filtering and searching capabilities
+- Email alert testing interface
 
 ### Configuration
 
