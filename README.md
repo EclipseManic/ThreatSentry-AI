@@ -99,6 +99,9 @@ Modern security teams face unprecedented challenges:
 
 #### Sample Alert Email
 ![Automated Security Alert Email Template](./assets/screenshots/email-alert-sample.png)
+
+[Gmail - Fwd_ Manual alert - Filtered (All) - 10 device(s) [duplicate alerts possible].pdf](https://github.com/user-attachments/files/24541015/Gmail.-.Fwd_.Manual.alert.-.Filtered.All.-.10.device.s.duplicate.alerts.possible.pdf)
+
 *HTML formatted email with risk summary, CVE details, and remediation guidance sent via SendGrid*
 
 ### 📈 Model Transparency & Continuous Improvement
@@ -134,27 +137,45 @@ Modern security teams face unprecedented challenges:
 ## � Visual Overview
 
 ### Main Dashboard
-![ThreatSentry AI Dashboard - Main Threat Hunting Interface](./assets/screenshots/dashboard-main.png)
+![ThreatSentry AI Dashboard - Main Threat Hunting Interface]
+
+<img width="1489" height="867" alt="Screenshot 2026-01-10 153154" src="https://github.com/user-attachments/assets/e10c7a66-8212-4748-9cfa-a767456c14b1" />
+
 *Real-time risk visualization with sortable device table and risk distribution bar chart*
 
 ### Device Risk Assessment Table
-![Device Table with Risk Indicators](./assets/screenshots/device-table.png)
+![Device Table with Risk Indicators]
+
+<img width="523" height="513" alt="image" src="https://github.com/user-attachments/assets/4825f015-c814-4e3c-80d1-a8e6181ba53f" />
+
 *Sortable and filterable device listing with color-coded risk levels (Green=Low, Yellow=Medium, Red=High)*
 
 ### Analytics & Reporting Panel
-![Analytics Tab - Risk Trends and CVE Analysis](./assets/screenshots/analytics-panel.png)
+![Analytics Tab - Risk Trends and CVE Analysis]
+
+<img width="1494" height="651" alt="Screenshot 2026-01-10 153300" src="https://github.com/user-attachments/assets/1801484a-30e9-465a-8e1e-bc1187e67296" />
+
 *Historical risk trends, vulnerability analysis, and organization-wise security metrics*
 
 ### Tools & Configuration
-![Tools Tab - Model Status and Data Export](./assets/screenshots/tools-panel.png)
+![Tools Tab - Model Status and Data Export]
+
+<img width="1494" height="638" alt="Screenshot 2026-01-10 153240" src="https://github.com/user-attachments/assets/64a51a37-51d9-4af3-aec0-46073af11776" />
+
 *Model training information, performance metrics, data export, and advanced filtering options*
 
 ### Email Alert Notifications
-![Automated Security Alert Email](./assets/screenshots/email-alert-sample.png)
+![Automated Security Alert Email]
+
+
+
 *HTML formatted email with executive summary, vulnerability details, and remediation guidance*
 
 ### Manual Scan Workflow
-![Scan Trigger Dialog](./assets/screenshots/scan-workflow.png)
+![Scan Trigger Dialog]
+
+<img width="505" height="152" alt="Screenshot 2026-01-10 153710" src="https://github.com/user-attachments/assets/7554cf9d-e2bc-4cc4-9602-885632e39820" />
+
 *Execute Shodan + NVD enrichment with detailed error reporting and progress indication*
 
 ---
