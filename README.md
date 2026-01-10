@@ -98,7 +98,7 @@ Modern security teams face unprecedented challenges:
 - **Flexible Configuration**: Define alert recipients, email templates, and trigger conditions
 
 #### Sample Alert Email
-![Automated Security Alert Email Template](./assets/screenshots/email-alert-sample.png)
+![Automated Security Alert Email Template]
 
 [Gmail - Fwd_ Manual alert - Filtered (All) - 10 device(s) [duplicate alerts possible].pdf](https://github.com/user-attachments/files/24541015/Gmail.-.Fwd_.Manual.alert.-.Filtered.All.-.10.device.s.duplicate.alerts.possible.pdf)
 
@@ -348,18 +348,18 @@ The dashboard will launch with the scheduler running in the background.
 ## 🚀 Usage Guide
 
 ### Dashboard Components Overview
-![Dashboard Main Interface with All Tabs](./assets/screenshots/dashboard-tabs.png)
+![Dashboard Main Interface with All Tabs]
 *Overview, Analytics, and Tools tabs for comprehensive threat assessment*
 
 ### 1. Device Table & Discovery
-![Organization and Country Filters with Device List](./assets/screenshots/device-table-filters.png)
+![Organization and Country Filters with Device List]
 *Sortable device table with color-coded risk indicators (Green=Low, Yellow=Medium, Red=High)*
 - **Color Coding**: Instant visual risk assessment
 - **Sortable/Filterable**: Click column headers or use Quick Filter for rapid searching
 - **Real-time Updates**: Dashboard refreshes as new threats detected
 
 ### 2. Risk Distribution Chart
-![Risk Distribution Bar Chart](./assets/screenshots/risk-chart.png)
+![Risk Distribution Bar Chart]
 *Overall security posture visualization with device counts per risk level*
 - Shows count of devices across all risk categories
 - Updates in real-time as model predictions change
@@ -374,18 +374,16 @@ The dashboard will launch with the scheduler running in the background.
 ### Advanced Features
 
 #### Analytics Tab
-![Analytics Panel - Risk Trends and Metrics](./assets/screenshots/analytics-panel.png)
+![Analytics Panel - Risk Trends and Metrics]
 - Detailed risk trends over time with historical analysis
 - Top vulnerable services identification
 - Organization-wise risk metrics and comparisons
 - CVE impact analysis and vulnerability trending
 
 #### Tools Tab
-![Tools Panel - Model Status and Export](./assets/screenshots/tools-panel.png)
+![Tools Panel - Model Status and Export
 - Model status and training information
-- Data export (CSV format) for reporting
-- Advanced filtering and searching capabilities
-- Email alert testing interface
+
 
 ### Configuration
 
