@@ -100,7 +100,8 @@ Modern security teams face unprecedented challenges:
 #### Sample Alert Email
 ![Automated Security Alert Email Template]
 
-[Gmail - Fwd_ Manual alert - Filtered (All) - 10 device(s) [duplicate alerts possible].pdf](https://github.com/user-attachments/files/24541015/Gmail.-.Fwd_.Manual.alert.-.Filtered.All.-.10.device.s.duplicate.alerts.possible.pdf)
+<img width="1494" height="1010" alt="Screenshot 2026-01-10 160955" src="https://github.com/user-attachments/assets/64936d95-d5f0-4fec-8350-c2ac7969398a" />
+
 
 *HTML formatted email with risk summary, CVE details, and remediation guidance sent via SendGrid*
 
@@ -165,9 +166,10 @@ Modern security teams face unprecedented challenges:
 *Model training information, performance metrics, data export, and advanced filtering options*
 
 ### Email Alert Notifications
+
+<img width="796" height="632" alt="Screenshot 2026-01-10 153939" src="https://github.com/user-attachments/assets/1044ca7f-1cfd-4bac-92c5-fefa2ddac2bb" />
+
 ![Automated Security Alert Email]
-
-
 
 *HTML formatted email with executive summary, vulnerability details, and remediation guidance*
 
