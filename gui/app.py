@@ -9,15 +9,19 @@ such as the training orchestrator are missing.
 
 import sys
 import pandas as pd
+import threading
+from concurrent.futures import ThreadPoolExecutor
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel,
     QTableView, QMessageBox, QHeaderView, QFileDialog, QComboBox, QSpinBox,
-    QCheckBox, QTextBrowser, QDialog, QLineEdit, QSizePolicy, QTabWidget
+    QCheckBox, QTextBrowser, QDialog, QLineEdit, QSizePolicy, QTabWidget, QStyledItemDelegate,
+    QProgressBar
 )
-from PyQt5.QtCore import QTimer, Qt, QAbstractTableModel, QSortFilterProxyModel
+from PyQt5.QtCore import QTimer, Qt, QAbstractTableModel, QSortFilterProxyModel, QThread, pyqtSignal, QModelIndex
 from PyQt5.QtGui import QColor, QFont
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
+import matplotlib.pyplot as plt
 from data import get_session, Device, init_db
 from alerts import send_email_alert, build_device_summary
 from collectors import shodan_collector, nvd_collector
@@ -30,22 +34,25 @@ import ipaddress
 try:
     from .enhanced_dashboard import (
         AdvancedFilterPanel, AnalyticsPanel, ExportManager,
-        ModelStatusWidget, RemediationSuggestionsWidget
+        ModelStatusWidget
     )
     ENHANCED_FEATURES_AVAILABLE = True
-except ImportError:
+except ImportError as e:
     ENHANCED_FEATURES_AVAILABLE = False
     logger = get_logger("gui")
-    logger.warning("Enhanced dashboard features not available")
+    logger.warning("Enhanced dashboard features not available: %s", e)
 
 # Import theme manager
 try:
-    from .theme_manager import ThemeManager
+    from .utils import ThemeManager
     THEME_MANAGER_AVAILABLE = True
-except ImportError:
+except ImportError as e:
     THEME_MANAGER_AVAILABLE = False
 
 logger = get_logger("gui")
+
+# Thread pool for network I/O operations in GUI (scans, enrichment)
+_network_executor = ThreadPoolExecutor(max_workers=3, thread_name_prefix="gui_network_io")
 
 
 class PandasModel(QAbstractTableModel):
@@ -87,6 +94,9 @@ class PandasModel(QAbstractTableModel):
         value = self._df.iloc[index.row(), index.column()]
         if role == Qt.DisplayRole:
             return str(value)
+        if role == Qt.TextColorRole:
+            # Always use bright white text for visibility in dark theme
+            return QColor('#ffffff')
         if role == Qt.TextAlignmentRole:
             col_name = self._df.columns[index.column()]
             if col_name in ('S.No', 'Open Ports', 'CVE Count', 'Max CVSS'):
@@ -94,28 +104,213 @@ class PandasModel(QAbstractTableModel):
             if col_name == 'IP':
                 return Qt.AlignLeft | Qt.AlignVCenter
             return Qt.AlignCenter
-        if role == Qt.BackgroundRole:
-            try:
-                if 'Risk' in self._df.columns:
-                    # Use label-based access to avoid pandas FutureWarning about integer keys
-                    row_idx = self._df.index[index.row()]
-                    risk = str(self._df.at[row_idx, 'Risk']).lower()
-                    if 'high' in risk:
-                        return QColor('#ffd6d6')
-                    if 'medium' in risk:
-                        return QColor('#fff4d6')
-                    if 'low' in risk:
-                        return QColor('#e6f7ff')
-            except Exception:
-                return None
+        # Note: BackgroundRole is now handled by RiskColorDelegate for the Risk column
+        # This removes per-cell color computation and improves rendering performance
         return None
 
 
+class PaginatedPandasModel(QAbstractTableModel):
+    """Paginated table model that displays data in chunks to improve performance with large datasets.
+    
+    Shows ROWS_PER_PAGE rows at a time, with ability to load more via pagination control.
+    """
+    ROWS_PER_PAGE = 50  # Show 50 rows initially, then 50 more per "Load More" click
+    
+    def __init__(self, df=pd.DataFrame()):
+        super().__init__()
+        self._full_df = df.copy()
+        self._displayed_rows = self.ROWS_PER_PAGE
+        self._df = self._full_df.iloc[:self._displayed_rows].copy() if len(self._full_df) > 0 else pd.DataFrame()
+
+    def setDataFrame(self, df: pd.DataFrame):
+        """Set the full dataset and reset pagination to first page"""
+        rename_map = {
+            'ip': 'IP', 'org': 'Org', 'country': 'Country', 'open_ports': 'Open Ports',
+            'cve_count': 'CVE Count', 'max_cvss': 'Max CVSS', 'risk': 'Risk', 'last_seen': 'Last Seen'
+        }
+        df = df.copy()
+        df.columns = [rename_map.get(c, c) for c in df.columns]
+        self.beginResetModel()
+        self._full_df = df
+        self._displayed_rows = min(self.ROWS_PER_PAGE, len(self._full_df))
+        self._df = self._full_df.iloc[:self._displayed_rows].copy() if len(self._full_df) > 0 else pd.DataFrame()
+        self.endResetModel()
+    
+    def load_more(self) -> bool:
+        """Load next page of results. Returns True if more rows available after loading."""
+        if self._displayed_rows >= len(self._full_df):
+            return False
+        
+        old_count = self._displayed_rows
+        self._displayed_rows = min(self._displayed_rows + self.ROWS_PER_PAGE, len(self._full_df))
+        
+        # Notify view of new rows being inserted (use QModelIndex() for root index)
+        self.beginInsertRows(QModelIndex(), old_count, self._displayed_rows - 1)
+        self._df = self._full_df.iloc[:self._displayed_rows].copy()
+        self.endInsertRows()
+        
+        return self._displayed_rows < len(self._full_df)
+    
+    def get_total_rows(self) -> int:
+        """Total number of rows in dataset"""
+        return len(self._full_df)
+    
+    def get_displayed_rows(self) -> int:
+        """Number of rows currently displayed"""
+        return self._displayed_rows
+
+    def headerData(self, section, orientation, role=Qt.DisplayRole):
+        if role != Qt.DisplayRole:
+            return None
+        if orientation == Qt.Horizontal:
+            try:
+                return str(self._df.columns[section])
+            except Exception:
+                return ''
+        else:
+            return str(section)
+
+    def rowCount(self, parent=None):
+        return len(self._df.index)
+
+    def columnCount(self, parent=None):
+        return len(self._df.columns)
+
+    def data(self, index, role=Qt.DisplayRole):
+        if not index.isValid():
+            return None
+        value = self._df.iloc[index.row(), index.column()]
+        if role == Qt.DisplayRole:
+            return str(value)
+        if role == Qt.TextColorRole:
+            return QColor('#ffffff')
+        if role == Qt.TextAlignmentRole:
+            col_name = self._df.columns[index.column()]
+            if col_name in ('S.No', 'Open Ports', 'CVE Count', 'Max CVSS'):
+                return Qt.AlignCenter
+            if col_name == 'IP':
+                return Qt.AlignLeft | Qt.AlignVCenter
+            return Qt.AlignCenter
+        return None
+
+
+class DeviceFetchWorker(QThread):
+    """Worker thread for fetching device data without blocking the UI"""
+    finished = pyqtSignal()  # Emitted when fetch is complete
+    result = pyqtSignal(pd.DataFrame)  # Emitted with the fetched DataFrame
+    error = pyqtSignal(str)  # Emitted if an error occurs
+    
+    def __init__(self, use_cache=True):
+        super().__init__()
+        self.use_cache = use_cache
+        self.cached_df = None
+        self.last_device_count = 0
+    
+    def run(self):
+        """Run the fetch operation in a worker thread"""
+        try:
+            session = get_session()
+            current_count = session.query(Device).count()
+            session.close()
+            
+            # Check if cache is still valid (same device count)
+            if self.use_cache and self.cached_df is not None and current_count == self.last_device_count:
+                logger.debug("Worker: Using cached device DataFrame (count: %d)", current_count)
+                self.result.emit(self.cached_df)
+                self.finished.emit()
+                return
+            
+            # Cache miss - fetch fresh data
+            logger.debug("Worker: Fetching fresh device data from database (count: %d)", current_count)
+            session = get_session()
+            devices = session.query(Device).all()
+            rows = []
+            for d in devices:
+                risk_text = {0: "Low", 1: "Medium", 2: "High"}.get(d.risk_label, "Unknown")
+                rows.append({
+                    "ip": d.ip,
+                    "org": d.org or "",
+                    "country": d.country or "",
+                    "open_ports": d.num_open_ports or 0,
+                    "cve_count": d.cve_count or 0,
+                    "max_cvss": d.max_cvss or 0.0,
+                    "risk": risk_text,
+                    "last_seen": d.last_seen.strftime("%Y-%m-%d %H:%M:%S") if d.last_seen else ""
+                })
+            session.close()
+            
+            # Update cache
+            df = pd.DataFrame(rows)
+            self.cached_df = df
+            self.last_device_count = current_count
+            self.result.emit(df)
+            self.finished.emit()
+        except Exception as e:
+            logger.error("Worker: Error fetching devices: %s", str(e))
+            self.error.emit(str(e))
+            self.finished.emit()
+
+
+class RiskColorDelegate(QStyledItemDelegate):
+    """Custom delegate for Risk column to optimize color rendering with caching"""
+    
+    # Cache risk level to color mapping (computed once, reused for all cells)
+    RISK_COLORS = {
+        'high': QColor('#8b3a3a'),      # Dark red
+        'medium': QColor('#8b6f3f'),    # Dark orange
+        'low': QColor('#3a5f8b'),       # Dark blue
+    }
+    DEFAULT_COLOR = QColor('#3a3a3a')   # Default gray
+    TEXT_COLOR = QColor('#ffffff')      # White text
+    
+    def paint(self, painter, option, index):
+        """Override paint to efficiently apply background colors"""
+        if not index.isValid():
+            super().paint(painter, option, index)
+            return
+        
+        # Get the risk value from the model
+        try:
+            risk_value = index.data(Qt.DisplayRole)
+            if risk_value:
+                risk_lower = str(risk_value).lower()
+                # Get cached color for this risk level
+                bg_color = self.RISK_COLORS.get(risk_lower, self.DEFAULT_COLOR)
+            else:
+                bg_color = self.DEFAULT_COLOR
+        except Exception:
+            bg_color = self.DEFAULT_COLOR
+        
+        # Draw background with cached color
+        painter.fillRect(option.rect, bg_color)
+        
+        # Draw text with white color
+        painter.setPen(self.TEXT_COLOR)
+        painter.drawText(option.rect, Qt.AlignCenter, str(risk_value))
+
+
 class DashboardWindow(QWidget):
+    # Signals for thread-safe communication from background threads to main thread
+    scan_completed = pyqtSignal(list)  # Emits list of error messages (empty if no errors)
+    training_completed = pyqtSignal(str, bool)  # Emits (message, is_success)
+    
     def __init__(self, refresh_interval_ms=60000):
         super().__init__()
         self.setWindowTitle('Threat Sentric AI - Dashboard')
         self.layout = QVBoxLayout(self)
+        
+        # Cache for devices data
+        self.cached_df = None
+        self.last_device_count = 0
+        self.cache_timestamp = None
+        
+        # Worker thread for fetching devices
+        self.fetch_worker = None
+        self.is_fetching = False
+        
+        # Connect signals to handlers for thread-safe updates
+        self.scan_completed.connect(self._on_scan_completed)
+        self.training_completed.connect(self._on_training_completed)
 
         # Header: left (scan/refresh/query/presets), center (title), right (actions + alert controls)
         header_top = QHBoxLayout()
@@ -270,7 +465,7 @@ class DashboardWindow(QWidget):
         self.layout.addWidget(self.title_label)
 
         self.table_view = QTableView()
-        self.model = PandasModel(pd.DataFrame())
+        self.model = PaginatedPandasModel(pd.DataFrame())  # Use paginated model for large result sets
         # Use a proxy model so we can filter across multiple columns
         class MultiColumnFilterProxy(QSortFilterProxyModel):
             """Fast multi-column filter that precomputes a boolean mask using
@@ -348,6 +543,18 @@ class DashboardWindow(QWidget):
         self.proxy = MultiColumnFilterProxy(self)
         self.proxy.setSourceModel(self.model)
         self.table_view.setModel(self.proxy)
+        
+        # Set custom delegate for Risk column to optimize color rendering
+        risk_delegate = RiskColorDelegate(self.table_view)
+        # Find the Risk column index (it should be at a fixed position based on column order)
+        try:
+            risk_col_index = list(self.model._df.columns).index('Risk') if 'Risk' in self.model._df.columns else -1
+            if risk_col_index >= 0:
+                self.table_view.setItemDelegateForColumn(risk_col_index, risk_delegate)
+                logger.debug("Risk color delegate applied to column %d", risk_col_index)
+        except Exception as e:
+            logger.warning("Could not apply Risk delegate: %s", e)
+        
         self.table_view.setAlternatingRowColors(True)
         self.table_view.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.table_view.verticalHeader().setVisible(False)
@@ -368,63 +575,86 @@ class DashboardWindow(QWidget):
         # Dashboard Tab (main view with table + chart)
         dashboard_widget = QWidget()
         dashboard_layout = QVBoxLayout(dashboard_widget)
+        dashboard_layout.setContentsMargins(6, 6, 6, 6)
+        dashboard_layout.setSpacing(10)
         
-        # Add advanced filters if available
+        # Add advanced filters if available - make them prominent at top
+        self.advanced_filters = None
         if ENHANCED_FEATURES_AVAILABLE:
-            self.advanced_filters = AdvancedFilterPanel()
-            self.advanced_filters.filters_changed.connect(self.on_advanced_filters_changed)
-            dashboard_layout.addWidget(self.advanced_filters)
+            try:
+                self.advanced_filters = AdvancedFilterPanel()
+                self.advanced_filters.filters_changed.connect(self.on_advanced_filters_changed)
+                self.advanced_filters.setFixedHeight(50)
+                dashboard_layout.addWidget(self.advanced_filters)
+                logger.info("Advanced filters added to dashboard")
+            except Exception as e:
+                logger.warning("Could not add advanced filters: %s", e)
         
-        dashboard_layout.addWidget(self.table_view, 3)
+        # Create horizontal layout for table and chart (side-by-side)
+        content_layout = QHBoxLayout()
+        content_layout.setContentsMargins(0, 0, 0, 0)
+        content_layout.setSpacing(12)
         
-        self.figure = Figure(figsize=(8, 3))
+        # Table with pagination controls on the left (65% width)
+        table_container = QWidget()
+        table_layout = QVBoxLayout(table_container)
+        table_layout.setContentsMargins(0, 0, 0, 0)
+        table_layout.setSpacing(6)
+        
+        self.table_view.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        self.table_view.setMinimumHeight(300)
+        table_layout.addWidget(self.table_view, 1)
+        
+        # Pagination controls
+        pagination_layout = QHBoxLayout()
+        pagination_layout.setContentsMargins(0, 0, 0, 0)
+        self.pagination_label = QLabel("Loading...")
+        pagination_layout.addWidget(self.pagination_label, 1)
+        self.load_more_btn = QPushButton("Load More (50 rows)")
+        self.load_more_btn.setFixedWidth(180)
+        self.load_more_btn.clicked.connect(self._on_load_more_clicked)
+        self.load_more_btn.setVisible(False)  # Hidden until data loads
+        pagination_layout.addWidget(self.load_more_btn)
+        table_layout.addLayout(pagination_layout)
+        
+        content_layout.addWidget(table_container, 65)
+        
+        # Chart on the right (35% width)
+        self.figure = Figure(figsize=(5, 4), facecolor='#2d2d2d', edgecolor='#444444')
         self.canvas = FigureCanvas(self.figure)
-        dashboard_layout.addWidget(self.canvas, 2)
+        self.canvas.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        self.canvas.setMinimumHeight(300)
+        content_layout.addWidget(self.canvas, 35)
+        
+        dashboard_layout.addLayout(content_layout, 1)
         
         self.main_tabs.addTab(dashboard_widget, "Dashboard")
         
-        # Analytics Tab (if enhanced features available)
+        # Analytics Tab (if enhanced features available) - lazy loaded on first click
+        self.analytics_panel = None
+        self.analytics_loaded = False
+        self.model_status = None
+        self.remediation_widget = None
+        self.tools_widget = None
+        self.tools_loaded = False
+        
         if ENHANCED_FEATURES_AVAILABLE:
-            self.analytics_panel = AnalyticsPanel()
-            self.main_tabs.addTab(self.analytics_panel, "Analytics")
+            # Create placeholder for Analytics tab (will be loaded on first access)
+            analytics_placeholder = QWidget()
+            analytics_placeholder_layout = QVBoxLayout(analytics_placeholder)
+            analytics_placeholder_layout.addWidget(QLabel("Analytics will load when you click on this tab..."))
+            analytics_placeholder_layout.addStretch()
+            self.main_tabs.addTab(analytics_placeholder, "Analytics")
             
-            # Tools Tab with Model Status and Export
-            tools_widget = QWidget()
-            tools_layout = QVBoxLayout(tools_widget)
+            # Create placeholder for Tools tab (will be loaded on first access)
+            tools_placeholder = QWidget()
+            tools_placeholder_layout = QVBoxLayout(tools_placeholder)
+            tools_placeholder_layout.addWidget(QLabel("Tools will load when you click on this tab..."))
+            tools_placeholder_layout.addStretch()
+            self.main_tabs.addTab(tools_placeholder, "Tools")
             
-            # Model Status Section
-            tools_layout.addWidget(QLabel("Model Training Status"))
-            self.model_status = ModelStatusWidget()
-            tools_layout.addWidget(self.model_status)
-            
-            tools_layout.addSpacing(20)
-            
-            # Export Section
-            export_layout = QHBoxLayout()
-            export_label = QLabel("Export Report:")
-            export_layout.addWidget(export_label)
-            
-            export_csv_btn = QPushButton("Export to CSV")
-            export_csv_btn.clicked.connect(self.export_to_csv)
-            export_layout.addWidget(export_csv_btn)
-            
-            export_pdf_btn = QPushButton("Export to PDF")
-            export_pdf_btn.clicked.connect(self.export_to_pdf)
-            export_layout.addWidget(export_pdf_btn)
-            
-            export_layout.addStretch()
-            tools_layout.addLayout(export_layout)
-            
-            tools_layout.addSpacing(20)
-            
-            # Remediation Suggestions
-            tools_layout.addWidget(QLabel("Remediation Suggestions"))
-            self.remediation_widget = RemediationSuggestionsWidget()
-            tools_layout.addWidget(self.remediation_widget)
-            
-            tools_layout.addStretch()
-            
-            self.main_tabs.addTab(tools_widget, "Tools")
+            # Connect tab change signal to lazy load analytics/tools
+            self.main_tabs.currentChanged.connect(self._on_tab_changed)
         
         # Add main tabs to layout
         self.layout.addWidget(self.main_tabs, 5)
@@ -439,54 +669,92 @@ class DashboardWindow(QWidget):
 
         self.refresh()
     
+    def _on_tab_changed(self, tab_index):
+        """Lazy load Analytics and Tools tabs when user switches to them"""
+        if tab_index == 1 and not self.analytics_loaded and ENHANCED_FEATURES_AVAILABLE:
+            # Analytics tab clicked (index 1)
+            logger.debug("Lazy loading Analytics tab...")
+            try:
+                self.analytics_panel = AnalyticsPanel()
+                self.main_tabs.widget(1).deleteLater()  # Remove placeholder
+                self.main_tabs.insertTab(1, self.analytics_panel, "Analytics")
+                self.analytics_loaded = True
+                logger.info("Analytics tab loaded successfully")
+            except Exception as e:
+                logger.exception("Failed to load Analytics tab: %s", e)
+                QMessageBox.warning(self, "Analytics", f"Failed to load analytics: {str(e)}")
+        
+        elif tab_index == 2 and not self.tools_loaded and ENHANCED_FEATURES_AVAILABLE:
+            # Tools tab clicked (index 2)
+            logger.debug("Lazy loading Tools tab...")
+            try:
+                tools_widget = QWidget()
+                tools_layout = QVBoxLayout(tools_widget)
+                
+                # Model Status Section
+                tools_layout.addWidget(QLabel("Model Training Status"))
+                self.model_status = ModelStatusWidget()
+                tools_layout.addWidget(self.model_status)
+                
+                tools_layout.addSpacing(20)
+                
+                # Export Section
+                export_layout = QHBoxLayout()
+                export_label = QLabel("Export Report:")
+                export_layout.addWidget(export_label)
+                
+                export_csv_btn = QPushButton("Export to CSV")
+                export_csv_btn.clicked.connect(self.export_to_csv)
+                export_layout.addWidget(export_csv_btn)
+                
+                export_pdf_btn = QPushButton("Export to PDF")
+                export_pdf_btn.clicked.connect(self.export_to_pdf)
+                export_layout.addWidget(export_pdf_btn)
+                
+                export_layout.addStretch()
+                tools_layout.addLayout(export_layout)
+                
+                tools_layout.addStretch()
+                
+                self.tools_widget = tools_widget
+                self.main_tabs.widget(2).deleteLater()  # Remove placeholder
+                self.main_tabs.insertTab(2, tools_widget, "Tools")
+                self.tools_loaded = True
+                logger.info("Tools tab loaded successfully")
+            except Exception as e:
+                logger.exception("Failed to load Tools tab: %s", e)
+                QMessageBox.warning(self, "Tools", f"Failed to load tools: {str(e)}")
+    
     def on_advanced_filters_changed(self, filters: dict):
-        """Handle advanced filter changes"""
+        """Handle advanced filter changes - filter in-memory for instant response"""
         try:
-            session = get_session()
-            query = session.query(Device)
+            # Use cached data directly (no new fetch needed, cache is already loaded from refresh)
+            if self.cached_df is None:
+                logger.debug("No cached data available for filtering yet")
+                return
             
-            # Apply CVSS range filter
+            # Apply filters in-memory (instant, no DB queries)
+            df = self.cached_df.copy()
+            
             if filters.get('cvss_min') is not None:
-                query = query.filter(Device.max_cvss >= filters['cvss_min'])
+                df = df[df['Max CVSS'] >= filters['cvss_min']]
+            
             if filters.get('cvss_max') is not None:
-                query = query.filter(Device.max_cvss <= filters['cvss_max'])
+                df = df[df['Max CVSS'] <= filters['cvss_max']]
             
-            # Apply organization filter
-            if filters.get('organization'):
-                query = query.filter(Device.org == filters['organization'])
+            if filters.get('organization') and filters['organization'] != 'All Organizations':
+                df = df[df['Org'] == filters['organization']]
             
-            # Apply country filter
-            if filters.get('country'):
-                query = query.filter(Device.country == filters['country'])
+            if filters.get('country') and filters['country'] != 'All Countries':
+                df = df[df['Country'] == filters['country']]
             
-            # Apply risk level filter
-            if filters.get('risk_level'):
-                risk_map = {'Low': 0, 'Medium': 1, 'High': 2}
-                risk_value = risk_map.get(filters['risk_level'])
-                if risk_value is not None:
-                    query = query.filter(Device.risk_label == risk_value)
-            
-            devices = query.all()
-            session.close()
+            if filters.get('risk_level') and filters['risk_level'] != 'All Risks':
+                df = df[df['Risk'] == filters['risk_level']]
             
             # Update table with filtered results
-            rows = []
-            for d in devices:
-                risk_text = {0: "Low", 1: "Medium", 2: "High"}.get(d.risk_label, "Unknown")
-                rows.append({
-                    "ip": d.ip,
-                    "org": d.org or "",
-                    "country": d.country or "",
-                    "open_ports": d.num_open_ports or 0,
-                    "cve_count": d.cve_count or 0,
-                    "max_cvss": d.max_cvss or 0.0,
-                    "risk": risk_text,
-                    "last_seen": d.last_seen.strftime("%Y-%m-%d %H:%M:%S") if d.last_seen else ""
-                })
-            
-            df = pd.DataFrame(rows)
             self.model.setDataFrame(df)
-            self.status_label.setText(f"Filters applied | {len(devices)} devices shown")
+            self.status_label.setText(f"Filters applied | {len(df)} devices shown")
+            logger.debug("Filters applied: %s -> %d devices", filters, len(df))
         except Exception as e:
             logger.error("Error applying advanced filters: %s", e)
     
@@ -575,58 +843,148 @@ class DashboardWindow(QWidget):
 
         self.proxy.setFilterText(t, ip_only=ip_only)
 
-    def fetch_devices_df(self):
-        session = get_session()
-        devices = session.query(Device).all()
-        rows = []
-        for d in devices:
-            risk_text = {0: "Low", 1: "Medium", 2: "High"}.get(d.risk_label, "Unknown")
-            rows.append({
-                "ip": d.ip,
-                "org": d.org or "",
-                "country": d.country or "",
-                "open_ports": d.num_open_ports or 0,
-                "cve_count": d.cve_count or 0,
-                "max_cvss": d.max_cvss or 0.0,
-                "risk": risk_text,
-                "last_seen": d.last_seen.strftime("%Y-%m-%d %H:%M:%S") if d.last_seen else ""
-            })
-        session.close()
-        return pd.DataFrame(rows)
-
-    def refresh(self):
+    def fetch_devices_df(self, use_cache=True):
+        """Initiate fetching devices in a background worker thread"""
+        # Don't start a new fetch if one is already in progress
+        if self.is_fetching:
+            logger.debug("Device fetch already in progress, skipping new request")
+            return
+        
+        # Stop any existing worker thread
+        if self.fetch_worker is not None and self.fetch_worker.isRunning():
+            self.fetch_worker.quit()
+            self.fetch_worker.wait()
+        
+        # Create and start the worker thread
+        self.is_fetching = True
+        self.fetch_worker = DeviceFetchWorker(use_cache=use_cache)
+        
+        # Share cache with worker
+        self.fetch_worker.cached_df = self.cached_df
+        self.fetch_worker.last_device_count = self.last_device_count
+        
+        # Connect signals
+        self.fetch_worker.result.connect(self._on_fetch_complete)
+        self.fetch_worker.error.connect(self._on_fetch_error)
+        self.fetch_worker.finished.connect(self._on_fetch_finished)
+        
+        logger.debug("Starting background device fetch worker")
+        self.fetch_worker.start()
+    
+    def _on_fetch_complete(self, df):
+        """Handle successful device fetch from worker thread"""
         try:
-            df = self.fetch_devices_df()
+            logger.debug("Received %d devices from worker thread", len(df))
+            
+            # Update cache from worker
+            self.cached_df = df
+            if self.fetch_worker:
+                self.last_device_count = self.fetch_worker.last_device_count
+            
+            # Update UI with paginated model
             self.model.setDataFrame(df)
             try:
                 self.table_view.resizeColumnsToContents()
                 self.table_view.horizontalHeader().setStretchLastSection(True)
             except Exception:
                 pass
+            
+            # Update pagination controls
+            self._update_pagination_controls()
+            
             self.update_chart(df)
             try:
                 self.update_risk_level_counts()
             except Exception:
                 logger.exception("Failed to update risk level counts")
-            logger.info("GUI refreshed.")
-            count = len(df.index)
-            from datetime import datetime
-            self.status_label.setText(f"Devices: {count}  |  Refreshed: {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')}")
+            
+            # Update filter panel with organizations and countries
+            if self.advanced_filters:
+                try:
+                    # Check for both lowercase and capitalized column names
+                    org_col = 'Org' if 'Org' in df.columns else 'org' if 'org' in df.columns else None
+                    country_col = 'Country' if 'Country' in df.columns else 'country' if 'country' in df.columns else None
+                    
+                    orgs = df[org_col].dropna().unique().tolist() if org_col and org_col in df.columns else []
+                    countries = df[country_col].dropna().unique().tolist() if country_col and country_col in df.columns else []
+                    
+                    if orgs:
+                        self.advanced_filters.set_organizations(orgs)
+                    if countries:
+                        self.advanced_filters.set_countries(countries)
+                    
+                    logger.debug("Updated filters: %d orgs, %d countries", len(orgs), len(countries))
+                except Exception as e:
+                    logger.exception("Failed to update filter options: %s", e)
         except Exception as e:
-            logger.exception("GUI refresh failed: %s", e)
+            logger.exception("Error processing fetched devices: %s", e)
+    
+    def _on_fetch_error(self, error_msg):
+        """Handle error from worker thread"""
+        logger.error("Device fetch worker error: %s", error_msg)
+        QMessageBox.warning(self, "Fetch Error", f"Failed to fetch devices: {error_msg}")
+    
+    def _on_fetch_finished(self):
+        """Handle worker thread completion"""
+        self.is_fetching = False
+        logger.debug("Device fetch worker finished")
+
+    def _update_pagination_controls(self):
+        """Update pagination label and Load More button visibility/state"""
+        try:
+            displayed = self.model.get_displayed_rows()
+            total = self.model.get_total_rows()
+            self.pagination_label.setText(f"Showing {displayed} of {total} devices")
+            
+            # Show Load More button only if there are more rows to load
+            has_more = displayed < total
+            self.load_more_btn.setVisible(has_more)
+            logger.debug("Pagination: %d/%d displayed, Load More visible=%s", displayed, total, has_more)
+        except Exception as e:
+            logger.exception("Failed to update pagination controls: %s", e)
+    
+    def _on_load_more_clicked(self):
+        """Handle Load More button click"""
+        try:
+            has_more = self.model.load_more()
+            self._update_pagination_controls()
+            logger.info("Loaded more results, %d rows displayed", self.model.get_displayed_rows())
+        except Exception as e:
+            logger.exception("Failed to load more results: %s", e)
+            QMessageBox.warning(self, "Load More Failed", f"Error loading more results: {str(e)}")
+
+    def refresh(self):
+        """Trigger a device data refresh using the background worker thread"""
+        logger.debug("Refresh requested - starting background device fetch")
+        self.fetch_devices_df(use_cache=False)  # Always fetch fresh on manual refresh
+    
+    def _run_training_with_message(self, message):
+        """Helper to run training in background and show message on completion"""
+        try:
+            mod = importlib.import_module('model')
+            if hasattr(mod, 'train_and_save_model'):
+                mod.train_and_save_model()
+                logger.info("Training completed successfully: %s", message)
+                # Emit signal to main thread instead of direct QMessageBox
+                self.training_completed.emit(message, True)
+        except Exception as e:
+            logger.exception("Training failed: %s", e)
+            # Emit signal to main thread instead of direct QMessageBox
+            self.training_completed.emit(f"Training failed: {str(e)}", False)
 
     def update_chart(self, df):
         # Draw a simple bar chart for risk distribution with counts and percentages (restored per user request)
         try:
             self.figure.clear()
             ax = self.figure.add_subplot(111)
-            self.figure.set_facecolor('#f7f9fb')
-            ax.set_facecolor('#ffffff')
-            ax.set_title('Device Risk Distribution', fontsize=14, weight='bold', pad=10)
+            # Dark theme colors for the chart
+            self.figure.set_facecolor('#2d2d2d')
+            ax.set_facecolor('#1e1e1e')
+            ax.set_title('Device Risk Distribution', fontsize=14, weight='bold', pad=10, color='#e0e0e0')
 
             if df.empty:
-                ax.text(0.5, 0.5, "No devices yet", ha='center', va='center', fontsize=12, color='#666')
-                self.canvas.draw()
+                ax.text(0.5, 0.5, "No devices yet", ha='center', va='center', fontsize=12, color='#888')
+                self.canvas.draw_idle()
                 return
 
             risk_col = 'Risk' if 'Risk' in df.columns else 'risk'
@@ -646,25 +1004,27 @@ class DashboardWindow(QWidget):
                 h = bar.get_height()
                 pct = (val / total) * 100 if total else 0
                 label = f"{val} ({pct:.1f}%)"
-                ax.annotate(label, xy=(bar.get_x() + bar.get_width() / 2, h), xytext=(0, 6), textcoords='offset points', ha='center', va='bottom', fontsize=11, weight='bold', color='#222')
+                ax.annotate(label, xy=(bar.get_x() + bar.get_width() / 2, h), xytext=(0, 6), textcoords='offset points', ha='center', va='bottom', fontsize=11, weight='bold', color='#e0e0e0')
 
             ax.spines['top'].set_visible(False)
             ax.spines['right'].set_visible(False)
-            ax.spines['left'].set_visible(False)
-            ax.spines['bottom'].set_color('#e6e9ef')
-            ax.set_ylabel('Count', fontsize=11)
-            ax.set_xlabel('Risk', fontsize=11)
-            ax.yaxis.grid(True, linestyle='--', color='#e9edf2')
+            ax.spines['left'].set_color('#444444')
+            ax.spines['bottom'].set_color('#444444')
+            ax.set_ylabel('Count', fontsize=11, color='#e0e0e0')
+            ax.set_xlabel('Risk', fontsize=11, color='#e0e0e0')
+            ax.yaxis.grid(True, linestyle='--', color='#444444', alpha=0.5)
             ax.set_axisbelow(True)
-            ax.tick_params(axis='x', colors='#333', labelsize=11)
-            ax.tick_params(axis='y', colors='#333', labelsize=10)
+            ax.tick_params(axis='x', colors='#e0e0e0', labelsize=11)
+            ax.tick_params(axis='y', colors='#e0e0e0', labelsize=10)
             # add headroom so annotations above bars aren't clipped
             ymin, ymax = ax.get_ylim()
             # Provide a uniform headroom so the 'count (pct%)' labels are not clipped.
             headroom = max(4, total * 0.25)
             ax.set_ylim(ymin, max(ymax, max_h + headroom))
             self.figure.tight_layout(pad=1.0)
-            self.canvas.draw()
+            self.canvas.draw_idle()
+            # Clean up matplotlib memory after rendering to prevent figure cache buildup
+            plt.close(self.figure)
         except Exception:
             logger.exception("update_chart failed")
 
@@ -727,17 +1087,77 @@ class DashboardWindow(QWidget):
             if used_default:
                 QMessageBox.information(self, "Shodan Query", f"No query specified. Using default Shodan query: {q}")
 
-            shodan_collector.scan_shodan(query=q)
-            try:
-                nvd_collector.enrich_devices_with_vulns()
-            except Exception:
-                logger.exception("NVD enrichment (manual) failed.")
-            self.refresh()
-            logger.info("Manual scan finished.")
-            QMessageBox.information(self, "Scan", "Manual scan complete. Refreshing view.")
+            # Run scan in thread pool to avoid UI blocking
+            logger.debug("Submitting scan to thread pool")
+            future = _network_executor.submit(self._perform_scan, q)
+            
+            # Show progress message
+            QMessageBox.information(self, "Scan", "Scan started in background. View will update when complete.")
+            logger.info("Manual scan submitted to background thread.")
         except Exception as e:
             logger.exception("Manual scan failed: %s", e)
             QMessageBox.critical(self, "Scan error", str(e))
+    
+    def _perform_scan(self, query):
+        """Execute Shodan and NVD scan in background thread"""
+        scan_errors = []
+        shodan_succeeded = False
+        
+        try:
+            logger.info("Performing Shodan scan for query: %s", query)
+            try:
+                shodan_collector.scan_shodan(query=query)
+                shodan_succeeded = True
+            except Exception as shodan_error:
+                logger.exception("Shodan scan failed: %s", shodan_error)
+                scan_errors.append(f"Shodan scan failed: {str(shodan_error)}")
+            
+            # Only run NVD enrichment if Shodan succeeded
+            if shodan_succeeded:
+                logger.info("Performing NVD enrichment")
+                try:
+                    nvd_collector.enrich_devices_with_vulns()
+                except Exception as nvd_error:
+                    logger.exception("NVD enrichment failed: %s", nvd_error)
+                    scan_errors.append(f"NVD enrichment failed: {str(nvd_error)}")
+            else:
+                logger.info("Skipping NVD enrichment due to Shodan scan failure")
+            
+            # Emit signal to main thread with error list
+            logger.info("Manual scan finished, emitting completion signal")
+            self.scan_completed.emit(scan_errors)
+        except Exception as e:
+            logger.exception("Scan execution failed: %s", e)
+            # Emit signal with critical error
+            self.scan_completed.emit([f"Scan failed with unexpected error: {str(e)}"])
+    
+    def _on_scan_completed(self, scan_errors):
+        """Handle scan completion in main thread (slot called via signal)"""
+        # Only refresh if scan partially or fully succeeded
+        if not scan_errors:
+            # All successful - refresh normally
+            self.refresh()
+            QMessageBox.information(self, "Scan Complete", 
+                "Manual scan completed successfully. View is being refreshed.")
+        else:
+            # Scan had errors - still refresh but show what went wrong
+            error_msg = "\n".join(scan_errors)
+            self.refresh()
+            # Show critical error if Shodan failed (since it's the primary data source)
+            if "Shodan scan failed" in error_msg:
+                QMessageBox.critical(self, "Scan Failed", 
+                    f"Shodan scan failed and no new data was collected:\n\n{error_msg}")
+            else:
+                # NVD-only error (Shodan succeeded but enrichment had issues)
+                QMessageBox.warning(self, "Scan Completed with Partial Errors", 
+                    f"Scan had some issues during enrichment:\n\n{error_msg}\n\nDevices were updated but vulnerability data may be incomplete.")
+    
+    def _on_training_completed(self, message, is_success):
+        """Handle training completion in main thread (slot called via signal)"""
+        if is_success:
+            QMessageBox.information(self, "Training", message)
+        else:
+            QMessageBox.critical(self, "Training Error", message)
 
     def upload_file(self):
         path, _ = QFileDialog.getOpenFileName(self, "Select file to import", "", "Data files (*.csv *.json)")
@@ -917,8 +1337,14 @@ class DashboardWindow(QWidget):
             try:
                 mod = importlib.import_module('model')
                 if hasattr(mod, 'train_and_save_model'):
-                    mod.train_and_save_model()
-                    QMessageBox.information(self, "Training", "Model trained and stored from uploaded data.")
+                    # Run training in background thread to avoid UI freeze
+                    training_thread = threading.Thread(
+                        target=self._run_training_with_message,
+                        args=("Model trained and stored from uploaded data.",),
+                        daemon=True
+                    )
+                    training_thread.start()
+                    logger.info("Post-upload training started in background thread")
                 else:
                     logger.info("No train_and_save_model found in model package; skipping post-import training.")
             except Exception:
@@ -1153,8 +1579,8 @@ class DashboardWindow(QWidget):
     def train_model(self):
         # Check dataset has at least 2 classes before attempting training to avoid ValueError
         try:
-            df = self.fetch_devices_df()
-            if df.empty:
+            df = self.cached_df  # Use cached data directly (no fetch needed)
+            if df is None or df.empty:
                 QMessageBox.information(self, "Training", "No device data available to train on.")
                 return
             # Look for risk labels (either numeric or textual)
@@ -1174,8 +1600,14 @@ class DashboardWindow(QWidget):
             try:
                 mod = importlib.import_module('model.training_orchestrator')
                 if hasattr(mod, 'train_and_save_model'):
-                    mod.train_and_save_model()
-                    QMessageBox.information(self, "Training", "Model trained and stored.")
+                    # Run training in background thread to avoid UI freeze
+                    training_thread = threading.Thread(
+                        target=self._run_training_with_message,
+                        args=("Model trained and stored.",),
+                        daemon=True
+                    )
+                    training_thread.start()
+                    logger.info("Manual training started in background thread")
                 else:
                     QMessageBox.information(self, "Training", "Training function not found in module.")
                     logger.info("Training function not found; skipping.")
@@ -1244,6 +1676,15 @@ def start_gui(dark_theme=False):
             # Continue anyway - GUI can work with degraded functionality
         
         win = DashboardWindow()
+        
+        # Set window size to 25% wider than default for better visibility
+        # Default width is typically 1200, make it 1500 (1200 * 1.25)
+        default_width = 1200
+        default_height = 700
+        width = int(default_width * 1.25)  # 25% wider
+        height = default_height
+        win.resize(width, height)
+        
         win.show()
         sys.exit(app.exec_())
     except Exception as e:

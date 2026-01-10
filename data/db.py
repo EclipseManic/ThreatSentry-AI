@@ -7,9 +7,10 @@ This module uses SQLite by default; change `SQLITE_PATH` in `config.py` to
 point to a different database file.
 """
 
-from sqlalchemy import create_engine, Column, Integer, String, DateTime, Float, Text, ForeignKey, Boolean
+from sqlalchemy import create_engine, Column, Integer, String, DateTime, Float, Text, ForeignKey, Boolean, Index
 from sqlalchemy.orm import sessionmaker, declarative_base, relationship
 import datetime
+from contextlib import contextmanager
 from core import get_logger
 from core.config import SQLITE_PATH
 
@@ -20,16 +21,19 @@ class Device(Base):
     __tablename__ = 'devices'
     id = Column(Integer, primary_key=True)
     ip = Column(String, unique=True, nullable=False)
-    org = Column(String)
-    country = Column(String)
+    org = Column(String, index=True)  # Index for frequent filtering
+    country = Column(String, index=True)  # Index for frequent filtering
     
     # Basic metrics
     num_open_ports = Column(Integer, default=0)
     banners = Column(Text)
-    last_seen = Column(DateTime, default=datetime.datetime.utcnow)
+    last_seen = Column(DateTime, default=datetime.datetime.utcnow, index=True)  # Index for sorting
     cve_count = Column(Integer, default=0)
-    max_cvss = Column(Float, nullable=True)
+    max_cvss = Column(Float, nullable=True, index=True)  # Index for range queries
     exposure_days = Column(Integer, default=0)
+    
+    # Risk assessment (indexed for filtering)
+    risk_label = Column(Integer, default=0, index=True)  # Index for risk filtering
     
     # Enhanced security metrics
     auth_failures_24h = Column(Integer, default=0)  # Authentication failures in last 24h
@@ -56,7 +60,6 @@ class Device(Base):
     connected_critical_assets = Column(Integer, default=0)  # Number of connected critical assets
     
     # ML and analysis fields
-    risk_label = Column(Integer, default=0)  # 0:Low, 1:Med, 2:High
     risk_score = Column(Float, default=0.0)  # Continuous risk score 0-100
     confidence_score = Column(Float, default=0.0)  # Model confidence 0-1
     last_analysis_date = Column(DateTime)
@@ -115,3 +118,13 @@ def get_session():
     except Exception as e:
         logger.error("Failed to create database session: %s", str(e))
         raise
+
+@contextmanager
+def get_session_context():
+    """Context manager for guaranteed session cleanup"""
+    session = get_session()
+    try:
+        yield session
+    finally:
+        session.close()
+        logger.debug("Database session closed")

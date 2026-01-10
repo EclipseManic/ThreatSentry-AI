@@ -8,6 +8,7 @@ are logged and do not crash the application.
 
 import shodan
 import datetime
+import time
 from core import get_logger
 from core.config import SHODAN_API_KEY, MAX_SHODAN_RESULTS, SHODAN_QUERY
 from data import get_session, Device
@@ -37,6 +38,32 @@ def parse_banners(host_data: dict) -> str:
     return "\n---\n".join(banners)
 
 
+def _retry_with_backoff(func, max_retries=3, base_delay=1):
+    """Execute a function with exponential backoff retry logic.
+    
+    Args:
+        func: Callable to execute
+        max_retries: Maximum number of retry attempts
+        base_delay: Initial delay in seconds (doubles each retry)
+    
+    Returns:
+        Result of func() or raises exception after max retries
+    """
+    last_exception = None
+    for attempt in range(max_retries):
+        try:
+            return func()
+        except Exception as e:
+            last_exception = e
+            if attempt < max_retries - 1:
+                delay = base_delay * (2 ** attempt)  # Exponential backoff: 1s, 2s, 4s
+                logger.warning("Attempt %d failed, retrying in %ds: %s", attempt + 1, delay, str(e))
+                time.sleep(delay)
+            else:
+                logger.error("All %d retry attempts failed", max_retries)
+    raise last_exception
+
+
 def scan_shodan(query: str = None, limit: int = None):
     """Run a Shodan search and upsert matching hosts into the Device table.
 
@@ -62,13 +89,23 @@ def scan_shodan(query: str = None, limit: int = None):
     session = get_session()
     logger.info("Starting Shodan scan: query=%s limit=%s", query, limit)
     try:
-        results = api.search(query, limit=limit)
+        # Use retry logic for API search
+        def do_search():
+            return api.search(query, limit=limit)
+        
+        results = _retry_with_backoff(do_search, max_retries=3, base_delay=1)
+        
         for match in results.get("matches", []):
             ip = match.get("ip_str") or match.get("ip")
             try:
-                host = api.host(ip)
-            except Exception:
-                # If detailed host lookup fails, fall back to match summary
+                # Use retry logic for detailed host lookup
+                def do_host_lookup():
+                    return api.host(ip)
+                
+                host = _retry_with_backoff(do_host_lookup, max_retries=2, base_delay=0.5)
+            except Exception as host_error:
+                # If detailed host lookup fails after retries, fall back to match summary
+                logger.warning("Host lookup failed for %s after retries: %s", ip, host_error)
                 host = match
 
             org = host.get("org") or "N/A"
@@ -100,5 +137,6 @@ def scan_shodan(query: str = None, limit: int = None):
     except Exception as e:
         logger.exception("Shodan scan failed: %s", e)
         session.rollback()
+        raise  # Re-raise so caller knows scan failed
     finally:
         session.close()

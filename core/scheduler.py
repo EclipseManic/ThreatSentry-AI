@@ -17,6 +17,8 @@ and notification emails. Shodan query selection follows this precedence:
 from apscheduler.schedulers.background import BackgroundScheduler
 import logging
 import datetime
+import threading
+from concurrent.futures import ThreadPoolExecutor
 
 from .config import SHODAN_QUERY, SHODAN_QUERY_EMPTY_TO_PRESET, SHODAN_QUERIES, MAX_SHODAN_RESULTS, RETRAIN_ON_SCHEDULE, SCAN_INTERVAL_MINUTES, RETRAIN_INTERVAL_MINUTES
 from .logger import get_logger
@@ -28,20 +30,41 @@ from alerts import notify_new_high_risk_devices
 logger = get_logger("scheduler")
 sched = BackgroundScheduler()
 
+# Thread pool for network I/O operations (Shodan, NVD)
+_network_executor = ThreadPoolExecutor(max_workers=3, thread_name_prefix="network_io")
+
 def _run_shodan_queries(queries):
-    """Execute a sequence of Shodan queries safely.
+    """Execute a sequence of Shodan queries safely using thread pool.
 
     Each configured preset is attempted regardless of individual failures. The
     collector handles API errors and logs; this wrapper ensures failures for
-    one query don't abort the rest.
+    one query don't abort the rest. Uses thread pool for non-blocking execution.
     """
+    futures = []
     for q in queries:
         try:
-            logger.info("Starting Shodan scan for query: %s", q)
-            shodan_collector.scan_shodan(query=q, limit=MAX_SHODAN_RESULTS)
-            logger.info("Finished Shodan scan for query: %s", q)
+            logger.info("Submitting Shodan scan for query: %s", q)
+            future = _network_executor.submit(_scan_shodan_safe, q)
+            futures.append(future)
         except Exception:
-            logger.exception("Failed Shodan scan for query: %s", q)
+            logger.exception("Failed to submit Shodan scan for query: %s", q)
+    
+    # Wait for all queries to complete
+    for future in futures:
+        try:
+            future.result(timeout=300)  # 5 minute timeout per query
+        except Exception:
+            logger.exception("Shodan query execution failed")
+
+def _scan_shodan_safe(query):
+    """Safely execute a single Shodan scan in thread pool"""
+    try:
+        logger.info("Starting Shodan scan for query: %s", query)
+        shodan_collector.scan_shodan(query=query, limit=MAX_SHODAN_RESULTS)
+        logger.info("Finished Shodan scan for query: %s", query)
+    except Exception:
+        logger.exception("Failed Shodan scan for query: %s", query)
+
 
 def scheduled_scan():
     """Called by the scheduler on each interval."""
@@ -59,6 +82,19 @@ def scheduled_scan():
         queries = [SHODAN_QUERY or ""]
 
     _run_shodan_queries(queries)
+    
+    # Run NVD enrichment in parallel with Shodan scan (in thread pool)
+    logger.debug("Submitting NVD enrichment to thread pool")
+    _network_executor.submit(_enrich_nvd_safe)
+
+def _enrich_nvd_safe():
+    """Safely run NVD enrichment in thread pool"""
+    try:
+        logger.info("Starting NVD enrichment")
+        nvd_collector.enrich_devices_with_vulns()
+        logger.info("Finished NVD enrichment")
+    except Exception:
+        logger.exception("NVD enrichment failed")
 
 def scheduled_initial_scan():
     """Optional startup scan. Reuse same behavior as scheduled_scan."""
@@ -67,8 +103,16 @@ def scheduled_initial_scan():
 
 def scheduled_retrain():
     logger.info("Scheduled retrain started.")
+    # Run training in a background daemon thread to prevent blocking the scheduler
+    training_thread = threading.Thread(target=_train_in_background, daemon=True)
+    training_thread.start()
+    logger.debug("Training thread started (daemon mode)")
+
+def _train_in_background():
+    """Run model training in a background thread"""
     try:
         train_and_save_model()
+        logger.info("Scheduled retrain completed successfully")
     except Exception as e:
         logger.exception("Retrain failed: %s", e)
 

@@ -32,7 +32,7 @@ def main():
 
     try:
         logger.info("Starting GUI...")
-        start_gui()
+        start_gui(dark_theme=True)  # Use dark theme by default
     except Exception as e:
         logger.error("Failed to start GUI: %s", str(e))
         raise

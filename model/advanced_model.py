@@ -142,7 +142,7 @@ class EnsembleModel:
         self.validation_metrics = {
             'accuracy': np.mean(y_pred == y_val),
             'confusion_matrix': confusion_matrix(y_val, y_pred).tolist(),
-            'classification_report': classification_report(y_val, y_pred, output_dict=True)
+            'classification_report': classification_report(y_val, y_pred, output_dict=True, zero_division=0)
         }
     
     def get_prediction_explanation(self, X: np.ndarray) -> List[Dict[str, Any]]:

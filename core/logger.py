@@ -23,22 +23,23 @@ def _ensure_log_directory():
 def get_logger(name: str = __name__):
     logger = logging.getLogger(name)
     if not logger.handlers:
-        formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(name)s - %(message)s")
+        # Console handler: simplified format for normal operations (no logger name, less verbose)
+        console_formatter = logging.Formatter("%(levelname)s - %(message)s")
         
-        # Console handler
         ch = logging.StreamHandler(stream=sys.stdout)
-        ch.setFormatter(formatter)
+        ch.setFormatter(console_formatter)
         logger.addHandler(ch)
         
-        # File handler with rotation
+        # File handler with rotation: detailed format for debugging
         try:
             _ensure_log_directory()
+            file_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(name)s - %(message)s")
             fh = RotatingFileHandler(
                 LOG_FILE_PATH,
                 maxBytes=LOG_FILE_MAX_BYTES,
                 backupCount=LOG_FILE_BACKUP_COUNT
             )
-            fh.setFormatter(formatter)
+            fh.setFormatter(file_formatter)
             logger.addHandler(fh)
         except Exception as e:
             logger.warning(f"Failed to setup file logging: {e}")
