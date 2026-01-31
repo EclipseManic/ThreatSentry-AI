@@ -151,6 +151,41 @@ Modern security teams face unprecedented challenges:
 
 *Sortable and filterable device listing with color-coded risk levels (Green=Low, Yellow=Medium, Red=High)*
 
+### Advanced Filtering Panel
+![Advanced Filters - CVSS Range, Organization, Country, Risk Level]
+
+*Powerful filtering controls with CVSS range, organization, country, and risk level filters + "Clear All" button*
+
+- **CVSS Range Filter**: Adjust minimum and maximum CVSS scores (0-10) to focus on specific severity levels
+- **Organization Filter**: Quick filter by specific organization from a dropdown of all organizations in your database
+- **Country Filter**: Filter by geographical location to identify regional risks
+- **Risk Level Filter**: Display only High, Medium, Low, or All devices for focused analysis
+- **Clear All Button**: One-click reset of all filters to default values to see full dataset again
+- **Apply Filters**: Instantly apply all selected filters with results reflected in real-time
+
+### Full-Database Search Capability
+![Search Input - Multi-Column Search Across Entire Database]
+
+*Intelligent search that spans entire device database, not just currently displayed rows*
+
+- **Comprehensive Search**: Search across IP addresses, organization names, countries, and risk levels
+- **Auto-IP Detection**: Automatically detects IP address format and searches accordingly
+- **Full Database Coverage**: Search results include ALL devices in database, not limited to first 50 rows
+- **Real-Time Results**: Debounced 300ms delay for responsive search without performance impact
+- **Pagination Integration**: Search results respect pagination system for efficient loading
+
+### Intelligent Pagination & Large Dataset Support
+![Load More Button - Pagination Controls]
+
+*Optimized pagination system for handling thousands of devices efficiently*
+
+- **Default 50-Row Display**: Dashboard loads with initial 50 devices for fast rendering
+- **Progressive Loading**: "Load More (50 rows)" button allows incremental loading without timeout
+- **Memory Efficient**: Only displays requested rows; never loads entire dataset into memory
+- **Performance Optimized**: Non-blocking UI prevents freezing when loading large datasets
+- **Status Indicator**: Shows "Showing X of Y devices" for transparency on total available data
+- **Search Integration**: Search filters work seamlessly with pagination for fast results
+
 ### Analytics & Reporting Panel
 ![Analytics Tab - Risk Trends and CVE Analysis]
 
@@ -468,8 +503,8 @@ CVE Info:         cve_id, cvss, summary
 ### Common Issues
 
 #### Issue: "Shodan API Key invalid" (403 Forbidden)
-- **Solution**: Verify API key in SendGrid. Dashboard will show error but continue processing
-- **Note**: NVD enrichment won't run (prevents data reset on API failures)
+- **Solution**: Verify Shodan API key in `.env` file. Dashboard will show error but continue processing
+- **Note**: NVD enrichment won't run (prevents data loss on API failures)
 
 #### Issue: "No CVEs found for device"
 - **Solution**: Check banner extraction. Edit `collectors/nvd_collector.py` keyword list
@@ -549,20 +584,6 @@ This project is licensed under the MIT License—see [LICENSE](LICENSE) file for
 ---
 
 **Made with ❤️ by EclipseManic | Securing Tomorrow's Infrastructure Today**
-
-### 2. Create and activate a virtual environment
-```bash
-python -m venv venv
-
-# On Windows:
-venv\Scripts\activate
-
-# On macOS/Linux:
-source venv/bin/activate
-```
-
-### 3. Install required dependencies
-```bash
 pip install -r requirements.txt
 ```
 
@@ -580,7 +601,7 @@ SHODAN_API_KEY="YOUR_SHODAN_API_KEY"
 # --- SendGrid Email Alerts (Required) ---
 SENDGRID_API_KEY="YOUR_SENDGRID_API_KEY"
 SENDER_EMAIL="your_verified_sender@example.com"
-ALERT_RECIENTS="recipient1@example.com,recipient2@example.com"
+ALERT_RECIPIENTS="recipient1@example.com,recipient2@example.com"
 
 # --- Database ---
 SQLITE_PATH="threat_sentric_ai.db"
