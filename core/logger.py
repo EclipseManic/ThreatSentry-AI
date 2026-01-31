@@ -26,7 +26,14 @@ def get_logger(name: str = __name__):
         # Console handler: simplified format for normal operations (no logger name, less verbose)
         console_formatter = logging.Formatter("%(levelname)s - %(message)s")
         
+        # Use UTF-8 encoding for console output (fixes font corruption on Windows)
         ch = logging.StreamHandler(stream=sys.stdout)
+        if hasattr(sys.stdout, 'reconfigure'):
+            # Python 3.7+ on Windows: reconfigure to use UTF-8
+            try:
+                sys.stdout.reconfigure(encoding='utf-8')
+            except Exception:
+                pass
         ch.setFormatter(console_formatter)
         logger.addHandler(ch)
         

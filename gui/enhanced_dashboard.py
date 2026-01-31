@@ -240,6 +240,12 @@ class AdvancedFilterPanel(QWidget):
         apply_btn.clicked.connect(self.emit_filters)
         layout.addWidget(apply_btn)
         
+        # Clear All Filters Button
+        clear_btn = QPushButton("Clear All")
+        clear_btn.setToolTip("Reset all filters to default")
+        clear_btn.clicked.connect(self.clear_all_filters)
+        layout.addWidget(clear_btn)
+        
         layout.addStretch()
     
     def set_organizations(self, orgs: List[str]):
@@ -271,6 +277,16 @@ class AdvancedFilterPanel(QWidget):
         }
     
     def emit_filters(self):
+        self.filters_changed.emit(self.get_filters())
+    
+    def clear_all_filters(self):
+        """Reset all filters to default values"""
+        self.cvss_min.setValue(0)
+        self.cvss_max.setValue(10)
+        self.org_filter.setCurrentText("All Organizations")
+        self.country_filter.setCurrentText("All Countries")
+        self.risk_filter.setCurrentText("All Risks")
+        # Emit the reset filters
         self.filters_changed.emit(self.get_filters())
 
 

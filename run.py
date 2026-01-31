@@ -5,6 +5,16 @@ Initializes the database, starts the background scheduler and launches the
 GUI. Suitable for running the application locally.
 """
 
+import sys
+
+# Ensure UTF-8 encoding for console output (fixes font corruption on Windows)
+if hasattr(sys.stdout, 'reconfigure'):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+        sys.stderr.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+
 from data import init_db
 from core import start as start_scheduler
 from core import get_logger

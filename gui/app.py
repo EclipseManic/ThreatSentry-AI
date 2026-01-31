@@ -11,6 +11,15 @@ import sys
 import pandas as pd
 import threading
 from concurrent.futures import ThreadPoolExecutor
+
+# Ensure UTF-8 encoding for console output (fixes font corruption on Windows)
+if hasattr(sys.stdout, 'reconfigure'):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+        sys.stderr.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel,
     QTableView, QMessageBox, QHeaderView, QFileDialog, QComboBox, QSpinBox,
@@ -468,23 +477,24 @@ class DashboardWindow(QWidget):
         self.model = PaginatedPandasModel(pd.DataFrame())  # Use paginated model for large result sets
         # Use a proxy model so we can filter across multiple columns
         class MultiColumnFilterProxy(QSortFilterProxyModel):
-            """Fast multi-column filter that precomputes a boolean mask using
-            vectorized pandas operations whenever the filter text changes.
-
-            This avoids expensive per-keystroke Python loops for large DataFrames.
+            """Fast multi-column filter that works with paginated model by filtering the full dataset,
+            then having the paginated model display the filtered results.
             """
-            def __init__(self, parent=None):
+            def __init__(self, parent=None, paginated_model=None):
                 super().__init__(parent)
                 self._filter_text = ''
                 self._ip_only = False
                 self._cols = []
                 self._col_indices = []
                 self._mask = None
+                self._paginated_model = paginated_model
 
             def setSourceModel(self, model):
                 super().setSourceModel(model)
+                self._paginated_model = model
                 try:
-                    self._cols = list(model._df.columns)
+                    df_to_use = model._full_df if hasattr(model, '_full_df') else model._df
+                    self._cols = list(df_to_use.columns)
                 except Exception:
                     self._cols = []
 
@@ -493,12 +503,10 @@ class DashboardWindow(QWidget):
                 self._filter_text = t.lower()
                 self._ip_only = bool(ip_only)
 
-                # Refresh column list from the current source model in case the model's
-                # DataFrame was replaced (e.g., after refresh). This prevents stale
-                # column metadata from causing the mask to be built against wrong cols.
                 try:
                     src = self.sourceModel()
-                    self._cols = list(src._df.columns) if hasattr(src, '_df') else []
+                    df_to_use = src._full_df if hasattr(src, '_full_df') else src._df
+                    self._cols = list(df_to_use.columns) if hasattr(src, '_df') else []
                 except Exception:
                     self._cols = []
 
@@ -514,11 +522,14 @@ class DashboardWindow(QWidget):
                 else:
                     self._col_indices = []
 
-                # build a boolean mask quickly using pandas vectorized string contains
+                # build a boolean mask on full dataset and filter the paginated model
                 try:
-                    df = self.sourceModel()._df
+                    src = self.sourceModel()
+                    df = src._full_df if hasattr(src, '_full_df') else src._df
+                    
                     if not self._filter_text:
-                        self._mask = None
+                        # No filter - show full dataset
+                        filtered_df = df.copy()
                     else:
                         ft = self._filter_text
                         masks = None
@@ -526,23 +537,20 @@ class DashboardWindow(QWidget):
                             col = df.iloc[:, ci].astype(str).fillna('').str.lower()
                             m = col.str.contains(ft, regex=False)
                             masks = m if masks is None else (masks | m)
-                        self._mask = masks if masks is not None else pd.Series([False] * len(df))
+                        filtered_df = df[masks] if masks is not None else pd.DataFrame()
+                    
+                    # Update the paginated model with filtered results and reset pagination
+                    if self._paginated_model:
+                        self._paginated_model.setDataFrame(filtered_df)
                 except Exception:
-                    self._mask = None
+                    pass
 
-                self.invalidateFilter()
-
-            def filterAcceptsRow(self, source_row: int, source_parent) -> bool:
-                if self._mask is None:
-                    return True
-                try:
-                    return bool(self._mask.iat[source_row])
-                except Exception:
-                    return True
-
-        self.proxy = MultiColumnFilterProxy(self)
+        self.proxy = MultiColumnFilterProxy(self, self.model)
         self.proxy.setSourceModel(self.model)
-        self.table_view.setModel(self.proxy)
+        # Note: We don't use proxy as the table model anymore, we directly use the paginated model
+        # because the proxy filters the underlying data in the paginated model
+        self.table_view.setModel(self.model)  # Use paginated model directly
+
         
         # Set custom delegate for Risk column to optimize color rendering
         risk_delegate = RiskColorDelegate(self.table_view)
@@ -733,30 +741,60 @@ class DashboardWindow(QWidget):
                 logger.debug("No cached data available for filtering yet")
                 return
             
-            # Apply filters in-memory (instant, no DB queries)
+            # Clear search when applying advanced filters
+            self.search_input.blockSignals(True)
+            self.search_input.clear()
+            self.search_input.blockSignals(False)
+            
+            # Apply filters in-memory using raw column names (cached_df has lowercase names like 'max_cvss')
             df = self.cached_df.copy()
             
-            if filters.get('cvss_min') is not None:
-                df = df[df['Max CVSS'] >= filters['cvss_min']]
+            # Check which columns exist (could be lowercase or capitalized depending on where data came from)
+            max_cvss_col = 'Max CVSS' if 'Max CVSS' in df.columns else 'max_cvss' if 'max_cvss' in df.columns else None
+            org_col = 'Org' if 'Org' in df.columns else 'org' if 'org' in df.columns else None
+            country_col = 'Country' if 'Country' in df.columns else 'country' if 'country' in df.columns else None
+            risk_col = 'Risk' if 'Risk' in df.columns else 'risk' if 'risk' in df.columns else None
             
-            if filters.get('cvss_max') is not None:
-                df = df[df['Max CVSS'] <= filters['cvss_max']]
+            # Apply CVSS filters
+            if max_cvss_col and filters.get('cvss_min') is not None:
+                cvss_min = filters['cvss_min']
+                # Convert to numeric to handle any string values
+                df[max_cvss_col] = pd.to_numeric(df[max_cvss_col], errors='coerce')
+                df = df[df[max_cvss_col] >= cvss_min]
+                logger.debug("Applied CVSS min filter: %s", cvss_min)
             
-            if filters.get('organization') and filters['organization'] != 'All Organizations':
-                df = df[df['Org'] == filters['organization']]
+            if max_cvss_col and filters.get('cvss_max') is not None:
+                cvss_max = filters['cvss_max']
+                # Convert to numeric to handle any string values
+                df[max_cvss_col] = pd.to_numeric(df[max_cvss_col], errors='coerce')
+                df = df[df[max_cvss_col] <= cvss_max]
+                logger.debug("Applied CVSS max filter: %s", cvss_max)
             
-            if filters.get('country') and filters['country'] != 'All Countries':
-                df = df[df['Country'] == filters['country']]
+            # Apply organization filter
+            if org_col and filters.get('organization') and filters['organization'] != 'All Organizations':
+                df = df[df[org_col] == filters['organization']]
+                logger.debug("Applied organization filter: %s", filters['organization'])
             
-            if filters.get('risk_level') and filters['risk_level'] != 'All Risks':
-                df = df[df['Risk'] == filters['risk_level']]
+            # Apply country filter
+            if country_col and filters.get('country') and filters['country'] != 'All Countries':
+                df = df[df[country_col] == filters['country']]
+                logger.debug("Applied country filter: %s", filters['country'])
             
-            # Update table with filtered results
+            # Apply risk filter
+            if risk_col and filters.get('risk_level') and filters['risk_level'] != 'All Risks':
+                df = df[df[risk_col] == filters['risk_level']]
+                logger.debug("Applied risk filter: %s", filters['risk_level'])
+            
+            # Update table with filtered results (pagination resets automatically in setDataFrame)
             self.model.setDataFrame(df)
+            self._update_pagination_controls()
+            self.update_chart(df)
             self.status_label.setText(f"Filters applied | {len(df)} devices shown")
-            logger.debug("Filters applied: %s -> %d devices", filters, len(df))
+            logger.info("Filters applied: %s -> %d devices", filters, len(df))
         except Exception as e:
             logger.error("Error applying advanced filters: %s", e)
+            import traceback
+            logger.error("Traceback: %s", traceback.format_exc())
     
     def export_to_csv(self):
         """Export filtered devices to CSV"""

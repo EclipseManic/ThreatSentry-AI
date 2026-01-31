@@ -797,3 +797,407 @@ shodan.exception.APIError: Access denied (403 Forbidden)
 2026-01-10 15:02:00,501 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
 2026-01-10 15:02:00,502 - INFO - db - Database engine created successfully
 2026-01-10 15:02:02,179 - INFO - scripts.clear_db_enhanced - Deleted 1000 devices.
+2026-01-10 15:26:23,040 - INFO - run - Initializing database...
+2026-01-10 15:26:23,110 - INFO - db - Database engine created successfully
+2026-01-10 15:26:23,115 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-10 15:26:23,116 - INFO - run - Database initialized successfully
+2026-01-10 15:26:23,116 - INFO - run - Starting scheduler...
+2026-01-10 15:26:24,778 - INFO - run - Scheduler started successfully
+2026-01-10 15:26:24,778 - INFO - run - Starting GUI...
+2026-01-10 15:26:24,794 - INFO - gui - Initializing database for GUI...
+2026-01-10 15:26:24,795 - INFO - db - Database engine created successfully
+2026-01-10 15:26:24,797 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-10 15:26:24,797 - INFO - gui - Database initialized successfully
+2026-01-10 15:26:25,243 - INFO - gui - Advanced filters added to dashboard
+2026-01-10 15:26:25,411 - INFO - db - Database engine created successfully
+2026-01-10 15:26:41,124 - INFO - gui - Imported 1000 rows from D:/visual code file/Project_3/ThreatSentry-AI-main/data/generated_data/my_training_data.json -> added=1000 updated=0 skipped=0
+2026-01-10 15:26:41,129 - INFO - gui - Post-upload training started in background thread
+2026-01-10 15:26:41,128 - INFO - model_training - Starting advanced model training
+2026-01-10 15:26:44,695 - INFO - model_training - Model and metadata saved to data/models/rf_model.pkl
+2026-01-10 15:26:44,696 - INFO - model_training - Model training completed successfully
+2026-01-10 15:26:44,696 - INFO - model_training - Validation accuracy: 0.965
+2026-01-10 15:26:44,697 - INFO - gui - Training completed successfully: Model trained and stored from uploaded data.
+2026-01-10 15:31:56,684 - INFO - gui - Analytics tab loaded successfully
+2026-01-10 15:31:56,708 - INFO - gui - Tools tab loaded successfully
+2026-01-10 15:37:00,906 - INFO - gui - Manual scan started.
+2026-01-10 15:37:00,913 - INFO - gui - Performing Shodan scan for query: product:apache
+2026-01-10 15:37:00,916 - INFO - shodan_collector - Starting Shodan scan: query=product:apache limit=50
+2026-01-10 15:37:02,176 - WARNING - shodan_collector - Attempt 1 failed, retrying in 1s: Access denied (403 Forbidden)
+2026-01-10 15:37:03,712 - WARNING - shodan_collector - Attempt 2 failed, retrying in 2s: Access denied (403 Forbidden)
+2026-01-10 15:37:06,478 - ERROR - shodan_collector - All 3 retry attempts failed
+2026-01-10 15:37:06,480 - ERROR - shodan_collector - Shodan scan failed: Access denied (403 Forbidden)
+Traceback (most recent call last):
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 96, in scan_shodan
+    results = _retry_with_backoff(do_search, max_retries=3, base_delay=1)
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 64, in _retry_with_backoff
+    raise last_exception
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 55, in _retry_with_backoff
+    return func()
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 94, in do_search
+    return api.search(query, limit=limit)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\shodan\client.py", line 571, in search
+    return self._request('/shodan/host/search', args)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\shodan\client.py", line 389, in _request
+    raise APIError('Access denied (403 Forbidden)')
+shodan.exception.APIError: Access denied (403 Forbidden)
+2026-01-10 15:37:06,487 - ERROR - gui - Shodan scan failed: Access denied (403 Forbidden)
+Traceback (most recent call last):
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\gui\app.py", line 1109, in _perform_scan
+    shodan_collector.scan_shodan(query=query)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 96, in scan_shodan
+    results = _retry_with_backoff(do_search, max_retries=3, base_delay=1)
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 64, in _retry_with_backoff
+    raise last_exception
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 55, in _retry_with_backoff
+    return func()
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 94, in do_search
+    return api.search(query, limit=limit)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\shodan\client.py", line 571, in search
+    return self._request('/shodan/host/search', args)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\shodan\client.py", line 389, in _request
+    raise APIError('Access denied (403 Forbidden)')
+shodan.exception.APIError: Access denied (403 Forbidden)
+2026-01-10 15:37:06,492 - INFO - gui - Skipping NVD enrichment due to Shodan scan failure
+2026-01-10 15:37:06,493 - INFO - gui - Manual scan finished, emitting completion signal
+2026-01-10 15:37:21,089 - INFO - gui - Manual scan submitted to background thread.
+2026-01-10 15:37:42,800 - INFO - gui - Imported 1000 rows from D:/visual code file/Project_3/ThreatSentry-AI-main/data/generated_data/my_training_data.json -> added=0 updated=1000 skipped=0
+2026-01-10 15:37:42,805 - INFO - model_training - Starting advanced model training
+2026-01-10 15:37:42,805 - INFO - gui - Post-upload training started in background thread
+2026-01-10 15:37:45,646 - INFO - model_training - Model and metadata saved to data/models/rf_model.pkl
+2026-01-10 15:37:45,647 - INFO - model_training - Model training completed successfully
+2026-01-10 15:37:45,647 - INFO - model_training - Validation accuracy: 0.965
+2026-01-10 15:37:45,647 - INFO - gui - Training completed successfully: Model trained and stored from uploaded data.
+2026-01-10 15:38:29,102 - INFO - gui - Imported 1000 rows from D:/visual code file/Project_3/ThreatSentry-AI-main/data/generated_data/my_training_data.json -> added=0 updated=1000 skipped=0
+2026-01-10 15:38:29,105 - INFO - model_training - Starting advanced model training
+2026-01-10 15:38:29,105 - INFO - gui - Post-upload training started in background thread
+2026-01-10 15:38:32,636 - INFO - model_training - Model and metadata saved to data/models/rf_model.pkl
+2026-01-10 15:38:32,638 - INFO - model_training - Model training completed successfully
+2026-01-10 15:38:32,639 - INFO - model_training - Validation accuracy: 0.965
+2026-01-10 15:38:32,641 - INFO - gui - Training completed successfully: Model trained and stored from uploaded data.
+2026-01-10 15:41:51,654 - INFO - run - Initializing database...
+2026-01-10 15:41:51,693 - INFO - db - Database engine created successfully
+2026-01-10 15:41:51,696 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-10 15:41:51,697 - INFO - run - Database initialized successfully
+2026-01-10 15:41:51,703 - INFO - run - Starting scheduler...
+2026-01-10 15:41:53,474 - INFO - run - Scheduler started successfully
+2026-01-10 15:41:53,474 - INFO - run - Starting GUI...
+2026-01-10 15:41:53,490 - INFO - gui - Initializing database for GUI...
+2026-01-10 15:41:53,491 - INFO - db - Database engine created successfully
+2026-01-10 15:41:53,495 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-10 15:41:53,495 - INFO - gui - Database initialized successfully
+2026-01-10 15:41:53,933 - INFO - gui - Advanced filters added to dashboard
+2026-01-10 15:41:54,074 - INFO - db - Database engine created successfully
+2026-01-10 16:07:28,491 - INFO - run - Initializing database...
+2026-01-10 16:07:28,521 - INFO - db - Database engine created successfully
+2026-01-10 16:07:28,525 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-10 16:07:28,526 - INFO - run - Database initialized successfully
+2026-01-10 16:07:28,527 - INFO - run - Starting scheduler...
+2026-01-10 16:07:30,659 - INFO - run - Scheduler started successfully
+2026-01-10 16:07:30,660 - INFO - run - Starting GUI...
+2026-01-10 16:07:30,682 - INFO - gui - Initializing database for GUI...
+2026-01-10 16:07:30,683 - INFO - db - Database engine created successfully
+2026-01-10 16:07:30,686 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-10 16:07:30,686 - INFO - gui - Database initialized successfully
+2026-01-10 16:07:31,043 - INFO - gui - Advanced filters added to dashboard
+2026-01-10 16:07:31,201 - INFO - db - Database engine created successfully
+2026-01-10 16:07:49,228 - INFO - email_alerts - SendGrid status: 202
+2026-01-10 16:07:52,198 - INFO - gui - Filtered alerts sent for 50 devices (cat=All)
+2026-01-31 11:06:03,311 - INFO - run - Initializing database...
+2026-01-31 11:06:03,473 - INFO - db - Database engine created successfully
+2026-01-31 11:06:03,483 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-31 11:06:03,483 - INFO - run - Database initialized successfully
+2026-01-31 11:06:03,483 - INFO - run - Starting scheduler...
+2026-01-31 11:06:09,442 - INFO - run - Scheduler started successfully
+2026-01-31 11:06:09,442 - INFO - run - Starting GUI...
+2026-01-31 11:06:09,694 - INFO - gui - Initializing database for GUI...
+2026-01-31 11:06:09,695 - INFO - db - Database engine created successfully
+2026-01-31 11:06:09,696 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-31 11:06:09,697 - INFO - gui - Database initialized successfully
+2026-01-31 11:06:10,118 - INFO - gui - Advanced filters added to dashboard
+2026-01-31 11:06:10,191 - INFO - db - Database engine created successfully
+2026-01-31 11:06:15,990 - INFO - gui - Manual scan started.
+2026-01-31 11:06:15,991 - INFO - gui - Performing Shodan scan for query: product:apache
+2026-01-31 11:06:15,992 - INFO - shodan_collector - Starting Shodan scan: query=product:apache limit=50
+2026-01-31 11:06:17,942 - INFO - gui - Manual scan submitted to background thread.
+2026-01-31 11:06:19,210 - WARNING - shodan_collector - Attempt 1 failed, retrying in 1s: Access denied (403 Forbidden)
+2026-01-31 11:06:20,698 - WARNING - shodan_collector - Attempt 2 failed, retrying in 2s: Access denied (403 Forbidden)
+2026-01-31 11:06:23,746 - ERROR - shodan_collector - All 3 retry attempts failed
+2026-01-31 11:06:23,746 - ERROR - shodan_collector - Shodan scan failed: Access denied (403 Forbidden)
+Traceback (most recent call last):
+  File "d:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 96, in scan_shodan
+    results = _retry_with_backoff(do_search, max_retries=3, base_delay=1)
+  File "d:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 64, in _retry_with_backoff
+    raise last_exception
+  File "d:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 55, in _retry_with_backoff
+    return func()
+  File "d:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 94, in do_search
+    return api.search(query, limit=limit)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\shodan\client.py", line 571, in search
+    return self._request('/shodan/host/search', args)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\shodan\client.py", line 389, in _request
+    raise APIError('Access denied (403 Forbidden)')
+shodan.exception.APIError: Access denied (403 Forbidden)
+2026-01-31 11:06:23,760 - ERROR - gui - Shodan scan failed: Access denied (403 Forbidden)
+Traceback (most recent call last):
+  File "d:\visual code file\Project_3\ThreatSentry-AI-main\gui\app.py", line 1109, in _perform_scan
+    shodan_collector.scan_shodan(query=query)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "d:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 96, in scan_shodan
+    results = _retry_with_backoff(do_search, max_retries=3, base_delay=1)
+  File "d:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 64, in _retry_with_backoff
+    raise last_exception
+  File "d:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 55, in _retry_with_backoff
+    return func()
+  File "d:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 94, in do_search
+    return api.search(query, limit=limit)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\shodan\client.py", line 571, in search
+    return self._request('/shodan/host/search', args)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\shodan\client.py", line 389, in _request
+    raise APIError('Access denied (403 Forbidden)')
+shodan.exception.APIError: Access denied (403 Forbidden)
+2026-01-31 11:06:23,762 - INFO - gui - Skipping NVD enrichment due to Shodan scan failure
+2026-01-31 11:06:23,762 - INFO - gui - Manual scan finished, emitting completion signal
+2026-01-31 11:07:03,354 - INFO - gui - Manual scan started.
+2026-01-31 11:07:03,355 - INFO - gui - Performing Shodan scan for query: org:"Your  Name"
+2026-01-31 11:07:03,356 - INFO - shodan_collector - Starting Shodan scan: query=org:"Your  Name" limit=50
+2026-01-31 11:07:04,699 - WARNING - shodan_collector - Attempt 1 failed, retrying in 1s: Access denied (403 Forbidden)
+2026-01-31 11:07:05,989 - WARNING - shodan_collector - Attempt 2 failed, retrying in 2s: Access denied (403 Forbidden)
+2026-01-31 11:07:08,870 - ERROR - shodan_collector - All 3 retry attempts failed
+2026-01-31 11:07:08,872 - ERROR - shodan_collector - Shodan scan failed: Access denied (403 Forbidden)
+Traceback (most recent call last):
+  File "d:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 96, in scan_shodan
+    results = _retry_with_backoff(do_search, max_retries=3, base_delay=1)
+  File "d:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 64, in _retry_with_backoff
+    raise last_exception
+  File "d:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 55, in _retry_with_backoff
+    return func()
+  File "d:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 94, in do_search
+    return api.search(query, limit=limit)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\shodan\client.py", line 571, in search
+    return self._request('/shodan/host/search', args)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\shodan\client.py", line 389, in _request
+    raise APIError('Access denied (403 Forbidden)')
+shodan.exception.APIError: Access denied (403 Forbidden)
+2026-01-31 11:07:08,876 - ERROR - gui - Shodan scan failed: Access denied (403 Forbidden)
+Traceback (most recent call last):
+  File "d:\visual code file\Project_3\ThreatSentry-AI-main\gui\app.py", line 1109, in _perform_scan
+    shodan_collector.scan_shodan(query=query)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "d:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 96, in scan_shodan
+    results = _retry_with_backoff(do_search, max_retries=3, base_delay=1)
+  File "d:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 64, in _retry_with_backoff
+    raise last_exception
+  File "d:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 55, in _retry_with_backoff
+    return func()
+  File "d:\visual code file\Project_3\ThreatSentry-AI-main\collectors\shodan_collector.py", line 94, in do_search
+    return api.search(query, limit=limit)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\shodan\client.py", line 571, in search
+    return self._request('/shodan/host/search', args)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\shodan\client.py", line 389, in _request
+    raise APIError('Access denied (403 Forbidden)')
+shodan.exception.APIError: Access denied (403 Forbidden)
+2026-01-31 11:07:08,879 - INFO - gui - Skipping NVD enrichment due to Shodan scan failure
+2026-01-31 11:07:08,880 - INFO - gui - Manual scan finished, emitting completion signal
+2026-01-31 11:07:17,564 - INFO - gui - Manual scan submitted to background thread.
+2026-01-31 11:07:49,628 - INFO - gui - Loaded more results, 100 rows displayed
+2026-01-31 11:12:19,363 - INFO - run - Initializing database...
+2026-01-31 11:12:19,563 - INFO - db - Database engine created successfully
+2026-01-31 11:12:19,570 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-31 11:12:19,571 - INFO - run - Database initialized successfully
+2026-01-31 11:12:19,573 - INFO - run - Starting scheduler...
+2026-01-31 11:12:35,628 - INFO - run - Scheduler started successfully
+2026-01-31 11:12:35,630 - INFO - run - Starting GUI...
+2026-01-31 11:12:36,195 - INFO - gui - Initializing database for GUI...
+2026-01-31 11:12:36,197 - INFO - db - Database engine created successfully
+2026-01-31 11:12:36,201 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-31 11:12:36,201 - INFO - gui - Database initialized successfully
+2026-01-31 11:12:36,621 - INFO - gui - Advanced filters added to dashboard
+2026-01-31 11:12:36,783 - INFO - db - Database engine created successfully
+2026-01-31 11:12:42,985 - INFO - gui - Analytics tab loaded successfully
+2026-01-31 11:12:42,989 - INFO - gui - Tools tab loaded successfully
+2026-01-31 11:13:08,565 - INFO - gui - Loaded more results, 100 rows displayed
+2026-01-31 11:13:10,141 - INFO - gui - Loaded more results, 150 rows displayed
+2026-01-31 11:13:10,597 - INFO - gui - Loaded more results, 200 rows displayed
+2026-01-31 11:13:10,754 - INFO - gui - Loaded more results, 250 rows displayed
+2026-01-31 11:13:10,909 - INFO - gui - Loaded more results, 300 rows displayed
+2026-01-31 11:13:11,064 - INFO - gui - Loaded more results, 350 rows displayed
+2026-01-31 11:13:11,188 - INFO - gui - Loaded more results, 400 rows displayed
+2026-01-31 11:13:11,342 - INFO - gui - Loaded more results, 450 rows displayed
+2026-01-31 11:13:11,467 - INFO - gui - Loaded more results, 500 rows displayed
+2026-01-31 11:13:11,608 - INFO - gui - Loaded more results, 550 rows displayed
+2026-01-31 11:13:11,731 - INFO - gui - Loaded more results, 600 rows displayed
+2026-01-31 11:13:11,855 - INFO - gui - Loaded more results, 650 rows displayed
+2026-01-31 11:13:11,996 - INFO - gui - Loaded more results, 700 rows displayed
+2026-01-31 11:13:12,122 - INFO - gui - Loaded more results, 750 rows displayed
+2026-01-31 11:13:12,285 - INFO - gui - Loaded more results, 800 rows displayed
+2026-01-31 11:13:12,418 - INFO - gui - Loaded more results, 850 rows displayed
+2026-01-31 11:13:12,590 - INFO - gui - Loaded more results, 900 rows displayed
+2026-01-31 11:13:12,749 - INFO - gui - Loaded more results, 950 rows displayed
+2026-01-31 11:13:12,921 - INFO - gui - Loaded more results, 1000 rows displayed
+2026-01-31 11:19:12,048 - INFO - run - Initializing database...
+2026-01-31 11:19:12,287 - INFO - db - Database engine created successfully
+2026-01-31 11:19:12,292 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-31 11:19:12,293 - INFO - run - Database initialized successfully
+2026-01-31 11:19:12,293 - INFO - run - Starting scheduler...
+2026-01-31 11:19:30,822 - INFO - run - Scheduler started successfully
+2026-01-31 11:19:30,823 - INFO - run - Starting GUI...
+2026-01-31 11:19:31,538 - INFO - gui - Initializing database for GUI...
+2026-01-31 11:19:31,540 - INFO - db - Database engine created successfully
+2026-01-31 11:19:31,543 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-31 11:19:31,544 - INFO - gui - Database initialized successfully
+2026-01-31 11:19:32,102 - INFO - gui - Advanced filters added to dashboard
+2026-01-31 11:19:32,340 - INFO - db - Database engine created successfully
+2026-01-31 11:19:44,751 - INFO - gui - Loaded more results, 100 rows displayed
+2026-01-31 11:19:44,886 - INFO - gui - Loaded more results, 150 rows displayed
+2026-01-31 11:19:45,042 - INFO - gui - Loaded more results, 200 rows displayed
+2026-01-31 11:19:45,180 - INFO - gui - Loaded more results, 250 rows displayed
+2026-01-31 11:19:45,305 - INFO - gui - Loaded more results, 300 rows displayed
+2026-01-31 11:19:45,462 - INFO - gui - Loaded more results, 350 rows displayed
+2026-01-31 11:19:45,599 - INFO - gui - Loaded more results, 400 rows displayed
+2026-01-31 11:19:45,719 - INFO - gui - Loaded more results, 450 rows displayed
+2026-01-31 11:19:45,859 - INFO - gui - Loaded more results, 500 rows displayed
+2026-01-31 11:19:45,998 - INFO - gui - Loaded more results, 550 rows displayed
+2026-01-31 11:19:46,123 - INFO - gui - Loaded more results, 600 rows displayed
+2026-01-31 11:19:46,260 - INFO - gui - Loaded more results, 650 rows displayed
+2026-01-31 11:19:46,412 - INFO - gui - Loaded more results, 700 rows displayed
+2026-01-31 11:19:46,550 - INFO - gui - Loaded more results, 750 rows displayed
+2026-01-31 11:20:08,444 - INFO - gui - Loaded more results, 800 rows displayed
+2026-01-31 11:20:09,089 - INFO - gui - Loaded more results, 850 rows displayed
+2026-01-31 11:20:09,240 - INFO - gui - Loaded more results, 900 rows displayed
+2026-01-31 11:20:46,595 - ERROR - gui - Error applying advanced filters: 'Max CVSS'
+2026-01-31 11:20:53,441 - ERROR - gui - Error applying advanced filters: 'Max CVSS'
+2026-01-31 11:20:58,908 - ERROR - gui - Error applying advanced filters: 'Max CVSS'
+2026-01-31 11:25:27,223 - INFO - run - Initializing database...
+2026-01-31 11:25:27,253 - INFO - db - Database engine created successfully
+2026-01-31 11:25:27,256 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-31 11:25:27,256 - INFO - run - Database initialized successfully
+2026-01-31 11:25:27,257 - INFO - run - Starting scheduler...
+2026-01-31 11:25:29,156 - INFO - run - Scheduler started successfully
+2026-01-31 11:25:29,157 - INFO - run - Starting GUI...
+2026-01-31 11:25:29,179 - INFO - gui - Initializing database for GUI...
+2026-01-31 11:25:29,181 - INFO - db - Database engine created successfully
+2026-01-31 11:25:29,183 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-31 11:25:29,184 - INFO - gui - Database initialized successfully
+2026-01-31 11:25:29,639 - INFO - gui - Advanced filters added to dashboard
+2026-01-31 11:25:29,800 - INFO - db - Database engine created successfully
+2026-01-31 11:25:40,230 - INFO - gui - Loaded more results, 32 rows displayed
+2026-01-31 11:25:55,498 - INFO - gui - Loaded more results, 100 rows displayed
+2026-01-31 11:25:57,795 - INFO - gui - Loaded more results, 150 rows displayed
+2026-01-31 11:25:59,539 - INFO - gui - Loaded more results, 200 rows displayed
+2026-01-31 11:25:59,696 - INFO - gui - Loaded more results, 250 rows displayed
+2026-01-31 11:25:59,840 - INFO - gui - Loaded more results, 300 rows displayed
+2026-01-31 11:25:59,982 - INFO - gui - Loaded more results, 350 rows displayed
+2026-01-31 11:26:00,125 - INFO - gui - Loaded more results, 400 rows displayed
+2026-01-31 11:26:00,267 - INFO - gui - Loaded more results, 450 rows displayed
+2026-01-31 11:26:00,393 - INFO - gui - Loaded more results, 500 rows displayed
+2026-01-31 11:26:00,537 - INFO - gui - Loaded more results, 550 rows displayed
+2026-01-31 11:26:00,680 - INFO - gui - Loaded more results, 600 rows displayed
+2026-01-31 11:26:00,806 - INFO - gui - Loaded more results, 650 rows displayed
+2026-01-31 11:26:00,965 - INFO - gui - Loaded more results, 700 rows displayed
+2026-01-31 11:26:01,140 - INFO - gui - Loaded more results, 750 rows displayed
+2026-01-31 11:26:01,329 - INFO - gui - Loaded more results, 800 rows displayed
+2026-01-31 11:26:01,679 - INFO - gui - Loaded more results, 850 rows displayed
+2026-01-31 11:26:01,838 - INFO - gui - Loaded more results, 900 rows displayed
+2026-01-31 11:26:02,009 - INFO - gui - Loaded more results, 950 rows displayed
+2026-01-31 11:26:02,178 - INFO - gui - Loaded more results, 1000 rows displayed
+2026-01-31 11:26:12,611 - ERROR - gui - Error applying advanced filters: 'Max CVSS'
+2026-01-31 11:26:16,869 - ERROR - gui - Error applying advanced filters: 'Max CVSS'
+2026-01-31 11:26:18,100 - INFO - gui - Loaded more results, 100 rows displayed
+2026-01-31 11:26:23,002 - ERROR - gui - Error applying advanced filters: 'Max CVSS'
+2026-01-31 11:28:09,525 - INFO - run - Initializing database...
+2026-01-31 11:28:09,553 - INFO - db - Database engine created successfully
+2026-01-31 11:28:09,557 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-31 11:28:09,558 - INFO - run - Database initialized successfully
+2026-01-31 11:28:09,558 - INFO - run - Starting scheduler...
+2026-01-31 11:28:11,478 - INFO - run - Scheduler started successfully
+2026-01-31 11:28:11,479 - INFO - run - Starting GUI...
+2026-01-31 11:28:11,494 - INFO - gui - Initializing database for GUI...
+2026-01-31 11:28:11,495 - INFO - db - Database engine created successfully
+2026-01-31 11:28:11,498 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-31 11:28:11,499 - INFO - gui - Database initialized successfully
+2026-01-31 11:28:11,979 - INFO - gui - Advanced filters added to dashboard
+2026-01-31 11:28:12,134 - INFO - db - Database engine created successfully
+2026-01-31 11:28:44,987 - ERROR - gui - Error applying advanced filters: 'Max CVSS'
+2026-01-31 11:28:45,104 - ERROR - gui - Traceback: Traceback (most recent call last):
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'Max CVSS'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\visual code file\Project_3\ThreatSentry-AI-main\gui\app.py", line 758, in on_advanced_filters_changed
+    df = df[df['Max CVSS'] >= cvss_min]
+            ~~^^^^^^^^^^^^
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "D:\visual code file\Project_3\ThreatSentry-AI-main\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'Max CVSS'
+
+2026-01-31 11:29:42,956 - INFO - run - Initializing database...
+2026-01-31 11:29:42,987 - INFO - db - Database engine created successfully
+2026-01-31 11:29:42,990 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-31 11:29:42,991 - INFO - run - Database initialized successfully
+2026-01-31 11:29:42,992 - INFO - run - Starting scheduler...
+2026-01-31 11:29:46,349 - INFO - run - Scheduler started successfully
+2026-01-31 11:29:46,350 - INFO - run - Starting GUI...
+2026-01-31 11:29:46,386 - INFO - gui - Initializing database for GUI...
+2026-01-31 11:29:46,390 - INFO - db - Database engine created successfully
+2026-01-31 11:29:46,395 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-31 11:29:46,396 - INFO - gui - Database initialized successfully
+2026-01-31 11:29:47,002 - INFO - gui - Advanced filters added to dashboard
+2026-01-31 11:29:47,137 - INFO - db - Database engine created successfully
+2026-01-31 11:29:54,356 - INFO - gui - Loaded more results, 32 rows displayed
+2026-01-31 11:30:05,665 - INFO - gui - Filters applied: {'cvss_min': 0, 'cvss_max': 9, 'organization': None, 'country': None, 'risk_level': None} -> 952 devices
+2026-01-31 11:30:11,214 - INFO - gui - Filters applied: {'cvss_min': 0, 'cvss_max': 5, 'organization': None, 'country': None, 'risk_level': None} -> 741 devices
+2026-01-31 11:30:17,070 - INFO - gui - Filters applied: {'cvss_min': 0, 'cvss_max': 5, 'organization': 'DigitalOcean', 'country': 'AU', 'risk_level': None} -> 0 devices
+2026-01-31 11:30:20,525 - INFO - gui - Filters applied: {'cvss_min': 0, 'cvss_max': 5, 'organization': 'DigitalOcean', 'country': 'FR', 'risk_level': None} -> 0 devices
+2026-01-31 11:30:23,779 - INFO - gui - Filters applied: {'cvss_min': 0, 'cvss_max': 5, 'organization': 'DigitalOcean', 'country': None, 'risk_level': None} -> 7 devices
+2026-01-31 11:31:39,192 - INFO - run - Initializing database...
+2026-01-31 11:31:39,232 - INFO - db - Database engine created successfully
+2026-01-31 11:31:39,236 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-31 11:31:39,237 - INFO - run - Database initialized successfully
+2026-01-31 11:31:39,238 - INFO - run - Starting scheduler...
+2026-01-31 11:31:41,386 - INFO - run - Scheduler started successfully
+2026-01-31 11:31:41,386 - INFO - run - Starting GUI...
+2026-01-31 11:31:41,408 - INFO - gui - Initializing database for GUI...
+2026-01-31 11:31:41,409 - INFO - db - Database engine created successfully
+2026-01-31 11:31:41,412 - INFO - db - DB initialized at data/db/threat_sentric_ai.db
+2026-01-31 11:31:41,413 - INFO - gui - Database initialized successfully
+2026-01-31 11:31:42,102 - INFO - gui - Advanced filters added to dashboard
+2026-01-31 11:31:42,257 - INFO - db - Database engine created successfully
+2026-01-31 11:31:51,831 - INFO - gui - Loaded more results, 32 rows displayed
+2026-01-31 11:31:57,968 - INFO - gui - Filters applied: {'cvss_min': 0, 'cvss_max': 6, 'organization': None, 'country': None, 'risk_level': None} -> 765 devices
+2026-01-31 11:32:26,730 - INFO - gui - Filters applied: {'cvss_min': 0, 'cvss_max': 10, 'organization': None, 'country': None, 'risk_level': None} -> 1000 devices
+2026-01-31 11:33:27,051 - INFO - gui - Filters applied: {'cvss_min': 0, 'cvss_max': 10, 'organization': None, 'country': None, 'risk_level': None} -> 1000 devices
+2026-01-31 11:33:27,505 - INFO - gui - Filters applied: {'cvss_min': 0, 'cvss_max': 10, 'organization': None, 'country': None, 'risk_level': None} -> 1000 devices
+2026-01-31 11:33:27,708 - INFO - gui - Filters applied: {'cvss_min': 0, 'cvss_max': 10, 'organization': None, 'country': None, 'risk_level': None} -> 1000 devices
+2026-01-31 11:34:41,253 - INFO - email_alerts - SendGrid status: 202
+2026-01-31 11:34:42,678 - INFO - gui - Selected manual alerts sent for 4 devices
+2026-01-31 11:35:57,318 - INFO - gui - Filters applied: {'cvss_min': 0, 'cvss_max': 10, 'organization': None, 'country': None, 'risk_level': None} -> 1000 devices
+2026-01-31 11:36:09,267 - INFO - gui - Filters applied: {'cvss_min': 0, 'cvss_max': 10, 'organization': 'Google Cloud', 'country': None, 'risk_level': None} -> 32 devices
+2026-01-31 11:36:20,868 - INFO - gui - Filters applied: {'cvss_min': 0, 'cvss_max': 10, 'organization': 'Google Cloud', 'country': 'IN', 'risk_level': None} -> 1 devices
+2026-01-31 11:36:25,562 - INFO - gui - Filters applied: {'cvss_min': 0, 'cvss_max': 10, 'organization': None, 'country': 'IN', 'risk_level': None} -> 72 devices
+2026-01-31 11:36:32,667 - INFO - gui - Filters applied: {'cvss_min': 0, 'cvss_max': 5, 'organization': None, 'country': 'IN', 'risk_level': None} -> 49 devices
+2026-01-31 11:36:38,608 - INFO - gui - Analytics tab loaded successfully
+2026-01-31 11:36:38,643 - INFO - gui - Tools tab loaded successfully
+2026-01-31 11:37:10,751 - INFO - enhanced_dashboard - Exported PDF report to E:/Lenovo Manic/Desktop/report.pdf
